@@ -22,7 +22,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
     let body={};if(req.method==='POST'){
      if(req.headers.origin!==currentOrigin){send(403,{error:'Request origin not allowed.'});return;}
      if(!req.headers['content-type']?.startsWith('application/json')){send(415,{error:'JSON required.'});return;}
-     let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>100000){send(413,{error:'Request too large.'});return;}}try{body=JSON.parse(raw||'{}');}catch{send(400,{error:'Invalid JSON.'});return;}
+     let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>4200000){send(413,{error:'Request too large.'});return;}}try{body=JSON.parse(raw||'{}');}catch{send(400,{error:'Invalid JSON.'});return;}
     }
     let data;
     if(path==='/api/login'&&req.method==='POST'){if(++l.logins>10){send(429,{error:'Too many login attempts. Wait a minute.'});return;}const t=model.tx(s=>model.login(s,body.password));cookie('teacher',t);send(200,{ok:true});return;}
@@ -45,6 +45,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
       case '/api/preview':return model.preview(s,t,body.ids);
       case '/api/begin':return model.begin(s,u,body.game);
       case '/api/answer':return model.answer(s,u,body);
+      case '/api/campaign':return model.campaign(s,u,body);
       case '/api/launch':return model.launch(s,u,body);
       case '/api/ironbreak':return model.ironbreak(s,u,body);
       case '/api/nightfall':return model.nightfall(s,u,body);
@@ -62,6 +63,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
    if(path.startsWith('/ironbreak/')){base=root+'/build/ironbreak';rel=decodeURIComponent(path.slice(11));}
    if(path.startsWith('/nightfall/')){base=root+'/build/nightfall';rel=decodeURIComponent(path.slice(11));}
    if(path.startsWith('/vault7/')){base=root+'/build/vault7';rel=decodeURIComponent(path.slice(8));}
+   if(/^\/(chrono|olivia|math-civ)\//.test(path)){const game=path.split('/')[1];model.tx(s=>{const {c,p}=model.student(s,cookies.student);if(p.activity?.game!==game||!p.activity.campaign||c.session.status==='ended')throw Object.assign(Error('Open this adventure from the arcade.'),{status:403});});base=root+'/build/'+game;rel=decodeURIComponent(path.slice(game.length+2));res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'");}
    if(path==='/math-format.js'){base=root+'/build/math';rel='math-format.js';}
    const file=resolve(base,rel);if(!file.startsWith(base+sep)||!existsSync(file)||!statSync(file).isFile()){send(404,{error:'Not found.'});return;}
    const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.mp3':'audio/mpeg','.wav':'audio/wav','.svg':'image/svg+xml'};

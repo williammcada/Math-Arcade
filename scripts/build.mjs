@@ -15,7 +15,7 @@ for(const file of manifest.files){
  }
 }
 cpSync(root+'/vendor/coastal/public',root+'/build/coastal',{recursive:true});
-writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.1.0-alpha.4',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak},vendorFiles:manifest.files.length},null,2));
+writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.1.0-alpha.5',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak},vendorFiles:manifest.files.length},null,2));
 
 // Derive presentation-only exports from the pinned runtime; never load its old network/storage host.
 cpSync(root+'/vendor/vault7/public',root+'/build/vault7',{recursive:true});
@@ -36,3 +36,5 @@ for(const name of ['adapter','config','hardware','renderer','simulation','world'
 
 cpSync(root+'/vendor/ironbreak/public',root+'/build/ironbreak',{recursive:true});
 const inputPath=root+'/build/ironbreak/games/shooter/input.js';writeFileSync(inputPath,readFileSync(inputPath,'utf8').replace('../../engine/held-input.js','../../../coastal/engine/held-input.js'));
+import {buildChrono} from './build-campaigns.mjs';
+buildChrono(root);

@@ -529,6 +529,354 @@
       "path": "public/cartridges/ironbreak.js",
       "dest": "vendor/ironbreak/public/cartridges/ironbreak.js",
       "sha": "3b84543183880b9d53c9614c5f3dd45b88da29e0"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/actor-art.js",
+      "dest": "vendor/chrono/public/actor-art.js",
+      "sha": "87b0c1b8a7cd2a47da82854c0572598fb3697972"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/adult-lock.js",
+      "dest": "vendor/chrono/public/adult-lock.js",
+      "sha": "e0e4a816ccd6292a3cfe20354ccc33ef5961662a"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/answer-mode.js",
+      "dest": "vendor/chrono/public/answer-mode.js",
+      "sha": "81fbc1c85c47729937c12ec86741e6b4d6244e66"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/arcade-math.css",
+      "dest": "vendor/chrono/public/arcade-math.css",
+      "sha": "99e4758823f20b821673a4d2f85db31d1308534c"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/arcade-math.js",
+      "dest": "vendor/chrono/public/arcade-math.js",
+      "sha": "b157cc8f529c8c8ccb067a954e7c261f8e0e4143"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/arcade-ui.js",
+      "dest": "vendor/chrono/public/arcade-ui.js",
+      "sha": "12ef3f1dc27b2df8964418abd08f1b11e1813e24"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/actors-bosses.png",
+      "dest": "vendor/chrono/public/assets/actors-bosses.png",
+      "sha": "d0a36e12259e3c90208fc650692f49fc9fa70b04"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/actors-enemies.png",
+      "dest": "vendor/chrono/public/assets/actors-enemies.png",
+      "sha": "addf6d79b078e913caf27766eb1aa6655841d79a"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/actors-meta.js",
+      "dest": "vendor/chrono/public/assets/actors-meta.js",
+      "sha": "0170b7b314b939c51503eb9bb0654e128f560c11"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/actors-meta.json",
+      "dest": "vendor/chrono/public/assets/actors-meta.json",
+      "sha": "39c3e1e41c8d52521817afbbc90cdb852c2dd750"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/fair.png",
+      "dest": "vendor/chrono/public/assets/environment/fair.png",
+      "sha": "19271f55db713074a3ef1718b5f2dd1f514301d7"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/garden.png",
+      "dest": "vendor/chrono/public/assets/environment/garden.png",
+      "sha": "3de0fae927cd85625281d894be65d057a4c4d835"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/metro.png",
+      "dest": "vendor/chrono/public/assets/environment/metro.png",
+      "sha": "4cb6a9a00daab34d71298c0da42237173a08d753"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/prism.png",
+      "dest": "vendor/chrono/public/assets/environment/prism.png",
+      "sha": "7cd6c52813396e587f6a4146c89108a337f4d5c2"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/sky.png",
+      "dest": "vendor/chrono/public/assets/environment/sky.png",
+      "sha": "221b8ac788f2d4b755b9a34026a2e0af67795222"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/tidal.png",
+      "dest": "vendor/chrono/public/assets/environment/tidal.png",
+      "sha": "010b8c5edecff415781fbdd344de54f2fb4131e1"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/environment/tower.png",
+      "dest": "vendor/chrono/public/assets/environment/tower.png",
+      "sha": "a94b953f06858c7296f10d54ab5df65166b9864f"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/foundry.png",
+      "dest": "vendor/chrono/public/assets/foundry.png",
+      "sha": "0a734ffa369d5b0d95c7eedcfd10ff1bc16dc2b0"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/portraits-guardians.png",
+      "dest": "vendor/chrono/public/assets/portraits-guardians.png",
+      "sha": "6a14c9dbdcaf1c087e285168db869bcd68b3d8f8"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/tempo-atlas-data.js",
+      "dest": "vendor/chrono/public/assets/tempo-atlas-data.js",
+      "sha": "49cbec514acbc96a5e12ccf5f77de185396e1d71"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/tempo-atlas.json",
+      "dest": "vendor/chrono/public/assets/tempo-atlas.json",
+      "sha": "7672c64394b43020587874c2c7fffec9db1465df"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/tempo-atlas.png",
+      "dest": "vendor/chrono/public/assets/tempo-atlas.png",
+      "sha": "baa02a7cc17e61c6e717f70413e5966e0838d111"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/assets/title.png",
+      "dest": "vendor/chrono/public/assets/title.png",
+      "sha": "f8bc701ee5ded0dfde1ba874189575ebce438a69"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/bosses.js",
+      "dest": "vendor/chrono/public/bosses.js",
+      "sha": "be397d42b118251d5f6e620ba1bc2b11229d9375"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/combat.js",
+      "dest": "vendor/chrono/public/combat.js",
+      "sha": "1edb5130cd76e17b52b0b185611474e654cf0d1c"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/controls.js",
+      "dest": "vendor/chrono/public/controls.js",
+      "sha": "7edc250a3d4d4575b1d85aa6671c011729adabe1"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/curriculum.js",
+      "dest": "vendor/chrono/public/curriculum.js",
+      "sha": "a46d8fdb8b013b6e2f6f1409d1aecd06699ef457"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/expansion-layouts.js",
+      "dest": "vendor/chrono/public/expansion-layouts.js",
+      "sha": "cff02a4df3658da6fd2384c6a80bd2cc1de7d290"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/game.js",
+      "dest": "vendor/chrono/public/game.js",
+      "sha": "6688737494a1da46df7269041f9bd858a1493683"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/gate-questions.js",
+      "dest": "vendor/chrono/public/gate-questions.js",
+      "sha": "23e53d97b1f3961c63dd31ead2f2841b772ffaec"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/gate-ui.css",
+      "dest": "vendor/chrono/public/gate-ui.css",
+      "sha": "e3020cb1813069252dc9abb3b4ef01600a877c0d"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/gate-ui.js",
+      "dest": "vendor/chrono/public/gate-ui.js",
+      "sha": "db04e0a4d9c4aa638a3df8bacf934937847c6059"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/hero-art.js",
+      "dest": "vendor/chrono/public/hero-art.js",
+      "sha": "a88ffbc147bda6b251deab36e269367e872e120f"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/index.html",
+      "dest": "vendor/chrono/public/index.html",
+      "sha": "be63b4be4bfa1ad50a6e3dfe3548f257fe34e24e"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/manifest.webmanifest",
+      "dest": "vendor/chrono/public/manifest.webmanifest",
+      "sha": "9c53826bb0553a8b353861d90252d733f9a4e824"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/math-modules.js",
+      "dest": "vendor/chrono/public/math-modules.js",
+      "sha": "fd8bca28327e9c171f99bb87abc6d0a81ec9a3dd"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/math-tasks.js",
+      "dest": "vendor/chrono/public/math-tasks.js",
+      "sha": "502d628a91d8ce9776c896243df737f156f2dc4c"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/music.js",
+      "dest": "vendor/chrono/public/music.js",
+      "sha": "b15caf01776741d5eff78b7c477a4a5928707a04"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/physics.js",
+      "dest": "vendor/chrono/public/physics.js",
+      "sha": "9656e1d8b7ccbb0c0548b55cb6ed030de446cbba"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/portraits.js",
+      "dest": "vendor/chrono/public/portraits.js",
+      "sha": "409dbfecee75c0a3d82ef21f133c2ea6480e49d3"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/powers.js",
+      "dest": "vendor/chrono/public/powers.js",
+      "sha": "a5dd71064d83d7ca1ee6dfe7558257238533e268"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/practice-config.js",
+      "dest": "vendor/chrono/public/practice-config.js",
+      "sha": "b3206270edb441fd3ea65aa6b1a8411d5ed6c499"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/practice-ui.js",
+      "dest": "vendor/chrono/public/practice-ui.js",
+      "sha": "ecfabefe9750a0cbb85083a9dcc53ed3c7d64a52"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/progress.js",
+      "dest": "vendor/chrono/public/progress.js",
+      "sha": "6473b8839d9d75fb6b147f273b58b4ed5620b456"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/projectile-system.js",
+      "dest": "vendor/chrono/public/projectile-system.js",
+      "sha": "ce5e0c9245858711b96e503e0308ef3129602a51"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/scenery.js",
+      "dest": "vendor/chrono/public/scenery.js",
+      "sha": "1a908bc536ee324d0f3d8448801955a253951807"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/shared-math.js",
+      "dest": "vendor/chrono/public/shared-math.js",
+      "sha": "25996beacba57eb709f299bb1bcddb2d6162e59e"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/shared-math.provenance.json",
+      "dest": "vendor/chrono/public/shared-math.provenance.json",
+      "sha": "a2f03550d30aadb1b768fe35edb543b736bf95c3"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/sharp-text.js",
+      "dest": "vendor/chrono/public/sharp-text.js",
+      "sha": "814b6a5a58e5c8475c87f6222bbf9c09be4f3099"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/stage-data.js",
+      "dest": "vendor/chrono/public/stage-data.js",
+      "sha": "7d394e20727e06be6a38a71335b8b39610b87ad7"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/stage-layouts.js",
+      "dest": "vendor/chrono/public/stage-layouts.js",
+      "sha": "cc482c5a789edf4a74ccbd75bfc6d67f2230a235"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/style.css",
+      "dest": "vendor/chrono/public/style.css",
+      "sha": "d03cde7e207df33c11e0ef998ff994bfc5c5574a"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/subtraction.js",
+      "dest": "vendor/chrono/public/subtraction.js",
+      "sha": "5dd6f0a4445bcea3136d9c8f66713309f3f984eb"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/sw.js",
+      "dest": "vendor/chrono/public/sw.js",
+      "sha": "12e2cd102d6c4cd3ad40c3f243eea3e96f1af7a2"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/time-engine.js",
+      "dest": "vendor/chrono/public/time-engine.js",
+      "sha": "fedf5de2ee35380a1bf43e239cd13c3e16c74313"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/time-tasks.js",
+      "dest": "vendor/chrono/public/time-tasks.js",
+      "sha": "690ba61436d67268b5c8b9ac35b569f1b35623ea"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/viewport-layout.js",
+      "dest": "vendor/chrono/public/viewport-layout.js",
+      "sha": "a5c8f52f8d7acb075bf52020ff4af31c5e9fa803"
+    },
+    {
+      "repo": "CHRONO-CIRCUIT",
+      "path": "public/world-mechanisms.js",
+      "dest": "vendor/chrono/public/world-mechanisms.js",
+      "sha": "643992dbe9bd47af2c69e43c2d84a1f9a549fd7e"
     }
   ],
   "vault7": {
@@ -542,5 +890,9 @@
   "ironbreak": {
     "repo": "williammcada/Math-Quest---Vault-7-",
     "commit": "285c2119d825eeea784e84248c9c509668b16269"
+  },
+  "chrono": {
+    "repo": "williammcada/CHRONO-CIRCUIT",
+    "commit": "cfc8ff6e7ee3cc4bb6a6cc7b6d902a99fa54aa5b"
   }
 }

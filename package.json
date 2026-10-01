@@ -1,5 +1,19 @@
 {
-  "name": "math-arcade", "version": "0.1.0-alpha.4", "private": true, "type": "module",
-  "engines": {"node": ">=24.0.0"},
-  "scripts": {"build":"node scripts/build.mjs", "start":"node server/index.mjs", "test":"node --test test/*.test.mjs", "check":"node --check server/index.mjs && node --check server/model.mjs && node --check public/app.js && node --check public/flight.js && node --check public/vault.js && node --check server/rounds.mjs && node --check public/nightfall.js && node --check server/nightfall.mjs"}
+  "name": "math-arcade",
+  "version": "0.1.0-alpha.5",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node server/index.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check server/index.mjs && node --check server/model.mjs && node --check public/app.js && node --check public/flight.js && node --check public/vault.js && node --check server/rounds.mjs && node --check public/nightfall.js && node --check server/nightfall.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.25.12",
+    "phaser": "3.90.0"
+  }
 }
