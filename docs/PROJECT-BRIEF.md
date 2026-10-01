@@ -1,0 +1,73 @@
+# Project brief — Math Arcade
+
+**Brief version:** 0.1.0  
+**Date:** 2026-10-01, Asia/Shanghai  
+**Owner:** William McAda  
+**Status:** Owner-directed design consolidated; engineering details are proposed implementation decisions. Canonical repository established; implementation and deployment are pending.  
+**Canonical repository:** `williammcada/Math-Arcade`  
+**Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). No combined implementation exists yet.  
+**Running version:** None.  
+**Handbook baseline:** `c50115ba1fea9cb552f3ad1415e670a219118b56`, selected for this task.
+
+## Purpose and audience
+
+Provide a classroom reward arcade that the teacher controls from one computer. Students use iPads to play existing games and complete the mathematics assigned to them. Keep daily operation simple: open a session, choose content and games, display a join code, and adjust individuals from the roster.
+
+## Scope
+
+The full target includes Vault 7, Nightfall, Journey to the West, the aerial shooter, the robot side-scrolling shooter, Chrono Circuit, Olivia's Magic Bracelet Quest and Math Civ. Integration proceeds in identifiable checkpoints. A working pilot is not completion of all eight integrations.
+
+Implement a backend, teacher authentication, classroom sessions, student identity/reconnect, class defaults, individual math overrides, game availability, pause/resume/end, shared practice, progress storage and saved-work deletion. Use the shared Olivia/Mega Man mathematics implementation identified by handbook S-03-M. Mega Man is a math-system reference and is not included as a game in this approved roster.
+
+Use [v0.1.0](change-specs/v0.1.0.md) as the consolidated implementation contract. Preserve the native MathQuest cartridge editions; the Arcade editions have their own host policy.
+
+## Required behavior
+
+- Students join by QR code or class code; teacher credentials never need to be entered on student iPads.
+- Teacher chooses a broad class skill set or opens a student's Math Practice panel to customize it.
+- Show Class settings, Individual settings, effective skills and pending application status on the roster.
+- Updating the class default preserves individual assignments. Assign to everyone explicitly replaces individual assignments. Use class settings removes an individual override.
+- Mini-games use one gate before each new round; the teacher sets questions per gate. No extra questions interrupt a live round.
+- Each game defines its terminal conditions. A respawn that belongs to the same round is not a new round. Terminal death, exhausted lives, expiry or victory returns to the next start gate.
+- Chrono Circuit and Olivia retain their established gate locations, death/retry credit and progression structure.
+- Math Civ has no added gate of any kind. Retain its authored mathematical decisions, campaign, consequences and save structure. Its card and reports say Built-in math.
+- Teacher availability, pause and session-end rules apply to every game, including Math Civ.
+- Refresh, reconnect, switching games and switching browser tabs must not duplicate rewards, erase credited work or create free new rounds.
+
+## Devices and operation
+
+Target teacher desktop browsers and student landscape iPad Safari. Preserve keyboard and touch controls; inherited gamepad support remains where implemented. iPhone review support is checked per game and must not be advertised as verified without physical-device evidence. Do not create an offline classroom-control promise: teacher-controlled sessions require the backend.
+
+Keep mathematics readable with fractions, exponents, units and usable answer entry. Preserve game art, audio, controls and accepted gameplay. Use one shared input-recovery implementation in the Arcade codebase wherever compatible; preserve game-specific mappings.
+
+## Saved work
+
+Store classes, stable student identifiers and display names, assignments, practice attempts, round grants, game saves and session records. Proposed initial operation uses classroom identifiers without student email/password accounts. Teacher-controlled identity recovery prevents a lost browser token from silently creating a new learner.
+
+Provide deletion for individual records, complete classes/sessions/campaigns where appropriate, and clear-all within the teacher workspace. Identify affected scope and counts, require confirmation and allow cancellation. Offer export before irreversible deletion; do not imply deleted data is recoverable. Remove associated records without orphaning them and preserve unrelated classes and source game assets.
+
+## Selected handbook rules
+
+Apply U-01–U-08 within this project; they are seeded handbook rules, not newly ratified global rules. Apply approved U-09 deletion and U-10 held-input/native-menu/viewport requirements. Select S-02, S-03 and S-04; apply approved S-03-M to shared mathematics. Use S-03-A's five-minute action default for new or explicitly retimed action rounds, while recording preserved existing round limits per imported game. Do not impose five minutes on Math Civ campaigns or whole Chrono/Olivia adventures.
+
+S-01 external AI import and S-05 applied-project rules are not selected. No handbook amendment is made by this package.
+
+## Conflicts and explicit scope
+
+| Existing rule or design | Math Arcade treatment |
+| --- | --- |
+| Earlier conversation suggested several gates before a mini-game | Superseded by the owner's one start gate per round instruction; customize questions per gate |
+| MathQuest's cartridge narratives, gates and one-run/retry rules | Native editions remain intact; Arcade uses the new round admission policy |
+| Shared practice for every hosted game | Owner explicitly exempts Math Civ: built-in math, no added gates |
+| Math Civ and Chrono standalone briefs say no backend | Arcade adds an online host integration; this does not change standalone distribution requirements |
+| Chrono currently freezes configuration for an entire run | Preserve that snapshot by default; show changes as queued for the next run/relay. This refines the earlier blanket next-gate recommendation using current source documentation |
+| Olivia/shared math snapshots a gate | Apply incoming changes at the next new gate; preserve an active gate and earned credit |
+| Ongoing upstream game development | Import pinned source states and record updates explicitly; never reconstruct games from chat |
+
+## Definition of done
+
+Every listed game has an identified source revision, implemented adapter and evidence for its required gate policy. Teacher + student workflows pass with class and individual assignments; Math Civ produces no synthetic gate events. Reconnect, replay admission, permission isolation, saves and deletion pass. Separate physical iPad checks cover stuck input, native browser interference and viewport stability. Test the actual school network and classroom concurrency before claiming readiness. The live version must identify the exact verified source candidate.
+
+## Known limits
+
+This is a documentation checkpoint. There are no product test results, working adapters or hosted Math Arcade service. Journey to the West and the robot shooter source revisions are unresolved in this intake. The linked shared-math overview still labels itself v1 while Olivia's project brief records later v2 work; inspect current source and manifests before importing.
