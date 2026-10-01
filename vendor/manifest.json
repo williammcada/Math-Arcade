@@ -487,6 +487,48 @@
       "path": "public/games/nightfall/rescue-world.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-world.js",
       "sha": "5c3915daefbe672db369908c8fb8d080d4aa3a90"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/shooter/audio.js",
+      "dest": "vendor/ironbreak/public/games/shooter/audio.js",
+      "sha": "85c14388006a09c55778f886d49deae7fcebbcba"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/shooter/config.js",
+      "dest": "vendor/ironbreak/public/games/shooter/config.js",
+      "sha": "c6e61e600439eff88866ee7e6ce77af016059f28"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/shooter/input.js",
+      "dest": "vendor/ironbreak/public/games/shooter/input.js",
+      "sha": "94550b93e3d8615e461c8258ace292b1adfcf756"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/shooter/renderer.js",
+      "dest": "vendor/ironbreak/public/games/shooter/renderer.js",
+      "sha": "dfbf27af1b6e777e0f547b87ab839f79641d7220"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/shooter/simulation.js",
+      "dest": "vendor/ironbreak/public/games/shooter/simulation.js",
+      "sha": "ee130e1267d8bee28580a100361bb1880225f894"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/shooter/world.js",
+      "dest": "vendor/ironbreak/public/games/shooter/world.js",
+      "sha": "5205a6ecc40d7c95a029af990032bc4d84097e3b"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/cartridges/ironbreak.js",
+      "dest": "vendor/ironbreak/public/cartridges/ironbreak.js",
+      "sha": "3b84543183880b9d53c9614c5f3dd45b88da29e0"
     }
   ],
   "vault7": {
@@ -496,5 +538,9 @@
   "nightfall": {
     "repo": "williammcada/Math-Quest---Vault-7-",
     "commit": "59c11c90c2f0893333dfe30b62578fd73deb9bbf"
+  },
+  "ironbreak": {
+    "repo": "williammcada/Math-Quest---Vault-7-",
+    "commit": "285c2119d825eeea784e84248c9c509668b16269"
   }
 }

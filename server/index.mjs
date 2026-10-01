@@ -46,6 +46,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
       case '/api/begin':return model.begin(s,u,body.game);
       case '/api/answer':return model.answer(s,u,body);
       case '/api/launch':return model.launch(s,u,body);
+      case '/api/ironbreak':return model.ironbreak(s,u,body);
       case '/api/nightfall':return model.nightfall(s,u,body);
       case '/api/vault':return model.vault(s,u,body);
       case '/api/sync':return model.sync(s,u,body);
@@ -58,6 +59,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
    if(req.method!=='GET'&&req.method!=='HEAD'){send(405,{error:'Method not allowed.'});return;}
    let base=root+'/public',rel=path==='/'?'index.html':decodeURIComponent(path.slice(1));
    if(path.startsWith('/coastal/')){base=root+'/build/coastal';rel=decodeURIComponent(path.slice(9));}
+   if(path.startsWith('/ironbreak/')){base=root+'/build/ironbreak';rel=decodeURIComponent(path.slice(11));}
    if(path.startsWith('/nightfall/')){base=root+'/build/nightfall';rel=decodeURIComponent(path.slice(11));}
    if(path.startsWith('/vault7/')){base=root+'/build/vault7';rel=decodeURIComponent(path.slice(8));}
    if(path==='/math-format.js'){base=root+'/build/math';rel='math-format.js';}

@@ -3,10 +3,10 @@
 **Brief version:** 0.1.0
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
-**Status:** Classroom foundation, Coastal Escape, Vault 7 and Nightfall implemented and locally tested as alpha.3. Five integrations, hosted deployment and physical-device verification remain pending.
+**Status:** Classroom foundation, Coastal Escape, Vault 7, Nightfall and Ironbreak implemented and locally tested as alpha.4. Three requested integrations, hosted deployment and physical-device verification remain pending.
 **Canonical repository:** `williammcada/Math-Arcade`
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
-**Running version:** v0.1.0-alpha.3 locally; no hosted deployment.
+**Running version:** v0.1.0-alpha.4 locally; no hosted deployment.
 **Handbook baseline:** `c50115ba1fea9cb552f3ad1415e670a219118b56`, selected for this task.
 
 ## Purpose and audience
@@ -15,7 +15,7 @@ Provide a classroom reward arcade that the teacher controls from one computer. S
 
 ## Scope
 
-The full target includes Vault 7, Nightfall, Journey to the West, the aerial shooter, the robot side-scrolling shooter, Chrono Circuit, Olivia's Magic Bracelet Quest and Math Civ. Integration proceeds in identifiable checkpoints. A working pilot is not completion of all eight integrations.
+The full target includes Vault 7, Nightfall, Journey to the West, the aerial shooter, the robot side-scrolling shooter, Chrono Circuit, Olivia's Magic Bracelet Quest and Math Civ. Integration proceeds in identifiable checkpoints. The owner excluded Journey to the West on 2026-10-01. The current requested roster has seven games.
 
 Implement a backend, teacher authentication, classroom sessions, student identity/reconnect, class defaults, individual math overrides, game availability, pause/resume/end, shared practice, progress storage and saved-work deletion. Use the shared Olivia/Mega Man mathematics implementation identified by handbook S-03-M. Mega Man is a math-system reference and is not included as a game in this approved roster.
 
@@ -79,3 +79,7 @@ See [approved integration scope](change-specs/v0.1.0-alpha.2.md). Preserve the h
 ## alpha.3 Nightfall integration
 
 See [city mission scope](change-specs/v0.1.0-alpha.3.md). Import Last Bus Out with no short countdown, its historic 7,200-second review envelope, optional store rescue, shotgun, alarms, garage horde and accessible objectives. Zero to three post-gate resources and source threat presets are free Arcade preparation choices. Exact simulation state survives reload/restart; accessible completion is separate from action success. First Response and the team narrative remain outside this mini-game adapter.
+
+## Current continuation
+
+Journey to the West is excluded. Continue with Chrono Circuit, Olivia and Math Civ after the [Ironbreak checkpoint](checkpoints/alpha.4.md). Native gates stay in Chrono/Olivia; Math Civ receives no added gates.
