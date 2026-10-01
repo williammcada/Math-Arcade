@@ -355,9 +355,145 @@
       "path": "public/vault-art.js",
       "dest": "vendor/vault7/public/vault-art.js",
       "sha": "37df10eee62a4b76594747a225758c6077f8abf3"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/actors.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/actors.png",
+      "sha": "540d1f0865c34b9fffc0edf6e74d21d4bb2d4e35"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/ambient.mp3",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/ambient.mp3",
+      "sha": "db4971cedff5cfa875e55ec7532c4dfbc22dba6c"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/danger.mp3",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/danger.mp3",
+      "sha": "c883e49f3e64b8031af82870eaf07888c1f7aef7"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/effects.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/effects.wav",
+      "sha": "85985cf81deeb606f9fcd05df7c8e5abafd3c1b8"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/ending.mp3",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/ending.mp3",
+      "sha": "10e7b4f8b4c649842fe06ffc075db2fd8beeaf69"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/props.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/props.png",
+      "sha": "33cafbff04bf92602c5062f0d100e0c45fdaadbd"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/tiles.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/tiles.png",
+      "sha": "c6eb5d9579c943bdb5d138a907f9d6c3a45d1740"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/alarm.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/alarm.wav",
+      "sha": "b842ae1c82e77251769dbb92b7c094db7fbd16a7"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/breach.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/breach.wav",
+      "sha": "ca0b57c647f08ce39dd93798aaeb6b26e4f9c9f1"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/enemy-death.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/enemy-death.wav",
+      "sha": "6a9552d647ca2e4dee15fab34997fc512a4d1fa6"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/glass.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/glass.wav",
+      "sha": "09d2840c39a5c6353a54edd4a51a2e852ede3dca"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/moan.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/moan.wav",
+      "sha": "fd31e4abbf93fff653f467e0631b8be23e5daa63"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/shot.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/shot.wav",
+      "sha": "f34d5c0fef7ac944a49f6e61202a6d1c1d233e4e"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/shotgun.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/shotgun.wav",
+      "sha": "51e3a70275aa0a0e9478783e1adc949684779f01"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/nightfall/city/v092/step.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/v092/step.wav",
+      "sha": "c2f3be48c0b2c9038cc1d1abc58516ecdd70694b"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/adapter.js",
+      "dest": "vendor/nightfall/public/games/nightfall/adapter.js",
+      "sha": "f4e70aa18d66166cf797b3f551f6a9777795d0bf"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/config.js",
+      "dest": "vendor/nightfall/public/games/nightfall/config.js",
+      "sha": "4c4369fb48d08f8dc57dc36b186cbce1383f277b"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/hardware.js",
+      "dest": "vendor/nightfall/public/games/nightfall/hardware.js",
+      "sha": "6abf4cd2468b2552034f66ac14f726fe40af6a9d"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/renderer.js",
+      "dest": "vendor/nightfall/public/games/nightfall/renderer.js",
+      "sha": "6a61f126be7b1d11165809d200347c7b0c5605ca"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/simulation.js",
+      "dest": "vendor/nightfall/public/games/nightfall/simulation.js",
+      "sha": "a6776c631b85d80cad2207217412bddaa3c89028"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/world.js",
+      "dest": "vendor/nightfall/public/games/nightfall/world.js",
+      "sha": "d8c5b69c2acd5e02815b96e825c385929f3408e9"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/nightfall/rescue-world.js",
+      "dest": "vendor/nightfall/public/games/nightfall/rescue-world.js",
+      "sha": "5c3915daefbe672db369908c8fb8d080d4aa3a90"
     }
   ],
   "vault7": {
+    "repo": "williammcada/Math-Quest---Vault-7-",
+    "commit": "59c11c90c2f0893333dfe30b62578fd73deb9bbf"
+  },
+  "nightfall": {
     "repo": "williammcada/Math-Quest---Vault-7-",
     "commit": "59c11c90c2f0893333dfe30b62578fd73deb9bbf"
   }

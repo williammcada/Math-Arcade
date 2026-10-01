@@ -15,7 +15,7 @@ for(const file of manifest.files){
  }
 }
 cpSync(root+'/vendor/coastal/public',root+'/build/coastal',{recursive:true});
-writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.1.0-alpha.2',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7},vendorFiles:manifest.files.length},null,2));
+writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.1.0-alpha.3',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall},vendorFiles:manifest.files.length},null,2));
 
 // Derive presentation-only exports from the pinned runtime; never load its old network/storage host.
 cpSync(root+'/vendor/vault7/public',root+'/build/vault7',{recursive:true});
@@ -25,4 +25,11 @@ writeFileSync(root+'/build/vault7/fallback.js',between('export function fallback
 writeFileSync(root+'/build/vault7/presentation.js',"import {crispCanvas} from '../coastal/engine/controls.js';\nimport {drawHardware} from './vault-art.js';\nimport {conePolygon,sensorActive} from './stealth-core.js';\nexport const presentation={\n"+between('  draw(){','  destroy(){')+'};\n');
 rmSync(root+'/build/vault7/stealth.js');
 
-console.log('Verified '+manifest.files.length+' upstream blobs; built shared math, Coastal Escape and Vault 7.');
+console.log('Verified '+manifest.files.length+' upstream blobs; built shared math, Coastal Escape, Vault 7 and Nightfall.');
+
+cpSync(root+'/vendor/nightfall/public',root+'/build/nightfall',{recursive:true});
+for(const name of ['adapter','config','hardware','renderer','simulation','world','rescue-world']){
+ const path=root+'/build/nightfall/games/nightfall/'+name+'.js';
+ const code=readFileSync(path,'utf8').replace(/\?v=[0-9.]+/g,'').replace('../../engine/controls.js','../../../coastal/engine/controls.js').replaceAll('./assets/nightfall/','/nightfall/assets/nightfall/');
+ writeFileSync(path,code);
+}

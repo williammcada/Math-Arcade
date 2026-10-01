@@ -54,3 +54,9 @@ QR encoder provenance is recorded in THIRD_PARTY.md. No other game has been impo
 Arcade baseline `d3040d129ac54c0d4371d4313de5ddcec74f5b55`; MathQuest source `59c11c90c2f0893333dfe30b62578fd73deb9bbf`. Import six unchanged files: stealth core, original runtime (build input only), hardware rendering, agent sprite, finale music and cover art. Manifest hashes cover all 58 vendor files. The build extracts the original runtime drawing method and accessible-scene function; the old MathQuest network/storage host is not shipped. Existing controls and held-input blobs match this source revision, so both games share the already pinned modules.
 
 Reconsulted AI-START-HERE.md, UNIVERSAL-RULES.md, relevant CONDITIONAL-STANDARDS.md sections and RELEASE-CHECKLIST.md at handbook `c50115ba1fea9cb552f3ad1415e670a219118b56`; MathQuest AGENTS.md, brief and relevant v0.9.2/v0.9.4 source specifications inspected. No handbook or source-game repository changes.
+
+## alpha.3 Nightfall import — 2026-10-01
+
+Arcade baseline `c947c1c9254bde26ad73037319a3c1f4a51ebf0c`; MathQuest remains `59c11c90c2f0893333dfe30b62578fd73deb9bbf`. Canonical `public/games/nightfall` modules and city media: 22 additional unchanged files, 80 total hashed vendor files. `rescue-world.js` is included because the city world imports it; no early-rescue host/campaign is enabled. Build normalization removes version query strings and adjusts import/media URLs only. Existing shared control profiles, held-input and GameAudio are reused.
+
+Consulted current upstream AGENTS.md, PROJECT-BRIEF and relevant v0.9.2 encounter/timing and v0.9.4 chapter requirements. Reconsulted handbook AI-START-HERE, UNIVERSAL-RULES, applicable CONDITIONAL-STANDARDS and RELEASE-CHECKLIST at `c50115ba1fea9cb552f3ad1415e670a219118b56`. No upstream repository or handbook modifications.

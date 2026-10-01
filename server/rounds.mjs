@@ -1,17 +1,20 @@
+import * as night from './nightfall.mjs';
 import * as flight from '../build/coastal/games/aerial-shooter/core.js';
 import {StealthSimulation} from '../build/vault7/stealth-core.js';
 import {fallbackScene} from '../build/vault7/fallback.js';
 const fail=message=>{throw Object.assign(Error(message),{status:409});};
 const hydrate=s=>Object.assign(Object.create(StealthSimulation.prototype),s);
-export const keysFor=game=>game==='vault7'?['left','right','jump','interact','jam','cloak','confirm']:['left','right','up','down'];
+export const keysFor=game=>game==='nightfall'?['left','right','up','down','run','fire','interact','weapon']:game==='vault7'?['left','right','jump','interact','jam','cloak','confirm']:['left','right','up','down'];
 export function createRound(game,identity,options={}){
+ if(game==='nightfall')return night.create(options);
  if(game!=='vault7')return flight.createRun(identity);
  const route=options.route||'corridor',loadout=options.loadout??['toolkit','cloak'];
  if(!['corridor','shaft'].includes(route)||!Array.isArray(loadout)||loadout.length>2||new Set(loadout).size!==loadout.length||loadout.some(x=>!['toolkit','cloak'].includes(x)))fail('Choose a valid route and equipment.');
  const sim=new StealthSimulation({route,loadout,adverseCount:0});sim.start();return {...sim,arcadeMode:'action',assistStep:0,selected:null,confirmHeld:0,feedback:'',unsafe:[]};
 }
-export function snapshot(game,s){return game==='vault7'?{...s,events:[]}:flight.snapshot(s);}
+export function snapshot(game,s){return ['vault7','nightfall'].includes(game)?{...s,events:[]}:flight.snapshot(s);}
 export function step(game,s,input,dt){
+ if(game==='nightfall'){night.step(s,input,dt);return;}
  if(game!=='vault7'){flight.step(s,input,dt);return;}
  const sim=hydrate(s);sim.events=[];
  if(sim.arcadeMode==='accessible'){
@@ -50,3 +53,5 @@ export function vaultAction(s,input){
  }
  Object.assign(s,sim);
 }
+
+export const nightfallAction=night.command;

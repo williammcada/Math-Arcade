@@ -30,3 +30,9 @@ Enable Vault 7 on the teacher desk. After the assigned gate, choose Security cor
 Accessible extraction is an irreversible mode change within the same round, preserving integrity, checkpoints and spent equipment. Read the original decision scenes, choose a position and hold the final boarding control. There is no speed timer in this mode; teacher pause/end still controls access. Every completed, captured, expired or abandoned round needs a new math gate.
 
 Vault browser verification: `node test/vault-browser.cjs` (same Playwright/CHROMIUM_PATH requirements). The additional original shared-input regressions run with `node --test test/shared-input.mjs` when the development-only happy-dom package (tested version 20.14.5) is available to Node (or via NODE_PATH). Neither Playwright nor happy-dom is needed by the deployed application.
+
+## Nightfall (alpha.3)
+
+Nightfall is enabled in new sessions; teachers can enable it in existing sessions. Complete one assigned gate, select the existing threat preset and zero to three resources, then start the city mission. No short countdown: the historic active review envelope is two hours. Death, bus escape or leaving requires a new gate. Accessible mission retains no speed timer; teacher pause/end still applies. Refresh resumes the exact same round paused, with spent ammunition and all encounters intact. The First Response campaign chapter is outside this mini-game adapter.
+
+Run its additional browser check with `CHROMIUM_PATH=/path/to/chromium node test/nightfall-browser.cjs` after the build. Playwright and a browser are development-only verification tools, not runtime dependencies.
