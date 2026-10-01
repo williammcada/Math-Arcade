@@ -1,0 +1,324 @@
+{
+  "math": {
+    "repo": "williammcada/OLIVIA-MAGIC-BRACELET-QUEST",
+    "commit": "df28efce7bde25a239915af7db72b8b5caf85eb4"
+  },
+  "coastal": {
+    "repo": "williammcada/Math-Quest---Vault-7-",
+    "commit": "02acd2cdf065adf33df4a2dd90094ef4381ce39a"
+  },
+  "files": [
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/catalog.ts",
+      "dest": "vendor/math/src/shared-math/catalog.ts",
+      "sha": "d7a07e69dbf4c2eaa04b0ae8daea06b38b2f12fd"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/engine.ts",
+      "dest": "vendor/math/src/shared-math/engine.ts",
+      "sha": "81bf2cf08d7ed8ce6ef4de2261f827ecc8a604c5"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/mega-content.js",
+      "dest": "vendor/math/src/shared-math/mega-content.js",
+      "sha": "e2191419be8cc5c3211948b03f62b464cb43aa2b"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/quarter-time.ts",
+      "dest": "vendor/math/src/shared-math/quarter-time.ts",
+      "sha": "bf9699d99d38c24c208275808d6728e201eaa083"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/preview.ts",
+      "dest": "vendor/math/src/shared-math/preview.ts",
+      "sha": "2ac0ced1b066b983ce9adabf528c8ded39de8cd8"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/settings.ts",
+      "dest": "vendor/math/src/shared-math/settings.ts",
+      "sha": "076d4c31f6b7cc20c1596919cb87a930ec37043c"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/facts.ts",
+      "dest": "vendor/math/src/facts.ts",
+      "sha": "1d4666e006f9c55f341274bb2dc9d706b1b769f0"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/expansion.ts",
+      "dest": "vendor/math/src/expansion.ts",
+      "sha": "96649baf62196577231e43ce4e74706072ef7a71"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/math-format.ts",
+      "dest": "vendor/math/src/math-format.ts",
+      "sha": "eaf5eb5c5c6ef643b422052bd58e9ad3c5b6c4b3"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/bonus.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/bonus.wav",
+      "sha": "6adbebe83fbc57985ff4a6c4f799ed3180be6766"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/boss.mp3",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/boss.mp3",
+      "sha": "12ae62d04f93474892585364127027fbf6848b56"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/carrier.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/carrier.wav",
+      "sha": "87245c049b5a83b4a54113a09e8dd3185d86758b"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/checkpoint.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/checkpoint.wav",
+      "sha": "499f11db1d0b37681bada54fc655606e27b55117"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/defeat.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/defeat.wav",
+      "sha": "96f2a55afe6c0b91fe568d66dcf1a0d25e27c5d3"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/effects.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/effects.wav",
+      "sha": "c3e72f81f7771b7028a6892ce2e06f75b795bb41"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/enemy.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/enemy.wav",
+      "sha": "15cf7381ecf9b222e97bdceb803619aa9292b428"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/engine.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/engine.wav",
+      "sha": "574e4afe6210bd016e5894e06ce7164f8cc86fea"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/escape.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/escape.wav",
+      "sha": "044a47ee7f66ac613c0d0272c5c2596c29684134"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/explosion.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/explosion.wav",
+      "sha": "c2738d8df90ee2db99ca6867307fa4e8239c07d3"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/expose.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/expose.wav",
+      "sha": "419f3f08eb722e16b4c3fdc8b16493205cc350d5"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/flight.mp3",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/flight.mp3",
+      "sha": "45cfbeeb3d32fc4452d8598c50c01de2cc6d6b96"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/heavy.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/heavy.wav",
+      "sha": "297981c4a195516f929126fbe00cbfefe59b433f"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/hurt.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/hurt.wav",
+      "sha": "f5b1b8466a9943fe2ab25d1d5306e62b0398e8de"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/rapid.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/rapid.wav",
+      "sha": "b9288eaa568b390710abb7edd13de8266e077fd7"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/repair.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/repair.wav",
+      "sha": "c4fbba1cce975f721eb9588b617dcd1a8595ac1c"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/shot.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/shot.wav",
+      "sha": "1ade5de39780ffc6592a29b5633a7a27fac828d2"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/upgraded.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/upgraded.wav",
+      "sha": "04d34f7afe15e9ae2653c7041e7f9139b7450cbc"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/victory.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/victory.wav",
+      "sha": "a9df7f0cbf03319fc731564646826211501df39f"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/audio/warning.wav",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/audio/warning.wav",
+      "sha": "8e4053d923fd2bb1f86b3fe46a4b18fa73a39788"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/bomber.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/bomber.webp",
+      "sha": "d22a349b8ce3811b66cc48747c7fbf259047bc6a"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/boss.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/boss.webp",
+      "sha": "13899ee0cf626a9ebea0d0c2dfc360e3f5f290af"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/explosion.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/explosion.webp",
+      "sha": "eb2b0a261485ac89d4945aa6bda9a307480ae041"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/fighter.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/fighter.webp",
+      "sha": "77afdf25ce17b75e98579ea0bc023cd938a22385"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/harbor.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/harbor.webp",
+      "sha": "ff2f0081623ef5ed8b81cb615ec0b19190aa8c7b"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/interceptor.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/interceptor.webp",
+      "sha": "90c4b19f5713c22918c6b35eb69ea2ddca078931"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/island.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/island.webp",
+      "sha": "ddc2e2bff46ecd701ef601f65ff28645d07afcbe"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/manifest.json",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/manifest.json",
+      "sha": "cbf87b93361d67fb680dae5f0244b34b6dfcdfdf"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/ocean.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/ocean.webp",
+      "sha": "b2a526966af3d2905da3425a902e66bb05a9876e"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/player.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/player.webp",
+      "sha": "5063c811f632249744105d6a9f51f080a185565c"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/ship.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/ship.webp",
+      "sha": "ad76ef2cb71a88abeb9c98df3005d5bffd51965f"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/shore.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/shore.webp",
+      "sha": "915c842bd65bc1760524ed993ed2172f0e79394d"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/aerial-shooter/supply.webp",
+      "dest": "vendor/coastal/public/assets/aerial-shooter/supply.webp",
+      "sha": "cab0f4ef2029215c1ff1f12e4688dc383d6ad6cb"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/engine/controls.js",
+      "dest": "vendor/coastal/public/engine/controls.js",
+      "sha": "d35cc9fa3c1ceb93ce839bd28e67a7af367c8d93"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/engine/directional-input.js",
+      "dest": "vendor/coastal/public/engine/directional-input.js",
+      "sha": "0c3dcce0356cebcfe0ce52bcb3b56bee253162d6"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/engine/game-audio.js",
+      "dest": "vendor/coastal/public/engine/game-audio.js",
+      "sha": "e2551d9a149650a01588054066148891e3aa4740"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/engine/held-input.js",
+      "dest": "vendor/coastal/public/engine/held-input.js",
+      "sha": "f8bc3762ba73359c0ad017d37f60312ca0762e2c"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/aerial-shooter/adapter.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/adapter.js",
+      "sha": "0df500f95d0c6ab1f91d0ac797fc531683e6b91f"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/aerial-shooter/core.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/core.js",
+      "sha": "e47534c5aad3eccc899cb427b146915e34a85e7a"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/aerial-shooter/level.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/level.js",
+      "sha": "b18c72ff663e3fed4640c750075930c9fe3d2658"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/aerial-shooter/render.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/render.js",
+      "sha": "4bb3ec737902f91234178bbfbb5a5cb05c4ace9d"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/aerial-shooter/session.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/session.js",
+      "sha": "9cdd9a2ba307b6f30613cd3d2b588ad8e618fa5e"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/games/aerial-shooter/tuning.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/tuning.js",
+      "sha": "c2b0c85ffd95074aeaa7113faec64f9c00eff8bd"
+    }
+  ]
+}

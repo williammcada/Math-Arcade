@@ -3,10 +3,10 @@
 **Brief version:** 0.1.0  
 **Date:** 2026-10-01, Asia/Shanghai  
 **Owner:** William McAda  
-**Status:** Owner-directed design consolidated; engineering details are proposed implementation decisions. Canonical repository established; implementation and deployment are pending.  
+**Status:** Classroom foundation and Coastal Escape implemented and locally tested as alpha.1. Seven integrations, hosted deployment and physical-device verification remain pending.  
 **Canonical repository:** `williammcada/Math-Arcade`  
-**Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). No combined implementation exists yet.  
-**Running version:** None.  
+**Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.1](checkpoints/alpha.1.md).  
+**Running version:** v0.1.0-alpha.1 locally; no hosted deployment.  
 **Handbook baseline:** `c50115ba1fea9cb552f3ad1415e670a219118b56`, selected for this task.
 
 ## Purpose and audience

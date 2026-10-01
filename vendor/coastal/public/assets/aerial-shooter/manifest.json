@@ -1,0 +1,733 @@
+{
+  "revision": "coast-art/1",
+  "generatedWith": "built-in image_gen",
+  "encoding": "WebP quality 82 with alpha; original PNG preserved; no concept-board crops",
+  "assets": {
+    "player": {
+      "id": "player",
+      "path": "player.webp",
+      "revision": 1,
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          97,
+          15,
+          358,
+          238
+        ],
+        [
+          593,
+          14,
+          351,
+          238
+        ],
+        [
+          1082,
+          15,
+          357,
+          238
+        ],
+        [
+          97,
+          268,
+          358,
+          236
+        ],
+        [
+          592,
+          267,
+          352,
+          237
+        ],
+        [
+          1081,
+          267,
+          358,
+          237
+        ],
+        [
+          97,
+          518,
+          359,
+          239
+        ],
+        [
+          592,
+          517,
+          352,
+          240
+        ],
+        [
+          1081,
+          518,
+          358,
+          239
+        ],
+        [
+          98,
+          770,
+          358,
+          238
+        ],
+        [
+          592,
+          770,
+          352,
+          238
+        ],
+        [
+          1081,
+          770,
+          358,
+          238
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/player.png",
+      "sourceSHA256": "1a19d11740dc74aa76464988a06e75cdb14a38a63c682ae22d4ba3be09488dcc",
+      "sha256": "87017f11cde3059f0e58173211e8c02ea1846e4ea8c361e42049ca25693f2ea2",
+      "bytes": 244572,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "fighter": {
+      "id": "fighter",
+      "path": "fighter.webp",
+      "revision": 1,
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          88,
+          11,
+          376,
+          242
+        ],
+        [
+          568,
+          11,
+          401,
+          241
+        ],
+        [
+          1071,
+          11,
+          377,
+          241
+        ],
+        [
+          87,
+          266,
+          378,
+          240
+        ],
+        [
+          568,
+          266,
+          400,
+          237
+        ],
+        [
+          1071,
+          266,
+          378,
+          237
+        ],
+        [
+          87,
+          523,
+          378,
+          228
+        ],
+        [
+          568,
+          519,
+          400,
+          249
+        ],
+        [
+          1071,
+          523,
+          378,
+          245
+        ],
+        [
+          85,
+          768,
+          380,
+          241
+        ],
+        [
+          563,
+          768,
+          410,
+          241
+        ],
+        [
+          1072,
+          768,
+          379,
+          241
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/fighter.png",
+      "sourceSHA256": "c8cc811914283805be615948fd62a598f0eaf8ac8c891da01e7f93d4d0e40dd0",
+      "sha256": "9992826b30beb0b2054db3a14ff5e332b223c39a52e99c3be2457a8384665c86",
+      "bytes": 284090,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "interceptor": {
+      "id": "interceptor",
+      "path": "interceptor.webp",
+      "revision": 1,
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          68,
+          15,
+          366,
+          237
+        ],
+        [
+          573,
+          13,
+          387,
+          239
+        ],
+        [
+          1102,
+          14,
+          365,
+          238
+        ],
+        [
+          67,
+          271,
+          367,
+          208
+        ],
+        [
+          573,
+          272,
+          387,
+          207
+        ],
+        [
+          1102,
+          271,
+          367,
+          208
+        ],
+        [
+          65,
+          522,
+          369,
+          216
+        ],
+        [
+          573,
+          522,
+          387,
+          216
+        ],
+        [
+          1102,
+          522,
+          368,
+          216
+        ],
+        [
+          65,
+          781,
+          369,
+          212
+        ],
+        [
+          573,
+          781,
+          387,
+          208
+        ],
+        [
+          1102,
+          781,
+          369,
+          212
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/interceptor.png",
+      "sourceSHA256": "dbbc7e682b77f15583f09b6fd4805b39cc7a0e3117f0d6917cecaddcd1297714",
+      "sha256": "31dc8fbc21fa8462a026f21bcfb27870efe16b6058d0b8f7d8e939fa79850b25",
+      "bytes": 253464,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "bomber": {
+      "id": "bomber",
+      "path": "bomber.webp",
+      "revision": 1,
+      "width": 1024,
+      "height": 1536,
+      "frames": [
+        [
+          96,
+          14,
+          833,
+          369
+        ],
+        [
+          96,
+          397,
+          832,
+          369
+        ],
+        [
+          96,
+          780,
+          832,
+          369
+        ],
+        [
+          96,
+          1163,
+          833,
+          370
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/bomber.png",
+      "sourceSHA256": "71ef341e09c5fda0559e89ddb05662ea78e5bde3217ec714218a8c33edb8d3fc",
+      "sha256": "2bb073b2e4911657e9981dde425d3c69d75972ee8d57ffc4de805beb75399b6d",
+      "bytes": 182072,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "supply": {
+      "id": "supply",
+      "path": "supply.webp",
+      "revision": 1,
+      "width": 1024,
+      "height": 1536,
+      "frames": [
+        [
+          159,
+          14,
+          709,
+          370
+        ],
+        [
+          159,
+          393,
+          708,
+          350
+        ],
+        [
+          159,
+          772,
+          708,
+          342
+        ],
+        [
+          159,
+          1152,
+          708,
+          354
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/supply.png",
+      "sourceSHA256": "592b7959323c6853e3581d38c006e9d10ea34f3364bd4062da42ffef19b22b38",
+      "sha256": "4d60f7acaf2d7591015cc1bd5bee56f3743e8d8062eef339b8047573613073dc",
+      "bytes": 162756,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "boss": {
+      "id": "boss",
+      "path": "boss.webp",
+      "revision": 1,
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          214,
+          7,
+          1108,
+          266
+        ],
+        [
+          214,
+          276,
+          1108,
+          265
+        ],
+        [
+          214,
+          545,
+          1108,
+          264
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/boss.png",
+      "sourceSHA256": "abcc31fa573ea985061e161a283ab45bfd57d6b1f679e8a25be5e55c4552d4c8",
+      "sha256": "7144c9cd6cad0c6583beb67d4eb24be715332112aab1e4eb02e19627d1e867a2",
+      "bytes": 164826,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "ship": {
+      "id": "ship",
+      "path": "ship.webp",
+      "revision": 1,
+      "width": 1024,
+      "height": 1536,
+      "frames": [
+        [
+          426,
+          7,
+          173,
+          369
+        ],
+        [
+          404,
+          390,
+          216,
+          370
+        ],
+        [
+          385,
+          774,
+          255,
+          370
+        ],
+        [
+          417,
+          1158,
+          191,
+          370
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/ship.png",
+      "sourceSHA256": "13ba949b62f662e71d2fb9abc4f38eee2fdbd9a3d6a3cd2f4d1a9a76a0ec3661",
+      "sha256": "aa6300fe1213341922338315a1d6608018920bd03689d2d0e3c132725b4080cb",
+      "bytes": 127280,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "shore": {
+      "id": "shore",
+      "path": "shore.webp",
+      "revision": 1,
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          627,
+          627
+        ],
+        [
+          627,
+          0,
+          627,
+          627
+        ],
+        [
+          0,
+          627,
+          627,
+          627
+        ],
+        [
+          627,
+          627,
+          627,
+          627
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/shore.png",
+      "sourceSHA256": "b8c2677313c82d66a701963a6c190894638f3f2d88ae8c61092eefa844bf4bd2",
+      "sha256": "241b8d73d767882af7631d007c90b12959f9b7f218710323b7226d0c1706f2a7",
+      "bytes": 262150,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "ocean": {
+      "id": "ocean",
+      "path": "ocean.webp",
+      "revision": 1,
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          1254,
+          1254
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "scenery",
+      "source": "art-source/aerial-shooter/ocean.png",
+      "sourceSHA256": "c4d902c58022abd78f77591817a302f38947dedc9448d8e6b1174c331cbab571",
+      "sha256": "389c542c17b694eedf00fffb8789c24c1acbcda14753b69f0d84c1569cfbbddf",
+      "bytes": 212830,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "island": {
+      "id": "island",
+      "path": "island.webp",
+      "revision": 1,
+      "width": 1024,
+      "height": 1536,
+      "frames": [
+        [
+          0,
+          0,
+          1024,
+          1536
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "scenery",
+      "source": "art-source/aerial-shooter/island.png",
+      "sourceSHA256": "cbf1bc1139585c854b54d7a549f96cd8783b94ba64421299cca1bbb2c4e87a9b",
+      "sha256": "340e030a71e4608734b60793de660fb781977e427368be05a38909c8a6fb8663",
+      "bytes": 327594,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "harbor": {
+      "id": "harbor",
+      "path": "harbor.webp",
+      "revision": 1,
+      "width": 1024,
+      "height": 1536,
+      "frames": [
+        [
+          0,
+          0,
+          1024,
+          1536
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "scenery",
+      "source": "art-source/aerial-shooter/harbor.png",
+      "sourceSHA256": "2b4e3c9dc980be58c6a5fce0e2c6e2c72cd6ba30a708caf0d993bfd2543f25d6",
+      "sha256": "107b3253b163c0ea50c85a29e8a574db113be65df9281a3636bf62dbd8e7e08c",
+      "bytes": 280620,
+      "preload": "action",
+      "fallback": "assisted"
+    },
+    "explosion": {
+      "id": "explosion",
+      "path": "explosion.webp",
+      "revision": 1,
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          512,
+          512
+        ],
+        [
+          512,
+          0,
+          512,
+          512
+        ],
+        [
+          1024,
+          0,
+          512,
+          512
+        ],
+        [
+          0,
+          512,
+          512,
+          512
+        ],
+        [
+          512,
+          512,
+          512,
+          512
+        ],
+        [
+          1024,
+          512,
+          512,
+          512
+        ]
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "role": "sprite",
+      "source": "art-source/aerial-shooter/explosion.png",
+      "sourceSHA256": "867e82581807c8c7f4b05b6d44d64d338ecd0ba06a79e905fa4b4eb0e119088d",
+      "sha256": "1d8ae58acd1ba00e6603dbde85df02b104027c21b30904ffe63e039d859e1b2a",
+      "bytes": 313374,
+      "preload": "action",
+      "fallback": "assisted"
+    }
+  },
+  "audio": {
+    "checkpoint.wav": {
+      "bytes": 22094,
+      "sha256": "504ead55d9c1faf0335f94bb823097ede1361f845022c0739bcd90d6c58ef4a6",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "victory.wav": {
+      "bytes": 37528,
+      "sha256": "3477fc53bf5f143a0bc83679b5a72539bf3c12f56e7903cdf30f654e5423ef11",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "defeat.wav": {
+      "bytes": 37528,
+      "sha256": "321dcd7b3d2793dd79e494c442e08405e7d9e41b10949a710e414d64c52f1ff2",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "heavy.wav": {
+      "bytes": 9746,
+      "sha256": "3139d6f6c884c20bb19e62de31b21567a43732d25377a6574bd252dc4f052f45",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "engine.wav": {
+      "bytes": 22094,
+      "sha256": "ac20745ff66ea58739aa4b8436608b12f0282e7b86323a841fab2d131c384648",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "hurt.wav": {
+      "bytes": 9746,
+      "sha256": "e6c260c3993aae7da93cbe5a7500f2583b61b08edb5fd5f39ffb64b7ff95122c",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "bonus.wav": {
+      "bytes": 17684,
+      "sha256": "474866f914facf45dce5018678ac25a5fb65807f9a81b69c2721129b5b98f852",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "flight.mp3": {
+      "bytes": 480697,
+      "sha256": "887e3962c995e5f07934c64dc8d5d4ebed82c1def3ba4b8cc53ddce7417732f6",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "boss.mp3": {
+      "bytes": 400866,
+      "sha256": "77d42063ded3fd4aab8f17dd12fd9965a47f832ed8a405a9e4ca29f27ea10452",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "expose.wav": {
+      "bytes": 19888,
+      "sha256": "0d16d8c260368116ff0c3138ebbf69beeb498c0b1831cd927bb98c00a0459ba4",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "effects.wav": {
+      "bytes": 44144,
+      "sha256": "842d8ff3d950813e85a6f5cd2e3c0639ea69070ca01766ad47184befd309b8ec",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "escape.wav": {
+      "bytes": 30912,
+      "sha256": "24b9e1745db282e25cef619124a13df7d0f18d7ac2b2cfb6ee96d901df64e237",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "warning.wav": {
+      "bytes": 30912,
+      "sha256": "0875977645e4ff8d2387f3a5815076c8b21f61b63adc3fb344b3251e73e1e6cb",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "carrier.wav": {
+      "bytes": 10628,
+      "sha256": "24d79196c448bab58870069a833a0a3ff1dbdf1c182be94b78f623b4803d343c",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "shot.wav": {
+      "bytes": 3130,
+      "sha256": "d37314fe7bebd62a433285d55d0a57b36a7a9a28f0374755c21e2a6c853e3559",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "explosion.wav": {
+      "bytes": 19888,
+      "sha256": "e6dd372f2469d3f273e0ddd442257c4ab27426e7f5c7d2eb6831c3f27331b036",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "rapid.wav": {
+      "bytes": 2468,
+      "sha256": "bfa0e2d8489ac8a66370966ae6ec2b1601618cc726a55236790d6d1505c01a7d",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "upgraded.wav": {
+      "bytes": 4012,
+      "sha256": "6309e2184a6583f6997d8c6c49698edf02598c04704b2d6faebd64fcdce82dee",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "repair.wav": {
+      "bytes": 14156,
+      "sha256": "18d46f5457a394fae4b659834f0777f5c3cc0fa0a5fc1daa3a053a8ac8321776",
+      "source": "scripts/generate-aerial-audio.py"
+    },
+    "enemy.wav": {
+      "bytes": 3572,
+      "sha256": "2fa3fc9a6dbf1ac0e1cdf8753b30bd8b5c31e47e575347a6056fb9c13ebca20d",
+      "source": "scripts/generate-aerial-audio.py"
+    }
+  }
+}

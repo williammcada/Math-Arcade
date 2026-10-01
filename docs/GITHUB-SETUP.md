@@ -10,4 +10,4 @@ Read README.md, docs/PROJECT-BRIEF.md, docs/change-specs/v0.1.0.md and docs/SOUR
 
 Use DESIGN → CHANGE SPEC → IMPLEMENT → CHECKPOINT → VERIFY → VERIFIED CHECKPOINT → RELEASE → DEPLOY. The design checkpoint contains six Markdown documents and no executable application. It is not an implementation or verified release. Repository upload does not deploy Math Arcade.
 
-Next implementation checkpoint: teacher/student session flow, persistent roster, class defaults and individual assignments, followed by the shared mathematics service and one round-entry game pilot. All eight game integrations remain the full project target.
+Completed alpha.1 scope: teacher/student session flow, persistent roster, class defaults and individual assignments, shared mathematics and Coastal Escape round-entry pilot. Read docs/checkpoints/alpha.1.md, docs/RUNNING.md and docs/VERIFICATION.md before continuing. Next work: seven remaining game integrations and hosted/physical-device validation. All eight integrations remain the full project target.

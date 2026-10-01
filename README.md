@@ -4,7 +4,9 @@
 
 Teacher-controlled classroom games with shared mathematics practice and individual student assignments.
 
-**Target:** v0.1.0. **Current stage:** DESIGN → CHANGE SPEC. This package contains project documentation, not a running application or verified release. The canonical repository is [williammcada/Math-Arcade](https://github.com/williammcada/Math-Arcade), created by the owner on 2026-10-01.
+**Target:** v0.1.0. **Current version:** v0.1.0-alpha.1 — implemented classroom and Coastal Escape pilot, locally tested. Seven other games remain pending; this is not a deployed or classroom-verified release. The canonical repository is [williammcada/Math-Arcade](https://github.com/williammcada/Math-Arcade), created by the owner on 2026-10-01.
+
+Run locally with Node 24: `npm run build`, set `ARCADE_TEACHER_PASSWORD` (12+ characters), then `npm start`. Open `http://localhost:3000/?role=teacher`. See [running and hosting instructions](docs/RUNNING.md) and [pilot scope](docs/checkpoints/alpha.1.md).
 
 ## Classroom workflow
 
@@ -15,7 +17,7 @@ The teacher opens a session from a computer, chooses available games and class m
 | Vault 7 | One gate before each new round |
 | Nightfall | One gate before each new round |
 | Journey to the West | Each participant completes a gate before joining a new round |
-| Aerial shooter / Coastal Escape | One gate before each new round; final display name checked against imported source |
+| Aerial shooter / Coastal Escape | One gate before each new round; implemented pilot |
 | Robot side-scrolling shooter | One gate before each new round; final display name checked against imported source |
 | Chrono Circuit | Existing gates and progression structure |
 | Olivia's Magic Bracelet Quest | Existing gates and progression structure |

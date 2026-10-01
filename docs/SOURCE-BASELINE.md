@@ -42,3 +42,9 @@ U-09, U-10 and S-03-M are explicitly applicable approved rules. S-03-A retains i
 ## New-project baseline
 
 Initial local design checkpoint: `5343f1b528a3a2bbc8e040085feced4367abf022`, preserved in the previously delivered design archive. The owner created the private canonical repository `williammcada/Math-Arcade` on 2026-10-01 with initial commit `27128c2c4ab3b6f001cbdd2287eddc88067fa45d`. The documentation upload uses that commit as its parent and updates repository-status wording without changing the agreed design. See GitHub history for the resulting design checkpoint. There is no running Math Arcade version.
+
+## alpha.1 implementation import — 2026-10-01
+
+The pilot imports the actual shared engine, 240-skill catalog, mathematics formatting and dependencies from Olivia commit `df28efce7bde25a239915af7db72b8b5caf85eb4`. Coastal Escape core, rendering, assets, audio and shared held-input modules come from MathQuest commit `02acd2cdf065adf33df4a2dd90094ef4381ce39a`, which advanced after the design baseline. `vendor/manifest.json` pins all 52 files and their Git blob hashes. `npm run build` verifies them before generating JavaScript. Upstream files are unchanged. The Arcade host and backend are separate new code.
+
+QR encoder provenance is recorded in THIRD_PARTY.md. No other game has been imported in this pilot.
