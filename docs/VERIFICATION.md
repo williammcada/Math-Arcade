@@ -20,7 +20,7 @@ Scope: Nightfall city integration into the two-game classroom pilot. GitHub base
 | Physical iPad/iPhone Safari | Not run | Actual release/cancel/lock/background, long press, viewport, audio and demanding combined encounters require hardware |
 | School Wi-Fi/classroom concurrency | Not run | Local tests do not establish hosting capacity or network behavior |
 | Hosted assets/persistent restart | Not run | No Render service provisioned or deployment |
-| Five other games | Pending | Disabled; Journey source discovery next; Chrono/Olivia native gates, Math Civ no added gates remain specified |
+| Five other games | Pending | Disabled; Journey recovery source identified; multiplayer bridge next; Chrono/Olivia native gates, Math Civ no added gates remain specified |
 
 The initial import check caught an empty alarm file; it was fetched again and now matches the pinned source hash. An initial shotgun test assumed pickup selected the primary weapon; source pickup selects the shotgun, so the test was corrected to exercise switching both ways. No source gameplay change was needed.
 

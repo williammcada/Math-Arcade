@@ -60,3 +60,7 @@ Reconsulted AI-START-HERE.md, UNIVERSAL-RULES.md, relevant CONDITIONAL-STANDARDS
 Arcade baseline `c947c1c9254bde26ad73037319a3c1f4a51ebf0c`; MathQuest remains `59c11c90c2f0893333dfe30b62578fd73deb9bbf`. Canonical `public/games/nightfall` modules and city media: 22 additional unchanged files, 80 total hashed vendor files. `rescue-world.js` is included because the city world imports it; no early-rescue host/campaign is enabled. Build normalization removes version query strings and adjusts import/media URLs only. Existing shared control profiles, held-input and GameAudio are reused.
 
 Consulted current upstream AGENTS.md, PROJECT-BRIEF and relevant v0.9.2 encounter/timing and v0.9.4 chapter requirements. Reconsulted handbook AI-START-HERE, UNIVERSAL-RULES, applicable CONDITIONAL-STANDARDS and RELEASE-CHECKLIST at `c50115ba1fea9cb552f3ad1415e670a219118b56`. No upstream repository or handbook modifications.
+
+## Journey source resolved after alpha.3
+
+Recovery branch `recovery/journey-stage1-20261001` at `316189b94dd2e0d73fd1dc605242ef40bb5167ff` in MathQuest contains the experimental multiplayer stage-1 prototype. Main and the original design branch are not that implementation. See [source intake and integration boundaries](checkpoints/journey-intake.md). Journey remains disabled until its Arcade bridge is implemented and verified.

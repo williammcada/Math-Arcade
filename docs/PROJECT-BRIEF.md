@@ -70,7 +70,7 @@ Every listed game has an identified source revision, implemented adapter and evi
 
 ## Known limits
 
-The three-game pilot has local application and browser evidence in VERIFICATION.md. No hosted Math Arcade service or physical-device/classroom-network verification exists yet. Journey to the West and the robot shooter source revisions are unresolved in this intake. The linked shared-math overview still labels itself v1 while Olivia's project brief records later v2 work; inspect current source and manifests before importing.
+The three-game pilot has local application and browser evidence in VERIFICATION.md. No hosted Math Arcade service or physical-device/classroom-network verification exists yet. Journey to the West source is now identified in [its intake](checkpoints/journey-intake.md); its Arcade integration remains pending. The robot shooter source revision remains unresolved in the initial intake. The linked shared-math overview still labels itself v1 while Olivia's project brief records later v2 work; inspect current source and manifests before importing.
 
 ## alpha.2 Vault 7 implementation
 
