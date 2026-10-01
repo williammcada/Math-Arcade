@@ -1,6 +1,9 @@
 FROM node:24-bookworm-slim
 WORKDIR /app
-COPY package.json ./
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY adapters ./adapters
+COPY public ./public
 COPY scripts ./scripts
 COPY vendor ./vendor
 RUN node scripts/build.mjs

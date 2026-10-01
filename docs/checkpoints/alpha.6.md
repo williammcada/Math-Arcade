@@ -1,0 +1,5 @@
+# Olivia — alpha.6
+
+Integrated the canonical v0.7.1 source, its six adventures, original artwork, sound, flight sections, beads and bracelet studio. Practice, rainbow/sky gates and refill wells now request the classroom shared math engine at their native trigger points. Each correct answer still awards native energy; gate completion returns to the original phase. No extra entry gate. Teacher assignments and central academic evidence use the same API as Chrono and the round games. Student campaign storage persists the native save and active gate ID. Adult math overrides and standalone offline registration are disabled in the derived build. Production builds install pinned dependencies.
+
+Browser verification: real Olivia boot, native story → practice → platform transition, teacher-selected one-question count, native energy reward, teacher pause/resume and saved quest recovery after exiting/reopening. Screenshot visually inspected at 1180×820. No page errors. Backend shared gate/snapshot and campaign lease tests pass. No physical-device claim; not deployed.

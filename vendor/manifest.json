@@ -877,6 +877,342 @@
       "path": "public/world-mechanisms.js",
       "dest": "vendor/chrono/public/world-mechanisms.js",
       "sha": "643992dbe9bd47af2c69e43c2d84a1f9a549fd7e"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/_headers",
+      "dest": "vendor/olivia/public/_headers",
+      "sha": "56e3b1fe48786ac2927c2ff4b809f9b0e9ab900d"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/animal-fox.png",
+      "dest": "vendor/olivia/public/art/animal-fox.png",
+      "sha": "7c8a8faed44ed1cf756ce2ae1d1ec31b2b14dc12"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/animal-seal.png",
+      "dest": "vendor/olivia/public/art/animal-seal.png",
+      "sha": "4949162214c65e13790ecfd4409c059aa46453ca"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/cover.webp",
+      "dest": "vendor/olivia/public/art/cover.webp",
+      "sha": "f00e37a4a83a56feaa9fa2ad47a4aedf98124f65"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/logo.webp",
+      "dest": "vendor/olivia/public/art/logo.webp",
+      "sha": "07073b92d24e159ea7dee431ef8e1bf694afa6a8"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/lumi-flight-0.png",
+      "dest": "vendor/olivia/public/art/lumi-flight-0.png",
+      "sha": "ddb79b7f66d5b40078a61603c9f54db0e8e39e5b"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/lumi-flight-1.png",
+      "dest": "vendor/olivia/public/art/lumi-flight-1.png",
+      "sha": "cb64960d0faebd8c8e97de94402f2128b7a64a9c"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/lumi-flight-2.png",
+      "dest": "vendor/olivia/public/art/lumi-flight-2.png",
+      "sha": "14cef9960c5fd7e958da95d6dbd416354e025812"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/lumi-flight-3.png",
+      "dest": "vendor/olivia/public/art/lumi-flight-3.png",
+      "sha": "db9b4d4e95dbf75893287a303cd9677e5b7b7367"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/lumi-flight-4.png",
+      "dest": "vendor/olivia/public/art/lumi-flight-4.png",
+      "sha": "a2d9c5ffba3fab770bfcad1ac16509b0a07b2ff2"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/lumi-flight-5.png",
+      "dest": "vendor/olivia/public/art/lumi-flight-5.png",
+      "sha": "d597af296b9dcffdae05e578b09fe4263a20daad"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-0.png",
+      "dest": "vendor/olivia/public/art/sprite-0.png",
+      "sha": "2bfac348c927b7fa8b38e06a95753e950fa372cf"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-1.png",
+      "dest": "vendor/olivia/public/art/sprite-1.png",
+      "sha": "31129a7d6291b7ebfe0da18b6eab96bdc314cc5a"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-10.png",
+      "dest": "vendor/olivia/public/art/sprite-10.png",
+      "sha": "55b803e992463d91c07f7b0da9e48b8f87fc4544"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-11.png",
+      "dest": "vendor/olivia/public/art/sprite-11.png",
+      "sha": "f7bf20392186b5f83a6e2fe94573bcc086356632"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-12.png",
+      "dest": "vendor/olivia/public/art/sprite-12.png",
+      "sha": "5e43f25e8e2bd8d5e61ff472ac43757ba3de22f3"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-13.png",
+      "dest": "vendor/olivia/public/art/sprite-13.png",
+      "sha": "f1b07f218f61fbc65b4693f0c5a3837f45bbe7f3"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-14.png",
+      "dest": "vendor/olivia/public/art/sprite-14.png",
+      "sha": "20078e6af6c187047b41eded2271e41a50905d72"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-15.png",
+      "dest": "vendor/olivia/public/art/sprite-15.png",
+      "sha": "dff64d7250052c43c017dc340545d49652632862"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-2.png",
+      "dest": "vendor/olivia/public/art/sprite-2.png",
+      "sha": "588384fbaea889dba7f6fffa516cf05f21a77232"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-3.png",
+      "dest": "vendor/olivia/public/art/sprite-3.png",
+      "sha": "9bb90331d2d0c2f3b0111ac6c9fc19badff245eb"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-4.png",
+      "dest": "vendor/olivia/public/art/sprite-4.png",
+      "sha": "3eabb113a57a823580f72ffea24a6ba7c69e627e"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-5.png",
+      "dest": "vendor/olivia/public/art/sprite-5.png",
+      "sha": "2d2913a4b366e79b6251439cb1fb99c24018e87b"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-6.png",
+      "dest": "vendor/olivia/public/art/sprite-6.png",
+      "sha": "ccec579a7325ca9f61b54c8a98b8dfd209f2aa71"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-7.png",
+      "dest": "vendor/olivia/public/art/sprite-7.png",
+      "sha": "93c598cdc1b5b3c477d611ffe4a27888558efc7d"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-8.png",
+      "dest": "vendor/olivia/public/art/sprite-8.png",
+      "sha": "058284b30d66ed7c8cfa7243542e7901d2507f66"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/art/sprite-9.png",
+      "dest": "vendor/olivia/public/art/sprite-9.png",
+      "sha": "a5131f19810b824c53546414603c652b187800e8"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/icon-192.png",
+      "dest": "vendor/olivia/public/icon-192.png",
+      "sha": "1a1a19915254ea41ac4fc99f3f25b52fc5c09f45"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "public/icon-512.png",
+      "dest": "vendor/olivia/public/icon-512.png",
+      "sha": "df231963804d01432e7345c6119ab81734ebad82"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/audio.ts",
+      "dest": "vendor/olivia/src/audio.ts",
+      "sha": "19ea82eb7ab5d73e2edc4e05852050949cd2d78a"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/beads.ts",
+      "dest": "vendor/olivia/src/beads.ts",
+      "sha": "3c076bbc41c379b3b58a9ab5245f461ce3ce2544"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/core.ts",
+      "dest": "vendor/olivia/src/core.ts",
+      "sha": "9d61c008aaa86507de6a994e1212db842058b9db"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/expansion.ts",
+      "dest": "vendor/olivia/src/expansion.ts",
+      "sha": "96649baf62196577231e43ce4e74706072ef7a71"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/facts.ts",
+      "dest": "vendor/olivia/src/facts.ts",
+      "sha": "1d4666e006f9c55f341274bb2dc9d706b1b769f0"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/flight-art.ts",
+      "dest": "vendor/olivia/src/flight-art.ts",
+      "sha": "30b9ab9db77ef30998d6e31311cef0a3f6837dd8"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/flight-world.ts",
+      "dest": "vendor/olivia/src/flight-world.ts",
+      "sha": "491be1807b2761105a19610f9d2bf76c8beac909"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/flight.ts",
+      "dest": "vendor/olivia/src/flight.ts",
+      "sha": "602b60a963ed642a5e46f6a6418057a7ad96b1af"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/held-controls.ts",
+      "dest": "vendor/olivia/src/held-controls.ts",
+      "sha": "2d9227416f0031e275c45b5ffa0c62540cb836c1"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/levels.ts",
+      "dest": "vendor/olivia/src/levels.ts",
+      "sha": "96ec0eb7dcef4d9a9aa47a32a6219b993e73481b"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/main.ts",
+      "dest": "vendor/olivia/src/main.ts",
+      "sha": "00c8f655f2d9cc0d13ccc398ccf2027498f6ef94"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/math-format.ts",
+      "dest": "vendor/olivia/src/math-format.ts",
+      "sha": "eaf5eb5c5c6ef643b422052bd58e9ad3c5b6c4b3"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/models.ts",
+      "dest": "vendor/olivia/src/models.ts",
+      "sha": "f53502bda2d6bd1f7a07ab6cd9b46fcaaea10a3c"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/music.ts",
+      "dest": "vendor/olivia/src/music.ts",
+      "sha": "a2d5dfea12aeb24f3102e7df61dc46da6a72d407"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/catalog.ts",
+      "dest": "vendor/olivia/src/shared-math/catalog.ts",
+      "sha": "d7a07e69dbf4c2eaa04b0ae8daea06b38b2f12fd"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/engine.ts",
+      "dest": "vendor/olivia/src/shared-math/engine.ts",
+      "sha": "81bf2cf08d7ed8ce6ef4de2261f827ecc8a604c5"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/mega-content.d.ts",
+      "dest": "vendor/olivia/src/shared-math/mega-content.d.ts",
+      "sha": "186c3affc8c50fcfbd61472ee89a14f565107fe1"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/mega-content.js",
+      "dest": "vendor/olivia/src/shared-math/mega-content.js",
+      "sha": "e2191419be8cc5c3211948b03f62b464cb43aa2b"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/preview.ts",
+      "dest": "vendor/olivia/src/shared-math/preview.ts",
+      "sha": "2ac0ced1b066b983ce9adabf528c8ded39de8cd8"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/quarter-time.ts",
+      "dest": "vendor/olivia/src/shared-math/quarter-time.ts",
+      "sha": "bf9699d99d38c24c208275808d6728e201eaa083"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/settings.ts",
+      "dest": "vendor/olivia/src/shared-math/settings.ts",
+      "sha": "076d4c31f6b7cc20c1596919cb87a930ec37043c"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/shared-math/standalone.ts",
+      "dest": "vendor/olivia/src/shared-math/standalone.ts",
+      "sha": "dcdd36405e56fa5a0fc2d9d252378b254df14f70"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/style.css",
+      "dest": "vendor/olivia/src/style.css",
+      "sha": "13507932f534fd03395dba55e488d507b5391b39"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/vector-assets.ts",
+      "dest": "vendor/olivia/src/vector-assets.ts",
+      "sha": "a598fa07b98eb6f6224f2805d583daccb4c310bc"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/version.ts",
+      "dest": "vendor/olivia/src/version.ts",
+      "sha": "6aac61e39bc7d67a3b2f73a422f3033f5b22ed29"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/viewport.ts",
+      "dest": "vendor/olivia/src/viewport.ts",
+      "sha": "a3bfe3da37feab0da469c7257a10cae541275710"
+    },
+    {
+      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
+      "path": "src/world.ts",
+      "dest": "vendor/olivia/src/world.ts",
+      "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
     }
   ],
   "vault7": {
@@ -894,5 +1230,9 @@
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
     "commit": "cfc8ff6e7ee3cc4bb6a6cc7b6d902a99fa54aa5b"
+  },
+  "olivia": {
+    "repo": "williammcada/OLIVIA-MAGIC-BRACELET-QUEST",
+    "commit": "df28efce7bde25a239915af7db72b8b5caf85eb4"
   }
 }
