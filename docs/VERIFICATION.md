@@ -1,29 +1,33 @@
-# Math Arcade alpha.1 verification — 2026-10-01
+# Math Arcade alpha.2 verification — 2026-10-01
 
-Scope: classroom foundation and one-game Coastal Escape pilot. This is local verification, not a release or deployment approval. The original design checkpoint is `215089cfb1804180f865a8451e8704197833ee2e`. A local implementation checkpoint was preserved before extended tests: `6a907328c08799f72e552e2dfcbd4a5fca63a648` (local Git identity; the connector publication has its own commit identity).
+Scope: add Vault 7 to the existing classroom + Coastal Escape pilot. Baseline is GitHub `d3040d129ac54c0d4371d4313de5ddcec74f5b55` (its verification record remains in that commit). Vault source is MathQuest `59c11c90c2f0893333dfe30b62578fd73deb9bbf`. Pre-verification local implementation checkpoint: `82819be71a17762266e8d1620e94d415787b8208`. Local and connector commit identities differ; publication compares exact file blob hashes.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Pinned source integrity/build | Passed | Node 24.19.0; `npm run build`; all 52 source-file Git blob hashes match the manifest |
-| Syntax | Passed | `npm run check`; backend, model and both frontend modules |
-| Automated model and HTTP checks | Passed | `npm test`; 7 tests, 0 failures |
-| Assignment semantics | Passed | Separate defaults/overrides, replace-everyone, restore inheritance, invalid selection rejection, active gate snapshot preserved |
-| Gate/admission integrity | Passed | No student-facing answer key; duplicate/stale answer handling; pre-gate launch rejected; single-use grant; role isolation; replacement-device revocation |
-| Persistence and round lifecycle | Passed locally | SQLite reopen preserves round/tick, pauses on restart; fractional frame accounting; disconnect lease; teacher pause/end; replay after timer expiry and final-life defeat |
-| Terminal condition coverage | Fixture-based | Tests place the original core immediately before timer expiry or last-life defeat; this does not claim a full five-minute gameplay balance run |
-| Export/deletion | Passed | Export omits authentication tokens; deletion confirmation required; student deletion preserves unrelated learner |
-| HTTP boundary | Passed | Authentication, same-origin mutation guard, Secure/HttpOnly/SameSite cookies under HTTPS origin; server files not publicly served |
-| Browser classroom walkthrough | Passed | `CHROMIUM_PATH=/tmp/chromium node test/browser.cjs`; Chromium + Playwright; teacher 1440×1000, student 1180×820 with touch enabled; no page errors |
-| Browser workflow details | Passed | Class/roster, QR rendered, admission, draft preserved through assignment update, math gate, artwork/game launch, keyboard release, teacher pause/resume, reload paused recovery, leave/replay gate, preview draft isolation |
-| Synthetic held-touch release | Passed | Chromium touchStart/touchEnd on D-pad, server receives held left then released input |
-| Synthetic native-menu/selection suppression | Passed | Cancellable contextmenu prevented; computed user-select none; this is not a physical Safari long-press result |
-| Synthetic viewport drift | Passed | Game viewport remains 1180px wide with zero document scroll after touch interaction |
-| Visual inspection | Passed | Teacher dashboard, math preview/settings and running Coastal Escape screenshots inspected locally |
-| Physical iPad/iPhone controls, menus and viewport | Not run | Requires actual target hardware; record these three checks separately |
-| School Wi-Fi, classroom concurrency and QR camera scan | Not run | Local browser flow does not establish these outcomes |
-| Remaining seven game integrations | Pending | Disabled in catalog; Chrono/Olivia native gates and Math Civ no-added-gate policy remain specified, not claimed implemented |
-| Hosted version and persistent hosting restart | Not run | No Render service provisioned or Math Arcade site deployed |
+| Source integrity/build | Passed | `npm run build`; 58 vendored files match their Git blob hashes; unchanged Vault core/assets and reproducible presentation extraction |
+| Syntax | Passed | `npm run check`; backend, round dispatch and both game hosts |
+| Application/core tests | Passed | `npm test`; 22 tests, 0 failures on Node 24.19.0 |
+| Original shared-input regressions | Passed | `NODE_PATH=/tmp/arcade-browser-tools/node_modules node --test test/shared-input.mjs`; 10 tests, 0 failures; happy-dom 20.14.5 |
+| Original Vault mechanics | Passed | Adapted upstream tests: both routes traversed with live hazards; base speed/jump/coyote/buffer, collision/light occlusion, sensor crossing, three detections, held extraction and 180-second expiry |
+| Gate/round authority | Passed | Entry gate required; immutable route/gear; duplicate launch; invalid loadout rollback; per-game availability; stale resume rejected; wrong round ID rejected |
+| Recovery and teacher control | Passed | Exact position/objectives/elapsed/spent equipment survive SQLite reopen; resumed paused; teacher pause/end; disconnect lease; no extra math inside a round |
+| Endings/replay | Passed | Extraction, capture and timeout each require fresh gate. Server-lifecycle terminal tests position fixtures near each boundary; full route traversals are separate upstream-core tests |
+| Accessible path | Passed | Original scenes, wrong-answer integrity, duplicate/stale scene commands, Toolkit bypass, one-use Cloak, checkpoint credit, final 0.6-second hold and release reset, distinct accessible outcome |
+| Vault browser workflow | Passed | `CHROMIUM_PATH=/tmp/chromium node test/vault-browser.cjs`; Chromium 138 test binary, Playwright; teacher 1440×1000 and student touch-enabled 1180×820; no page errors |
+| Browser workflow details | Passed | Teacher availability, student joining/admission, entry gate, route/gear setup, action, teacher pause/resume, refresh to same paused round, accessible completion and replay gate |
+| Synthetic held controls | Passed | Actual Chromium touch events: simultaneous direction/jump, both release orders, cancellation, blur and fresh input. Original DOM suite additionally covers capture failure/loss, drag outside, missed pointer release/touch-list cleanup, stationary holds, keyboard aliases, blocked contacts and teardown |
+| Synthetic native-menu interference | Passed | HUD contextmenu canceled and play paused. Shared suite checks selection/drag prevention while ordinary editable fields remain usable |
+| Synthetic viewport/visuals | Passed | Portrait rotation pauses; return to landscape preserves zero scroll and width. Canvas stays above objective/controls. Action and accessible screenshots inspected after layout correction |
+| Coastal Escape regression | Passed | `CHROMIUM_PATH=/tmp/chromium node test/browser.cjs`; original teacher/student/gate/play/pause/reload/replay/preview flow; no page errors |
+| Physical iPad/iPhone held-input checks | Not run | Emulation does not establish actual device release/cancel/background/lock behavior |
+| Physical iPad/iPhone native-menu checks | Not run | Requires real Safari/Edge long presses on controls, HUD and battlefield |
+| Physical iPad/iPhone viewport/audio checks | Not run | Actual browser bars, keyboard, zoom, safe areas and audible playback require hardware review |
+| School Wi-Fi and classroom concurrency | Not run | No claim based on local testing |
+| Hosted version/assets/persistent hosting restart | Not run | Source checkpoint only; no Render deployment |
+| Other six games | Pending | Disabled in catalog; Nightfall is next. Chrono/Olivia native gates and Math Civ no-added-gate exemption remain specified |
 
-Fixes made during local verification: preserve a typed answer when the teacher changes future assignments; preserve fractional server simulation frames; handle queued resume actions; correct the pause button label; require explicit resume on browser reload; retain typed drafts through temporary screen changes; raise the shared-IP request ceiling to accommodate classroom polling. The latter is configuration preparation, not a concurrency performance claim.
+The two-finger browser test initially sent a release for the opposite contact; native touch logs identified the test error. Correcting the test made both release orders pass without changing the shared input module. Visual inspection found a canvas/objective overlap; the corrected fixed gameplay layout was retested and inspected. Gate-completion toasts now clear before gameplay, and pending configuration changes do not reset post-gate loadout choices.
 
-Known boundaries and the unexposed upstream assisted-flight mode are described in [alpha.1 scope](checkpoints/alpha.1.md). Use [running instructions](RUNNING.md) for configuration. Never describe this pilot as all eight games complete or as verified on physical devices.
+The standard Playwright browser download failed in this execution environment. Browser checks used a Chromium 138 binary from the pinned development-only `@sparticuz/chromium@138.0.2` package. These temporary verification tools are not deployed application dependencies.
+
+This is a locally tested integration checkpoint, not a verified-device release. See [scope and limitations](checkpoints/alpha.2.md) and [running instructions](RUNNING.md). No handbook changes were made.

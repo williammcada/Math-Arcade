@@ -22,3 +22,11 @@ Verify the actual hosted version, teacher login, QR URL, two independent student
 ## Repeat local verification
 
 Run `npm run build`, `npm run check` and `npm test` on Node 24. Browser checks require Playwright available to Node and its Chromium browser: run `node test/browser.cjs`; optionally set `CHROMIUM_PATH` to an installed compatible Chromium binary. Playwright is a development verification tool, not an application runtime dependency. The browser test uses a temporary database and an explicit test password, never real classroom records.
+
+## Vault 7 (alpha.2)
+
+Enable Vault 7 on the teacher desk. After the assigned gate, choose Security corridor or Ventilation shaft and optionally Toolkit/Cloak. Start, then Resume extraction. A/D or arrows move; Space jumps; hold E at the security panel, access card and elevator. Q jams security with the Toolkit; R uses the once-per-round Cloak. Touch buttons provide the same actions. Controls & help, Reset controls, high contrast, reduced motion and music controls are available in the game.
+
+Accessible extraction is an irreversible mode change within the same round, preserving integrity, checkpoints and spent equipment. Read the original decision scenes, choose a position and hold the final boarding control. There is no speed timer in this mode; teacher pause/end still controls access. Every completed, captured, expired or abandoned round needs a new math gate.
+
+Vault browser verification: `node test/vault-browser.cjs` (same Playwright/CHROMIUM_PATH requirements). The additional original shared-input regressions run with `node --test test/shared-input.mjs` when the development-only happy-dom package (tested version 20.14.5) is available to Node (or via NODE_PATH). Neither Playwright nor happy-dom is needed by the deployed application.

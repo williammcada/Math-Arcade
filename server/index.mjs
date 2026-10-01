@@ -45,7 +45,8 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
       case '/api/preview':return model.preview(s,t,body.ids);
       case '/api/begin':return model.begin(s,u,body.game);
       case '/api/answer':return model.answer(s,u,body);
-      case '/api/launch':return model.launch(s,u);
+      case '/api/launch':return model.launch(s,u,body);
+      case '/api/vault':return model.vault(s,u,body);
       case '/api/sync':return model.sync(s,u,body);
       case '/api/leave':return model.leave(s,u);
       default:throw Object.assign(Error('Not found.'),{status:404});
@@ -56,6 +57,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
    if(req.method!=='GET'&&req.method!=='HEAD'){send(405,{error:'Method not allowed.'});return;}
    let base=root+'/public',rel=path==='/'?'index.html':decodeURIComponent(path.slice(1));
    if(path.startsWith('/coastal/')){base=root+'/build/coastal';rel=decodeURIComponent(path.slice(9));}
+   if(path.startsWith('/vault7/')){base=root+'/build/vault7';rel=decodeURIComponent(path.slice(8));}
    if(path==='/math-format.js'){base=root+'/build/math';rel='math-format.js';}
    const file=resolve(base,rel);if(!file.startsWith(base+sep)||!existsSync(file)||!statSync(file).isFile()){send(404,{error:'Not found.'});return;}
    const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.mp3':'audio/mpeg','.wav':'audio/wav','.svg':'image/svg+xml'};

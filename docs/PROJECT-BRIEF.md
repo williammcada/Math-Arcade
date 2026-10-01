@@ -3,10 +3,10 @@
 **Brief version:** 0.1.0  
 **Date:** 2026-10-01, Asia/Shanghai  
 **Owner:** William McAda  
-**Status:** Classroom foundation and Coastal Escape implemented and locally tested as alpha.1. Seven integrations, hosted deployment and physical-device verification remain pending.  
+**Status:** Classroom foundation, Coastal Escape and Vault 7 implemented and locally tested as alpha.2. Six integrations, hosted deployment and physical-device verification remain pending.  
 **Canonical repository:** `williammcada/Math-Arcade`  
-**Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.1](checkpoints/alpha.1.md).  
-**Running version:** v0.1.0-alpha.1 locally; no hosted deployment.  
+**Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.2](checkpoints/alpha.2.md).  
+**Running version:** v0.1.0-alpha.2 locally; no hosted deployment.  
 **Handbook baseline:** `c50115ba1fea9cb552f3ad1415e670a219118b56`, selected for this task.
 
 ## Purpose and audience
@@ -70,4 +70,8 @@ Every listed game has an identified source revision, implemented adapter and evi
 
 ## Known limits
 
-This is a documentation checkpoint. There are no product test results, working adapters or hosted Math Arcade service. Journey to the West and the robot shooter source revisions are unresolved in this intake. The linked shared-math overview still labels itself v1 while Olivia's project brief records later v2 work; inspect current source and manifests before importing.
+The two-game pilot has local application and browser evidence in VERIFICATION.md. No hosted Math Arcade service or physical-device/classroom-network verification exists yet. Journey to the West and the robot shooter source revisions are unresolved in this intake. The linked shared-math overview still labels itself v1 while Olivia's project brief records later v2 work; inspect current source and manifests before importing.
+
+## alpha.2 Vault 7 implementation
+
+See [approved integration scope](change-specs/v0.1.0-alpha.2.md). Preserve the historical three-minute action limit, three integrity points, both routes, objectives/checkpoints and original art/audio. Free post-gate Toolkit/Cloak selection replaces market gates for this action-only edition. Accessible extraction retains no speed timer and remains subject to teacher control. Full team cipher/narrative gameplay is not part of this mini-game adapter. Server state is authoritative; settings apply at the next gate and refresh resumes the same round paused.

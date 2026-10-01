@@ -319,6 +319,46 @@
       "path": "public/games/aerial-shooter/tuning.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/tuning.js",
       "sha": "c2b0c85ffd95074aeaa7113faec64f9c00eff8bd"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/vault7/audio/vault7-finale.mp3",
+      "dest": "vendor/vault7/public/assets/vault7/audio/vault7-finale.mp3",
+      "sha": "4ce03dcb85114f165dc230d3d65438c20f5de5b8"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/vault7/scenes/cover-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/cover-480.webp",
+      "sha": "4caddca537eeeafdad4aa25beeaedc6e923bb613"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/assets/vault7/sprites/agent-16x24.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-16x24.png",
+      "sha": "6096b384cbe38d783fcdcc7239efc044067fe7fc"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/stealth-core.js",
+      "dest": "vendor/vault7/public/stealth-core.js",
+      "sha": "b46891531a2580bc9ec6d5d85fb64d9a2feef5af"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/stealth.js",
+      "dest": "vendor/vault7/public/stealth.js",
+      "sha": "fea807807248db93e4029f03f334e8b10170ecf4"
+    },
+    {
+      "repo": "Math-Quest---Vault-7-",
+      "path": "public/vault-art.js",
+      "dest": "vendor/vault7/public/vault-art.js",
+      "sha": "37df10eee62a4b76594747a225758c6077f8abf3"
     }
-  ]
+  ],
+  "vault7": {
+    "repo": "williammcada/Math-Quest---Vault-7-",
+    "commit": "59c11c90c2f0893333dfe30b62578fd73deb9bbf"
+  }
 }

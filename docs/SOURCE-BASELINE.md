@@ -48,3 +48,9 @@ Initial local design checkpoint: `5343f1b528a3a2bbc8e040085feced4367abf022`, pre
 The pilot imports the actual shared engine, 240-skill catalog, mathematics formatting and dependencies from Olivia commit `df28efce7bde25a239915af7db72b8b5caf85eb4`. Coastal Escape core, rendering, assets, audio and shared held-input modules come from MathQuest commit `02acd2cdf065adf33df4a2dd90094ef4381ce39a`, which advanced after the design baseline. `vendor/manifest.json` pins all 52 files and their Git blob hashes. `npm run build` verifies them before generating JavaScript. Upstream files are unchanged. The Arcade host and backend are separate new code.
 
 QR encoder provenance is recorded in THIRD_PARTY.md. No other game has been imported in this pilot.
+
+## alpha.2 Vault 7 import — 2026-10-01
+
+Arcade baseline `d3040d129ac54c0d4371d4313de5ddcec74f5b55`; MathQuest source `59c11c90c2f0893333dfe30b62578fd73deb9bbf`. Import six unchanged files: stealth core, original runtime (build input only), hardware rendering, agent sprite, finale music and cover art. Manifest hashes cover all 58 vendor files. The build extracts the original runtime drawing method and accessible-scene function; the old MathQuest network/storage host is not shipped. Existing controls and held-input blobs match this source revision, so both games share the already pinned modules.
+
+Reconsulted AI-START-HERE.md, UNIVERSAL-RULES.md, relevant CONDITIONAL-STANDARDS.md sections and RELEASE-CHECKLIST.md at handbook `c50115ba1fea9cb552f3ad1415e670a219118b56`; MathQuest AGENTS.md, brief and relevant v0.9.2/v0.9.4 source specifications inspected. No handbook or source-game repository changes.
