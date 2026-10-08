@@ -7,3 +7,8 @@ test-results/
 .wrangler/
 .dev.vars
 .dev.vars.*
+
+# v0.4 snapshots are pinned by vendor/manifest.json and hydrated before build.
+/vendor/journey/
+/vendor/blackline/
+/vendor/nightfall/public/assets/false-haven/

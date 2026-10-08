@@ -7,7 +7,7 @@ import {once} from 'node:events';
 import {setTimeout as delay} from 'node:timers/promises';
 import {freshMath} from '../build/math/shared-math/engine.js';
 
-test('Cloudflare runtime: atomic joins, seven games, isolation, persistence and browser delivery',{timeout:180000},async t=>{
+test('Cloudflare runtime: atomic joins, ten games, isolation, persistence and browser delivery',{timeout:180000},async t=>{
  const dir=mkdtempSync(tmpdir()+'/arcade-worker-');let child,base,log='';
  async function start(){
   child=spawn(process.execPath,['node_modules/wrangler/bin/wrangler.js','dev','build/worker/worker.js','--no-bundle','--local','--port','8797','--persist-to',dir,'--var','ARCADE_TEACHER_PASSWORD:test-password-only'],{env:{...process.env,WRANGLER_SEND_METRICS:'false'},stdio:['ignore','pipe','pipe']});
@@ -44,10 +44,10 @@ test('Cloudflare runtime: atomic joins, seven games, isolation, persistence and 
  await call('/api/teacher',undefined,student,401);
  for(const path of ['/math-civ/index.html','/math-civ/game.js','/math-civ%2Fgame.js','/chrono/index.html','/olivia/index.html'])assert.equal((await fetch(base+path)).status,401,path);
  for(const path of ['/server/worker.mjs','/vendor/manifest.json','/data/arcade.sqlite','/build/provenance.json'])assert.equal((await fetch(base+path)).status,404,path);
- const home=await fetch(base+'/');assert.match(await home.text(),/<title>Math Arcade v0.3.0-rc.1<\/title>/);
+ const home=await fetch(base+'/');assert.match(await home.text(),/<title>Math Arcade v0.4.0-rc.1<\/title>/);
  assert.match(home.headers.get('content-security-policy'),/frame-ancestors 'none'/);
- // All four authoritative round engines execute in workerd, with one start gate.
- for(const game of ['coastal','vault7','nightfall','robot']){
+ // All seven authoritative round engines execute in workerd, with one start gate.
+ for(const game of ['coastal','vault7','nightfall','robot','false-haven','blackline','journey']){
   const initial=await studentCall('begin',{game});assert.equal(initial.gate.count,1);
   await studentCall('launch',{},403);
   const saved=(await teacherCall('export')).classes[0].students[0];
@@ -95,7 +95,7 @@ test('Cloudflare runtime: atomic joins, seven games, isolation, persistence and 
  assert.equal((await studentCall('campaign',{game,action:'poll',lease:load.lease})).playing,false);
  await teacherCall('session',{classId:cid,action:'resume'});
  const asset=await fetch(base+'/math-civ/index.html',{headers:{cookie:student}});
- assert.equal(asset.status,200);assert.match(asset.headers.get('cache-control'),/no-store/);assert.match(await asset.text(),/Math Arcade v0.3.0-rc.1/);
+ assert.equal(asset.status,200);assert.match(asset.headers.get('cache-control'),/no-store/);assert.match(await asset.text(),/Math Arcade v0.4.0-rc.1/);
  // Restart the entire workerd process using the same persistent directory.
  await stop();await start();
  load=await studentCall('campaign',{game,action:'load'});assert.deepEqual(load.storage,storage);
@@ -137,5 +137,5 @@ test('Cloudflare runtime: atomic joins, seven games, isolation, persistence and 
  await stop();await start();assert.equal((await teacherCall('teacher')).classes.length,0);
  const newClass=(await teacherCall('class',{name:'Fresh start'})).id;assert.ok(newClass);
  await teacherCall('delete',{classId:'all',confirm:'DELETE'});
- console.log('Worker passed: 23 concurrent identities, 7 game policies, storage restart, asset authorization and Chromium adventure.');
+ console.log('Worker passed: 23 concurrent identities, 10 game policies, storage restart, asset authorization and Chromium adventure.');
 });

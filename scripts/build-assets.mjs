@@ -3,7 +3,7 @@ import {resolve} from 'node:path';
 export function buildAssets(root){
  const dest=root+'/build/assets';rmSync(dest,{recursive:true,force:true});mkdirSync(dest,{recursive:true});
  cpSync(root+'/public',dest,{recursive:true});
- for(const game of ['coastal','vault7','nightfall','ironbreak','chrono','olivia','math-civ'])cpSync(root+'/build/'+game,dest+'/'+game,{recursive:true});
+ for(const game of ['journey','blackline','coastal','vault7','nightfall','ironbreak','chrono','olivia','math-civ'])cpSync(root+'/build/'+game,dest+'/'+game,{recursive:true});
  cpSync(root+'/build/math/math-format.js',dest+'/math-format.js');
  // Only presentation assets are uploaded. Never copy server code, source trees or saves.
  const version=JSON.parse(readFileSync(root+'/package.json')).version;

@@ -1,3 +1,4 @@
+import * as extra from './extra-rounds.mjs';
 import * as iron from './ironbreak.mjs';
 import * as night from './nightfall.mjs';
 import * as flight from '../build/coastal/games/aerial-shooter/core.js';
@@ -5,8 +6,9 @@ import {StealthSimulation} from '../build/vault7/stealth-core.js';
 import {fallbackScene} from '../build/vault7/fallback.js';
 const fail=message=>{throw Object.assign(Error(message),{status:409});};
 const hydrate=s=>Object.assign(Object.create(StealthSimulation.prototype),s);
-export const keysFor=game=>game==='robot'?['left','right','up','down','jump','prone','noFire']:game==='nightfall'?['left','right','up','down','run','fire','interact','weapon']:game==='vault7'?['left','right','jump','interact','jam','cloak','confirm']:['left','right','up','down'];
+export const keysFor=game=>game==='journey'?['left','right','up','down','attack','jump','magic']:game==='blackline'?['left','right','brake','boost']:game==='false-haven'?['left','right','up','down','run','fire','interact','weapon']:game==='robot'?['left','right','up','down','jump','prone','noFire']:game==='nightfall'?['left','right','up','down','run','fire','interact','weapon']:game==='vault7'?['left','right','jump','interact','jam','cloak','confirm']:['left','right','up','down'];
 export function createRound(game,identity,options={}){
+ if(extra.extraGames.includes(game))return extra.create(game,identity,options);
  if(game==='robot')return iron.create(options);
  if(game==='nightfall')return night.create(options);
  if(game!=='vault7')return flight.createRun(identity);
@@ -14,8 +16,9 @@ export function createRound(game,identity,options={}){
  if(!['corridor','shaft'].includes(route)||!Array.isArray(loadout)||loadout.length>2||new Set(loadout).size!==loadout.length||loadout.some(x=>!['toolkit','cloak'].includes(x)))fail('Choose a valid route and equipment.');
  const sim=new StealthSimulation({route,loadout,adverseCount:0});sim.start();return {...sim,arcadeMode:'action',assistStep:0,selected:null,confirmHeld:0,feedback:'',unsafe:[]};
 }
-export function snapshot(game,s){return ['vault7','nightfall','robot'].includes(game)?{...s,events:[]}:flight.snapshot(s);}
+export function snapshot(game,s){return ['vault7','nightfall','robot',...extra.extraGames].includes(game)?{...s,events:[]}:flight.snapshot(s);}
 export function step(game,s,input,dt){
+ if(extra.extraGames.includes(game)){extra.step(game,s,input,dt);return;}
  if(game==='robot'){iron.step(s,input,dt);return;}
  if(game==='nightfall'){night.step(s,input,dt);return;}
  if(game!=='vault7'){flight.step(s,input,dt);return;}
@@ -60,3 +63,5 @@ export function vaultAction(s,input){
 export const nightfallAction=night.command;
 
 export const ironbreakAction=iron.command;
+
+export const extraAction=extra.command;

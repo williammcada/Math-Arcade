@@ -1,6 +1,6 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.3.0-rc.1
+**Brief version:** 0.4.0-rc.1
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
 **Canonical repository:** `williammcada/Math-Arcade`
@@ -99,3 +99,9 @@ Implementation baseline: `5e627cc3b25f903a4d594e1077af9bef7c1284a2`; handbook `f
 ## Verified Worker candidate — 8 October 2026
 
 Cloudflare migration candidate `900198428f94be221e61e76eb330d87f09ebe908` passed the complete repository build, 41 Node tests, seven Chromium suites, Wrangler packaging and the real workerd regression in [run 37734366972](https://github.com/williammcada/Math-Arcade/actions/runs/37734366972). The exact Worker/assets package is preserved, with evidence and limitations in [v0.3.0 checkpoint](checkpoints/v0.3.0.md). Earlier failed migration checkpoint notifications are resolved by this successful run. Deployment remains pending: no authenticated Cloudflare account was available. Physical iPad and school-network checks remain Not run, deferred as instructed. No live readiness claim or paid upgrade.
+
+## v0.4.0 approved expansion and network repair — 8 October 2026
+
+Current approved scope supersedes the seven-game roster and Journey exclusion: ten games, adding Nightfall 2: False Haven, Blackline: Last Exit and Journey to the West — Single Player. Nightfall 1: Last Bus Out retains its saved ID. See [approved v0.4 specification](change-specs/v0.4.0.md). All three additions use one math gate per new server-authoritative round. Journey is solo, with canonical three lives/three minutes and one chosen hero/upgrade. No changes to MathQuest rooms or multiplayer.
+
+The v0.3 Worker deployed successfully (run 37735985363) and the owner reached teacher admission by phone. The accessible school-network entry remained missing. The v0.4 implementation adds a separate same-origin Netlify relay for the complete Arcade site; [setup and verification](NETLIFY.md). Until actual Netlify publishing and live checks, network repair is implemented but not deployed. Physical-device and school-network checks remain deferred, Not run by the agent. Handbook consulted at fd4330863f4cc0812180fbf1de122970a42c7885.

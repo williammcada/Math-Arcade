@@ -1,0 +1,7 @@
+[build]
+  command = "echo 'Publishing Math Arcade same-origin relay'"
+  publish = "hosting/netlify/public"
+
+[[edge_functions]]
+  function = "arcade-proxy"
+  path = "/*"

@@ -1,3 +1,11 @@
+# Math Arcade v0.4.0-rc.1
+
+Ten-game implementation candidate: Nightfall 1: Last Bus Out and Nightfall 2: False Haven are separate entries; Journey to the West is single player; Blackline: Last Exit is included. Existing seven games and classroom controls are retained.
+
+Hosting: the existing Cloudflare Worker plus a separate same-origin [Netlify entry point](docs/NETLIFY.md). Netlify publishing/live verification is pending; the workers.dev URL is not the intended school-network entry. See [approved specification](docs/change-specs/v0.4.0.md).
+
+## Earlier release documentation
+
 # Math Arcade
 
 **A WILLIAM MCADA PRODUCT**
