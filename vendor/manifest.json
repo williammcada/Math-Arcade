@@ -1,7 +1,7 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "3b8437bd0bf226c70bb03143dd0847acef23f669",
+    "commit": "314882a1e7d4642b4bfb82231d89e29726acb35d",
     "baseline": "baselines/megaman-v0.7"
   },
   "coastal": {
@@ -9,6 +9,12 @@
     "commit": "cd35fd912fbde2007f8fade6b93b1c2a1421275c"
   },
   "files": [
+    {
+      "repo": "Math-Civ",
+      "path": "PLAY-SEKIGAHARA-0.3.1.html",
+      "dest": "vendor/math-civ/PLAY-SEKIGAHARA-0.3.1.html",
+      "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
+    },
     {
       "repo": "MATH-ENGINE",
       "path": "baselines/megaman-v0.7/comparison.json",
@@ -1598,12 +1604,6 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
-    },
-    {
-      "repo": "Math-Civ",
-      "path": "PLAY-SEKIGAHARA-0.3.1.html",
-      "dest": "vendor/math-civ/PLAY-SEKIGAHARA-0.3.1.html",
-      "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
     }
   ],
   "vault7": {
