@@ -1598,6 +1598,12 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
+    },
+    {
+      "repo": "Math-Civ",
+      "path": "PLAY-SEKIGAHARA-0.3.1.html",
+      "dest": "vendor/math-civ/PLAY-SEKIGAHARA-0.3.1.html",
+      "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
     }
   ],
   "vault7": {
@@ -1619,5 +1625,9 @@
   "olivia": {
     "repo": "williammcada/OLIVIA-MAGIC-BRACELET-QUEST",
     "commit": "df28efce7bde25a239915af7db72b8b5caf85eb4"
+  },
+  "math-civ": {
+    "repo": "williammcada/Math-Civ",
+    "commit": "f2600f821a8ea194caea624548948d6ae2c98c9d"
   }
 }
