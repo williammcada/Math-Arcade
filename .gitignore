@@ -4,3 +4,6 @@ data/
 .env
 *.sqlite*
 test-results/
+.wrangler/
+.dev.vars
+.dev.vars.*

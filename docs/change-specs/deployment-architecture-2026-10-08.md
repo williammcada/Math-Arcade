@@ -1,6 +1,6 @@
 # Deployment architecture decision — 2026-10-08
 
-Status: source inspection complete; hosting choice requires owner clarification. No deployment or backend migration performed.
+Status: historical comparison. Owner subsequently approved the Cloudflare migration with “Yes”; see v0.3.0.md for the implementation contract. Earlier unresolved-choice and sync statements below describe the previous checkpoint.
 
 ## Verified source
 

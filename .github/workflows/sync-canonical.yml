@@ -22,7 +22,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/sync-upstream.mjs
-      - run: npm run build && npm run check && npm test
+      - run: npm run build && npm run check && npm test && npm run check:worker
       - run: npm install --no-save --package-lock=false playwright@1.62.1
       - run: npx playwright install --with-deps chromium
       - name: Verify classroom and native game adapters
@@ -30,6 +30,7 @@ jobs:
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           mkdir -p test-results
           for test in test/*browser.cjs; do node "$test"; done
+          npm run test:worker
       - name: Promote verified source snapshots
         run: |
           git add vendor

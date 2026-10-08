@@ -1,3 +1,4 @@
+import {dispatch} from './api.mjs';
 import {createServer} from 'node:http';
 import {readFileSync,existsSync,statSync} from 'node:fs';
 import {resolve,extname,sep} from 'node:path';
@@ -28,34 +29,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
     if(path==='/api/login'&&req.method==='POST'){if(++l.logins>10){send(429,{error:'Too many login attempts. Wait a minute.'});return;}const t=model.tx(s=>model.login(s,body.password));cookie('teacher',t);send(200,{ok:true});return;}
     if(path==='/api/join'&&req.method==='POST'){if(++l.joins>120){send(429,{error:'Too many join attempts. Please wait a minute.'});return;}const t=model.tx(s=>model.join(s,body));cookie('student',t);send(200,{ok:true});return;}
     if(path==='/api/logout'&&req.method==='POST'){const key=body.role==='teacher'?'teacher':'student';model.tx(s=>{if(cookies[key]){const a=model.auth(s,cookies[key],key);s.tokens=s.tokens.filter(x=>x!==a);}});cookie(key,'');send(200,{ok:true});return;}
-    if(req.method==='GET'&&path==='/api/teacher')data=model.tx(s=>model.teacherView(s,cookies.teacher));
-    else if(req.method==='GET'&&path==='/api/student')data=model.tx(s=>model.studentView(s,cookies.student));
-    else if(req.method==='GET'&&path==='/api/roster')data=model.tx(s=>model.lookup(s,url.searchParams.get('code')));
-    else if(req.method==='GET'&&path==='/api/export')data=model.tx(s=>model.export(s,cookies.teacher));
-    else if(req.method==='POST')data=model.tx(s=>{
-     const t=cookies.teacher,u=cookies.student;
-     switch(path){
-      case '/api/class':return {id:model.classCreate(s,t,body)};
-      case '/api/roster':model.roster(s,t,body.classId,body.names);break;
-      case '/api/assign':model.assign(s,t,body.classId,body);break;
-      case '/api/new-password':return model.newPassword(s,t,body.classId);
-      case '/api/session':model.session(s,t,body.classId,body.action);break;
-      case '/api/availability':model.availability(s,t,body.classId,body.enabled);break;
-      case '/api/approve':model.approve(s,t,body.id,body.allow);break;
-      case '/api/delete':model.remove(s,t,body.classId,body.studentId,body.confirm);break;
-      case '/api/preview':return model.preview(s,t,body.ids);
-      case '/api/begin':return model.begin(s,u,body.game);
-      case '/api/answer':return model.answer(s,u,body);
-      case '/api/campaign':return model.campaign(s,u,body);
-      case '/api/launch':return model.launch(s,u,body);
-      case '/api/ironbreak':return model.ironbreak(s,u,body);
-      case '/api/nightfall':return model.nightfall(s,u,body);
-      case '/api/vault':return model.vault(s,u,body);
-      case '/api/sync':return model.sync(s,u,body);
-      case '/api/leave':return model.leave(s,u);
-      default:throw Object.assign(Error('Not found.'),{status:404});
-     }return {ok:true};
-    });else {send(404,{error:'Not found.'});return;}
+    data=dispatch(model,{method:req.method,path,url,body,cookies});
     send(200,data);return;
    }
    if(req.method!=='GET'&&req.method!=='HEAD'){send(405,{error:'Method not allowed.'});return;}

@@ -1,6 +1,6 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.2.1-rc.1
+**Brief version:** 0.3.0-rc.1
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
 **Canonical repository:** `williammcada/Math-Arcade`
@@ -89,3 +89,9 @@ Math Civ is integrated in the v0.2.1 candidate. See [checkpoint and verification
 ## Deployment continuation — 8 October 2026
 
 Owner permits proceeding on assumed iPad/network compatibility only if architecture matches MathQuest. Inspection found Arcade's Node/SQLite server differs from MathQuest's Worker/Durable Object/relay architecture. Hosting direction is unresolved; see [source comparison and proposed choices](change-specs/deployment-architecture-2026-10-08.md). No migration/deployment or physical-test pass is claimed. Current handbook consulted at `fd4330863f4cc0812180fbf1de122970a42c7885`.
+
+## Approved Cloudflare migration — 8 October 2026
+
+Owner approved the recommended migration with “Yes”. The previous unresolved hosting choice above is superseded. Target v0.3.0-rc.1 uses a separate `math-arcade` Worker with SQLite-backed `ArcadeWorkspace` Durable Object. The same-origin frontend/API use Worker Static Assets to preserve existing HttpOnly cookies; this shares MathQuest's backend infrastructure family but does not duplicate its GitHub Pages/Netlify relay network route. Physical iPad and school-network checks remain Not run, deferred under the owner's direction; no verified-device or school-network claim is made.
+
+Implementation baseline: `5e627cc3b25f903a4d594e1077af9bef7c1284a2`; handbook `fd4330863f4cc0812180fbf1de122970a42c7885`. See [migration contract](change-specs/v0.3.0.md). Canonical source sync now has successful hosted evidence: run 37732838790. No existing MathQuest namespace or room is changed. Cloudflare account access and applicable service quotas are required; no paid upgrade is provisioned or assumed.

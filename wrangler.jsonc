@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "math-arcade",
+  "main": "server/worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "directory": "./build/assets",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
+  "durable_objects": {"bindings": [{"name": "ARCADE", "class_name": "ArcadeWorkspace"}]},
+  "migrations": [{"tag": "arcade-v1", "new_sqlite_classes": ["ArcadeWorkspace"]}],
+  "observability": {"enabled": false},
+  "vars": {"SOURCE_COMMIT": "local"}
+}
