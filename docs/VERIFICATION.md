@@ -1,3 +1,7 @@
+# Current Worker verification — v0.3.0-rc.1
+
+See [exact verified Worker checkpoint](checkpoints/v0.3.0.md): source `900198428f94be221e61e76eb330d87f09ebe908`, successful run `37734366972`. Full build, 41 Node tests, seven Chromium suites and real workerd end-to-end/persistence checks passed. Live deployment and physical iPad/school-network checks remain Not run. Earlier sections below are historical.
+
 # v0.2.0 verification — 2026-10-08
 
 - Node 24 build verifies 265 canonical source blob hashes.
@@ -36,7 +40,3 @@ Scope: Nightfall city integration into the two-game classroom pilot. GitHub base
 The initial import check caught an empty alarm file; it was fetched again and now matches the pinned source hash. An initial shotgun test assumed pickup selected the primary weapon; source pickup selects the shotgun, so the test was corrected to exercise switching both ways. No source gameplay change was needed.
 
 Temporary Playwright, happy-dom and Chromium tools are not deployed dependencies. This is a locally tested integration checkpoint, not a verified-device release. No handbook changes.
-
-## v0.2.1 Math Civ candidate
-
-Exact verified candidate: `b88e677fdb274463ae0166bb49e97a8fe046abb4`. Full GitHub build, syntax checks, 41 server/engine/source tests and seven browser suites passed in [run 37714523034](https://github.com/williammcada/Math-Arcade/actions/runs/37714523034). See [detailed evidence and remaining checks](checkpoints/v0.2.1.md). Not deployed; physical iPad, school network and first successful upstream-sync run remain pending.
