@@ -1,0 +1,26 @@
+# Ironbreak v0.1.0 — cartridge candidate
+
+A WILLIAM MCADA PRODUCT. The combat/level baseline remains `shooter-0.1.0-alpha.2`; cartridge identity is `ironbreak-0.1.0`.
+
+Ironbreak is registered with MathQuest's existing teacher/student session runtime. Its authored story supports 3–5 required gates, a priority vote, earned team equipment, individual three-life action runs, guided tactical play, an authoritative five-minute crew window, and a final vote/epilogue. See `docs/change-specs/ironbreak-v0.1.0.md` for the contract and `docs/releases/ironbreak-v0.1.0.md` for verification limits.
+
+## Review entries
+
+- `public/Ironbreak-v0.1.0-cartridge-review.html`: self-contained offline story-to-ending review using the actual session engine in memory. One simulated student, one GCF question per required gate, two per optional block. It sends no classroom records; reload/reset discards the review.
+- `public/Ironbreak-v0.1.0-practice.html`: self-contained action-only review with free equipment/checkpoint selection. No math or classroom evidence.
+- `public/practice-shooter.html`: hosted module-based action practice.
+- `public/index.html`: actual multi-student MathQuest frontend. Requires the matching updated Worker to select Ironbreak.
+
+`public/ironbreak-review.html` and its script are packaging inputs; use the generated single-file cartridge review. Regenerate both self-contained files with `npm ci` then `npm run build:ironbreak`. The pinned esbuild tool is a development dependency already used transitively by the repository; no player-side dependency is added.
+
+## Components
+
+`simulation.js`, `world.js`, `renderer.js`, `config.js`, and `audio.js` retain the accepted alpha.2 level/combat/music bytes. `input.js` is now a shooter profile over `public/engine/held-input.js`. `adapter.js` defines the pure game interface; `host.js` connects it to issued runs, acknowledged snapshots, retry and guided commands. A dedicated host is necessary because the existing hosts hard-code Nightfall/flight assumptions; input ownership remains shared.
+
+Narrative and guided content: `public/cartridges/ironbreak.js`. Server lifecycle/validation: `src/cartridges/ironbreak/server.js`. Existing equipment, math, privacy, teacher controls and reports remain the host's responsibility. Server validation is an envelope, not authoritative combat replay. Recovery removes transient bullets/effects without restoring health, lives or time. At most the unacknowledged interval may need reconciliation; pending snapshots keep stable command/attempt identities.
+
+Authored-map provenance and complete geometry remain preserved on `design/industrial-shooter-v0.1` at `b67cd57bcaa09c7bb733c91ab8a24f50b2415dde`, under `docs/level-design/shooter-v0.1`. Do not redraw or regenerate that map from chat history.
+
+## Release boundary
+
+This branch is a cartridge candidate, not a deployed classroom release. Physical iPhone/iPad input, viewport stability and native-menu interference checks remain separate release gates. Hosted frontend/Worker, school-network and classroom concurrency checks remain pending. Existing MathQuest engine version stays v0.9.4; the new cartridge carries its own revision.

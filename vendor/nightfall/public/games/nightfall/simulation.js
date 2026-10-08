@@ -1,12 +1,16 @@
-import {REVISION,TASKS,PICKUPS,PROPS,DISTRACTIONS,WINDOWS,propBounds,doorRects,solid,lineClear,nextObjective,seededEnemies,worldFor} from './world.js?v=0.9.4';
-import {threatFor} from './config.js?v=0.9.4';
+import {collisionGeometry,solidInGeometry} from './world.js?v=0.9.7';
+import {HAVEN_REVISION,havenEnvironment,havenEnemies,havenComplete,havenTick,havenSwitch,HAVEN_SWITCHES} from './false-haven-world.js?v=0.9.7';
+import {REVISION,TASKS,PICKUPS,PROPS,DISTRACTIONS,WINDOWS,propBounds,doorRects,solid,lineClear,nextObjective,seededEnemies,worldFor} from './world.js?v=0.9.7';
+import {threatFor} from './config.js?v=0.9.7';
 export const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const emit=(s,type,text)=>{s.events.push({type,text});if(text){s.message=text;s.messageAt=s.time;}};
-export function createState(loadout=[],route='clinic',threat=1){
- return {revision:REVISION,threat:threatFor(threat).id,x:1168,y:1200,angle:-Math.PI/2,health:3,ammo:12+(loadout.includes('ammo-pouch')?24:0),vest:loadout.includes('vest')?2:0,medkit:0,damage:loadout.includes('carbine')?2:1,loadout:[...loadout],route,time:0,immune:0,cooldown:0,tasks:{},picked:[],enemies:seededEnemies(threat),bullets:[],events:[],shots:0,hits:0,blocks:0,heals:0,doors:Object.fromEntries(doorRects().map(d=>[d.id,{closed:d.id==='store',hp:100}])),doorRevision:0,doorUses:0,doorsBroken:0,distractions:{},windows:{},hordeTriggered:false,garageHordeTriggered:false,shotgun:false,shells:0,shotgunShots:0,weapon:"primary",distractionsUsed:0,noise:0,noiseX:1168,noiseY:1200,noiseKind:null,noiseId:0,interact:0,interactId:null,outcome:null,anim:'idle',animTime:0,checkpoint:{x:1168,y:1200},message:'Find the fuse in Maintenance. Dispatch holds the keys. Close doors or trigger a lure to break pursuit.',messageAt:0};
+export function createState(loadout=[],route='clinic',threat=1,scenario='city'){
+ const state={revision:REVISION,threat:threatFor(threat).id,x:1168,y:1200,angle:-Math.PI/2,health:3,ammo:12+(loadout.includes('ammo-pouch')?24:0),vest:loadout.includes('vest')?2:0,medkit:0,damage:loadout.includes('carbine')?2:1,loadout:[...loadout],route,time:0,immune:0,cooldown:0,tasks:{},picked:[],enemies:seededEnemies(threat),bullets:[],events:[],shots:0,hits:0,blocks:0,heals:0,doors:Object.fromEntries(doorRects().map(d=>[d.id,{closed:d.id==='store',hp:100}])),doorRevision:0,doorUses:0,doorsBroken:0,distractions:{},windows:{},hordeTriggered:false,garageHordeTriggered:false,shotgun:false,shells:0,shotgunShots:0,weapon:"primary",distractionsUsed:0,noise:0,noiseX:1168,noiseY:1200,noiseKind:null,noiseId:0,interact:0,interactId:null,outcome:null,anim:'idle',animTime:0,checkpoint:{x:1168,y:1200},message:'Find the fuse in Maintenance. Dispatch holds the keys. Close doors or trigger a lure to break pursuit.',messageAt:0};
+ if(scenario==='false-haven'){Object.assign(state,{scenario,revision:HAVEN_REVISION,x:640,y:1728,checkpoint:{x:640,y:1728},haven:havenEnvironment(),enemies:havenEnemies(),message:'The safe zone is sealed. Start the generator in the utility yard.'});state.doors=Object.fromEntries(doorRects(state).map(d=>[d.id,{closed:false,hp:100}]));}
+ return state;
 }
-export function restoreState(raw,loadout=[],route='clinic',threat=1){
- const s=createState(loadout,route,threat);if(!raw||raw.revision!==REVISION||raw.threat!==s.threat)return s;
+export function restoreState(raw,loadout=[],route='clinic',threat=1,scenario='city'){
+ const s=createState(loadout,route,threat,scenario);const W=worldFor(s).WORLD;if(!raw||raw.revision!==s.revision||raw.threat!==s.threat)return s;
  for(const key of ['x','y','angle','time','shots','hits','blocks','heals','doorUses','doorsBroken','distractionsUsed','shotgunShots'])if(Number.isFinite(raw[key]))s[key]=Math.max(key==='angle'?-1000:0,Math.min(key==='time'?7200:100000,raw[key]));
  for(const key of ['tasks','picked','checkpoint','doors','distractions','windows','storeDiversion'])if(raw[key]&&typeof raw[key]==='object')s[key]=structuredClone(raw[key]);
  s.garageHordeTriggered=!!raw.garageHordeTriggered;s.hordeTriggered=s.garageHordeTriggered;if(s.garageHordeTriggered)s.enemies.push(...garageHorde());
@@ -14,9 +18,9 @@ export function restoreState(raw,loadout=[],route='clinic',threat=1){
  s.shotgun=!!raw.shotgun&&s.picked.includes('shotgun');s.shells=s.shotgun?Math.max(0,Math.min(8,Number(raw.shells)||0)):0;s.weapon=s.shotgun&&raw.weapon==='shotgun'?'shotgun':'primary';
  s.health=Math.max(0,Math.min(3,Number(raw.health)||0));s.ammo=Math.max(0,Math.min(loadout.includes('ammo-pouch')?84:60,Number(raw.ammo)||0));s.vest=Math.max(0,Math.min(s.vest,Number(raw.vest)||0));
  const known=new Map((Array.isArray(raw.enemies)?raw.enemies:[]).map(e=>[e.id,e]));
- for(const e of s.enemies){const old=known.get(e.id);if(old&&Number.isFinite(old.x)&&Number.isFinite(old.y)){e.x=Math.max(16,Math.min(2544,old.x));e.y=Math.max(16,Math.min(1264,old.y));e.hp=Math.max(0,Math.min(e.hp,Number(old.hp)||0));e.phase=e.hp?(e.horde?'investigate':'return'):'dead';e.ingressed=!!old.ingressed;e.phase=e.hp?(e.horde&&!e.ingressed?'garage-ingress':'return'):'dead';e.target=e.horde&&!e.ingressed?{x:2152,y:980}:{x:e.homeX,y:e.homeY};if(e.horde)e.memory=30;}}
+ for(const e of s.enemies){const old=known.get(e.id);if(old&&Number.isFinite(old.x)&&Number.isFinite(old.y)){e.x=Math.max(16,Math.min(W.width-16,old.x));e.y=Math.max(16,Math.min(W.height-16,old.y));e.hp=Math.max(0,Math.min(e.hp,Number(old.hp)||0));e.phase=e.hp?(e.horde?'investigate':'return'):'dead';e.ingressed=!!old.ingressed;e.phase=e.hp?(e.horde&&!e.ingressed?'garage-ingress':'return'):'dead';e.target=e.horde&&!e.ingressed?{x:2152,y:980}:{x:e.homeX,y:e.homeY};if(e.horde)e.memory=30;}}
  s.outcome=['success','lost','setback','skipped','timed_out','teacher_advanced'].includes(raw.outcome)?raw.outcome:null;
- if(solid(s,s.x,s.y)){s.x=s.checkpoint.x;s.y=s.checkpoint.y;if(solid(s,s.x,s.y)){s.x=1168;s.y=1200;}}return s;
+ if(solid(s,s.x,s.y)){s.x=s.checkpoint.x;s.y=s.checkpoint.y;if(solid(s,s.x,s.y)){s.x=W.bus.x;s.y=Math.min(W.height-32,W.bus.y+80);}}return s;
 }
 export function damage(s,amount=1,fire=false){
  if(s.immune>0||s.outcome)return;s.immune=1.4;s.anim='hurt';s.animTime=.35;
@@ -26,25 +30,35 @@ export function damage(s,amount=1,fire=false){
 }
 // Connected-space fields target evidence, never the hidden player's position.
 // Closed doors attenuate sound; solid walls are impassable to sound and sight.
-const cache=new WeakMap();
+const cache=new WeakMap(),navigationGeometry=new WeakMap();
 export function navigationField(s,target,{sound=false}={}){
- let entries=cache.get(s);if(!entries){entries=new Map();cache.set(s,entries);}
- const tx=Math.floor(target.x/32),ty=Math.floor(target.y/32),key=`${tx},${ty}:${s.doorRevision}:${!!s.tasks.power}:${sound}`;
+ const geometry=collisionGeometry(s),W=geometry.world,C=W.width/W.tile,R=W.height/W.tile;
+ let nav=navigationGeometry.get(geometry);
+ if(!nav){
+  const blocked=new Uint8Array(C*R),doorCost=new Uint8Array(C*R);
+  for(let y=0;y<R;y++)for(let x=0;x<C;x++){
+   const k=y*C+x,px=x*32+16,py=y*32+16;
+   blocked[k]=solidInGeometry(geometry,px,py,8,true);
+   doorCost[k]=geometry.doors.some(d=>Math.abs(d.y+8-py)<24&&px>d.x-8&&px<d.x+d.w+8);
+  }
+  nav={blocked,doorCost};navigationGeometry.set(geometry,nav);
+ }
+ let record=cache.get(s);if(record?.geometry!==geometry){record={geometry,entries:new Map()};cache.set(s,record);}
+ const entries=record.entries,tx=Math.floor(target.x/32),ty=Math.floor(target.y/32),key=`${tx},${ty}:${sound}`;
  if(entries.has(key))return entries.get(key);
- const cells=new Float32Array(3200).fill(Infinity),queue=[],start=ty*80+tx;
- if(start<0||start>=3200)return cells;cells[start]=0;queue.push(start);
- const doors=doorRects(s).filter(d=>s.doors[d.id]?.closed&&s.doors[d.id].hp>0);
+ const cells=new Float32Array(C*R).fill(Infinity),queue=[],start=ty*C+tx;
+ if(tx<0||tx>=C||ty<0||ty>=R)return cells;cells[start]=0;queue.push(start);
  for(let i=0;i<queue.length;i++){
-  const n=queue[i],x=n%80,y=Math.floor(n/80);
+  const n=queue[i],x=n%C,y=Math.floor(n/C);
   for(const [a,b]of[[x-1,y],[x+1,y],[x,y-1],[x,y+1]]){
-   if(a<0||a>=80||b<0||b>=40||solid(s,a*32+16,b*32+16,8,true))continue;
-   const k=b*80+a,door=doors.some(d=>Math.abs(d.y+8-(b*32+16))<24&&a*32+16>d.x-8&&a*32+16<d.x+d.w+8),cost=cells[n]+32+(door?(sound?180:96):0);
+   if(a<0||a>=C||b<0||b>=R||nav.blocked[b*C+a])continue;
+   const k=b*C+a,door=nav.doorCost[k],cost=cells[n]+32+(door?(sound?180:96):0);
    if(cost<cells[k]&&cost<6000){cells[k]=cost;queue.push(k);}
   }
  }
  if(entries.size>24)entries.delete(entries.keys().next().value);entries.set(key,cells);return cells;
 }
-export function soundDistance(s,source,target){return navigationField(s,source,{sound:true})[Math.floor(target.y/32)*80+Math.floor(target.x/32)]??Infinity;}
+export function soundDistance(s,source,target){return navigationField(s,source,{sound:true})[Math.floor(target.y/32)*(worldFor(s).WORLD.width/32)+Math.floor(target.x/32)]??Infinity;}
 export function makeNoise(s,x,y,radius,duration,kind='shot'){Object.assign(s,{noise:duration,noiseX:x,noiseY:y,noiseRadius:radius,noiseKind:kind,noiseId:s.noiseId+1});}
 export function move(s,obj,dx,dy){const count=Math.max(1,Math.ceil(Math.hypot(dx,dy)/5));for(let i=0;i<count;i++){if(!solid(s,obj.x+dx/count,obj.y))obj.x+=dx/count;if(!solid(s,obj.x,obj.y+dy/count))obj.y+=dy/count;}}
 export function toggleDoor(s,id){
@@ -69,10 +83,11 @@ export function collectShotgun(s){if(s.shotgun)return false;s.shotgun=true;s.she
 // Seven pellets, 30 degrees total, 312 px range, 1 damage/pellet, 0.9 s cadence.
 export const SHOTGUN={pellets:7,spread:Math.PI/6,range:312,damage:1,cadence:.9};
 export function follow(s,e,target,dt,speed){
- if(!lineClear(s,e,target)){const grid=navigationField(s,target),x=Math.floor(e.x/32),y=Math.floor(e.y/32),options=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]].filter(([a,b])=>a>=0&&a<80&&b>=0&&b<40&&Number.isFinite(grid[b*80+a])).sort((a,b)=>grid[a[1]*80+a[0]]-grid[b[1]*80+b[0]]);if(options.length)target={x:options[0][0]*32+16,y:options[0][1]*32+16};}
+ const C=worldFor(s).WORLD.width/32,R=worldFor(s).WORLD.height/32;
+ if(!lineClear(s,e,target)){const grid=navigationField(s,target),x=Math.floor(e.x/32),y=Math.floor(e.y/32),options=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]].filter(([a,b])=>a>=0&&a<C&&b>=0&&b<R&&Number.isFinite(grid[b*C+a])).sort((a,b)=>grid[a[1]*C+a[0]]-grid[b[1]*C+b[0]]);if(options.length)target={x:options[0][0]*32+16,y:options[0][1]*32+16};}
  e.angle=Math.atan2(target.y-e.y,target.x-e.x);if(dist(e,target)>8)move(s,e,Math.cos(e.angle)*speed*dt,Math.sin(e.angle)*speed*dt);
 }
-export function completeTask(s,id){const {TASKS}=worldFor(s);
+export function completeTask(s,id){if(s.scenario==='false-haven')return havenComplete(s,id);const {TASKS}=worldFor(s);
  const t=TASKS.find(t=>t.id===id);if(!t||s.tasks[id]||!(t.requires||[]).every(r=>s.tasks[r]))return false;
  s.tasks[id]=true;s.checkpoint={x:s.x,y:s.y};makeNoise(s,s.x,s.y,180,1,'repair');
  if(s.scenario==='rescue')return true;
@@ -83,7 +98,8 @@ export function completeTask(s,id){const {TASKS}=worldFor(s);
  if(id==='installed'){const cap=Math.max(1,threatFor(s.threat).ambush-(s.tasks.survivor?2:0));s.enemies.filter(e=>e.hp>0&&dist(e,s)<650).sort((a,b)=>dist(a,s)-dist(b,s)).slice(0,cap).forEach(e=>{e.phase='investigate';e.target={x:s.x,y:s.y};e.memory=5;});}return true;
 }
 function advanceEnemy(s,e,active,dt){
- const alarm=activeAlarm(s);
+ const C=worldFor(s).WORLD.width/32,R=worldFor(s).WORLD.height/32;
+ const alarm=s.scenario==='false-haven'?null:activeAlarm(s);
  if(e.horde&&!e.ingressed){e.phase='garage-ingress';e.target={x:2152,y:980};e.timer=0;follow(s,e,e.target,dt,100);if(e.y<1010)e.ingressed=true;return;}
  if(alarm){e.phase='alarm';e.timer=0;e.breachId=null;e.target=alarmTarget(s,alarm);e.memory=0;follow(s,e,e.target,dt,e.kind==='runner'?78:38);return;}
  if(e.phase==='alarm'){e.phase='search';e.target=null;e.memory=threatFor(s.threat).search;e.timer=0;}
@@ -107,7 +123,7 @@ function advanceEnemy(s,e,active,dt){
  let target=e.target;
  if(!target||e.phase==='wander'){if(!e.timer){e.angle+=1.73;e.timer=2.5;}if(dist(e,{x:e.homeX,y:e.homeY})>65)e.angle=Math.atan2(e.homeY-e.y,e.homeX-e.x);move(s,e,Math.cos(e.angle)*12*dt,Math.sin(e.angle)*12*dt);return;}
  if(!lineClear(s,e,target)){
-  const grid=navigationField(s,target),x=Math.floor(e.x/32),y=Math.floor(e.y/32),options=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]].filter(([a,b])=>a>=0&&a<80&&b>=0&&b<40&&Number.isFinite(grid[b*80+a])).sort((a,b)=>grid[a[1]*80+a[0]]-grid[b[1]*80+b[0]]);
+  const grid=navigationField(s,target),x=Math.floor(e.x/32),y=Math.floor(e.y/32),options=[[x-1,y],[x+1,y],[x,y-1],[x,y+1]].filter(([a,b])=>a>=0&&a<C&&b>=0&&b<R&&Number.isFinite(grid[b*C+a])).sort((a,b)=>grid[a[1]*C+a[0]]-grid[b[1]*C+b[0]]);
   if(options.length)target={x:options[0][0]*32+16,y:options[0][1]*32+16};
  }
  const door=doorRects(s).find(d=>d.id!=='store'&&s.doors[d.id]?.closed&&s.doors[d.id].hp>0&&e.target&&(e.y-(d.y+8))*(e.target.y-(d.y+8))<0&&dist(e,{x:Math.max(d.x,Math.min(d.x+d.w,e.x)),y:d.y+8})<30);
@@ -119,7 +135,7 @@ function advanceEnemy(s,e,active,dt){
  if(e.stuck>.5){move(s,e,-Math.sin(e.angle)*24*dt,Math.cos(e.angle)*24*dt);if(e.stuck>2){e.phase='search';e.memory=tune.search;e.stuck=0;}}
 }
 export function step(s,input,dt=1/60){const {TASKS,PICKUPS,PROPS,DISTRACTIONS,WINDOWS}=worldFor(s);
- s.events=[];if(s.outcome)return s;dt=Math.max(0,Math.min(dt,1/30));s.time+=dt;s.immune=Math.max(0,s.immune-dt);s.cooldown=Math.max(0,s.cooldown-dt);s.noise=Math.max(0,s.noise-dt);s.animTime=Math.max(0,s.animTime-dt);
+ s.events=[];if(s.outcome)return s;dt=Math.max(0,Math.min(dt,1/30));s.time+=dt;if(s.scenario==='false-haven'){havenTick(s,dt);if(s.outcome)return s;}s.immune=Math.max(0,s.immune-dt);s.cooldown=Math.max(0,s.cooldown-dt);s.noise=Math.max(0,s.noise-dt);s.animTime=Math.max(0,s.animTime-dt);
  s.angle+=((input.right?1:0)-(input.left?1:0))*2.8*dt;const m=(input.up?1:0)-(input.down?1:0),running=!!input.run&&m&&!input.fire,speed=(running?155:100)*(s.tasks.battery&&!s.tasks.installed?.85:1);
  move(s,s,Math.cos(s.angle)*m*speed*dt,Math.sin(s.angle)*m*speed*dt);if(s.animTime<=0)s.anim=running?'run':m?'walk':'idle';
  if(m&&s.time-(s.lastStep||0)>(running?.28:.48)){s.lastStep=s.time;emit(s,'step','');if(running&&s.noise<=0)makeNoise(s,s.x,s.y,155,.28,'running');}
@@ -129,9 +145,9 @@ export function step(s,input,dt=1/60){const {TASKS,PICKUPS,PROPS,DISTRACTIONS,WI
  for(const d of DISTRACTIONS){const live=s.distractions[d.id];if(live&&live.until>s.time){if(s.noise<=0)makeNoise(s,d.x,d.y,d.radius,.5,'lure');if(d.kind==='barrel'&&s.time>=live.ignitesAt){if(dist(s,d)<60&&lineClear(s,s,d))damage(s,1.5,true);for(const e of s.enemies)if(e.hp>0&&dist(e,d)<60&&lineClear(s,e,d)){e.hp=0;e.phase='dead';e.deathTime=s.time;emit(s,'enemy-death','');}}}}
  // Alarms must be heard beyond the normal nearby-AI budget. Keep those
  // investigators active until they arrive; only their heard location is known.
- if(s.noise>0&&s.noiseKind==='lure')for(const e of s.enemies)if(e.hp>0&&e.heard!==s.noiseId&&soundDistance(s,{x:s.noiseX,y:s.noiseY},e)<=s.noiseRadius){e.heard=s.noiseId;e.phase='investigate';e.target={x:s.noiseX,y:s.noiseY};e.memory=30;e.lured=true;}
+ if(s.scenario!=='false-haven'&&s.noise>0&&s.noiseKind==='lure')for(const e of s.enemies)if(e.hp>0&&e.heard!==s.noiseId&&soundDistance(s,{x:s.noiseX,y:s.noiseY},e)<=s.noiseRadius){e.heard=s.noiseId;e.phase='investigate';e.target={x:s.noiseX,y:s.noiseY};e.memory=30;e.lured=true;}
  const nearby=s.enemies.filter(e=>e.hp>0&&dist(e,s)<650).sort((a,b)=>dist(a,s)-dist(b,s)).slice(0,threatFor(s.threat).active);
- const active=[...new Set([...nearby,...s.enemies.filter(e=>e.hp>0&&(activeAlarm(s)||e.phase==='alarm'||e.horde||e.storeGuard||e.lured&&e.memory>0))])];s.activeCount=active.length;
+ let active=[...new Set([...nearby,...s.enemies.filter(e=>e.hp>0&&((s.scenario!=='false-haven'&&activeAlarm(s))||e.phase==='alarm'||e.horde||e.storeGuard||e.lured&&e.memory>0))])];if(s.scenario==='false-haven'){active=[...new Set([...nearby,...s.enemies.filter(e=>e.hp>0&&e.finale)])].slice(0,17);if(s.haven.speakerUntil>s.time){for(const e of s.enemies.filter(e=>e.hp>0&&soundDistance(s,{x:2160,y:864},e)<=640).slice(0,12)){e.phase='investigate';e.target={x:2160,y:864};e.memory=15;if(!active.includes(e)&&active.length<17)active.push(e);}}}s.activeCount=active.length;
  for(const e of active)advanceEnemy(s,e,active,dt);
  for(const b of s.bullets){const travel=Math.min(dt,Math.max(0,b.life))*520,n=Math.max(1,Math.ceil(travel/3));b.life-=dt;for(let i=0;i<n;i++){b.x+=Math.cos(b.angle)*travel/n;b.y+=Math.sin(b.angle)*travel/n;
  const car=PROPS.find(p=>p.art<=3&&b.x>=propBounds(p).x-2&&b.x<=propBounds(p).x+propBounds(p).w+2&&b.y>=propBounds(p).y-2&&b.y<=propBounds(p).y+propBounds(p).h+2);if(car){const alarm=DISTRACTIONS.find(d=>d.propId===car.id);if(alarm)triggerDistraction(s,alarm.id);b.life=0;break;}
@@ -144,9 +160,12 @@ export function step(s,input,dt=1/60){const {TASKS,PICKUPS,PROPS,DISTRACTIONS,WI
  for(const p of PICKUPS)if(!s.picked.includes(p.id)&&dist(s,p)<25&&lineClear(s,s,p)&&(p.kind!=='health'||s.health<3)){if(p.kind==='shotgun'){collectShotgun(s);continue;}s.picked.push(p.id);if(p.kind==='ammo'){const n=p.amount+(s.scenario==='rescue'?0:threatFor(s.threat).pickupBonus);s.ammo=Math.min(s.loadout.includes('ammo-pouch')?84:60,s.ammo+n);emit(s,'pickup',`Found ${n} rounds.`);}else{s.health=Math.min(3,s.health+p.amount);s.heals++;emit(s,'heal','First aid restored one health.');}}
  if(s.time>(s.nextMoan||0)&&s.enemies.some(e=>e.hp>0&&dist(s,e)<260)){emit(s,'moan','');s.nextMoan=s.time+4+(s.shots%3);}
  for(const p of PROPS)if(p.burning&&s.x>p.x-5&&s.x<p.x+p.w+5&&s.y>p.y-5&&s.y<p.y+p.h+5)damage(s);
- const task=TASKS.filter(t=>!s.tasks[t.id]&&dist(t,s)<68&&lineClear(s,s,t)).sort((a,b)=>dist(a,s)-dist(b,s))[0],door=doorRects(s).find(d=>d.id!=='store'&&s.doors[d.id].hp>0&&dist(s,{x:Math.max(d.x,Math.min(d.x+d.w,s.x)),y:d.y+8})<48),lure=DISTRACTIONS.find(d=>d.kind==='alarm'&&!s.distractions[d.id]&&dist(d,s)<78),pane=WINDOWS.find(w=>!s.windows?.[w.id]&&dist(s,{x:w.x+8,y:w.y+40})<58);
+ const task=TASKS.filter(t=>!t.automatic&&!s.tasks[t.id]&&(s.scenario!=='false-haven'||!t.requires||t.requires.every(id=>s.tasks[id]))&&dist(t,s)<68&&lineClear(s,s,t)).sort((a,b)=>dist(a,s)-dist(b,s))[0],door=doorRects(s).find(d=>d.id!=='store'&&s.doors[d.id].hp>0&&dist(s,{x:Math.max(d.x,Math.min(d.x+d.w,s.x)),y:d.y+8})<48),lure=DISTRACTIONS.find(d=>d.kind==='alarm'&&!s.distractions[d.id]&&dist(d,s)<78),pane=WINDOWS.find(w=>!s.windows?.[w.id]&&dist(s,{x:w.x+8,y:w.y+40})<58);
+ const switchItem=s.scenario==='false-haven'?HAVEN_SWITCHES.find(t=>dist(t,s)<76&&lineClear(s,s,t)):null;
  s.nearby=task?.id||null;s.prompt=task?`Hold Search / Use: ${task.label} · ${Math.min(100,Math.floor(s.interact/task.duration*100))}%`:pane?`Hold Search / Use: break window · ${Math.min(100,Math.floor(s.interact/1.2*100))}%`:door?`Tap Search / Use: ${s.doors[door.id].closed?'open':'close'} ${door.id} door (${Math.ceil(s.doors[door.id].hp)}%)`:lure?`Tap Search / Use: ${lure.label}`:'';
  if(task&&(task.requires||[]).some(id=>!s.tasks[id]))s.prompt='This station is locked until the earlier objectives are complete.';
+ if(switchItem&&!task)s.prompt='Tap Search / Use: '+switchItem.label;
+ if(switchItem&&!task&&input.interact&&!s.prevInteract){havenSwitch(s,switchItem.id);}
  if(input.interact&&task){if(!(task.requires||[]).every(id=>s.tasks[id])){if(!s.prevInteract)emit(s,'locked',`Required first: ${task.requires.filter(id=>!s.tasks[id]).join(', ')}.`);s.interact=0;}else{if(s.interactId!==task.id)s.interact=0;s.interactId=task.id;s.interact+=dt;if(s.interact>=task.duration){completeTask(s,task.id);s.interact=0;}}}
  else if(input.interact&&pane){if(s.interactId!==pane.id)s.interact=0;s.interactId=pane.id;s.interact+=dt;if(s.interact>=1.2){breakWindow(s,pane.id);s.interact=0;}}
  else {s.interact=0;s.interactId=null;if(input.interact&&!s.prevInteract){if(door)toggleDoor(s,door.id);else if(lure)triggerDistraction(s,lure.id);}}

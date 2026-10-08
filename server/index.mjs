@@ -7,7 +7,7 @@ const root=resolve(import.meta.dirname,'..');
 export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade.sqlite',password=process.env.ARCADE_TEACHER_PASSWORD,origin=process.env.PUBLIC_ORIGIN}={}){
  const model=new Model(dbPath,password);const limits=new Map();
  const server=createServer(async(req,res)=>{
-  const ip=req.socket.remoteAddress,now=Date.now();let l=limits.get(ip);if(!l||now-l.at>60000){l={at:now,count:0,logins:0};limits.set(ip,l);}if(limits.size>10000)for(const [k,v]of limits)if(now-v.at>60000)limits.delete(k);
+  const ip=req.socket.remoteAddress,now=Date.now();let l=limits.get(ip);if(!l||now-l.at>60000){l={at:now,count:0,logins:0,joins:0};limits.set(ip,l);}if(limits.size>10000)for(const [k,v]of limits)if(now-v.at>60000)limits.delete(k);
   const cookies=Object.fromEntries((req.headers.cookie||'').split(';').map(x=>x.trim().split('=')));
   const host=req.headers.host||'localhost';const currentOrigin=origin||'http://'+host;
   res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','same-origin');
@@ -26,7 +26,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
     }
     let data;
     if(path==='/api/login'&&req.method==='POST'){if(++l.logins>10){send(429,{error:'Too many login attempts. Wait a minute.'});return;}const t=model.tx(s=>model.login(s,body.password));cookie('teacher',t);send(200,{ok:true});return;}
-    if(path==='/api/join'&&req.method==='POST'){const t=model.tx(s=>model.join(s,body));cookie('student',t);send(200,{ok:true});return;}
+    if(path==='/api/join'&&req.method==='POST'){if(++l.joins>120){send(429,{error:'Too many join attempts. Please wait a minute.'});return;}const t=model.tx(s=>model.join(s,body));cookie('student',t);send(200,{ok:true});return;}
     if(path==='/api/logout'&&req.method==='POST'){const key=body.role==='teacher'?'teacher':'student';model.tx(s=>{if(cookies[key]){const a=model.auth(s,cookies[key],key);s.tokens=s.tokens.filter(x=>x!==a);}});cookie(key,'');send(200,{ok:true});return;}
     if(req.method==='GET'&&path==='/api/teacher')data=model.tx(s=>model.teacherView(s,cookies.teacher));
     else if(req.method==='GET'&&path==='/api/student')data=model.tx(s=>model.studentView(s,cookies.student));
@@ -38,6 +38,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
       case '/api/class':return {id:model.classCreate(s,t,body)};
       case '/api/roster':model.roster(s,t,body.classId,body.names);break;
       case '/api/assign':model.assign(s,t,body.classId,body);break;
+      case '/api/new-password':return model.newPassword(s,t,body.classId);
       case '/api/session':model.session(s,t,body.classId,body.action);break;
       case '/api/availability':model.availability(s,t,body.classId,body.enabled);break;
       case '/api/approve':model.approve(s,t,body.id,body.allow);break;

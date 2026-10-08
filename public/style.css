@@ -1,2 +1,4 @@
 @import url('/base.css');
 .campaign-shell{position:fixed;inset:0;background:#10182a;z-index:20;display:flex;flex-direction:column}.campaign-shell[hidden]{display:none}.campaign-shell nav{height:48px;flex-shrink:0;display:flex;align-items:center;gap:16px;padding:4px 12px;color:white;font-size:13px}.campaign-shell nav button{padding:7px 12px}.campaign-shell iframe{width:100%;flex:1;border:0;min-height:0}
+
+.join-password-panel{margin:16px 0;padding:15px;border:1px solid #62799b;border-radius:12px}.join-password-panel p{font-size:13px;margin:4px 0 9px}.join-password-panel strong{font:700 40px ui-monospace,monospace;letter-spacing:8px}#join-password{text-transform:uppercase;letter-spacing:6px;width:190px}

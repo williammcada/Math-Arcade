@@ -1,8 +1,8 @@
-import {createState,restoreState,step,completeTask,nextObjective,breakWindow,triggerDistraction,collectShotgun,activeAlarm} from './simulation.js?v=0.9.4';
-import {render,loadArt,MEDIA} from './renderer.js?v=0.9.4';
-import {CONTROL_PROFILES} from '../../engine/controls.js?v=0.9.4';
-import {CONFIG_REVISION,RESULT_LABELS} from './config.js?v=0.9.4';
-import {TASKS} from './world.js?v=0.9.4';
+import {createState,restoreState,step,completeTask,nextObjective,breakWindow,triggerDistraction,collectShotgun,activeAlarm} from './simulation.js?v=0.9.7';
+import {render,loadArt,MEDIA} from './renderer.js?v=0.9.7';
+import {CONTROL_PROFILES} from '../../engine/controls.js?v=0.9.7';
+import {CONFIG_REVISION,RESULT_LABELS} from './config.js?v=0.9.7';
+import {TASKS} from './world.js?v=0.9.7';
 export const nightfallAdapter={
  id:'nightfall-city',title:'Nightfall · Last Bus Out',revision:CONFIG_REVISION,media:MEDIA,controlProfile:CONTROL_PROFILES.nightfall,resultLabels:RESULT_LABELS,canvasLabel:'Search the city, repair the bus, then make the final crew decision',
  resultText:'One field run is complete. Wait for the other crew members, then everyone participates in the final story decision.',

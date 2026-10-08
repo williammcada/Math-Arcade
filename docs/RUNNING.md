@@ -2,7 +2,7 @@
 
 Requires Node 24. Build with `npm run build`. Set `ARCADE_TEACHER_PASSWORD` to a private password of at least 12 characters, then run `npm start`. Default address is http://localhost:3000; teacher desk is /?role=teacher. For a network pilot use the host's reachable HTTPS URL, not localhost, on the iPads. Secure browser APIs and production cookies require HTTPS.
 
-Create a class and roster, edit class practice, open the arcade and display its QR/code. Students claim their names; use Admit on the teacher dashboard. A replacement admission disconnects that student's earlier device. Individual Math practice buttons edit overrides. Assign to everyone replaces overrides explicitly.
+Create a class and roster, edit class practice, open the arcade and display its QR/code. Students enter the current four-letter password and claim their names. Each password admits one device and expires after 45 seconds. Click New password for the next student without waiting; use Admit on the teacher dashboard. A replacement admission disconnects that student's earlier device. Individual Math practice buttons edit overrides. Assign to everyone replaces overrides explicitly.
 
 ## Render deployment preparation
 

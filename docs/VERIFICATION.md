@@ -1,3 +1,14 @@
+# v0.2.0 verification — 2026-10-08
+
+- Node 24 build verifies 265 canonical source blob hashes.
+- 39 server/engine tests pass, including concurrent HTTP redemption (one success, one rejection), 45-second expiry, manual rotation, consumed-code restart persistence, teacher authorization, existing device continuity and class/individual assignments.
+- All six Chromium/Playwright browser suites pass: classroom/Coastal, Vault 7, Nightfall, Ironbreak, Chrono and Olivia. Dashboard QR/password admission, gameplay recovery and native campaign boot are covered. Physical iPads are not covered.
+- Canonical Math Engine provides 312 skills and diagram/keypad presentation. Math Quest sources are current at cd35fd912fbde2007f8fade6b93b1c2a1421275c; other exact source commits are in vendor/manifest.json.
+- Hourly GitHub workflow refreshes upstream files, checks build/server/browser suites, and commits only passing candidates. Its first hosted Actions execution is pending.
+- Math Civ remains unintegrated. Journey is excluded. No live backend deployment or school-network test has been performed.
+
+Earlier checkpoint records follow.
+
 # Math Arcade alpha.3 verification — 2026-10-01
 
 Scope: Nightfall city integration into the two-game classroom pilot. GitHub baseline `c947c1c9254bde26ad73037319a3c1f4a51ebf0c`; MathQuest `59c11c90c2f0893333dfe30b62578fd73deb9bbf`. Local implementation checkpoint `83ea0a4`; connector publication compares exact source-tree hashes. [Prior verification](checkpoints/alpha.2-verification.md).

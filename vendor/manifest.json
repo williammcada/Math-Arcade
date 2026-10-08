@@ -1,534 +1,919 @@
 {
   "math": {
-    "repo": "williammcada/OLIVIA-MAGIC-BRACELET-QUEST",
-    "commit": "df28efce7bde25a239915af7db72b8b5caf85eb4"
+    "repo": "williammcada/MATH-ENGINE",
+    "commit": "3b8437bd0bf226c70bb03143dd0847acef23f669",
+    "baseline": "baselines/megaman-v0.7"
   },
   "coastal": {
-    "repo": "williammcada/Math-Quest---Vault-7-",
-    "commit": "02acd2cdf065adf33df4a2dd90094ef4381ce39a"
+    "repo": "williammcada/mathquest",
+    "commit": "cd35fd912fbde2007f8fade6b93b1c2a1421275c"
   },
   "files": [
     {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/shared-math/catalog.ts",
-      "dest": "vendor/math/src/shared-math/catalog.ts",
-      "sha": "d7a07e69dbf4c2eaa04b0ae8daea06b38b2f12fd"
+      "repo": "MATH-ENGINE",
+      "path": "baselines/megaman-v0.7/comparison.json",
+      "dest": "vendor/math/comparison.json",
+      "sha": "42154ffe34e9022060e1a9ae4b32d45bf19a5f57"
     },
     {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/shared-math/engine.ts",
-      "dest": "vendor/math/src/shared-math/engine.ts",
-      "sha": "81bf2cf08d7ed8ce6ef4de2261f827ecc8a604c5"
+      "repo": "MATH-ENGINE",
+      "path": "baselines/megaman-v0.7/provenance.json",
+      "dest": "vendor/math/provenance.json",
+      "sha": "775185a993c74dea8e9127d5384233e11d8d4d1e"
     },
     {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/shared-math/mega-content.js",
-      "dest": "vendor/math/src/shared-math/mega-content.js",
-      "sha": "e2191419be8cc5c3211948b03f62b464cb43aa2b"
+      "repo": "MATH-ENGINE",
+      "path": "baselines/megaman-v0.7/shared-math.js",
+      "dest": "vendor/math/shared-math.js",
+      "sha": "9fe3859ff11995d241a8a5f122550c4f7f644813"
     },
     {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/shared-math/quarter-time.ts",
-      "dest": "vendor/math/src/shared-math/quarter-time.ts",
-      "sha": "bf9699d99d38c24c208275808d6728e201eaa083"
-    },
-    {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/shared-math/preview.ts",
-      "dest": "vendor/math/src/shared-math/preview.ts",
-      "sha": "2ac0ced1b066b983ce9adabf528c8ded39de8cd8"
-    },
-    {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/shared-math/settings.ts",
-      "dest": "vendor/math/src/shared-math/settings.ts",
-      "sha": "076d4c31f6b7cc20c1596919cb87a930ec37043c"
-    },
-    {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/facts.ts",
-      "dest": "vendor/math/src/facts.ts",
-      "sha": "1d4666e006f9c55f341274bb2dc9d706b1b769f0"
-    },
-    {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/expansion.ts",
-      "dest": "vendor/math/src/expansion.ts",
-      "sha": "96649baf62196577231e43ce4e74706072ef7a71"
-    },
-    {
-      "repo": "OLIVIA-MAGIC-BRACELET-QUEST",
-      "path": "src/math-format.ts",
-      "dest": "vendor/math/src/math-format.ts",
-      "sha": "eaf5eb5c5c6ef643b422052bd58e9ad3c5b6c4b3"
-    },
-    {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/bonus.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/bonus.wav",
       "sha": "6adbebe83fbc57985ff4a6c4f799ed3180be6766"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/boss.mp3",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/boss.mp3",
       "sha": "12ae62d04f93474892585364127027fbf6848b56"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/carrier.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/carrier.wav",
       "sha": "87245c049b5a83b4a54113a09e8dd3185d86758b"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/checkpoint.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/checkpoint.wav",
       "sha": "499f11db1d0b37681bada54fc655606e27b55117"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/defeat.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/defeat.wav",
       "sha": "96f2a55afe6c0b91fe568d66dcf1a0d25e27c5d3"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/effects.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/effects.wav",
       "sha": "c3e72f81f7771b7028a6892ce2e06f75b795bb41"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/enemy.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/enemy.wav",
       "sha": "15cf7381ecf9b222e97bdceb803619aa9292b428"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/engine.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/engine.wav",
       "sha": "574e4afe6210bd016e5894e06ce7164f8cc86fea"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/escape.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/escape.wav",
       "sha": "044a47ee7f66ac613c0d0272c5c2596c29684134"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/explosion.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/explosion.wav",
       "sha": "c2738d8df90ee2db99ca6867307fa4e8239c07d3"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/expose.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/expose.wav",
       "sha": "419f3f08eb722e16b4c3fdc8b16493205cc350d5"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/flight.mp3",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/flight.mp3",
       "sha": "45cfbeeb3d32fc4452d8598c50c01de2cc6d6b96"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/heavy.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/heavy.wav",
       "sha": "297981c4a195516f929126fbe00cbfefe59b433f"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/hurt.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/hurt.wav",
       "sha": "f5b1b8466a9943fe2ab25d1d5306e62b0398e8de"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/rapid.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/rapid.wav",
       "sha": "b9288eaa568b390710abb7edd13de8266e077fd7"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/repair.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/repair.wav",
       "sha": "c4fbba1cce975f721eb9588b617dcd1a8595ac1c"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/shot.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/shot.wav",
       "sha": "1ade5de39780ffc6592a29b5633a7a27fac828d2"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/upgraded.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/upgraded.wav",
       "sha": "04d34f7afe15e9ae2653c7041e7f9139b7450cbc"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/victory.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/victory.wav",
       "sha": "a9df7f0cbf03319fc731564646826211501df39f"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/warning.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/warning.wav",
       "sha": "8e4053d923fd2bb1f86b3fe46a4b18fa73a39788"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/bomber.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/bomber.webp",
       "sha": "d22a349b8ce3811b66cc48747c7fbf259047bc6a"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/boss.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/boss.webp",
       "sha": "13899ee0cf626a9ebea0d0c2dfc360e3f5f290af"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/explosion.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/explosion.webp",
       "sha": "eb2b0a261485ac89d4945aa6bda9a307480ae041"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/fighter.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/fighter.webp",
       "sha": "77afdf25ce17b75e98579ea0bc023cd938a22385"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/harbor.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/harbor.webp",
       "sha": "ff2f0081623ef5ed8b81cb615ec0b19190aa8c7b"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/interceptor.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/interceptor.webp",
       "sha": "90c4b19f5713c22918c6b35eb69ea2ddca078931"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/island.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/island.webp",
       "sha": "ddc2e2bff46ecd701ef601f65ff28645d07afcbe"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/manifest.json",
       "dest": "vendor/coastal/public/assets/aerial-shooter/manifest.json",
       "sha": "cbf87b93361d67fb680dae5f0244b34b6dfcdfdf"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/ocean.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/ocean.webp",
       "sha": "b2a526966af3d2905da3425a902e66bb05a9876e"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/player.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/player.webp",
       "sha": "5063c811f632249744105d6a9f51f080a185565c"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/ship.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/ship.webp",
       "sha": "ad76ef2cb71a88abeb9c98df3005d5bffd51965f"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/shore.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/shore.webp",
       "sha": "915c842bd65bc1760524ed993ed2172f0e79394d"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/aerial-shooter/supply.webp",
       "dest": "vendor/coastal/public/assets/aerial-shooter/supply.webp",
       "sha": "cab0f4ef2029215c1ff1f12e4688dc383d6ad6cb"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/engine/action-host.js",
+      "dest": "vendor/coastal/public/engine/action-host.js",
+      "sha": "7eb8e7f14d3cda9ec9e44aa21c95a41c3be4602f"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/engine/controls.js",
       "dest": "vendor/coastal/public/engine/controls.js",
       "sha": "d35cc9fa3c1ceb93ce839bd28e67a7af367c8d93"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/engine/directional-input.js",
       "dest": "vendor/coastal/public/engine/directional-input.js",
       "sha": "0c3dcce0356cebcfe0ce52bcb3b56bee253162d6"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/engine/game-audio.js",
       "dest": "vendor/coastal/public/engine/game-audio.js",
       "sha": "e2551d9a149650a01588054066148891e3aa4740"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/engine/game-host.js",
+      "dest": "vendor/coastal/public/engine/game-host.js",
+      "sha": "169fb26d7f87c67dfdc9b34716a170452cb175d3"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/engine/held-input.js",
       "dest": "vendor/coastal/public/engine/held-input.js",
       "sha": "f8bc3762ba73359c0ad017d37f60312ca0762e2c"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/engine/practice-scenes.js",
+      "dest": "vendor/coastal/public/engine/practice-scenes.js",
+      "sha": "ee8ea04c0bec30ce8b0414bb4456454b836401be"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/engine/teacher-tools.js",
+      "dest": "vendor/coastal/public/engine/teacher-tools.js",
+      "sha": "b48a3fc5c904fb9c6b7971bf7a6b2b7c9bed6e10"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/engine/team-tools.js",
+      "dest": "vendor/coastal/public/engine/team-tools.js",
+      "sha": "af73abd8ef305f1aa1e575527c1889bc1c1e2dc5"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/aerial-shooter/adapter.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/adapter.js",
       "sha": "0df500f95d0c6ab1f91d0ac797fc531683e6b91f"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/games/aerial-shooter/classroom-host.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/classroom-host.js",
+      "sha": "282225c19e9a84d7c81b8bf6e2d7107fbf86ef88"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/aerial-shooter/core.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/core.js",
       "sha": "e47534c5aad3eccc899cb427b146915e34a85e7a"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/aerial-shooter/level.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/level.js",
       "sha": "b18c72ff663e3fed4640c750075930c9fe3d2658"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/games/aerial-shooter/practice.css",
+      "dest": "vendor/coastal/public/games/aerial-shooter/practice.css",
+      "sha": "3ac6cf9cc6273cfe36513c1e8ab09ed572a3dbc3"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/aerial-shooter/practice.js",
+      "dest": "vendor/coastal/public/games/aerial-shooter/practice.js",
+      "sha": "622c23e8fb049fb267b7b379fae55c7cc9003dc2"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/aerial-shooter/render.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/render.js",
       "sha": "4bb3ec737902f91234178bbfbb5a5cb05c4ace9d"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/aerial-shooter/session.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/session.js",
       "sha": "9cdd9a2ba307b6f30613cd3d2b588ad8e618fa5e"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/aerial-shooter/tuning.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/tuning.js",
       "sha": "c2b0c85ffd95074aeaa7113faec64f9c00eff8bd"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/assets/vault7/art-manifest.json",
+      "dest": "vendor/vault7/public/assets/vault7/art-manifest.json",
+      "sha": "0b747743576e437c2dd1dceb4a8772b8ee593af6"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/audio/vault7-ambient.mp3",
+      "dest": "vendor/vault7/public/assets/vault7/audio/vault7-ambient.mp3",
+      "sha": "854d5f9b1dbf2552a73aa831cfdcb32f1e1818fe"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/assets/vault7/audio/vault7-finale.mp3",
       "dest": "vendor/vault7/public/assets/vault7/audio/vault7-finale.mp3",
       "sha": "4ce03dcb85114f165dc230d3d65438c20f5de5b8"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/briefing-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/briefing-480.webp",
+      "sha": "7f2ef51e3d403dca68aff9f5641271e188a93331"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/briefing.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/briefing.webp",
+      "sha": "136f7a569793a44e11e6710291f6f2a113138e95"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/cipher-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/cipher-480.webp",
+      "sha": "66bcbceda104b836432a60fa20dd0c038b38c3a1"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/cipher.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/cipher.webp",
+      "sha": "db047b7e47a9261389613aa3809d723dcdf30f08"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/assets/vault7/scenes/cover-480.webp",
       "dest": "vendor/vault7/public/assets/vault7/scenes/cover-480.webp",
       "sha": "4caddca537eeeafdad4aa25beeaedc6e923bb613"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/cover.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/cover.webp",
+      "sha": "1de2f37a951f6def1b5ca4fa1fd24a98213b159b"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-copy-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-copy-480.webp",
+      "sha": "5fc0910acbeafe2a2a7f5419b4c9e171c3c45e22"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-copy.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-copy.webp",
+      "sha": "b774930819dbbf406460ad828bd872caf05212b8"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-destroy-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-destroy-480.webp",
+      "sha": "d63f635a7416a610553fbba5446f5f0d8dbe4b72"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-destroy.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-destroy.webp",
+      "sha": "846eb8127467bb1176d0f7b04ec248b27b0f4618"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-isolate-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-isolate-480.webp",
+      "sha": "ca74727fbb355e5ade2b87e2c50ebcddfa86f308"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-isolate.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-isolate.webp",
+      "sha": "4f625f07a4f96589a82c68aca85b581fe9bb108c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-release-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-release-480.webp",
+      "sha": "df5e1920f23f71c0c61274d127fec0012b2389ca"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/ending-release.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/ending-release.webp",
+      "sha": "3623bb0208c41e03fe3692fa4b89ad0b6b3f668c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/finale-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/finale-480.webp",
+      "sha": "cc955ac76d3995c76a03992a98078eea4e3670d5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/finale.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/finale.webp",
+      "sha": "3c397878cd08c4c5c5094aed3c8e7f3ec7ff890d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate1-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate1-480.webp",
+      "sha": "1952ffaa6edfcaa8501c1b977dd551b022c91db5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate1.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate1.webp",
+      "sha": "ce7798b2863597adac63b832cc289a42b391bbc7"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate2-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate2-480.webp",
+      "sha": "ee56420661e4926342d2d73c0a479fcaa927e86e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate2.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate2.webp",
+      "sha": "9417876e3180b64cbaf0f09607e2feffad870dee"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate3-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate3-480.webp",
+      "sha": "87e830918d08241fba58d2a885f331f682d7f9e5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate3.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate3.webp",
+      "sha": "3f593d63baecfb7b048c77a78012e90a63322fa5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate4-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate4-480.webp",
+      "sha": "09bc06bec4302e6736980b48b43bd10236d1118e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate4.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate4.webp",
+      "sha": "4d7d9772381d5f7cebff949773828895a01cbd96"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate5-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate5-480.webp",
+      "sha": "a64c4e4a2a00d6e616e5f0f438b32bdf50596a3d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/gate5.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/gate5.webp",
+      "sha": "b4b2325827f1441432c5c9fe5acc3858a54ee20b"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/market-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/market-480.webp",
+      "sha": "4ad4089e59e36ebaae076d629d98c9b3a6fa7e24"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/market.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/market.webp",
+      "sha": "b6a8267d6a6fb34c90e9f13ba3015c52b3d5a200"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/route-480.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/route-480.webp",
+      "sha": "e60146aa64de9c8f6c1aafed054b46199bf1f53b"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/scenes/route.webp",
+      "dest": "vendor/vault7/public/assets/vault7/scenes/route.webp",
+      "sha": "cee6d5017f557363042fe78d0211c023bbd52919"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/assets/vault7/sprites/agent-16x24.png",
       "dest": "vendor/vault7/public/assets/vault7/sprites/agent-16x24.png",
       "sha": "6096b384cbe38d783fcdcc7239efc044067fe7fc"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-down-idle.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-down-idle.png",
+      "sha": "0f58866f1a6bf1ccc66bf338b07b2df725707b87"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-down-walk-a.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-down-walk-a.png",
+      "sha": "f256fd592c4d0e020d3afedb341d6301383ae412"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-down-walk-b.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-down-walk-b.png",
+      "sha": "4c7e5232c3930e7ffa994a6a7a8d9e8d3993df51"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-left-idle.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-left-idle.png",
+      "sha": "863cb0a5da86527ff946237e643a0410c2d0c9fe"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-left-walk-a.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-left-walk-a.png",
+      "sha": "cfadd71fc310711740328dcd074c587831ec629f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-left-walk-b.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-left-walk-b.png",
+      "sha": "0db2c11e933b0d154b9b9335aebbab3901f8e792"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-right-idle.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-right-idle.png",
+      "sha": "f7d4ff1635b241deef308024157ed8a0694dda01"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-right-walk-a.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-right-walk-a.png",
+      "sha": "9bee1f9f003c1eb14fc67de793997bb39accd88f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-right-walk-b.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-right-walk-b.png",
+      "sha": "5d8c524a84b1dd2629d7d04021c496c7db79852e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-up-idle.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-up-idle.png",
+      "sha": "ffa60c5026c0012c1194646da7f3b386c8db8a23"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-up-walk-a.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-up-walk-a.png",
+      "sha": "2b9c6f7d13cf134f4561d18fc7d983082e450fb3"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent-up-walk-b.png",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent-up-walk-b.png",
+      "sha": "a9e46f9461516ddf953b7e6b472e63b8df6fd979"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/agent.json",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/agent.json",
+      "sha": "354f946bf4d1a457e3ff6a50209984735760c7b7"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/vault7/sprites/prompt.json",
+      "dest": "vendor/vault7/public/assets/vault7/sprites/prompt.json",
+      "sha": "2324eff23ce160f7611cb611a41af8869ec09d79"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/stealth-core.js",
       "dest": "vendor/vault7/public/stealth-core.js",
       "sha": "b46891531a2580bc9ec6d5d85fb64d9a2feef5af"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/stealth.js",
       "dest": "vendor/vault7/public/stealth.js",
-      "sha": "fea807807248db93e4029f03f334e8b10170ecf4"
+      "sha": "6ac34d7a271fca403f0c942cc01dc4911a6c415b"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/vault-art.js",
       "dest": "vendor/vault7/public/vault-art.js",
-      "sha": "37df10eee62a4b76594747a225758c6077f8abf3"
+      "sha": "040600398c24ae92d8bb7587fefa0bc48af95391"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/ambient.mp3",
+      "dest": "vendor/nightfall/public/assets/nightfall/ambient.mp3",
+      "sha": "880d76f8e7513ef0a7c174c9b1501912405e83fd"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/actors.png",
       "dest": "vendor/nightfall/public/assets/nightfall/city/actors.png",
       "sha": "540d1f0865c34b9fffc0edf6e74d21d4bb2d4e35"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/ambient.mp3",
       "dest": "vendor/nightfall/public/assets/nightfall/city/ambient.mp3",
       "sha": "db4971cedff5cfa875e55ec7532c4dfbc22dba6c"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/danger.mp3",
       "dest": "vendor/nightfall/public/assets/nightfall/city/danger.mp3",
       "sha": "c883e49f3e64b8031af82870eaf07888c1f7aef7"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/effects.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/effects.wav",
       "sha": "85985cf81deeb606f9fcd05df7c8e5abafd3c1b8"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/ending.mp3",
       "dest": "vendor/nightfall/public/assets/nightfall/city/ending.mp3",
       "sha": "10e7b4f8b4c649842fe06ffc075db2fd8beeaf69"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/props.png",
       "dest": "vendor/nightfall/public/assets/nightfall/city/props.png",
       "sha": "33cafbff04bf92602c5062f0d100e0c45fdaadbd"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/tiles.png",
       "dest": "vendor/nightfall/public/assets/nightfall/city/tiles.png",
       "sha": "c6eb5d9579c943bdb5d138a907f9d6c3a45d1740"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/alarm.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/alarm.wav",
       "sha": "b842ae1c82e77251769dbb92b7c094db7fbd16a7"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/breach.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/breach.wav",
       "sha": "ca0b57c647f08ce39dd93798aaeb6b26e4f9c9f1"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/enemy-death.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/enemy-death.wav",
       "sha": "6a9552d647ca2e4dee15fab34997fc512a4d1fa6"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/glass.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/glass.wav",
       "sha": "09d2840c39a5c6353a54edd4a51a2e852ede3dca"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/moan.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/moan.wav",
       "sha": "fd31e4abbf93fff653f467e0631b8be23e5daa63"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/shot.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/shot.wav",
       "sha": "f34d5c0fef7ac944a49f6e61202a6d1c1d233e4e"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/shotgun.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/shotgun.wav",
       "sha": "51e3a70275aa0a0e9478783e1adc949684779f01"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/assets/nightfall/city/v092/step.wav",
       "dest": "vendor/nightfall/public/assets/nightfall/city/v092/step.wav",
       "sha": "c2f3be48c0b2c9038cc1d1abc58516ecdd70694b"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
-      "path": "public/games/nightfall/adapter.js",
-      "dest": "vendor/nightfall/public/games/nightfall/adapter.js",
-      "sha": "f4e70aa18d66166cf797b3f551f6a9777795d0bf"
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/cover.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/cover.png",
+      "sha": "98c811681c6c120ce07c3ae4795fe9ccd78256ee"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/ending.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/ending.png",
+      "sha": "487e1f5d63516caccac7e1cb280217631afccfa2"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/finale.mp3",
+      "dest": "vendor/nightfall/public/assets/nightfall/finale.mp3",
+      "sha": "a0bba9316c505834cc85a515d5635e71f1290064"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/finale.wav",
+      "dest": "vendor/nightfall/public/assets/nightfall/finale.wav",
+      "sha": "cf31b3b849dd522db6950b2af29a2bd89db96ced"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/market.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/market.png",
+      "sha": "8d03fc6f4386d38cb2c8803d62757c0a2fc5ffa1"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/radio.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/radio.png",
+      "sha": "1bb714fa85c72736a5868c607f98440ad611f717"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/adapter.js",
+      "dest": "vendor/nightfall/public/games/nightfall/adapter.js",
+      "sha": "e221015ff3a2805cd65e5cabec9ad26f272b7f7f"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/nightfall/config.js",
       "dest": "vendor/nightfall/public/games/nightfall/config.js",
       "sha": "4c4369fb48d08f8dc57dc36b186cbce1383f277b"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/games/nightfall/false-haven-adapter.js",
+      "dest": "vendor/nightfall/public/games/nightfall/false-haven-adapter.js",
+      "sha": "eacd9523ff15a463b8281469c748fd3db8b876b8"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/false-haven-renderer.js",
+      "dest": "vendor/nightfall/public/games/nightfall/false-haven-renderer.js",
+      "sha": "51ebafd2ce6f1eade4166851ead56dc3a7f288a0"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/false-haven-world.js",
+      "dest": "vendor/nightfall/public/games/nightfall/false-haven-world.js",
+      "sha": "d22a52abe9214750120718c4da99967bfd5bb98f"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/nightfall/hardware.js",
       "dest": "vendor/nightfall/public/games/nightfall/hardware.js",
-      "sha": "6abf4cd2468b2552034f66ac14f726fe40af6a9d"
+      "sha": "ee8623865138ff4e00b263053724e25aa532b4fd"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/nightfall/renderer.js",
       "dest": "vendor/nightfall/public/games/nightfall/renderer.js",
-      "sha": "6a61f126be7b1d11165809d200347c7b0c5605ca"
+      "sha": "1c6c84ab875e3ce5a66d3ec30ab25bf0d4df7d5e"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
-      "path": "public/games/nightfall/simulation.js",
-      "dest": "vendor/nightfall/public/games/nightfall/simulation.js",
-      "sha": "a6776c631b85d80cad2207217412bddaa3c89028"
+      "repo": "mathquest",
+      "path": "public/games/nightfall/rescue-adapter.js",
+      "dest": "vendor/nightfall/public/games/nightfall/rescue-adapter.js",
+      "sha": "f708c0c3ffdc50c0777ab0fc6824dd66584eda0c"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
-      "path": "public/games/nightfall/world.js",
-      "dest": "vendor/nightfall/public/games/nightfall/world.js",
-      "sha": "d8c5b69c2acd5e02815b96e825c385929f3408e9"
+      "repo": "mathquest",
+      "path": "public/games/nightfall/rescue-host.js",
+      "dest": "vendor/nightfall/public/games/nightfall/rescue-host.js",
+      "sha": "a688e5c9b01e708aba4044b5bad7f791827fad46"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/nightfall/rescue-world.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-world.js",
       "sha": "5c3915daefbe672db369908c8fb8d080d4aa3a90"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/games/nightfall/rescue.js",
+      "dest": "vendor/nightfall/public/games/nightfall/rescue.js",
+      "sha": "bccb4f7236c8d82ceba4a7ca790085603b2e3075"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/simulation.js",
+      "dest": "vendor/nightfall/public/games/nightfall/simulation.js",
+      "sha": "71134d11dc9e0e0474a4b996778c4386639c2b9d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/world.js",
+      "dest": "vendor/nightfall/public/games/nightfall/world.js",
+      "sha": "398408fd874684417c369de3263564180172767f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/cartridges/ironbreak.js",
+      "dest": "vendor/ironbreak/public/cartridges/ironbreak.js",
+      "sha": "6e7fbfdbdeb318761d755055bdc6f97e7f971124"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/shooter/README.md",
+      "dest": "vendor/ironbreak/public/games/shooter/README.md",
+      "sha": "5c408fc14703d24234b5c73a7e0477d89471d866"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/shooter/adapter.js",
+      "dest": "vendor/ironbreak/public/games/shooter/adapter.js",
+      "sha": "7cc674152bf5003131bab999e02e06759c04bfdf"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/shooter/audio.js",
       "dest": "vendor/ironbreak/public/games/shooter/audio.js",
       "sha": "85c14388006a09c55778f886d49deae7fcebbcba"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/shooter/config.js",
       "dest": "vendor/ironbreak/public/games/shooter/config.js",
       "sha": "c6e61e600439eff88866ee7e6ce77af016059f28"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
+      "path": "public/games/shooter/host.css",
+      "dest": "vendor/ironbreak/public/games/shooter/host.css",
+      "sha": "47acbb62ec029285aa54410a48c09bbe8aae97d2"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/shooter/host.js",
+      "dest": "vendor/ironbreak/public/games/shooter/host.js",
+      "sha": "e191fc9467e7fdd096bfdd2d0d97dad13f08fdd8"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/games/shooter/input.js",
       "dest": "vendor/ironbreak/public/games/shooter/input.js",
       "sha": "94550b93e3d8615e461c8258ace292b1adfcf756"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/shooter/renderer.js",
       "dest": "vendor/ironbreak/public/games/shooter/renderer.js",
       "sha": "dfbf27af1b6e777e0f547b87ab839f79641d7220"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/shooter/simulation.js",
       "dest": "vendor/ironbreak/public/games/shooter/simulation.js",
       "sha": "ee130e1267d8bee28580a100361bb1880225f894"
     },
     {
-      "repo": "Math-Quest---Vault-7-",
+      "repo": "mathquest",
       "path": "public/games/shooter/world.js",
       "dest": "vendor/ironbreak/public/games/shooter/world.js",
       "sha": "5205a6ecc40d7c95a029af990032bc4d84097e3b"
-    },
-    {
-      "repo": "Math-Quest---Vault-7-",
-      "path": "public/cartridges/ironbreak.js",
-      "dest": "vendor/ironbreak/public/cartridges/ironbreak.js",
-      "sha": "3b84543183880b9d53c9614c5f3dd45b88da29e0"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -1216,16 +1601,16 @@
     }
   ],
   "vault7": {
-    "repo": "williammcada/Math-Quest---Vault-7-",
-    "commit": "59c11c90c2f0893333dfe30b62578fd73deb9bbf"
+    "repo": "williammcada/mathquest",
+    "commit": "cd35fd912fbde2007f8fade6b93b1c2a1421275c"
   },
   "nightfall": {
-    "repo": "williammcada/Math-Quest---Vault-7-",
-    "commit": "59c11c90c2f0893333dfe30b62578fd73deb9bbf"
+    "repo": "williammcada/mathquest",
+    "commit": "cd35fd912fbde2007f8fade6b93b1c2a1421275c"
   },
   "ironbreak": {
-    "repo": "williammcada/Math-Quest---Vault-7-",
-    "commit": "285c2119d825eeea784e84248c9c509668b16269"
+    "repo": "williammcada/mathquest",
+    "commit": "cd35fd912fbde2007f8fade6b93b1c2a1421275c"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",

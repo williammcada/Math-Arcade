@@ -1,13 +1,15 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.1.0
+**Brief version:** 0.2.0
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
-**Status:** Classroom foundation, Coastal Escape, Vault 7, Nightfall and Ironbreak implemented and locally tested as alpha.4. Three requested integrations, hosted deployment and physical-device verification remain pending.
 **Canonical repository:** `williammcada/Math-Arcade`
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
-**Running version:** v0.1.0-alpha.4 locally; no hosted deployment.
 **Handbook baseline:** `c50115ba1fea9cb552f3ad1415e670a219118b56`, selected for this task.
+
+## Current checkpoint — 2026-10-08
+
+v0.2.0 implements six games through canonical snapshots, 312-skill MATH-ENGINE practice, QR plus single-use four-letter passwords (45 seconds), and checked hourly upstream synchronization. Math Civ remains pending; Journey remains excluded. No live deployment or physical-device verification is claimed. The current contract is [v0.2.0](change-specs/v0.2.0.md); older checkpoint descriptions below are historical.
 
 ## Purpose and audience
 

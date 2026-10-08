@@ -1,21 +1,21 @@
 import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync} from 'node:fs';
 import {dirname,resolve} from 'node:path';
 import {createHash} from 'node:crypto';
-import {stripTypeScriptTypes} from 'node:module';
 const root=resolve(import.meta.dirname,'..');
 const manifest=JSON.parse(readFileSync(root+'/vendor/manifest.json'));
 rmSync(root+'/build',{recursive:true,force:true});mkdirSync(root+'/build',{recursive:true});
 for(const file of manifest.files){
  const bytes=readFileSync(root+'/'+file.dest);const hash=createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
  if(hash!==file.sha)throw Error('Upstream hash mismatch: '+file.dest);
- if(file.dest.startsWith('vendor/math/')){
-  let code=bytes.toString();if(file.path.endsWith('.ts'))code=stripTypeScriptTypes(code,{mode:'transform'});
-  code=code.replace(/(from\s+['"])(\.[^'"]+)(['"])/g,(all,a,p,z)=>a+(p.endsWith('.js')?p:p+'.js')+z);
-  const target=root+'/build/math/'+file.path.replace(/^src\//,'').replace(/\.ts$/,'.js');mkdirSync(dirname(target),{recursive:true});writeFileSync(target,code);
- }
+
 }
+// The canonical bundle is byte-for-byte upstream; only its module envelope is derived.
+mkdirSync(root+'/build/math/shared-math',{recursive:true});
+writeFileSync(root+'/build/math/shared-math/engine.js',readFileSync(root+'/vendor/math/shared-math.js','utf8')+'\nexport const {Practice,freshMath,configError,catalog,formatMath,formatItem,keypadKeys}=SharedMath;\n');
+writeFileSync(root+'/build/math/shared-math/catalog.js',"export {catalog} from './engine.js';\n");
+cpSync(root+'/build/math/shared-math/engine.js',root+'/build/math/math-format.js');
 cpSync(root+'/vendor/coastal/public',root+'/build/coastal',{recursive:true});
-writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.1.0-alpha.6',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak},vendorFiles:manifest.files.length},null,2));
+writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.2.0',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia},vendorFiles:manifest.files.length},null,2));
 
 // Derive presentation-only exports from the pinned runtime; never load its old network/storage host.
 cpSync(root+'/vendor/vault7/public',root+'/build/vault7',{recursive:true});

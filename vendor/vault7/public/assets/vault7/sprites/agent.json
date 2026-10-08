@@ -1,0 +1,398 @@
+{
+  "image": "agent-16x24.png",
+  "width": 64,
+  "height": 72,
+  "frame_width": 16,
+  "frame_height": 24,
+  "columns": 4,
+  "rows": 3,
+  "direction_columns": [
+    "down",
+    "left",
+    "up",
+    "right"
+  ],
+  "pose_rows": [
+    "idle",
+    "walk-a",
+    "walk-b"
+  ],
+  "walking_pose_order": [
+    0,
+    1,
+    0,
+    2
+  ],
+  "recommended_frame_ms": 140,
+  "format": "PNG RGBA",
+  "transparent": true,
+  "source": "../sources/agent-sprite-source.png",
+  "source_size": [
+    1448,
+    1086
+  ],
+  "preparation": "Grid cell extraction from generated alpha; common scale; nearest-neighbor downscale; centered 16x24 frames with shared foot baseline. No painted changes.",
+  "sha256": "a44e7d93ae64e5c15dd60fa491d361c300f145d6e8004f63045761499e843696",
+  "frames": [
+    {
+      "id": "down-idle",
+      "file": "agent-down-idle.png",
+      "rect": [
+        0,
+        0,
+        16,
+        24
+      ],
+      "source_cell": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "source_content_bounds": [
+        165,
+        58,
+        318,
+        347
+      ],
+      "content_size": [
+        11,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "left-idle",
+      "file": "agent-left-idle.png",
+      "rect": [
+        16,
+        0,
+        16,
+        24
+      ],
+      "source_cell": [
+        362,
+        0,
+        724,
+        362
+      ],
+      "source_content_bounds": [
+        149,
+        58,
+        246,
+        349
+      ],
+      "content_size": [
+        7,
+        22
+      ],
+      "content_offset": [
+        4,
+        1
+      ]
+    },
+    {
+      "id": "up-idle",
+      "file": "agent-up-idle.png",
+      "rect": [
+        32,
+        0,
+        16,
+        24
+      ],
+      "source_cell": [
+        724,
+        0,
+        1086,
+        362
+      ],
+      "source_content_bounds": [
+        92,
+        58,
+        246,
+        347
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "right-idle",
+      "file": "agent-right-idle.png",
+      "rect": [
+        48,
+        0,
+        16,
+        24
+      ],
+      "source_cell": [
+        1086,
+        0,
+        1448,
+        362
+      ],
+      "source_content_bounds": [
+        79,
+        58,
+        175,
+        349
+      ],
+      "content_size": [
+        7,
+        22
+      ],
+      "content_offset": [
+        4,
+        1
+      ]
+    },
+    {
+      "id": "down-walk-a",
+      "file": "agent-down-walk-a.png",
+      "rect": [
+        0,
+        24,
+        16,
+        24
+      ],
+      "source_cell": [
+        0,
+        362,
+        362,
+        724
+      ],
+      "source_content_bounds": [
+        162,
+        39,
+        319,
+        329
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "left-walk-a",
+      "file": "agent-left-walk-a.png",
+      "rect": [
+        16,
+        24,
+        16,
+        24
+      ],
+      "source_cell": [
+        362,
+        362,
+        724,
+        724
+      ],
+      "source_content_bounds": [
+        110,
+        39,
+        270,
+        327
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "up-walk-a",
+      "file": "agent-up-walk-a.png",
+      "rect": [
+        32,
+        24,
+        16,
+        24
+      ],
+      "source_cell": [
+        724,
+        362,
+        1086,
+        724
+      ],
+      "source_content_bounds": [
+        89,
+        36,
+        247,
+        329
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "right-walk-a",
+      "file": "agent-right-walk-a.png",
+      "rect": [
+        48,
+        24,
+        16,
+        24
+      ],
+      "source_cell": [
+        1086,
+        362,
+        1448,
+        724
+      ],
+      "source_content_bounds": [
+        54,
+        39,
+        214,
+        328
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "down-walk-b",
+      "file": "agent-down-walk-b.png",
+      "rect": [
+        0,
+        48,
+        16,
+        24
+      ],
+      "source_cell": [
+        0,
+        724,
+        362,
+        1086
+      ],
+      "source_content_bounds": [
+        159,
+        12,
+        322,
+        301
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "left-walk-b",
+      "file": "agent-left-walk-b.png",
+      "rect": [
+        16,
+        48,
+        16,
+        24
+      ],
+      "source_cell": [
+        362,
+        724,
+        724,
+        1086
+      ],
+      "source_content_bounds": [
+        107,
+        11,
+        270,
+        293
+      ],
+      "content_size": [
+        12,
+        21
+      ],
+      "content_offset": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "up-walk-b",
+      "file": "agent-up-walk-b.png",
+      "rect": [
+        32,
+        48,
+        16,
+        24
+      ],
+      "source_cell": [
+        724,
+        724,
+        1086,
+        1086
+      ],
+      "source_content_bounds": [
+        88,
+        6,
+        247,
+        300
+      ],
+      "content_size": [
+        12,
+        22
+      ],
+      "content_offset": [
+        2,
+        1
+      ]
+    },
+    {
+      "id": "right-walk-b",
+      "file": "agent-right-walk-b.png",
+      "rect": [
+        48,
+        48,
+        16,
+        24
+      ],
+      "source_cell": [
+        1086,
+        724,
+        1448,
+        1086
+      ],
+      "source_content_bounds": [
+        54,
+        11,
+        218,
+        293
+      ],
+      "content_size": [
+        12,
+        21
+      ],
+      "content_offset": [
+        2,
+        2
+      ]
+    }
+  ]
+}
