@@ -36,3 +36,11 @@ Vault browser verification: `node test/vault-browser.cjs` (same Playwright/CHROM
 Nightfall is enabled in new sessions; teachers can enable it in existing sessions. Complete one assigned gate, select the existing threat preset and zero to three resources, then start the city mission. No short countdown: the historic active review envelope is two hours. Death, bus escape or leaving requires a new gate. Accessible mission retains no speed timer; teacher pause/end still applies. Refresh resumes the exact same round paused, with spent ammunition and all encounters intact. The First Response campaign chapter is outside this mini-game adapter.
 
 Run its additional browser check with `CHROMIUM_PATH=/path/to/chromium node test/nightfall-browser.cjs` after the build. Playwright and a browser are development-only verification tools, not runtime dependencies.
+
+## Math Civ (v0.2.1 candidate)
+
+Enable Math Civ in the teacher desk's game list (older saved sessions may not have it enabled). Its card says Built-in math and opens the original campaign without shared-practice gates. Calculations, three attempts, resource effects and campaign outcomes remain authored by Math Civ. The roster identifies Built-in math; these outcomes do not create shared-engine mastery events.
+
+Use Save & back to arcade before leaving. Save slots are scoped to the admitted student, and a second tab invalidates the first tab's write lease. Teacher pause, closure, session end and connection loss block play; reopening requires Resume. In Save / Load, export wanted slots before Delete all Math Civ campaigns; cancellation preserves them. Teacher deletion of the student or class also removes these saves.
+
+Additional browser verification: `node test/math-civ-browser.cjs`. Physical iPad, all campaign branches, school-network behavior and deployment remain separate checks.

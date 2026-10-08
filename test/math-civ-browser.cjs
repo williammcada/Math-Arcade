@@ -18,12 +18,13 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=r
   await frame.locator('[data-action^="policy:"]').first().click();await frame.locator('[data-action^="detail:"]').first().click();await frame.locator('[data-action^="open:"]').click();
   const operands=await frame.locator('body').evaluate(()=>window.arcadeCiv.state.activeOrder.operands);
   for(const input of await frame.locator('[data-answer]').all())await input.fill('0');
-  await frame.locator('[data-action=answer]').click();
+  await frame.locator('[data-action=answer]').click();await frame.locator('#yes').click();
   assert.equal(await frame.locator('body').evaluate(()=>window.arcadeCiv.state.activeOrder.attempts),1);
   // Independently calculate the authored allocation question, preserving the second-attempt consequence.
   const sum=operands.ratio.reduce((a,b)=>a+b,0),fields=['farms','workshops','works'];
   for(let i=0;i<fields.length;i++)await frame.locator(`[data-answer=${fields[i]}]`).fill(String(operands.total*operands.ratio[i]/sum));
   await frame.locator('[data-action=answer]').click();
+  console.log('Math Civ: authored calculation completed');
   const snapshot=await frame.locator('body').evaluate(()=>structuredClone(window.arcadeCiv.state));assert.equal(snapshot.challengeRecords.at(-1).path,'attempt2');
   assert.equal(await frame.locator('.classroom-gate').count(),0);
   model.tx(s=>model.session(s,teacher,cid,'pause'));await frame.locator('.classroom-blocker').waitFor({state:'visible'});
@@ -32,6 +33,7 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=r
   await page.locator('[data-back]').click();await page.locator('[data-game="math-civ"]').click();frame=page.frameLocator('iframe');await frame.locator('[data-action=continue]').click();
   assert.deepEqual(await frame.locator('body').evaluate(()=>window.arcadeCiv.state),snapshot);
   assert.equal(model.tx(s=>s.classes[0].students[0].math.events.length),0);
+  console.log('Math Civ: campaign restored and pause checked');
   // Lease replacement blocks the old tab before it can overwrite the new one.
   const second=await context.newPage();second.on('pageerror',e=>errors.push(e.message));await second.goto(base);const next=second.frameLocator('iframe');await next.locator('[data-action=continue]').click();
   await frame.locator('.classroom-blocker').waitFor({state:'visible'});assert.match(await frame.locator('.classroom-blocker').innerText(),/another tab/);await page.close();
@@ -39,10 +41,11 @@ const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=r
   await next.locator('[data-action=arcade-clear-campaigns]').click();await next.locator('#yes').click();await next.getByText('Math Civ campaigns deleted.',{exact:true}).waitFor();
   await second.locator('[data-back]').click();await second.locator('[data-game="math-civ"]').click();assert.equal(await next.locator('[data-action=continue]').isDisabled(),true);
   await next.locator('[data-action=new]').click();await next.locator('[data-action=start]').click();await next.locator('.arcade-story').waitFor();
+  console.log('Math Civ: stale tab and deletion checked');
   // A real loss of connectivity is fail-closed; reconnection still needs explicit Resume.
   await second.route('**/api/campaign',route=>route.abort());await next.locator('.classroom-blocker').waitFor({state:'visible'});assert.equal(await next.getByRole('button',{name:'Resume adventure'}).isVisible(),false);await second.unroute('**/api/campaign');await next.getByRole('button',{name:'Resume adventure'}).click();
   model.tx(s=>model.availability(s,teacher,cid,['chrono']));await next.locator('.classroom-blocker').waitFor({state:'visible'});assert.equal(await next.getByRole('button',{name:'Resume adventure'}).isVisible(),false);
-  model.tx(s=>model.session(s,teacher,cid,'end'));await second.locator('iframe').waitFor({state:'detached'});
+  model.tx(s=>model.session(s,teacher,cid,'end'));await next.getByText('Your classroom session has ended.',{exact:true}).waitFor();assert.equal(await next.getByRole('button',{name:'Resume adventure'}).isVisible(),false);await second.locator('[data-back]').click();await second.locator('iframe').waitFor({state:'detached'});
   assert.deepEqual(errors,[]);console.log('PASS Math Civ: authored calculation, no synthetic gates, save/reload, pause, stale tab, deletion/cancel, fresh campaign, connection loss, availability and session end.');
  }finally{await browser?.close();await new Promise(r=>server.close(r));fs.rmSync(dir,{recursive:true,force:true});}
 })().catch(e=>{console.error(e);process.exitCode=1;});
