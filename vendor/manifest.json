@@ -1,7 +1,7 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "314882a1e7d4642b4bfb82231d89e29726acb35d",
+    "commit": "9ec6d82cb46fdd91f01aedf2edb8e563f4ff645e",
     "baseline": "baselines/megaman-v0.7"
   },
   "coastal": {
@@ -9,6 +9,414 @@
     "commit": "cd35fd912fbde2007f8fade6b93b1c2a1421275c"
   },
   "files": [
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/ENVIRONMENT-ART-PROVENANCE.md",
+      "dest": "vendor/journey/public/assets/journey/ENVIRONMENT-ART-PROVENANCE.md",
+      "sha": "912e3cf18ba2d3c1914d8880c64a66e370d3eaa5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/HERO-ART-PROVENANCE.md",
+      "dest": "vendor/journey/public/assets/journey/HERO-ART-PROVENANCE.md",
+      "sha": "5d3f638c99642a5c30b9ba02e13ca500ee09b533"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/README.md",
+      "dest": "vendor/journey/public/assets/journey/README.md",
+      "sha": "9819454a66d4ccb958c7b24bd9a85d3c6b3c71ea"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/STAGE9-ART-PROVENANCE.md",
+      "dest": "vendor/journey/public/assets/journey/STAGE9-ART-PROVENANCE.md",
+      "sha": "8f273aca9377b7bb2a36b60e7d8f91c11c1c620c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/bajie-repair-stage3.png",
+      "dest": "vendor/journey/public/assets/journey/bajie-repair-stage3.png",
+      "sha": "9a8486d23e404d587d0adb8822a1ca3e10250bee"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/bajie-stage2.png",
+      "dest": "vendor/journey/public/assets/journey/bajie-stage2.png",
+      "sha": "220b80819c196242208de4694d1e578fdc472010"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/baozi-stage9.png",
+      "dest": "vendor/journey/public/assets/journey/baozi-stage9.png",
+      "sha": "2332fbf977445da91183682474cc4e7f3f219eb7"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/brute-stage6.png",
+      "dest": "vendor/journey/public/assets/journey/brute-stage6.png",
+      "sha": "962c43ebc4ed0f62a81a702d578f50a6433a3f49"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/cast-concept.png",
+      "dest": "vendor/journey/public/assets/journey/cast-concept.png",
+      "sha": "ce2ad4711a015e3624c13112b2c1a32c79d050eb"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/caster-stage6.png",
+      "dest": "vendor/journey/public/assets/journey/caster-stage6.png",
+      "sha": "7ea3bad20dc7f61d0d1b6b087c80c14b78edbbe9"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/crate-stage9.png",
+      "dest": "vendor/journey/public/assets/journey/crate-stage9.png",
+      "sha": "128399547d9b30a4f2080c28f75ef8882ad904ff"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/elixir-stage9.png",
+      "dest": "vendor/journey/public/assets/journey/elixir-stage9.png",
+      "sha": "c898d65a023b6feec9b5099511236a4ace335920"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/enemy-repairs-stage6.png",
+      "dest": "vendor/journey/public/assets/journey/enemy-repairs-stage6.png",
+      "sha": "5eec934ef75d073fe65d8cb38c12cb5647ea7db4"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-cave-stage7.png",
+      "dest": "vendor/journey/public/assets/journey/environment-cave-stage7.png",
+      "sha": "2478fae0e7878042f45d6a6badfec7d8bed38c71"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-cave-stage7.webp",
+      "dest": "vendor/journey/public/assets/journey/environment-cave-stage7.webp",
+      "sha": "05f689c33b336d735be915a4b9bff5b5260c43fe"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-courtyard-stage7.png",
+      "dest": "vendor/journey/public/assets/journey/environment-courtyard-stage7.png",
+      "sha": "3a08f9574b6a12ce971adcbb808056a46ec29a4a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-courtyard-stage7.webp",
+      "dest": "vendor/journey/public/assets/journey/environment-courtyard-stage7.webp",
+      "sha": "6551047ff556066b407da1137117aaebd79980fd"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-mountain-stage7.png",
+      "dest": "vendor/journey/public/assets/journey/environment-mountain-stage7.png",
+      "sha": "bc79ce6feeb5d3e21c32c8882ae0c7989fc225d3"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-mountain-stage7.webp",
+      "dest": "vendor/journey/public/assets/journey/environment-mountain-stage7.webp",
+      "sha": "449257702521010253760008f5031638ba302c14"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-shrine-stage7.png",
+      "dest": "vendor/journey/public/assets/journey/environment-shrine-stage7.png",
+      "sha": "65f4ac66de840fd501d662743ee6100038b502ae"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/environment-shrine-stage7.webp",
+      "dest": "vendor/journey/public/assets/journey/environment-shrine-stage7.webp",
+      "sha": "555896ce96e42c50c3a294777cd01264c732afb6"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/frame-bounds-audit.json",
+      "dest": "vendor/journey/public/assets/journey/frame-bounds-audit.json",
+      "sha": "5f96d4e6c239d884bee0029f2278db79b3fd73e5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/leaper-stage6.png",
+      "dest": "vendor/journey/public/assets/journey/leaper-stage6.png",
+      "sha": "d8002f9f9a164f88648b878a92d3a21a525eef4e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/manifest.json",
+      "dest": "vendor/journey/public/assets/journey/manifest.json",
+      "sha": "e889f64295c791f5e471ce6aacb83b82c051283e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/nezha-stage6.png",
+      "dest": "vendor/journey/public/assets/journey/nezha-stage6.png",
+      "sha": "241239a6a996578f0e0c0b6bd352a4a400d85171"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/prince-charge-stage3.png",
+      "dest": "vendor/journey/public/assets/journey/prince-charge-stage3.png",
+      "sha": "bdef328936f276df07fedfecb284829c66c15763"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/prince-repair-stage4.png",
+      "dest": "vendor/journey/public/assets/journey/prince-repair-stage4.png",
+      "sha": "4c016503a62934ecf0135626c3bacbcdfbd967b5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/prince-stage2.png",
+      "dest": "vendor/journey/public/assets/journey/prince-stage2.png",
+      "sha": "c34890d1294c26f835191001016a07dc5ebf6f05"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/raider-stage1.png",
+      "dest": "vendor/journey/public/assets/journey/raider-stage1.png",
+      "sha": "d75091044079871313cea8d146e537268420169d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/shield-stage6.png",
+      "dest": "vendor/journey/public/assets/journey/shield-stage6.png",
+      "sha": "d53eeb1d333aa06ae48a0bf5c2a8568d5a61dc2d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/stage4-repair-manifest.json",
+      "dest": "vendor/journey/public/assets/journey/stage4-repair-manifest.json",
+      "sha": "84a2a706abdc7f484f10c67c773693de90198287"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/tang-stage2.png",
+      "dest": "vendor/journey/public/assets/journey/tang-stage2.png",
+      "sha": "50022bfdd5b651315638eb25b434fd366695857d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/wujing-repair-stage4.png",
+      "dest": "vendor/journey/public/assets/journey/wujing-repair-stage4.png",
+      "sha": "1636ea381f6038660551b82fb7ca5f693313b48b"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/wujing-stage2.png",
+      "dest": "vendor/journey/public/assets/journey/wujing-stage2.png",
+      "sha": "8d77f5989c23927d71fc38c6dc69cbb09771343d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/wukong-repair-stage4.png",
+      "dest": "vendor/journey/public/assets/journey/wukong-repair-stage4.png",
+      "sha": "66b007215be95b8a551c28ddc942606a9c824d12"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/journey/wukong-stage1.png",
+      "dest": "vendor/journey/public/assets/journey/wukong-stage1.png",
+      "sha": "6ffe76e8c8cd107a75087373873da3299d6c5c2f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/audio.js",
+      "dest": "vendor/journey/public/games/journey/audio.js",
+      "sha": "4cb0e12979c3a5883c1dc6ea33aac8eee39cdd4c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/config.js",
+      "dest": "vendor/journey/public/games/journey/config.js",
+      "sha": "bbc8df913abff6bdf1db91e526dd1a96e4771c3b"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/enemy-art.js",
+      "dest": "vendor/journey/public/games/journey/enemy-art.js",
+      "sha": "fa9477a89a551bc6ce5f0ced4b0a5f4bd907e30a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/environment-art.js",
+      "dest": "vendor/journey/public/games/journey/environment-art.js",
+      "sha": "6935275db9ed9b1f481633837b5893a7b4c50b8f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/frame-bounds.js",
+      "dest": "vendor/journey/public/games/journey/frame-bounds.js",
+      "sha": "0968b22fccee280d71f038a07846ca174051958d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/frame-repairs.js",
+      "dest": "vendor/journey/public/games/journey/frame-repairs.js",
+      "sha": "2cffa7995d1f66f050eba427db39f0e60832214c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/hero-art.js",
+      "dest": "vendor/journey/public/games/journey/hero-art.js",
+      "sha": "75b8627a9120294836f4c0d7a27d4309e8f44aaa"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/host.js",
+      "dest": "vendor/journey/public/games/journey/host.js",
+      "sha": "f2dcf9f1a324df2ac057fe647df89b51babf7cb1"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/input.js",
+      "dest": "vendor/journey/public/games/journey/input.js",
+      "sha": "fce13d56c2c7ebf56f98183a3eac37f12ab43e16"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/journey.css",
+      "dest": "vendor/journey/public/games/journey/journey.css",
+      "sha": "64a86f53a553bd1662100f2d386cd32a5f371627"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/math-input.js",
+      "dest": "vendor/journey/public/games/journey/math-input.js",
+      "sha": "4ce97cff5c063b6ad00b71933b54a0b94ada37ab"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/practice.js",
+      "dest": "vendor/journey/public/games/journey/practice.js",
+      "sha": "ed22e21a9ea1a9ef8843c097803ecc007d9d5e54"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/renderer.js",
+      "dest": "vendor/journey/public/games/journey/renderer.js",
+      "sha": "770cd2cb24e1051a5b6fb5ec292b2757442c9539"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/special-effects.js",
+      "dest": "vendor/journey/public/games/journey/special-effects.js",
+      "sha": "0406746f846cb6b69e27e3d815dece0cfed03913"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/journey/story.js",
+      "dest": "vendor/journey/public/games/journey/story.js",
+      "sha": "2b1dfffd1564a936745e8f69298671fbd87529e1"
+    },
+    {
+      "repo": "mathquest",
+      "path": "src/cartridges/journey/encounters.js",
+      "dest": "vendor/journey/src/cartridges/journey/encounters.js",
+      "sha": "fa61438e2d03e183ef7a141107d87cd6193c027a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "src/cartridges/journey/model.js",
+      "dest": "vendor/journey/src/cartridges/journey/model.js",
+      "sha": "626bd5bc052345c1de7fc0d4f096d7953aea6ca5"
+    },
+    {
+      "repo": "mathquest",
+      "path": "src/cartridges/journey/specials.js",
+      "dest": "vendor/journey/src/cartridges/journey/specials.js",
+      "sha": "568f8b7362006100c459d38bddeb92ea8577bb3a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/ambient.wav",
+      "dest": "vendor/blackline/public/assets/blackline/ambient.wav",
+      "sha": "2a24131dc93f540740ea4ef15631ed89f786fbb4"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/cover.svg",
+      "dest": "vendor/blackline/public/assets/blackline/cover.svg",
+      "sha": "765fe453c57c781423060900a20cdab914b680d0"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/cover.webp",
+      "dest": "vendor/blackline/public/assets/blackline/cover.webp",
+      "sha": "fb9a32694ee6fae8ff6ac77cb13d9215c96e6f1b"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/ending.svg",
+      "dest": "vendor/blackline/public/assets/blackline/ending.svg",
+      "sha": "21e9c0f054bd5a7628bcdd1cfe0aefe7973e670a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/ending.webp",
+      "dest": "vendor/blackline/public/assets/blackline/ending.webp",
+      "sha": "25986614a6b79a8fffbd582c83efbad9d1a2477a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/finale.wav",
+      "dest": "vendor/blackline/public/assets/blackline/finale.wav",
+      "sha": "a4be6e887163f69a54e67070582d7260549f0012"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/market.svg",
+      "dest": "vendor/blackline/public/assets/blackline/market.svg",
+      "sha": "ff9d1ae75838e6e3c1f9ff41991547074ad639dd"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/market.webp",
+      "dest": "vendor/blackline/public/assets/blackline/market.webp",
+      "sha": "1e81e2a76921a887dbc650c89d5d6e67ae10037f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/radio.svg",
+      "dest": "vendor/blackline/public/assets/blackline/radio.svg",
+      "sha": "00191c4622c06d658e2dfd8dfae7cc3fbd801232"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackline/radio.webp",
+      "dest": "vendor/blackline/public/assets/blackline/radio.webp",
+      "sha": "95c1dfce4b6079b6c4d5d36e6170bc6ce4569242"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackline/adapter.js",
+      "dest": "vendor/blackline/public/games/blackline/adapter.js",
+      "sha": "a15d0b1f868afd3a75101964e6c319327a2807c4"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackline/audio.js",
+      "dest": "vendor/blackline/public/games/blackline/audio.js",
+      "sha": "8120ebdc6cfead3c7230ec52bd06e957af18737d"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackline/render.js",
+      "dest": "vendor/blackline/public/games/blackline/render.js",
+      "sha": "fc77d8daea0b0bcaf29e47ad15208ce0f8ce3e0c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackline/sim.js",
+      "dest": "vendor/blackline/public/games/blackline/sim.js",
+      "sha": "53430cc33866bc743b94287035e0f7b16aa2db0a"
+    },
     {
       "repo": "Math-Civ",
       "path": "PLAY-SEKIGAHARA-0.3.1.html",
@@ -644,6 +1052,36 @@
       "path": "public/vault-art.js",
       "dest": "vendor/vault7/public/vault-art.js",
       "sha": "040600398c24ae92d8bb7587fefa0bc48af95391"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/false-haven/cover-v3.webp",
+      "dest": "vendor/nightfall/public/assets/false-haven/cover-v3.webp",
+      "sha": "9bc9453be28725b1adc6e6e86017a08504bd1689"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/false-haven/ending-v3.webp",
+      "dest": "vendor/nightfall/public/assets/false-haven/ending-v3.webp",
+      "sha": "bf120fd99d158d4528c8648f96ae0384b52906a9"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/false-haven/market-v3.webp",
+      "dest": "vendor/nightfall/public/assets/false-haven/market-v3.webp",
+      "sha": "e1aaa0f2e1fa1ae725312451eb91c3afd78793e9"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/false-haven/radio-v3.webp",
+      "dest": "vendor/nightfall/public/assets/false-haven/radio-v3.webp",
+      "sha": "99a09095d3c8916fcc18486c772b6402e53f2de0"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/false-haven/tiles-v3.webp",
+      "dest": "vendor/nightfall/public/assets/false-haven/tiles-v3.webp",
+      "sha": "85f808f136a9a9018214a09a8d68aa8f02eeeffa"
     },
     {
       "repo": "mathquest",
@@ -1604,444 +2042,6 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/false-haven/ending-v3.webp",
-      "dest": "vendor/nightfall/public/assets/false-haven/ending-v3.webp",
-      "sha": "bf120fd99d158d4528c8648f96ae0384b52906a9"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/false-haven/market-v3.webp",
-      "dest": "vendor/nightfall/public/assets/false-haven/market-v3.webp",
-      "sha": "e1aaa0f2e1fa1ae725312451eb91c3afd78793e9"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/false-haven/radio-v3.webp",
-      "dest": "vendor/nightfall/public/assets/false-haven/radio-v3.webp",
-      "sha": "99a09095d3c8916fcc18486c772b6402e53f2de0"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/false-haven/tiles-v3.webp",
-      "dest": "vendor/nightfall/public/assets/false-haven/tiles-v3.webp",
-      "sha": "85f808f136a9a9018214a09a8d68aa8f02eeeffa"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/false-haven/cover-v3.webp",
-      "dest": "vendor/nightfall/public/assets/false-haven/cover-v3.webp",
-      "sha": "9bc9453be28725b1adc6e6e86017a08504bd1689"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/cover.webp",
-      "dest": "vendor/blackline/public/assets/blackline/cover.webp",
-      "sha": "fb9a32694ee6fae8ff6ac77cb13d9215c96e6f1b"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/radio.webp",
-      "dest": "vendor/blackline/public/assets/blackline/radio.webp",
-      "sha": "95c1dfce4b6079b6c4d5d36e6170bc6ce4569242"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/ambient.wav",
-      "dest": "vendor/blackline/public/assets/blackline/ambient.wav",
-      "sha": "2a24131dc93f540740ea4ef15631ed89f786fbb4"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/ending.svg",
-      "dest": "vendor/blackline/public/assets/blackline/ending.svg",
-      "sha": "21e9c0f054bd5a7628bcdd1cfe0aefe7973e670a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/market.svg",
-      "dest": "vendor/blackline/public/assets/blackline/market.svg",
-      "sha": "ff9d1ae75838e6e3c1f9ff41991547074ad639dd"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/ending.webp",
-      "dest": "vendor/blackline/public/assets/blackline/ending.webp",
-      "sha": "25986614a6b79a8fffbd582c83efbad9d1a2477a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/radio.svg",
-      "dest": "vendor/blackline/public/assets/blackline/radio.svg",
-      "sha": "00191c4622c06d658e2dfd8dfae7cc3fbd801232"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/market.webp",
-      "dest": "vendor/blackline/public/assets/blackline/market.webp",
-      "sha": "1e81e2a76921a887dbc650c89d5d6e67ae10037f"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/cover.svg",
-      "dest": "vendor/blackline/public/assets/blackline/cover.svg",
-      "sha": "765fe453c57c781423060900a20cdab914b680d0"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/blackline/finale.wav",
-      "dest": "vendor/blackline/public/assets/blackline/finale.wav",
-      "sha": "a4be6e887163f69a54e67070582d7260549f0012"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/blackline/render.js",
-      "dest": "vendor/blackline/public/games/blackline/render.js",
-      "sha": "fc77d8daea0b0bcaf29e47ad15208ce0f8ce3e0c"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/blackline/sim.js",
-      "dest": "vendor/blackline/public/games/blackline/sim.js",
-      "sha": "53430cc33866bc743b94287035e0f7b16aa2db0a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/blackline/audio.js",
-      "dest": "vendor/blackline/public/games/blackline/audio.js",
-      "sha": "8120ebdc6cfead3c7230ec52bd06e957af18737d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/blackline/adapter.js",
-      "dest": "vendor/blackline/public/games/blackline/adapter.js",
-      "sha": "a15d0b1f868afd3a75101964e6c319327a2807c4"
-    },
-    {
-      "repo": "mathquest",
-      "path": "src/cartridges/journey/encounters.js",
-      "dest": "vendor/journey/src/cartridges/journey/encounters.js",
-      "sha": "fa61438e2d03e183ef7a141107d87cd6193c027a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "src/cartridges/journey/specials.js",
-      "dest": "vendor/journey/src/cartridges/journey/specials.js",
-      "sha": "568f8b7362006100c459d38bddeb92ea8577bb3a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "src/cartridges/journey/model.js",
-      "dest": "vendor/journey/src/cartridges/journey/model.js",
-      "sha": "626bd5bc052345c1de7fc0d4f096d7953aea6ca5"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-courtyard-stage7.webp",
-      "dest": "vendor/journey/public/assets/journey/environment-courtyard-stage7.webp",
-      "sha": "6551047ff556066b407da1137117aaebd79980fd"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/STAGE9-ART-PROVENANCE.md",
-      "dest": "vendor/journey/public/assets/journey/STAGE9-ART-PROVENANCE.md",
-      "sha": "8f273aca9377b7bb2a36b60e7d8f91c11c1c620c"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/enemy-repairs-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/enemy-repairs-stage6.png",
-      "sha": "5eec934ef75d073fe65d8cb38c12cb5647ea7db4"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/prince-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/prince-stage2.png",
-      "sha": "c34890d1294c26f835191001016a07dc5ebf6f05"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-shrine-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-shrine-stage7.png",
-      "sha": "65f4ac66de840fd501d662743ee6100038b502ae"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-courtyard-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-courtyard-stage7.png",
-      "sha": "3a08f9574b6a12ce971adcbb808056a46ec29a4a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/brute-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/brute-stage6.png",
-      "sha": "962c43ebc4ed0f62a81a702d578f50a6433a3f49"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/baozi-stage9.png",
-      "dest": "vendor/journey/public/assets/journey/baozi-stage9.png",
-      "sha": "2332fbf977445da91183682474cc4e7f3f219eb7"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/manifest.json",
-      "dest": "vendor/journey/public/assets/journey/manifest.json",
-      "sha": "e889f64295c791f5e471ce6aacb83b82c051283e"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/stage4-repair-manifest.json",
-      "dest": "vendor/journey/public/assets/journey/stage4-repair-manifest.json",
-      "sha": "84a2a706abdc7f484f10c67c773693de90198287"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-cave-stage7.webp",
-      "dest": "vendor/journey/public/assets/journey/environment-cave-stage7.webp",
-      "sha": "05f689c33b336d735be915a4b9bff5b5260c43fe"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/crate-stage9.png",
-      "dest": "vendor/journey/public/assets/journey/crate-stage9.png",
-      "sha": "128399547d9b30a4f2080c28f75ef8882ad904ff"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/README.md",
-      "dest": "vendor/journey/public/assets/journey/README.md",
-      "sha": "9819454a66d4ccb958c7b24bd9a85d3c6b3c71ea"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/elixir-stage9.png",
-      "dest": "vendor/journey/public/assets/journey/elixir-stage9.png",
-      "sha": "c898d65a023b6feec9b5099511236a4ace335920"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/nezha-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/nezha-stage6.png",
-      "sha": "241239a6a996578f0e0c0b6bd352a4a400d85171"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wujing-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/wujing-stage2.png",
-      "sha": "8d77f5989c23927d71fc38c6dc69cbb09771343d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/raider-stage1.png",
-      "dest": "vendor/journey/public/assets/journey/raider-stage1.png",
-      "sha": "d75091044079871313cea8d146e537268420169d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/bajie-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/bajie-stage2.png",
-      "sha": "220b80819c196242208de4694d1e578fdc472010"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wujing-repair-stage4.png",
-      "dest": "vendor/journey/public/assets/journey/wujing-repair-stage4.png",
-      "sha": "1636ea381f6038660551b82fb7ca5f693313b48b"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/prince-repair-stage4.png",
-      "dest": "vendor/journey/public/assets/journey/prince-repair-stage4.png",
-      "sha": "4c016503a62934ecf0135626c3bacbcdfbd967b5"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-mountain-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-mountain-stage7.png",
-      "sha": "bc79ce6feeb5d3e21c32c8882ae0c7989fc225d3"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-cave-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-cave-stage7.png",
-      "sha": "2478fae0e7878042f45d6a6badfec7d8bed38c71"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wukong-stage1.png",
-      "dest": "vendor/journey/public/assets/journey/wukong-stage1.png",
-      "sha": "6ffe76e8c8cd107a75087373873da3299d6c5c2f"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/leaper-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/leaper-stage6.png",
-      "sha": "d8002f9f9a164f88648b878a92d3a21a525eef4e"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/tang-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/tang-stage2.png",
-      "sha": "50022bfdd5b651315638eb25b434fd366695857d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-shrine-stage7.webp",
-      "dest": "vendor/journey/public/assets/journey/environment-shrine-stage7.webp",
-      "sha": "555896ce96e42c50c3a294777cd01264c732afb6"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/cast-concept.png",
-      "dest": "vendor/journey/public/assets/journey/cast-concept.png",
-      "sha": "ce2ad4711a015e3624c13112b2c1a32c79d050eb"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/bajie-repair-stage3.png",
-      "dest": "vendor/journey/public/assets/journey/bajie-repair-stage3.png",
-      "sha": "9a8486d23e404d587d0adb8822a1ca3e10250bee"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/prince-charge-stage3.png",
-      "dest": "vendor/journey/public/assets/journey/prince-charge-stage3.png",
-      "sha": "bdef328936f276df07fedfecb284829c66c15763"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/HERO-ART-PROVENANCE.md",
-      "dest": "vendor/journey/public/assets/journey/HERO-ART-PROVENANCE.md",
-      "sha": "5d3f638c99642a5c30b9ba02e13ca500ee09b533"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/shield-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/shield-stage6.png",
-      "sha": "d53eeb1d333aa06ae48a0bf5c2a8568d5a61dc2d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/caster-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/caster-stage6.png",
-      "sha": "7ea3bad20dc7f61d0d1b6b087c80c14b78edbbe9"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/ENVIRONMENT-ART-PROVENANCE.md",
-      "dest": "vendor/journey/public/assets/journey/ENVIRONMENT-ART-PROVENANCE.md",
-      "sha": "912e3cf18ba2d3c1914d8880c64a66e370d3eaa5"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/frame-bounds-audit.json",
-      "dest": "vendor/journey/public/assets/journey/frame-bounds-audit.json",
-      "sha": "5f96d4e6c239d884bee0029f2278db79b3fd73e5"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-mountain-stage7.webp",
-      "dest": "vendor/journey/public/assets/journey/environment-mountain-stage7.webp",
-      "sha": "449257702521010253760008f5031638ba302c14"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wukong-repair-stage4.png",
-      "dest": "vendor/journey/public/assets/journey/wukong-repair-stage4.png",
-      "sha": "66b007215be95b8a551c28ddc942606a9c824d12"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/practice.js",
-      "dest": "vendor/journey/public/games/journey/practice.js",
-      "sha": "ed22e21a9ea1a9ef8843c097803ecc007d9d5e54"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/special-effects.js",
-      "dest": "vendor/journey/public/games/journey/special-effects.js",
-      "sha": "0406746f846cb6b69e27e3d815dece0cfed03913"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/input.js",
-      "dest": "vendor/journey/public/games/journey/input.js",
-      "sha": "fce13d56c2c7ebf56f98183a3eac37f12ab43e16"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/math-input.js",
-      "dest": "vendor/journey/public/games/journey/math-input.js",
-      "sha": "4ce97cff5c063b6ad00b71933b54a0b94ada37ab"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/frame-repairs.js",
-      "dest": "vendor/journey/public/games/journey/frame-repairs.js",
-      "sha": "2cffa7995d1f66f050eba427db39f0e60832214c"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/hero-art.js",
-      "dest": "vendor/journey/public/games/journey/hero-art.js",
-      "sha": "75b8627a9120294836f4c0d7a27d4309e8f44aaa"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/environment-art.js",
-      "dest": "vendor/journey/public/games/journey/environment-art.js",
-      "sha": "6935275db9ed9b1f481633837b5893a7b4c50b8f"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/journey.css",
-      "dest": "vendor/journey/public/games/journey/journey.css",
-      "sha": "64a86f53a553bd1662100f2d386cd32a5f371627"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/config.js",
-      "dest": "vendor/journey/public/games/journey/config.js",
-      "sha": "bbc8df913abff6bdf1db91e526dd1a96e4771c3b"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/renderer.js",
-      "dest": "vendor/journey/public/games/journey/renderer.js",
-      "sha": "770cd2cb24e1051a5b6fb5ec292b2757442c9539"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/story.js",
-      "dest": "vendor/journey/public/games/journey/story.js",
-      "sha": "2b1dfffd1564a936745e8f69298671fbd87529e1"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/enemy-art.js",
-      "dest": "vendor/journey/public/games/journey/enemy-art.js",
-      "sha": "fa9477a89a551bc6ce5f0ced4b0a5f4bd907e30a"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/frame-bounds.js",
-      "dest": "vendor/journey/public/games/journey/frame-bounds.js",
-      "sha": "0968b22fccee280d71f038a07846ca174051958d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/audio.js",
-      "dest": "vendor/journey/public/games/journey/audio.js",
-      "sha": "4cb0e12979c3a5883c1dc6ea33aac8eee39cdd4c"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/games/journey/host.js",
-      "dest": "vendor/journey/public/games/journey/host.js",
-      "sha": "f2dcf9f1a324df2ac057fe647df89b51babf7cb1"
     }
   ],
   "vault7": {
