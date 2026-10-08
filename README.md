@@ -4,9 +4,11 @@
 
 Teacher-controlled classroom games with shared mathematics practice and individual student assignments.
 
-**Current candidate: v0.2.1-rc.1** — seven integrated games, canonical MATH-ENGINE practice, and single-use classroom passwords. Saved source is not a hosted deployment. Physical iPad and school-network checks remain pending. Math Civ retains built-in mathematics and has no additional Arcade gates; Journey to the West is excluded.
+**Current candidate: v0.3.0-rc.1** — Cloudflare Worker + Durable Object, seven integrated games, canonical MATH-ENGINE practice, and single-use classroom passwords. Saved source is not a hosted deployment. Physical iPad and school-network checks remain pending. Math Civ retains built-in mathematics and has no additional Arcade gates; Journey to the West is excluded.
 
-Run locally with Node 24: `npm run build`, set `ARCADE_TEACHER_PASSWORD` (12+ characters), then `npm start`. Open `http://localhost:3000/?role=teacher`. See [running and hosting instructions](docs/RUNNING.md) and [current scope](docs/change-specs/v0.2.1.md).
+Run locally with Node 24: `npm run build`, set `ARCADE_TEACHER_PASSWORD` (12+ characters), then `npm start`. Open `http://localhost:3000/?role=teacher`. See [running and hosting instructions](docs/RUNNING.md) and [current scope](docs/change-specs/v0.3.0.md).
+
+Production hosting uses the [Cloudflare deployment guide](docs/CLOUDFLARE.md). Node remains a local/reference host.
 
 ## Classroom workflow
 

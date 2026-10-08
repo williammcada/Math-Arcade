@@ -34,3 +34,11 @@ jobs:
         with:
           name: browser-evidence-${{ github.sha }}
           path: test-results
+
+      - name: Preserve exact tested Worker and assets
+        run: node scripts/package-worker.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: worker-candidate-${{ github.sha }}
+          path: build/math-arcade-*.tar.gz
+          retention-days: 90

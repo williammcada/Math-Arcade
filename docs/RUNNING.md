@@ -1,3 +1,7 @@
+# Production hosting update — v0.3.0-rc.1
+
+Cloudflare Workers and Durable Objects are the approved hosting direction. Follow [CLOUDFLARE.md](CLOUDFLARE.md); Render/Node deployment material below is historical. Node instructions remain useful for local/reference testing.
+
 # Run the Math Arcade pilot
 
 Requires Node 24. Build with `npm run build`. Set `ARCADE_TEACHER_PASSWORD` to a private password of at least 12 characters, then run `npm start`. Default address is http://localhost:3000; teacher desk is /?role=teacher. For a network pilot use the host's reachable HTTPS URL, not localhost, on the iPads. Secure browser APIs and production cookies require HTTPS.

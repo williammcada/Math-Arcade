@@ -10,7 +10,7 @@ import {freshMath} from '../build/math/shared-math/engine.js';
 test('Cloudflare runtime: atomic joins, seven games, isolation, persistence and browser delivery',{timeout:180000},async t=>{
  const dir=mkdtempSync(tmpdir()+'/arcade-worker-');let child,base,log='';
  async function start(){
-  child=spawn(process.execPath,['node_modules/wrangler/bin/wrangler.js','dev','--local','--port','8797','--persist-to',dir,'--binding','ARCADE_TEACHER_PASSWORD:test-password-only'],{env:{...process.env,WRANGLER_SEND_METRICS:'false'},stdio:['ignore','pipe','pipe']});
+  child=spawn(process.execPath,['node_modules/wrangler/bin/wrangler.js','dev','build/worker/worker.js','--no-bundle','--local','--port','8797','--persist-to',dir,'--var','ARCADE_TEACHER_PASSWORD:test-password-only'],{env:{...process.env,WRANGLER_SEND_METRICS:'false'},stdio:['ignore','pipe','pipe']});
   child.stdout.on('data',b=>{log+=b;});child.stderr.on('data',b=>{log+=b;});base='http://localhost:8797';
   for(let i=0;i<150;i++){if(child.exitCode!==null)throw Error(log);try{if((await fetch(base+'/health')).ok)return;}catch{}await delay(200);}
   throw Error('Worker did not start: '+log);
