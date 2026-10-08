@@ -57,8 +57,17 @@ test('Cloudflare runtime: atomic joins, seven games, isolation, persistence and 
   const round=(await studentCall('launch',{})).activity.round;
   assert.equal((await studentCall('launch',{})).activity.round.id,round.id);
   await studentCall('sync',{roundId:round.id,seq:1,action:'resume',keys:{right:true}});
+  if(game==='coastal'){
+   await delay(100);
+   const before=(await studentCall('sync',{roundId:round.id,seq:2,keys:{right:true}})).activity.round;
+   assert.ok(before.snapshot.tick>0);
+   await stop();await start();
+   const after=(await studentCall('student')).activity.round;
+   assert.equal(after.id,before.id);assert.equal(after.running,false);assert.deepEqual(after.snapshot,before.snapshot);
+   assert.deepEqual((await teacherCall('export')).classes[0].students[0].activity.round.input,{});
+  }
   await teacherCall('session',{classId:cid,action:'pause'});
-  await studentCall('sync',{roundId:round.id,seq:2,action:'resume'},409);
+  await studentCall('sync',{roundId:round.id,seq:10,action:'resume'},409);
   await teacherCall('session',{classId:cid,action:'resume'});
   await studentCall('leave',{});
  }

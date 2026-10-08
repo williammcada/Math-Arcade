@@ -79,7 +79,12 @@ export default {
     if(path.startsWith('/api/')||result.status!==204)return secure(result);
    }
    if(!['GET','HEAD'].includes(request.method))return secure(json(405,{error:'Method not allowed.'}));
-   return secure(await env.ASSETS.fetch(request),campaign.test(path));
+   // html_handling:none prevents asset redirects from bypassing protected paths.
+   // Resolve only the app root and authorized campaign directory entry points here.
+   const assetURL=new URL(request.url);
+   if(path==='/')assetURL.pathname='/index.html';
+   else if(/^\/(chrono|olivia|math-civ)\/$/.test(path))assetURL.pathname=path+'index.html';
+   return secure(await env.ASSETS.fetch(new Request(assetURL,request)),campaign.test(path));
   }catch(e){return secure(json(e.status||503,{error:e.status?e.message:'The classroom service is unavailable. Please try again.'}));}
  }
 };
