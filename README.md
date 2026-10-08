@@ -4,9 +4,9 @@
 
 Teacher-controlled classroom games with shared mathematics practice and individual student assignments.
 
-**Current version: v0.2.0** — six integrated games, canonical MATH-ENGINE practice, and single-use classroom passwords. Saved source is not a hosted deployment. Physical iPad and school-network checks remain pending. Math Civ integration remains pending; Journey to the West is excluded.
+**Current candidate: v0.2.1-rc.1** — seven integrated games, canonical MATH-ENGINE practice, and single-use classroom passwords. Saved source is not a hosted deployment. Physical iPad and school-network checks remain pending. Math Civ retains built-in mathematics and has no additional Arcade gates; Journey to the West is excluded.
 
-Run locally with Node 24: `npm run build`, set `ARCADE_TEACHER_PASSWORD` (12+ characters), then `npm start`. Open `http://localhost:3000/?role=teacher`. See [running and hosting instructions](docs/RUNNING.md) and [current scope](docs/checkpoints/alpha.3.md).
+Run locally with Node 24: `npm run build`, set `ARCADE_TEACHER_PASSWORD` (12+ characters), then `npm start`. Open `http://localhost:3000/?role=teacher`. See [running and hosting instructions](docs/RUNNING.md) and [current scope](docs/change-specs/v0.2.1.md).
 
 ## Classroom workflow
 
@@ -44,6 +44,8 @@ Preserve source checkpoints and verify the actual hosted application and physica
 
 ## Canonical updates
 
-The classroom question bank comes directly from the unchanged canonical MATH-ENGINE bundle (312 skills at this checkpoint). Geometry rendering and answer keys use that provider too. Game snapshots come from mathquest, CHRONO-CIRCUIT and OLIVIA-MAGIC-BRACELET-QUEST; source commits and exact blob hashes are recorded in `vendor/manifest.json`. Upstream sources are never edited in this repository.
+The classroom question bank comes directly from the unchanged canonical MATH-ENGINE bundle (312 skills at this checkpoint). Geometry rendering and answer keys use that provider too. Game snapshots come from mathquest, CHRONO-CIRCUIT , OLIVIA-MAGIC-BRACELET-QUEST and Math-Civ; source commits and exact blob hashes are recorded in `vendor/manifest.json`. Upstream sources are never edited in this repository.
 
-GitHub Actions checks upstream hourly, or on manual/repository-dispatch request. It promotes updated snapshots only after the build, server tests and six browser suites pass. Failed candidates leave main unchanged and appear as failed Actions runs. GitHub may delay scheduled runs; this is checked periodic synchronization, not instantaneous delivery. New games require an explicit adapter; the workflow updates the six integrated games. Deploy from a passing commit between classroom sessions. `npm run sync:upstream` refreshes local snapshots; run the same checks before committing.
+GitHub Actions checks upstream hourly, or on manual/repository-dispatch request. It promotes updated snapshots only after the build, server tests and seven browser suites pass. Failed candidates leave main unchanged and appear as failed Actions runs. GitHub may delay scheduled runs; this is checked periodic synchronization, not instantaneous delivery. New games require an explicit adapter; the workflow updates the seven integrated games. Deploy from a passing commit between classroom sessions. `npm run sync:upstream` refreshes local snapshots; run the same checks before committing.
+
+The candidate-verification workflow builds the complete committed snapshots and runs regression tests without requiring upstream repository access. Its results are distinct from the hourly synchronization workflow, which still needs successful authenticated access to all private canonical repositories. See [Math Civ checkpoint](docs/checkpoints/v0.2.1.md) for verification limits.

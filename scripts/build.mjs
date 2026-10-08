@@ -15,7 +15,7 @@ writeFileSync(root+'/build/math/shared-math/engine.js',readFileSync(root+'/vendo
 writeFileSync(root+'/build/math/shared-math/catalog.js',"export {catalog} from './engine.js';\n");
 cpSync(root+'/build/math/shared-math/engine.js',root+'/build/math/math-format.js');
 cpSync(root+'/vendor/coastal/public',root+'/build/coastal',{recursive:true});
-writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.2.0',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia,mathCiv:manifest['math-civ']},vendorFiles:manifest.files.length},null,2));
+writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.2.1-rc.1',sources:{math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia,mathCiv:manifest['math-civ']},vendorFiles:manifest.files.length},null,2));
 
 // Derive presentation-only exports from the pinned runtime; never load its old network/storage host.
 cpSync(root+'/vendor/vault7/public',root+'/build/vault7',{recursive:true});

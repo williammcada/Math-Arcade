@@ -1,15 +1,15 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.2.0
+**Brief version:** 0.2.1-rc.1
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
 **Canonical repository:** `williammcada/Math-Arcade`
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
-**Handbook baseline:** `c50115ba1fea9cb552f3ad1415e670a219118b56`, selected for this task.
+**Handbook baseline:** `8fc5e3b6cd163278dd618081333f2264bf392db6`, consulted for the Math Civ continuation.
 
 ## Current checkpoint — 2026-10-08
 
-v0.2.0 implements six games through canonical snapshots, 312-skill MATH-ENGINE practice, QR plus single-use four-letter passwords (45 seconds), and checked hourly upstream synchronization. Math Civ remains pending; Journey remains excluded. No live deployment or physical-device verification is claimed. The current contract is [v0.2.0](change-specs/v0.2.0.md); older checkpoint descriptions below are historical.
+v0.2.1-rc.1 integrates seven games through canonical snapshots, 312-skill MATH-ENGINE practice, QR plus single-use four-letter passwords (45 seconds), and checked hourly upstream synchronization. Math Civ uses its own mathematics without extra gates; Journey remains excluded. No live deployment or physical-device verification is claimed. The current integration contract is [v0.2.1](change-specs/v0.2.1.md), extending [v0.2.0](change-specs/v0.2.0.md); older checkpoint descriptions below are historical.
 
 ## Purpose and audience
 
@@ -50,7 +50,7 @@ Provide deletion for individual records, complete classes/sessions/campaigns whe
 
 ## Selected handbook rules
 
-Apply U-01–U-08 within this project; they are seeded handbook rules, not newly ratified global rules. Apply approved U-09 deletion and U-10 held-input/native-menu/viewport requirements. Select S-02, S-03 and S-04; apply approved S-03-M to shared mathematics. Use S-03-A's five-minute action default for new or explicitly retimed action rounds, while recording preserved existing round limits per imported game. Do not impose five minutes on Math Civ campaigns or whole Chrono/Olivia adventures.
+Apply U-01–U-08 within this project; they are seeded handbook rules, not newly ratified global rules. Apply approved U-09 deletion, U-10 held-input/native-menu/viewport requirements and U-11 story/instructions separation. Select S-02, S-03 and S-04; apply approved S-03-M to shared mathematics. Use S-03-A's five-minute action default for new or explicitly retimed action rounds, while recording preserved existing round limits per imported game. Do not impose five minutes on Math Civ campaigns or whole Chrono/Olivia adventures.
 
 S-01 external AI import and S-05 applied-project rules are not selected. No handbook amendment is made by this package.
 
@@ -84,4 +84,4 @@ See [city mission scope](change-specs/v0.1.0-alpha.3.md). Import Last Bus Out wi
 
 ## Current continuation
 
-Journey to the West is excluded. Continue with Chrono Circuit, Olivia and Math Civ after the [Ironbreak checkpoint](checkpoints/alpha.4.md). Native gates stay in Chrono/Olivia; Math Civ receives no added gates.
+Math Civ is integrated in the v0.2.1 candidate. See [checkpoint and verification limits](checkpoints/v0.2.1.md). Journey remains excluded. Complete hosted candidate verification, establish a successful upstream-sync run, deploy the backend, then perform physical-device and school-network checks. Historical intake notes above describe earlier checkpoints.

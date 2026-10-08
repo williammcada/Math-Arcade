@@ -13,6 +13,9 @@ export function buildCiv(root){
  const replace=(from,to)=>{if(code.split(from).length!==2)throw Error('Math Civ adapter boundary changed: '+from.slice(0,90));code=code.replace(from,to);};
  replace('new br(xr).start()', '(window.arcadeCiv=new br(xr),installArcadeCiv(window.arcadeCiv),window.arcadeCiv.start())');
  replace('Wn();var xr=',readFileSync(root+'/adapters/math-civ.js','utf8')+'\nWn();var xr=');
+ replace('Compatibility saves use local storage in this viewer. Export backups; files moved to another app may use different storage. Existing IndexedDB saves remain untouched.', 'Classroom edition: saves are linked to your student profile. Use Save & back to arcade before leaving.');
+ replace('LOCAL EDITION','BUILT-IN MATH · CLASSROOM EDITION');
+ replace('LOCAL CAMPAIGNS','YOUR CLASSROOM CAMPAIGNS');
  // Resume schedules a fresh enemy decision; an interrupted timer cannot mutate state.
  replace('this.aiTimer=setTimeout(()=>this.dispatch({type:`AI_TURN`})','this.aiTimer=setTimeout(()=>{if(!window.arcadePaused)this.dispatch({type:`AI_TURN`})}') ;
  // Deleting a slot also removes its migration backups, not another slot's records.
@@ -23,6 +26,9 @@ export function buildCiv(root){
  replace('${Q(`Enter the Council`,`advance`,!1,`primary`)}<details>','${Q(`Enter the Council`,`advance`,!1,`primary`)}</section><details>');
  replace('<p>${X(n.drama)}</p><p>${X(n.goal)}</p>','<section class="arcade-story"><h3>Story</h3><p>${X(n.drama)}</p></section><section class="arcade-directions"><h3>Your task</h3><p>${X(n.goal)}</p>');
  replace('${Q(`Choose Policy`,`advance`,!1,`primary`)}</div></div>','${Q(`Choose Policy`,`advance`,!1,`primary`)}</section></div></div>');
+ replace('<p>${X(r.why)}</p><h3>What you can achieve</h3>','<section class="arcade-story"><h3>Story</h3><p>${X(r.why)}</p></section><section class="arcade-directions"><h3>Your task · What you can achieve</h3>');
+ replace('${Q(`Plan this order`,`open:`+e,!Yt(t,e),`primary`)}${Q(`Back`,`close`)}</div>','${Q(`Plan this order`,`open:`+e,!Yt(t,e),`primary`)}${Q(`Back`,`close`)}</div></section>');
+ replace('<p>“Not quite, my lord. Let us check the figures.”</p>','<section class="arcade-story"><h3>Adviser</h3><p>“Not quite, my lord. Let us check the figures.”</p></section><h3>Your task</h3>');
  replace('<p>${X(g(t.openingStringId))}</p>','<section class="arcade-story"><h3>Story</h3><p>${X(g(t.openingStringId))}</p>');
  replace('${Q(`Campaign Report`,`advance`,!1,`primary`)}','</section><section class="arcade-directions"><h3>Next step</h3>${Q(`Campaign Report`,`advance`,!1,`primary`)}</section>');
  html=html.replace(/<meta http-equiv="Content-Security-Policy"[^>]*>/,'').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
