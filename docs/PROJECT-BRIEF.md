@@ -85,3 +85,7 @@ See [city mission scope](change-specs/v0.1.0-alpha.3.md). Import Last Bus Out wi
 ## Current continuation
 
 Math Civ is integrated in the v0.2.1 candidate. See [checkpoint and verification limits](checkpoints/v0.2.1.md). Journey remains excluded. Complete hosted candidate verification, establish a successful upstream-sync run, deploy the backend, then perform physical-device and school-network checks. Historical intake notes above describe earlier checkpoints.
+
+## Deployment continuation — 8 October 2026
+
+Owner permits proceeding on assumed iPad/network compatibility only if architecture matches MathQuest. Inspection found Arcade's Node/SQLite server differs from MathQuest's Worker/Durable Object/relay architecture. Hosting direction is unresolved; see [source comparison and proposed choices](change-specs/deployment-architecture-2026-10-08.md). No migration/deployment or physical-test pass is claimed. Current handbook consulted at `fd4330863f4cc0812180fbf1de122970a42c7885`.
