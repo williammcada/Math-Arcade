@@ -1,7 +1,7 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "1f55f210da955db46e95333f11c8e796e5ccb2f6",
+    "commit": "1b127905daf63548b8f288e483b1617785619179",
     "baseline": "baselines/megaman-v0.7"
   },
   "coastal": {
