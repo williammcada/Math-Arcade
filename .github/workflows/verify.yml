@@ -27,6 +27,7 @@ jobs:
         run: |
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           mkdir -p test-results
+          for attempt in 1 2 3 4 5 6 7 8; do node test/ironbreak-browser.cjs; done
           for test in test/*browser.cjs; do node "$test"; done
           npm run test:worker
       - uses: actions/upload-artifact@v4
