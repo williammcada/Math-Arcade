@@ -1,5 +1,8 @@
 name: Sync canonical games and math
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sync-canonical.yml']
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
