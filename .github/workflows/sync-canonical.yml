@@ -1,5 +1,8 @@
 name: Sync canonical games and math
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sync-canonical.yml']
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
@@ -20,18 +23,33 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-      - run: npm ci
       - run: node scripts/sync-upstream.mjs
-      - run: npm run build && npm run check && npm test && npm run check:worker
-      - run: npm install --no-save --package-lock=false playwright@1.62.1
-      - run: npx playwright install --with-deps chromium
+      - name: Detect source changes
+        id: sources
+        run: |
+          if [ -n "$(git status --porcelain -- vendor)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Canonical snapshots are unchanged; no promotion is needed." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - run: npm ci
+        if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+      - if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm run build && npm run check && npm test && npm run check:worker
+      - if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm install --no-save --package-lock=false playwright@1.62.1
+      - if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npx playwright install --with-deps chromium
       - name: Verify classroom and native game adapters
+        if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           mkdir -p test-results
           for test in test/*browser.cjs; do node "$test"; done
           npm run test:worker
       - name: Promote verified source snapshots
+        if: steps.sources.outputs.changed == 'true'
         run: |
           git add vendor
           if git diff --cached --quiet; then exit 0; fi
