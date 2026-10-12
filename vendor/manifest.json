@@ -1,12 +1,12 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "4bcff91ead79967f08635fb86d62b637c7800dc1",
+    "commit": "4fb2db45c1c7ee6cfa04b369c6911bc3cf7f9081",
     "baseline": "baselines/megaman-v0.7"
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "4fcc7b717af0356671e67314bb180a55a7656460"
+    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
   },
   "files": [
     {
@@ -1067,6 +1067,12 @@
     },
     {
       "repo": "mathquest",
+      "path": "public/assets/false-haven/machinery-v1.png",
+      "dest": "vendor/nightfall/public/assets/false-haven/machinery-v1.png",
+      "sha": "667118539e6205edb675f99849eb91aed165459e"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/assets/false-haven/market-v3.webp",
       "dest": "vendor/nightfall/public/assets/false-haven/market-v3.webp",
       "sha": "e1aaa0f2e1fa1ae725312451eb91c3afd78793e9"
@@ -1214,6 +1220,30 @@
       "path": "public/assets/nightfall/radio.png",
       "dest": "vendor/nightfall/public/assets/nightfall/radio.png",
       "sha": "1bb714fa85c72736a5868c607f98440ad611f717"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/shared/decals-v1.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/decals-v1.png",
+      "sha": "57d777645b7db0c04db9c1c03731c65bb8b48e22"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/shared/furniture-v1.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/furniture-v1.png",
+      "sha": "ec74c562e5d22c0ea260c6cbde163a7fa3159964"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/shared/interactables-v1.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/interactables-v1.png",
+      "sha": "e1e6d27d3134ce487a7de124c41866d25bec2880"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/nightfall/shared/roofs-v1.png",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/roofs-v1.png",
+      "sha": "7b1aaddb506ea923f5a2f3f9d89d828bab405fa5"
     },
     {
       "repo": "mathquest",
@@ -2046,15 +2076,15 @@
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "4fcc7b717af0356671e67314bb180a55a7656460"
+    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "4fcc7b717af0356671e67314bb180a55a7656460"
+    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "4fcc7b717af0356671e67314bb180a55a7656460"
+    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2070,10 +2100,10 @@
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "4fcc7b717af0356671e67314bb180a55a7656460"
+    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "4fcc7b717af0356671e67314bb180a55a7656460"
+    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
   }
 }
