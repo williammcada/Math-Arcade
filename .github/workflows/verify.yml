@@ -27,8 +27,13 @@ jobs:
         run: |
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           mkdir -p test-results
-          for test in test/*browser.cjs; do node "$test"; done
-          npm run test:worker
+          status=0
+          for test in test/*browser.cjs; do
+            if ! node "$test" > out.log 2>&1; then status=1; echo "::error title=$test::$(tail -c 1500 out.log | tr '\n' ' ' | sed 's/%/%25/g')"; fi
+            tail -3 out.log
+          done
+          if ! npm run test:worker > w.log 2>&1; then status=1; echo "::error title=test:worker::$(tail -c 1500 w.log | tr '\n' ' ')"; fi
+          exit $status
       - uses: actions/upload-artifact@v4
         if: always()
         with:
