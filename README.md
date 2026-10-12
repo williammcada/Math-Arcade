@@ -1,4 +1,4 @@
-# Math Arcade v0.5.0-rc.2
+# Math Arcade v0.5.0-rc.3
 
 **A WILLIAM MCADA PRODUCT**
 
@@ -8,7 +8,7 @@ Release candidate fixing the erratic avatar movement in the action games and the
 - **No more 1.5-second freezes.** A round stops for a lost connection only after 10 seconds without contact.
 - **Consistent gates.** Olivia's Magic Bracelet Quest and Chrono Circuit gates now use the standard Math Arcade gate layout, keypad and fraction display.
 
-Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployment and physical iPad/school-network checks are pending.
+Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployed to Cloudflare 13 Oct 2026 (run 38314133992); physical iPad/school-network check pending.
 
 ## v0.4.0 summary
 

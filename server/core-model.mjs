@@ -3,7 +3,7 @@ import {randomUUID,randomBytes,createHash,timingSafeEqual,scryptSync} from 'node
 import {catalog,Practice,freshMath,configError,generate,find,courses,version as ENGINE_VERSION,contentHash as ENGINE_HASH} from '../build/math/engine.js';
 import {installCampaigns} from './campaigns.mjs';
 import * as rounds from './rounds.mjs';
-export const VERSION='0.5.0-rc.2';
+export const VERSION='0.5.0-rc.3';
 const escHTML=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]);
 // Teacher catalog rows, built once from the Math Engine. Sent through /api/catalog, not on every poll.
 const CATALOG_ROWS=catalog.map(e=>({id:e.id,name:e.name,grade:e.grade,standard:e.standard||'',layer:e.layer,course:e.course||null,bankId:e.bankId||null,lesson:e.lessonLabel||null,order:e.lessonOrder??null}));
