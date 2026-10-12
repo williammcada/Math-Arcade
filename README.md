@@ -8,7 +8,7 @@ Release candidate fixing the erratic avatar movement in the action games and the
 - **No more 1.5-second freezes.** A round stops for a lost connection only after 10 seconds without contact.
 - **Consistent gates.** Olivia's Magic Bracelet Quest and Chrono Circuit gates now use the standard Math Arcade gate layout, keypad and fraction display.
 
-Physical iPad and school-network checks are pending until the owner plays the deployed version.
+Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployment and physical iPad/school-network checks are pending.
 
 ## v0.4.0 summary
 
