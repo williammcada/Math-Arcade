@@ -113,3 +113,5 @@ Exact candidate `b3693b9085b8337bd8f7e8a3d667049020592348` passed full verificat
 ## v0.4.1 smooth play and gate consistency — 12 October 2026
 
 Owner playtest: the action games were unplayable in Math Arcade (avatars bouncing) while playing correctly in MathQuest Dev mode, and the OMBQ gate keypad looked inconsistent. The vendored games equal MathQuest's current main (`cd35fd9`); the cause was Arcade's host overwriting the device's game state with a lagging server simulation on every reply. Owner approved the MathQuest model (device runs the game; server stores snapshots within an envelope and keeps gates, rounds, teacher control, saves and time limits) and the standard gate for both OMBQ and Chrono. Accessible/guided modes remain server-stepped. Contract: [v0.4.1](change-specs/v0.4.1.md). Handbook consulted at `fd43308`. Physical iPad and school-network checks remain Not run until the owner plays the deployed build.
+
+Deployed 13 October 2026: verified candidate `e454e9c` via deploy run 38314133992; live `/health` confirms `0.4.1-rc.1`. Physical iPad/school-network play not yet reported. [Evidence](checkpoints/v0.4.1.md).
