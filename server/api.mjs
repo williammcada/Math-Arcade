@@ -2,6 +2,7 @@
 export function dispatch(model,{method,path,url,body,cookies}){
  let data;
     if(method==='GET'&&path==='/api/teacher')data=model.tx(s=>model.teacherView(s,cookies.teacher));
+    else if(method==='GET'&&path==='/api/catalog')data=model.tx(s=>model.catalogView(s,cookies.teacher));
     else if(method==='GET'&&path==='/api/student')data=model.tx(s=>model.studentView(s,cookies.student));
     else if(method==='GET'&&path==='/api/roster')data=model.tx(s=>model.lookup(s,url.searchParams.get('code')));
     else if(method==='GET'&&path==='/api/export')data=model.tx(s=>model.export(s,cookies.teacher));

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {Model,games} from '../server/model.mjs';
-import {freshMath} from '../build/math/shared-math/engine.js';
+import {freshMath} from '../build/math/engine.js';
 function fixture(t){const dir=mkdtempSync(tmpdir()+'/arcade-');let now=100000;let m=new Model(dir+'/db.sqlite','test-password-only',{now:()=>now});t.after(()=>{m.close();rmSync(dir,{recursive:true,force:true});});const call=(method,...args)=>m.tx(s=>{if(method==='join'&&args[0].password===undefined){const c=s.classes.find(c=>c.session?.code===args[0].code);args[0]={...args[0],password:m.newPassword(s,teacher,c.id).password};}return m[method](s,...args);});const teacher=call('login','test-password-only'),cid=call('classCreate',teacher,{name:'Period 1'});call('roster',teacher,cid,['Tim','Bill']);call('session',teacher,cid,'open');const c=call('teacherView',teacher).classes[0];const students=c.students.map(p=>{const token=call('join',{code:c.session.code,studentId:p.id});const claim=call('teacherView',teacher).classes[0].claims.find(x=>x.name===p.name);call('approve',teacher,claim.id,true);return {id:p.id,token};});return {call,teacher,cid,students,read:fn=>m.tx(fn),advance:ms=>now+=ms,restart:()=>{m.close();m=new Model(dir+'/db.sqlite','test-password-only',{now:()=>now});}};}
 const config=(skill='S01',count=2)=>({...freshMath(skill).config,count});
 function answer(f,student,commandId=crypto.randomUUID()){const item=f.read(s=>s.classes[0].students.find(p=>p.id===student.id).math.gate.item);const state=f.call('studentView',student.token);return f.call('answer',student.token,{itemId:state.gate.itemId,commandId,answer:String(item.answer)});}

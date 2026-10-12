@@ -1,4 +1,4 @@
-# Math Arcade v0.4.1-rc.1
+# Math Arcade v0.5.0-rc.1
 
 **A WILLIAM MCADA PRODUCT**
 
@@ -66,7 +66,7 @@ Preserve source checkpoints and verify the actual hosted application and physica
 
 ## Canonical updates
 
-The classroom question bank comes directly from the unchanged canonical MATH-ENGINE bundle (312 skills at this checkpoint). Geometry rendering and answer keys use that provider too. Game snapshots come from mathquest, CHRONO-CIRCUIT , OLIVIA-MAGIC-BRACELET-QUEST and Math-Civ; source commits and exact blob hashes are recorded in `vendor/manifest.json`. Upstream sources are never edited in this repository.
+The classroom question bank comes directly from the unchanged MATH-ENGINE practice bundle (Math Engine 0.34.0-rc.2: 312 K–7 skills, 1,441 course items Intermediate 4 → Algebra 2, 10 extras). Questions, rendering and answer checks all come from it, server-side. Game snapshots come from mathquest, CHRONO-CIRCUIT , OLIVIA-MAGIC-BRACELET-QUEST and Math-Civ; source commits and exact blob hashes are recorded in `vendor/manifest.json`. Upstream sources are never edited in this repository.
 
 GitHub Actions checks upstream hourly, or on manual/repository-dispatch request. It promotes updated snapshots only after the build, server tests and seven browser suites pass. Failed candidates leave main unchanged and appear as failed Actions runs. GitHub may delay scheduled runs; this is checked periodic synchronization, not instantaneous delivery. New games require an explicit adapter; the workflow updates the seven integrated games. Deploy from a passing commit between classroom sessions. `npm run sync:upstream` refreshes local snapshots; run the same checks before committing.
 
