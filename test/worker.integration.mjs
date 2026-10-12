@@ -6,6 +6,7 @@ import {tmpdir} from 'node:os';
 import {once} from 'node:events';
 import {setTimeout as delay} from 'node:timers/promises';
 import {freshMath} from '../build/math/shared-math/engine.js';
+import * as rounds from '../server/rounds.mjs';
 
 test('Cloudflare runtime: atomic joins, ten games, isolation, persistence and browser delivery',{timeout:180000},async t=>{
  const dir=mkdtempSync(tmpdir()+'/arcade-worker-');let child,base,log='';
@@ -56,11 +57,13 @@ test('Cloudflare runtime: atomic joins, ten games, isolation, persistence and br
   assert.ok((await studentCall('answer',body)).result.complete);
   const round=(await studentCall('launch',{})).activity.round;
   assert.equal((await studentCall('launch',{})).activity.round.id,round.id);
-  await studentCall('sync',{roundId:round.id,seq:1,action:'resume',keys:{right:true}});
+  const resumed=(await studentCall('sync',{roundId:round.id,seq:1,action:'resume',keys:{right:true}})).activity.round;
   if(game==='coastal'){
+   // v0.4.1: the device runs the round and reports its snapshot to the Worker.
    await delay(100);
-   const before=(await studentCall('sync',{roundId:round.id,seq:2,keys:{right:true}})).activity.round;
-   assert.ok(before.snapshot.tick>0);
+   const sim=structuredClone(resumed.snapshot);for(let i=0;i<6;i++)rounds.step('coastal',sim,{right:true},1/60);
+   const before=(await studentCall('sync',{roundId:round.id,seq:2,keys:{right:true},snapshot:rounds.snapshot('coastal',sim)})).activity.round;
+   assert.ok(before.snapshot.tick>0);assert.equal(before.snapshot.tick,sim.tick);
    await stop();await start();
    const after=(await studentCall('student')).activity.round;
    assert.equal(after.id,before.id);assert.equal(after.running,false);assert.deepEqual(after.snapshot,before.snapshot);
