@@ -1,8 +1,20 @@
-# Math Arcade v0.4.0-rc.1
+# Math Arcade v0.4.1-rc.1
 
-Ten-game implementation candidate: Nightfall 1: Last Bus Out and Nightfall 2: False Haven are separate entries; Journey to the West is single player; Blackline: Last Exit is included. Existing seven games and classroom controls are retained.
+**A WILLIAM MCADA PRODUCT**
 
-Hosting: the existing Cloudflare Worker plus a separate same-origin [Netlify entry point](docs/NETLIFY.md). Netlify publishing/live verification is pending; the workers.dev URL is not the intended school-network entry. See [approved specification](docs/change-specs/v0.4.0.md).
+Release candidate fixing the erratic avatar movement in the action games and the inconsistent Olivia/Chrono gate. See the [v0.4.1 specification](docs/change-specs/v0.4.1.md).
+
+- **Smooth action play.** Vault 7, Nightfall 1 & 2, Journey (single player), Blackline, Coastal Escape and Ironbreak now run on the student's iPad, the same way MathQuest runs them. Server replies no longer overwrite a running game, which was pulling avatars backward on slower networks. The server still controls gates, rounds, teacher pause/end, saves and time limits.
+- **No more 1.5-second freezes.** A round stops for a lost connection only after 10 seconds without contact.
+- **Consistent gates.** Olivia's Magic Bracelet Quest and Chrono Circuit gates now use the standard Math Arcade gate layout, keypad and fraction display.
+
+Physical iPad and school-network checks are pending until the owner plays the deployed version.
+
+## v0.4.0 summary
+
+Ten-game implementation: Nightfall 1: Last Bus Out and Nightfall 2: False Haven are separate entries; Journey to the West is single player; Blackline: Last Exit is included. Existing seven games and classroom controls are retained.
+
+Hosting: the existing Cloudflare Worker plus a separate same-origin [Netlify entry point](docs/NETLIFY.md). See [v0.4.0 specification](docs/change-specs/v0.4.0.md).
 
 ## Earlier release documentation
 

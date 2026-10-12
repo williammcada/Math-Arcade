@@ -1,6 +1,6 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.4.0-rc.1
+**Brief version:** 0.4.1-rc.1
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
 **Canonical repository:** `williammcada/Math-Arcade`
@@ -109,3 +109,7 @@ The v0.3 Worker deployed successfully (run 37735985363) and the owner reached te
 ## v0.4 verified and Cloudflare-deployed — 8 October 2026
 
 Exact candidate `b3693b9085b8337bd8f7e8a3d667049020592348` passed full verification (run 37745905993) and deployed from its preserved package (37746208651). [Evidence and limits](checkpoints/v0.4.0.md). The ten-game update is on Cloudflare. Netlify relay configuration is implemented, but publishing remains blocked on correct-account sign-in; no accessible Netlify Arcade URL or school-network readiness is claimed.
+
+## v0.4.1 smooth play and gate consistency — 12 October 2026
+
+Owner playtest: the action games were unplayable in Math Arcade (avatars bouncing) while playing correctly in MathQuest Dev mode, and the OMBQ gate keypad looked inconsistent. The vendored games equal MathQuest's current main (`cd35fd9`); the cause was Arcade's host overwriting the device's game state with a lagging server simulation on every reply. Owner approved the MathQuest model (device runs the game; server stores snapshots within an envelope and keeps gates, rounds, teacher control, saves and time limits) and the standard gate for both OMBQ and Chrono. Accessible/guided modes remain server-stepped. Contract: [v0.4.1](change-specs/v0.4.1.md). Handbook consulted at `fd43308`. Physical iPad and school-network checks remain Not run until the owner plays the deployed build.

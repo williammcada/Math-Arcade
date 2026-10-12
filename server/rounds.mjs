@@ -65,3 +65,30 @@ export const nightfallAction=night.command;
 export const ironbreakAction=iron.command;
 
 export const extraAction=extra.command;
+
+// v0.4.1: action rounds run on the student's device, as in MathQuest. The server
+// stores the device snapshot inside a generic envelope and keeps time limits.
+const LIMITS={nightfall:7200,vault7:180,journey:180,'false-haven':300,blackline:300,coastal:300,robot:300};
+const TIMEOUTS={nightfall:'timed_out',vault7:'timed_out',journey:'timed_out','false-haven':'timed_out',blackline:'timeout',coastal:'defeat',robot:'time_window_closed'};
+export const limitFor=game=>LIMITS[game]??300;
+export const timeoutOutcome=game=>TIMEOUTS[game]||'timed_out';
+export const SNAPSHOT_GRACE_MS=5000;
+function finiteTree(v,d=0){
+ if(d>24)return false;if(v===null||typeof v==='string'||typeof v==='boolean')return true;
+ if(typeof v==='number')return Number.isFinite(v);
+ if(Array.isArray(v))return v.length<=5000&&v.every(x=>finiteTree(x,d+1));
+ if(typeof v==='object')return Object.values(v).every(x=>finiteTree(x,d+1));
+ return false;
+}
+export function acceptSnapshot(game,old,incoming){
+ if(!incoming||typeof incoming!=='object'||Array.isArray(incoming))fail('A round snapshot is required.');
+ let text;try{text=JSON.stringify(incoming);}catch{fail('Invalid round snapshot.');}
+ if(text.length>400000)fail('Round snapshot is too large.');
+ const s=JSON.parse(text);
+ if(!finiteTree(s))fail('Invalid round snapshot values.');
+ if(old.outcome)fail('This round has already ended.');
+ if((s.arcadeMode??null)!==(old.arcadeMode??null))fail('Round mode cannot change from a snapshot.');
+ if(s.outcome!==undefined&&s.outcome!==null&&typeof s.outcome!=='string')fail('Invalid round outcome.');
+ if(s.outcome===undefined)s.outcome=null;
+ return snapshot(game,s);
+}
