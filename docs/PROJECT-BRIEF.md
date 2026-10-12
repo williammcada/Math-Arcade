@@ -1,6 +1,6 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.5.0-rc.1
+**Brief version:** 0.5.0-rc.2
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
 **Canonical repository:** `williammcada/Math-Arcade`
@@ -9,7 +9,7 @@
 
 ## Current checkpoint — 2026-10-12
 
-v0.5.0-rc.1 (review branch `review/arcade-0.5.0-engine`) moves all Arcade mathematics onto Math Engine 0.34.0-rc.2 — K–7 skills plus course items Intermediate 4 → Algebra 2 — matching MathQuest 0.10.0. See [v0.5.0](change-specs/v0.5.0.md). Not released or deployed; earlier checkpoints below are historical.
+v0.5.0-rc.2 (review branch `review/arcade-0.5.0-engine`) moves all Arcade mathematics onto Math Engine 0.34.0-rc.3 — K–7 skills plus course items Intermediate 4 → Algebra 2 — matching MathQuest 0.10.0. See [v0.5.0](change-specs/v0.5.0.md). Not released or deployed; earlier checkpoints below are historical.
 
 ## Checkpoint — 2026-10-08
 
