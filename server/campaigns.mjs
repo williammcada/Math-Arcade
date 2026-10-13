@@ -1,5 +1,5 @@
 import {randomUUID as id} from 'node:crypto';
-import {Practice} from '../build/math/shared-math/engine.js';
+import {Practice} from '../build/math/engine.js';
 const fail=(message,status=409)=>{throw Object.assign(Error(message),{status});};
 const clone=structuredClone;
 export function installCampaigns(Model){

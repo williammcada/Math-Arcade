@@ -2,7 +2,7 @@
 // avatar backward. Uses the real server model, real game simulations and the
 // client's own keepLocal/outgoing logic, with 150 ms each way (300 ms round trip).
 import test from 'node:test';import assert from 'node:assert/strict';import {mkdtempSync,rmSync} from 'node:fs';import {tmpdir} from 'node:os';
-import {Model} from '../server/model.mjs';import {freshMath} from '../build/math/shared-math/engine.js';import * as rounds from '../server/rounds.mjs';
+import {Model} from '../server/model.mjs';import {freshMath} from '../build/math/engine.js';import * as rounds from '../server/rounds.mjs';
 import {outgoing,keepLocal} from '../public/round-sync.js';
 
 function classroom(t,game){

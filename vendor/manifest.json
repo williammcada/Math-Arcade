@@ -1,8 +1,9 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "4fb2db45c1c7ee6cfa04b369c6911bc3cf7f9081",
-    "baseline": "baselines/megaman-v0.7"
+    "commit": "10127fc92ca3787df392046e7bbe13a7b3fb5cf7",
+    "path": "dist",
+    "engineVersion": "0.34.0-rc.3"
   },
   "coastal": {
     "repo": "williammcada/mathquest",
@@ -422,24 +423,6 @@
       "path": "PLAY-SEKIGAHARA-0.3.1.html",
       "dest": "vendor/math-civ/PLAY-SEKIGAHARA-0.3.1.html",
       "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "baselines/megaman-v0.7/comparison.json",
-      "dest": "vendor/math/comparison.json",
-      "sha": "42154ffe34e9022060e1a9ae4b32d45bf19a5f57"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "baselines/megaman-v0.7/provenance.json",
-      "dest": "vendor/math/provenance.json",
-      "sha": "775185a993c74dea8e9127d5384233e11d8d4d1e"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "baselines/megaman-v0.7/shared-math.js",
-      "dest": "vendor/math/shared-math.js",
-      "sha": "9fe3859ff11995d241a8a5f122550c4f7f644813"
     },
     {
       "repo": "mathquest",
@@ -2072,6 +2055,18 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.js",
+      "dest": "vendor/math/math-engine-practice.js",
+      "sha": "d971cec9ab9aab12b7dd994064edcaffab9dfbb8"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.provenance.json",
+      "dest": "vendor/math/math-engine-practice.provenance.json",
+      "sha": "4944dcfebce284e5eb4e39bb0681df3fa4bde66b"
     }
   ],
   "vault7": {

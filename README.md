@@ -1,14 +1,13 @@
-# Math Arcade v0.4.1-rc.1
+# Math Arcade v0.5.0
 
 **A WILLIAM MCADA PRODUCT**
 
-Release candidate fixing the erratic avatar movement in the action games and the inconsistent Olivia/Chrono gate. See the [v0.4.1 specification](docs/change-specs/v0.4.1.md).
+Release moving all Arcade mathematics onto the Math Engine (0.34.0-rc.3, MATH-ENGINE `10127fc`), the same build MathQuest 0.10.0 uses. See the [v0.5.0 specification](docs/change-specs/v0.5.0.md) and [release notes](docs/releases/v0.5.0.md).
 
-- **Smooth action play.** Vault 7, Nightfall 1 & 2, Journey (single player), Blackline, Coastal Escape and Ironbreak now run on the student's iPad, the same way MathQuest runs them. Server replies no longer overwrite a running game, which was pulling avatars backward on slower networks. The server still controls gates, rounds, teacher pause/end, saves and time limits.
-- **No more 1.5-second freezes.** A round stops for a lost connection only after 10 seconds without contact.
-- **Consistent gates.** Olivia's Magic Bracelet Quest and Chrono Circuit gates now use the standard Math Arcade gate layout, keypad and fraction display.
+- **Kindergarten to Algebra 2.** Teachers can browse K–7 skills by grade, each course from Intermediate 4 to Algebra 2 (with lesson names, in teaching order), and extras. Existing class settings and student progress keep working.
+- **Engine-checked answers.** Questions, answer checks and rendering come from the engine on the server; gates show the keys each answer needs.
 
-Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployed to Cloudflare 13 Oct 2026 (run 38314133992); physical iPad/school-network check pending.
+Previous release, v0.4.1: smoother action play, no 1.5-second freezes, consistent Olivia/Chrono gates. Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployed to Cloudflare 13 Oct 2026 (run 38314133992); physical iPad/school-network check pending.
 
 ## v0.4.0 summary
 
@@ -66,7 +65,7 @@ Preserve source checkpoints and verify the actual hosted application and physica
 
 ## Canonical updates
 
-The classroom question bank comes directly from the unchanged canonical MATH-ENGINE bundle (312 skills at this checkpoint). Geometry rendering and answer keys use that provider too. Game snapshots come from mathquest, CHRONO-CIRCUIT , OLIVIA-MAGIC-BRACELET-QUEST and Math-Civ; source commits and exact blob hashes are recorded in `vendor/manifest.json`. Upstream sources are never edited in this repository.
+The classroom question bank comes directly from the unchanged MATH-ENGINE practice bundle (Math Engine 0.34.0-rc.3: 312 K–7 skills, 1,441 course items Intermediate 4 → Algebra 2, 10 extras). Questions, rendering and answer checks all come from it, server-side. Game snapshots come from mathquest, CHRONO-CIRCUIT , OLIVIA-MAGIC-BRACELET-QUEST and Math-Civ; source commits and exact blob hashes are recorded in `vendor/manifest.json`. Upstream sources are never edited in this repository.
 
 GitHub Actions checks upstream hourly, or on manual/repository-dispatch request. It promotes updated snapshots only after the build, server tests and seven browser suites pass. Failed candidates leave main unchanged and appear as failed Actions runs. GitHub may delay scheduled runs; this is checked periodic synchronization, not instantaneous delivery. New games require an explicit adapter; the workflow updates the seven integrated games. Deploy from a passing commit between classroom sessions. `npm run sync:upstream` refreshes local snapshots; run the same checks before committing.
 

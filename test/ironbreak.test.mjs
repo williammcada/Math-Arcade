@@ -1,5 +1,5 @@
 import {device} from './device.mjs';import test from 'node:test';import assert from 'node:assert/strict';import {mkdtempSync,rmSync} from 'node:fs';import {tmpdir} from 'node:os';
-import {Model} from '../server/model.mjs';import {freshMath} from '../build/math/shared-math/engine.js';import * as core from '../build/ironbreak/games/shooter/simulation.js';
+import {Model} from '../server/model.mjs';import {freshMath} from '../build/math/engine.js';import * as core from '../build/ironbreak/games/shooter/simulation.js';
 import {GUIDED} from '../build/ironbreak/cartridges/ironbreak.js';
 
 import * as rounds from '../server/rounds.mjs';

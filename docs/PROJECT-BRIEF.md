@@ -1,13 +1,17 @@
 # Project brief — Math Arcade
 
-**Brief version:** 0.4.1-rc.1
+**Brief version:** 0.5.0
 **Date:** 2026-10-01, Asia/Shanghai
 **Owner:** William McAda
 **Canonical repository:** `williammcada/Math-Arcade`
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
 **Handbook baseline:** `8fc5e3b6cd163278dd618081333f2264bf392db6`, consulted for the Math Civ continuation.
 
-## Current checkpoint — 2026-10-08
+## Current checkpoint — 2026-10-12
+
+v0.5.0 (review branch `review/arcade-0.5.0-engine`) moves all Arcade mathematics onto Math Engine 0.34.0-rc.3 — K–7 skills plus course items Intermediate 4 → Algebra 2 — matching MathQuest 0.10.0. See [v0.5.0](change-specs/v0.5.0.md). Not released or deployed; earlier checkpoints below are historical.
+
+## Checkpoint — 2026-10-08
 
 v0.2.1-rc.1 integrates seven games through canonical snapshots, 312-skill MATH-ENGINE practice, QR plus single-use four-letter passwords (45 seconds), and checked hourly upstream synchronization. Math Civ uses its own mathematics without extra gates; Journey remains excluded. No live deployment or physical-device verification is claimed. The current integration contract is [v0.2.1](change-specs/v0.2.1.md), extending [v0.2.0](change-specs/v0.2.0.md); older checkpoint descriptions below are historical.
 

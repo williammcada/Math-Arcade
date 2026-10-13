@@ -10,13 +10,14 @@ for(const file of manifest.files){
  if(hash!==file.sha)throw Error('Upstream hash mismatch: '+file.dest);
 
 }
-// The canonical bundle is byte-for-byte upstream; only its module envelope is derived.
-mkdirSync(root+'/build/math/shared-math',{recursive:true});
-writeFileSync(root+'/build/math/shared-math/engine.js',readFileSync(root+'/vendor/math/shared-math.js','utf8')+'\nexport const {Practice,freshMath,configError,catalog,formatMath,formatItem,keypadKeys}=SharedMath;\n');
-writeFileSync(root+'/build/math/shared-math/catalog.js',"export {catalog} from './engine.js';\n");
-cpSync(root+'/build/math/shared-math/engine.js',root+'/build/math/math-format.js');
+// Math Engine (K–Algebra 2) practice bundle, byte-for-byte from MATH-ENGINE dist/. Server-side only:
+// questions, answer checks and gate control all come from it; browsers receive rendered items.
+mkdirSync(root+'/build/math',{recursive:true});
+{const prov=JSON.parse(readFileSync(root+'/vendor/math/math-engine-practice.provenance.json','utf8')),bytes=readFileSync(root+'/vendor/math/math-engine-practice.js');
+ if(createHash('sha256').update(bytes).digest('hex')!==prov.bundleSha256)throw Error('Math Engine bundle does not match its provenance.');
+ writeFileSync(root+'/build/math/engine.js',bytes);writeFileSync(root+'/build/math/catalog.js',"export {catalog} from './engine.js';\n");}
 cpSync(root+'/vendor/coastal/public',root+'/build/coastal',{recursive:true});
-writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.4.1-rc.1',sources:{journey:manifest.journey,blackline:manifest.blackline,math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia,mathCiv:manifest['math-civ']},vendorFiles:manifest.files.length},null,2));
+writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.5.0',sources:{journey:manifest.journey,blackline:manifest.blackline,math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia,mathCiv:manifest['math-civ']},vendorFiles:manifest.files.length},null,2));
 
 // Derive presentation-only exports from the pinned runtime; never load its old network/storage host.
 cpSync(root+'/vendor/vault7/public',root+'/build/vault7',{recursive:true});
