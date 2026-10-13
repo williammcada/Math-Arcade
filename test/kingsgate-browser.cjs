@@ -28,5 +28,5 @@ try{
  for(let i=0;i<2;i++){const answer=String(student0().math.gate.item.answer);await student.locator('.kg-break input').fill(i===0?answer:'wrong 999');await student.locator('.kg-break button.primary').click();await student.locator('.kg-break .feedback').filter({hasText:i===0?'+30 gold':'Not quite'}).waitFor();await student.locator('.kg-break button.primary').click();}
  await student.locator('.kg-break').waitFor({state:'hidden'});await student.waitForTimeout(1500);
  const r=student0().activity.round;assert.equal(r.running,true);assert.equal(r.snapshot.g.stats.mathGold,30);assert.equal(r.snapshot.g.towers.length,1);assert.equal(r.snapshot.g.towers[0].type,'archer');
- assert.deepEqual(errors,[]);console.log('Kingsgate browser flow passed.');
+ assert.deepEqual(errors,[]);console.log('PASS Kingsgate browser: no opening gate, tap-to-build, server-checked question round before wave 2, gold credited, clock paused; no page errors.');
 }finally{await browser?.close();server.close();fs.rmSync(dir,{recursive:true,force:true});}})().catch(e=>{console.error(e);process.exit(1);});
