@@ -7,7 +7,7 @@
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
   },
   "files": [
     {
@@ -272,7 +272,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/host.js",
       "dest": "vendor/journey/public/games/journey/host.js",
-      "sha": "888e22961c8b5805e06d205a10d31ac44a1eadfb"
+      "sha": "b6f582b95ee364071d61efe80fa01ccaa99255cd"
     },
     {
       "repo": "mathquest",
@@ -668,7 +668,7 @@
       "repo": "mathquest",
       "path": "public/engine/game-host.js",
       "dest": "vendor/coastal/public/engine/game-host.js",
-      "sha": "169fb26d7f87c67dfdc9b34716a170452cb175d3"
+      "sha": "99fc7e22f34e603af5aba8840045e75842e8c649"
     },
     {
       "repo": "mathquest",
@@ -686,7 +686,7 @@
       "repo": "mathquest",
       "path": "public/engine/teacher-tools.js",
       "dest": "vendor/coastal/public/engine/teacher-tools.js",
-      "sha": "9e2a4e069bc268b95a11742e6040f5dcfd26b139"
+      "sha": "c33cc8bb60f779530b90857d7cbb8fbc35d29785"
     },
     {
       "repo": "mathquest",
@@ -2083,15 +2083,15 @@
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2107,10 +2107,10 @@
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
   }
 }
