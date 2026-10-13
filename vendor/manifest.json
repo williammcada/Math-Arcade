@@ -1,13 +1,13 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "10127fc92ca3787df392046e7bbe13a7b3fb5cf7",
+    "commit": "5414be60373f9320edd5724565b7c8dd8f958e36",
     "path": "dist",
     "engineVersion": "0.34.0-rc.3"
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "files": [
     {
@@ -272,7 +272,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/host.js",
       "dest": "vendor/journey/public/games/journey/host.js",
-      "sha": "f2dcf9f1a324df2ac057fe647df89b51babf7cb1"
+      "sha": "888e22961c8b5805e06d205a10d31ac44a1eadfb"
     },
     {
       "repo": "mathquest",
@@ -290,7 +290,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/math-input.js",
       "dest": "vendor/journey/public/games/journey/math-input.js",
-      "sha": "4ce97cff5c063b6ad00b71933b54a0b94ada37ab"
+      "sha": "45ca25cba0893f2d348ad1a341faa360c3457efb"
     },
     {
       "repo": "mathquest",
@@ -398,7 +398,7 @@
       "repo": "mathquest",
       "path": "public/games/blackline/adapter.js",
       "dest": "vendor/blackline/public/games/blackline/adapter.js",
-      "sha": "a15d0b1f868afd3a75101964e6c319327a2807c4"
+      "sha": "0c7c5f6b28e66d81dbb0be45472ebdd84dae040a"
     },
     {
       "repo": "mathquest",
@@ -410,19 +410,31 @@
       "repo": "mathquest",
       "path": "public/games/blackline/render.js",
       "dest": "vendor/blackline/public/games/blackline/render.js",
-      "sha": "fc77d8daea0b0bcaf29e47ad15208ce0f8ce3e0c"
+      "sha": "763babdb3cad9ea3f7196d3e893309ae1260c565"
     },
     {
       "repo": "mathquest",
       "path": "public/games/blackline/sim.js",
       "dest": "vendor/blackline/public/games/blackline/sim.js",
-      "sha": "53430cc33866bc743b94287035e0f7b16aa2db0a"
+      "sha": "b42a882d9638b147bf20715d8b0bdbf86104b0dd"
     },
     {
       "repo": "Math-Civ",
       "path": "PLAY-SEKIGAHARA-0.3.1.html",
       "dest": "vendor/math-civ/PLAY-SEKIGAHARA-0.3.1.html",
       "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.js",
+      "dest": "vendor/math/math-engine-practice.js",
+      "sha": "d971cec9ab9aab12b7dd994064edcaffab9dfbb8"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.provenance.json",
+      "dest": "vendor/math/math-engine-practice.provenance.json",
+      "sha": "4944dcfebce284e5eb4e39bb0681df3fa4bde66b"
     },
     {
       "repo": "mathquest",
@@ -636,6 +648,12 @@
     },
     {
       "repo": "mathquest",
+      "path": "public/engine/dev-playtest.js",
+      "dest": "vendor/coastal/public/engine/dev-playtest.js",
+      "sha": "cdabdeca9e341f969661b59d9462e5fe72d594e5"
+    },
+    {
+      "repo": "mathquest",
       "path": "public/engine/directional-input.js",
       "dest": "vendor/coastal/public/engine/directional-input.js",
       "sha": "0c3dcce0356cebcfe0ce52bcb3b56bee253162d6"
@@ -668,7 +686,7 @@
       "repo": "mathquest",
       "path": "public/engine/teacher-tools.js",
       "dest": "vendor/coastal/public/engine/teacher-tools.js",
-      "sha": "b48a3fc5c904fb9c6b7971bf7a6b2b7c9bed6e10"
+      "sha": "9e2a4e069bc268b95a11742e6040f5dcfd26b139"
     },
     {
       "repo": "mathquest",
@@ -692,13 +710,13 @@
       "repo": "mathquest",
       "path": "public/games/aerial-shooter/core.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/core.js",
-      "sha": "e47534c5aad3eccc899cb427b146915e34a85e7a"
+      "sha": "7f44a257fac79ee4d551c9638079a16d188bbb9e"
     },
     {
       "repo": "mathquest",
       "path": "public/games/aerial-shooter/level.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/level.js",
-      "sha": "b18c72ff663e3fed4640c750075930c9fe3d2658"
+      "sha": "952d0e46bd7c9ff153a2caeb4e2e150e4143b1fc"
     },
     {
       "repo": "mathquest",
@@ -710,13 +728,13 @@
       "repo": "mathquest",
       "path": "public/games/aerial-shooter/practice.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/practice.js",
-      "sha": "622c23e8fb049fb267b7b379fae55c7cc9003dc2"
+      "sha": "c2eaeb1d126d9959fe51c18a83a0cd98c093539a"
     },
     {
       "repo": "mathquest",
       "path": "public/games/aerial-shooter/render.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/render.js",
-      "sha": "4bb3ec737902f91234178bbfbb5a5cb05c4ace9d"
+      "sha": "a9a33eef7043799e82eb73cbe1f31486e151ee3c"
     },
     {
       "repo": "mathquest",
@@ -728,7 +746,7 @@
       "repo": "mathquest",
       "path": "public/games/aerial-shooter/tuning.js",
       "dest": "vendor/coastal/public/games/aerial-shooter/tuning.js",
-      "sha": "c2b0c85ffd95074aeaa7113faec64f9c00eff8bd"
+      "sha": "a85f4e8bb03d74c9a707edd658f7d54b810744a6"
     },
     {
       "repo": "mathquest",
@@ -1310,19 +1328,19 @@
       "repo": "mathquest",
       "path": "public/cartridges/ironbreak.js",
       "dest": "vendor/ironbreak/public/cartridges/ironbreak.js",
-      "sha": "6e7fbfdbdeb318761d755055bdc6f97e7f971124"
+      "sha": "b4f948938e89b24909e6cc9fda3fdd461da6cbf0"
     },
     {
       "repo": "mathquest",
       "path": "public/games/shooter/README.md",
       "dest": "vendor/ironbreak/public/games/shooter/README.md",
-      "sha": "5c408fc14703d24234b5c73a7e0477d89471d866"
+      "sha": "0ad06aa1ca696b9496d0dfbd7b47319d367ded32"
     },
     {
       "repo": "mathquest",
       "path": "public/games/shooter/adapter.js",
       "dest": "vendor/ironbreak/public/games/shooter/adapter.js",
-      "sha": "7cc674152bf5003131bab999e02e06759c04bfdf"
+      "sha": "3d74a58cdb43b9169bcfc1eb3f9de2c7ddc46992"
     },
     {
       "repo": "mathquest",
@@ -1334,7 +1352,7 @@
       "repo": "mathquest",
       "path": "public/games/shooter/config.js",
       "dest": "vendor/ironbreak/public/games/shooter/config.js",
-      "sha": "c6e61e600439eff88866ee7e6ce77af016059f28"
+      "sha": "60af2480230b8c8673683840dc731f651bc74f3e"
     },
     {
       "repo": "mathquest",
@@ -1346,7 +1364,7 @@
       "repo": "mathquest",
       "path": "public/games/shooter/host.js",
       "dest": "vendor/ironbreak/public/games/shooter/host.js",
-      "sha": "e191fc9467e7fdd096bfdd2d0d97dad13f08fdd8"
+      "sha": "c686e3ddb42a5cd6e408ea79307cd80d9203f58f"
     },
     {
       "repo": "mathquest",
@@ -1358,19 +1376,25 @@
       "repo": "mathquest",
       "path": "public/games/shooter/renderer.js",
       "dest": "vendor/ironbreak/public/games/shooter/renderer.js",
-      "sha": "dfbf27af1b6e777e0f547b87ab839f79641d7220"
+      "sha": "b15f82f5225bfccd03c4c33154d66336a75b84c2"
     },
     {
       "repo": "mathquest",
       "path": "public/games/shooter/simulation.js",
       "dest": "vendor/ironbreak/public/games/shooter/simulation.js",
-      "sha": "ee130e1267d8bee28580a100361bb1880225f894"
+      "sha": "3e29c207d4fbe39e60daa594edb9b447e0530c55"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/shooter/world-blockout-0.2.js",
+      "dest": "vendor/ironbreak/public/games/shooter/world-blockout-0.2.js",
+      "sha": "36b931e23fbdd9e00edf4357e976f81bb9ad1fc9"
     },
     {
       "repo": "mathquest",
       "path": "public/games/shooter/world.js",
       "dest": "vendor/ironbreak/public/games/shooter/world.js",
-      "sha": "5205a6ecc40d7c95a029af990032bc4d84097e3b"
+      "sha": "b298824cc889234bf09481215516fefb1da720d5"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -2055,31 +2079,19 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "dist/math-engine-practice.js",
-      "dest": "vendor/math/math-engine-practice.js",
-      "sha": "d971cec9ab9aab12b7dd994064edcaffab9dfbb8"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "dist/math-engine-practice.provenance.json",
-      "dest": "vendor/math/math-engine-practice.provenance.json",
-      "sha": "4944dcfebce284e5eb4e39bb0681df3fa4bde66b"
     }
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2091,14 +2103,14 @@
   },
   "math-civ": {
     "repo": "williammcada/Math-Civ",
-    "commit": "f2600f821a8ea194caea624548948d6ae2c98c9d"
+    "commit": "b5d050c3def9cd3b68cbc3f4e5d1d6c4b960c2b6"
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "e79fdb8960cb4416e4953bba422bcbd8be545389"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   }
 }
