@@ -121,3 +121,7 @@ Owner playtest: the action games were unplayable in Math Arcade (avatars bouncin
 Deployed 13 October 2026: verified candidate `e454e9c` via deploy run 38314133992; live `/health` confirms `0.4.1-rc.1`. Physical iPad/school-network play not yet reported. [Evidence](checkpoints/v0.4.1.md).
 
 Owner playtest, 13 October 2026: "Animations are all smooth. We are good here." Recorded in [v0.4.1 evidence](checkpoints/v0.4.1.md). Device/network details were not specified.
+
+## Render front door — 14 October 2026
+
+Owner moved the student front door from Netlify to Render to stop Netlify's per-deploy credit use (the hourly sync redeployed Netlify on every push). A free Render web service (`render.yaml`, `hosting/render/relay.mjs`, relay 1.0.0) runs the unchanged Netlify relay function in Node; the Worker, its Durable Object data, games and frontend are unchanged. Owner tested Render on student iPads on the school Wi-Fi. Free-service sleep after 15 idle minutes is accepted (open the teacher page a minute early). U-12 names Netlify only; its amendment accepting Render is proposed in the handbook and must be saved for compliance. See [change specification](change-specs/render-front-door-2026-10-14.md) and [setup](RENDER.md). Hosted and school-network checks: Not run.
