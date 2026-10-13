@@ -18,7 +18,7 @@ try{fs.mkdirSync('test-results',{recursive:true});
  assert.match(await teacher.locator('#selected').innerText(),/Algebra 2 · Solve a two-variable system/);
  await teacher.locator('#preview-math').click();await teacher.locator('#preview details summary').click();const preview=await teacher.locator('#preview').innerText();assert.match(preview,/PREVIEW 1 \/ 3/);
  await teacher.locator('#count').fill('3');await teacher.screenshot({path:'test-results/engine-settings.png',fullPage:true});
- await teacher.locator('#save-math').click();await teacher.waitForTimeout(400);
+ await teacher.locator('#save-math').click();for(let t=0;t<200&&model.tx(s=>s.classes[0].config.selected.length)!==3;t++)await teacher.waitForTimeout(50);
  assert.deepEqual(model.tx(s=>s.classes[0].config.selected).sort(),['bank:algebra-2-en:node:142','bank:course-87-en:authored:MCADA-18.1','mq-properties']);
  await teacher.locator('#open-session').click();await teacher.locator('#qr canvas').waitFor();const code=await teacher.locator('.join-code').innerText();
  await student.goto(base+'/?code='+code);await student.getByRole('button',{name:'Join class →'}).click();await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
@@ -32,7 +32,9 @@ try{fs.mkdirSync('test-results',{recursive:true});
   await student.locator('#answer').fill('wrong');await student.locator('#check-answer').click();await student.locator('#feedback').filter({hasText:'Not quite'}).waitFor();
   if(item.inputMode==='choice'){await student.locator('#answer').fill('');await student.locator(`[data-key="${item.answerText}"]`).click();assert.equal(await student.locator('#answer').inputValue(),item.answerText);}
   else await student.locator('#answer').fill(item.answerText);
-  await student.locator('#check-answer').click();await student.waitForTimeout(700);
+  const before=model.tx(s=>s.classes[0].students[0].math.gate?.completed??99);await student.locator('#check-answer').click();
+  for(let t=0;t<200;t++){const g=model.tx(s=>s.classes[0].students[0].math.gate);if(!g||g.completed>before)break;await student.waitForTimeout(50);}
+  if(i<2)await student.locator('.pill').filter({hasText:`${i+1} / 3`}).waitFor({timeout:15000});
  }
  await student.locator('#launch').waitFor();
  assert.ok(seen.size>=2,[...seen].join());

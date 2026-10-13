@@ -27,8 +27,21 @@ jobs:
         run: |
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           mkdir -p test-results
-          for test in test/*browser.cjs; do node "$test"; done
-          npm run test:worker
+          # Each suite's failure is reported as an annotation (readable without downloading logs).
+          failed=0
+          for test in test/*browser.cjs; do
+            if ! node "$test" > "test-results/$(basename "$test").log" 2>&1; then
+              failed=1
+              echo "::error title=$(basename "$test") failed::$(grep -vE 'ExperimentalWarning|trace-warnings' "test-results/$(basename "$test").log" | tail -12 | tr '\n' ' ' | cut -c1-1500)"
+            else
+              echo "::notice title=$(basename "$test")::$(grep -m1 '^PASS' "test-results/$(basename "$test").log" | cut -c1-200)"
+            fi
+          done
+          if ! npm run test:worker > test-results/test-worker.log 2>&1; then
+            failed=1
+            echo "::error title=test:worker failed::$(tail -15 test-results/test-worker.log | tr '\n' ' ' | cut -c1-1500)"
+          fi
+          exit $failed
       - uses: actions/upload-artifact@v4
         if: always()
         with:
