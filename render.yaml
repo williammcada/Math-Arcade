@@ -1,0 +1,22 @@
+# Render Blueprint — Math Arcade student front door.
+# A free Node web service that relays the whole site to the existing
+# math-arcade Cloudflare Worker, exactly as the Netlify Edge Function did.
+# Class data stays in the Worker's Durable Object; nothing is stored on Render.
+# The relay has no dependencies, so the build only reports the Node version.
+# The build filter stops the hourly upstream sync from redeploying the relay.
+# See docs/change-specs/render-front-door-2026-10-14.md.
+services:
+  - type: web
+    runtime: node
+    name: mcada-matharcade
+    plan: free
+    branch: main
+    buildCommand: node --version
+    startCommand: node hosting/render/relay.mjs
+    healthCheckPath: /__relay/health
+    autoDeployTrigger: commit
+    buildFilter:
+      paths:
+        - "hosting/render/**"
+        - "netlify/edge-functions/arcade-proxy.js"
+        - "render.yaml"

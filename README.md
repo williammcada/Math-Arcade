@@ -13,7 +13,7 @@ Previous release, v0.4.1: smoother action play, no 1.5-second freezes, consisten
 
 Ten-game implementation: Nightfall 1: Last Bus Out and Nightfall 2: False Haven are separate entries; Journey to the West is single player; Blackline: Last Exit is included. Existing seven games and classroom controls are retained.
 
-Hosting: the existing Cloudflare Worker plus a separate same-origin [Netlify entry point](docs/NETLIFY.md). See [v0.4.0 specification](docs/change-specs/v0.4.0.md).
+Hosting: the existing Cloudflare Worker behind a same-origin student front door on [Render](docs/RENDER.md) (`https://mcada-matharcade.onrender.com/`), from 14 October 2026; it replaces the former [Netlify entry point](docs/NETLIFY.md), which forwards to Render once the move is verified. See the [Render front door specification](docs/change-specs/render-front-door-2026-10-14.md). See [v0.4.0 specification](docs/change-specs/v0.4.0.md).
 
 ## Earlier release documentation
 
