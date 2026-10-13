@@ -17,7 +17,7 @@ mkdirSync(root+'/build/math',{recursive:true});
  if(createHash('sha256').update(bytes).digest('hex')!==prov.bundleSha256)throw Error('Math Engine bundle does not match its provenance.');
  writeFileSync(root+'/build/math/engine.js',bytes);writeFileSync(root+'/build/math/catalog.js',"export {catalog} from './engine.js';\n");}
 cpSync(root+'/vendor/coastal/public',root+'/build/coastal',{recursive:true});
-writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.5.0-rc.3',sources:{journey:manifest.journey,blackline:manifest.blackline,math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia,mathCiv:manifest['math-civ']},vendorFiles:manifest.files.length},null,2));
+writeFileSync(root+'/build/provenance.json',JSON.stringify({version:'0.5.0',sources:{journey:manifest.journey,blackline:manifest.blackline,math:manifest.math,coastal:manifest.coastal,vault7:manifest.vault7,nightfall:manifest.nightfall,ironbreak:manifest.ironbreak,chrono:manifest.chrono,olivia:manifest.olivia,mathCiv:manifest['math-civ']},vendorFiles:manifest.files.length},null,2));
 
 // Derive presentation-only exports from the pinned runtime; never load its old network/storage host.
 cpSync(root+'/vendor/vault7/public',root+'/build/vault7',{recursive:true});

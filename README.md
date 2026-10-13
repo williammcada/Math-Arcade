@@ -1,14 +1,13 @@
-# Math Arcade v0.5.0-rc.3
+# Math Arcade v0.5.0
 
 **A WILLIAM MCADA PRODUCT**
 
-Release candidate fixing the erratic avatar movement in the action games and the inconsistent Olivia/Chrono gate. See the [v0.4.1 specification](docs/change-specs/v0.4.1.md).
+Release moving all Arcade mathematics onto the Math Engine (0.34.0-rc.3, MATH-ENGINE `10127fc`), the same build MathQuest 0.10.0 uses. See the [v0.5.0 specification](docs/change-specs/v0.5.0.md) and [release notes](docs/releases/v0.5.0.md).
 
-- **Smooth action play.** Vault 7, Nightfall 1 & 2, Journey (single player), Blackline, Coastal Escape and Ironbreak now run on the student's iPad, the same way MathQuest runs them. Server replies no longer overwrite a running game, which was pulling avatars backward on slower networks. The server still controls gates, rounds, teacher pause/end, saves and time limits.
-- **No more 1.5-second freezes.** A round stops for a lost connection only after 10 seconds without contact.
-- **Consistent gates.** Olivia's Magic Bracelet Quest and Chrono Circuit gates now use the standard Math Arcade gate layout, keypad and fraction display.
+- **Kindergarten to Algebra 2.** Teachers can browse K–7 skills by grade, each course from Intermediate 4 to Algebra 2 (with lesson names, in teaching order), and extras. Existing class settings and student progress keep working.
+- **Engine-checked answers.** Questions, answer checks and rendering come from the engine on the server; gates show the keys each answer needs.
 
-Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployed to Cloudflare 13 Oct 2026 (run 38314133992); physical iPad/school-network check pending.
+Previous release, v0.4.1: smoother action play, no 1.5-second freezes, consistent Olivia/Chrono gates. Verified candidate `e454e9c` ([evidence](docs/checkpoints/v0.4.1.md)). Deployed to Cloudflare 13 Oct 2026 (run 38314133992); physical iPad/school-network check pending.
 
 ## v0.4.0 summary
 
