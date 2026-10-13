@@ -34,7 +34,7 @@ export function createApp({dbPath=process.env.ARCADE_DB_PATH||root+'/data/arcade
    }
    if(req.method!=='GET'&&req.method!=='HEAD'){send(405,{error:'Method not allowed.'});return;}
    let base=root+'/public',rel=path==='/'?'index.html':decodeURIComponent(path.slice(1));
-   for(const game of ['journey','blackline'])if(path.startsWith('/'+game+'/')){base=root+'/build/'+game;rel=decodeURIComponent(path.slice(game.length+2));}
+   for(const game of ['journey','blackline','kingsgate'])if(path.startsWith('/'+game+'/')){base=root+'/build/'+game;rel=decodeURIComponent(path.slice(game.length+2));}
    if(path.startsWith('/coastal/')){base=root+'/build/coastal';rel=decodeURIComponent(path.slice(9));}
    if(path.startsWith('/ironbreak/')){base=root+'/build/ironbreak';rel=decodeURIComponent(path.slice(11));}
    if(path.startsWith('/nightfall/')){base=root+'/build/nightfall';rel=decodeURIComponent(path.slice(11));}

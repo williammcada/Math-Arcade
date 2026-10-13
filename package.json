@@ -1,6 +1,6 @@
 {
   "name": "math-arcade",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -10,7 +10,7 @@
     "build": "node scripts/build.mjs",
     "start": "node server/index.mjs",
     "test": "node --test test/*.test.mjs",
-    "check": "node --check server/index.mjs && node --check server/model.mjs && node --check public/app.js && node --check public/flight.js && node --check public/vault.js && node --check server/rounds.mjs && node --check public/nightfall.js && node --check server/nightfall.mjs && node --check public/extra-games.js && node --check public/round-sync.js && node --check public/campaign-runtime.js && node --check server/extra-rounds.mjs && node --check adapters/journey.js && node --check netlify/edge-functions/arcade-proxy.js",
+    "check": "node --check server/index.mjs && node --check server/model.mjs && node --check public/app.js && node --check public/flight.js && node --check public/vault.js && node --check server/rounds.mjs && node --check public/nightfall.js && node --check server/nightfall.mjs && node --check public/extra-games.js && node --check public/kingsgate-game.js && node --check server/kingsgate.mjs && node --check public/round-sync.js && node --check public/campaign-runtime.js && node --check server/extra-rounds.mjs && node --check adapters/journey.js && node --check netlify/edge-functions/arcade-proxy.js",
     "sync:upstream": "node scripts/sync-upstream.mjs",
     "dev:worker": "wrangler dev",
     "deploy:worker": "wrangler deploy",

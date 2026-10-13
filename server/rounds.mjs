@@ -68,8 +68,8 @@ export const extraAction=extra.command;
 
 // v0.4.1: action rounds run on the student's device, as in MathQuest. The server
 // stores the device snapshot inside a generic envelope and keeps time limits.
-const LIMITS={nightfall:7200,vault7:180,journey:180,'false-haven':300,blackline:300,coastal:300,robot:300};
-const TIMEOUTS={nightfall:'timed_out',vault7:'timed_out',journey:'timed_out','false-haven':'timed_out',blackline:'timeout',coastal:'defeat',robot:'time_window_closed'};
+const LIMITS={nightfall:7200,vault7:180,journey:180,'false-haven':300,blackline:300,kingsgate:300,coastal:300,robot:300};
+const TIMEOUTS={kingsgate:'timed_out',nightfall:'timed_out',vault7:'timed_out',journey:'timed_out','false-haven':'timed_out',blackline:'timeout',coastal:'defeat',robot:'time_window_closed'};
 export const limitFor=game=>LIMITS[game]??300;
 export const timeoutOutcome=game=>TIMEOUTS[game]||'timed_out';
 export const SNAPSHOT_GRACE_MS=5000;
