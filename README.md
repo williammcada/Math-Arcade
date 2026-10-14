@@ -1,4 +1,8 @@
-# Math Arcade v0.5.0
+# Math Arcade v0.6.0
+
+**v0.6.0 adds Kingsgate**, a tower defense game with question rounds between waves instead of a gate before the round. See the [v0.6.0 specification](docs/change-specs/v0.6.0-kingsgate.md) and [release notes](docs/releases/v0.6.0.md).
+
+## v0.5.0
 
 **A WILLIAM MCADA PRODUCT**
 

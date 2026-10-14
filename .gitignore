@@ -11,4 +11,5 @@ test-results/
 # v0.4 snapshots are pinned by vendor/manifest.json and hydrated before build.
 /vendor/journey/
 /vendor/blackline/
+/vendor/kingsgate/
 /vendor/nightfall/public/assets/false-haven/

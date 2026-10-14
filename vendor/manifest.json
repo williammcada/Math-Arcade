@@ -7,7 +7,7 @@
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "files": [
     {
@@ -272,7 +272,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/host.js",
       "dest": "vendor/journey/public/games/journey/host.js",
-      "sha": "b6f582b95ee364071d61efe80fa01ccaa99255cd"
+      "sha": "888e22961c8b5805e06d205a10d31ac44a1eadfb"
     },
     {
       "repo": "mathquest",
@@ -668,7 +668,7 @@
       "repo": "mathquest",
       "path": "public/engine/game-host.js",
       "dest": "vendor/coastal/public/engine/game-host.js",
-      "sha": "99fc7e22f34e603af5aba8840045e75842e8c649"
+      "sha": "169fb26d7f87c67dfdc9b34716a170452cb175d3"
     },
     {
       "repo": "mathquest",
@@ -686,7 +686,7 @@
       "repo": "mathquest",
       "path": "public/engine/teacher-tools.js",
       "dest": "vendor/coastal/public/engine/teacher-tools.js",
-      "sha": "c33cc8bb60f779530b90857d7cbb8fbc35d29785"
+      "sha": "9e2a4e069bc268b95a11742e6040f5dcfd26b139"
     },
     {
       "repo": "mathquest",
@@ -2079,19 +2079,91 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/ambient.wav",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/ambient.wav",
+      "sha": "718f0fcda74db4df1263d8e911253da59f4042d8"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/cover.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/cover.svg",
+      "sha": "2885c3db6c5990522bda9d6185ba203c1105dfa2"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/ending.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/ending.svg",
+      "sha": "2d5a4b6bc6ce359223b58f620d59a20345450794"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/finale.wav",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/finale.wav",
+      "sha": "a98201f0d794e6e927acf834bdc36bd00cc4cb51"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/market.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/market.svg",
+      "sha": "399aae2af848cf41fc74e0a77380457d1bc2b347"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/radio.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/radio.svg",
+      "sha": "4fa01f441b0109a4fe6f74081cb6570aeabe7e10"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/adapter.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/adapter.js",
+      "sha": "ae8f362b0d66408dbf5632f1afab96d9eea2ee1e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/audio.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/audio.js",
+      "sha": "569d98ed5dd1b7abb9fad939e480ebd698780537"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/config.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/config.js",
+      "sha": "6457c60659b0719c3a89a3692fdd2cc786a93df9"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/render.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/render.js",
+      "sha": "e78443e7eb6be6cd4e854b1631d9c40e29ebdd03"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/sim.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/sim.js",
+      "sha": "7c3c811cc1098056a8fdfab1bbf38d9c542cab87"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/sprites.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/sprites.js",
+      "sha": "e90c475565dbcaedbd9e2ed1c7e879e0f07608a6"
     }
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2107,10 +2179,14 @@
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "a4405f8bafc5a413c7130d442c87a354cfa1a0b4"
+  },
+  "kingsgate": {
+    "repo": "williammcada/mathquest",
+    "commit": "e5962a4d463954e3fa7802153443c60c351b9022"
   }
 }

@@ -23,6 +23,7 @@ export function dispatch(model,{method,path,url,body,cookies}){
       case '/api/campaign':return model.campaign(s,u,body);
       case '/api/launch':return model.launch(s,u,body);
       case '/api/extra':return model.extra(s,u,body);
+      case '/api/kingsgate':return model.kingsgate(s,u,body);
       case '/api/ironbreak':return model.ironbreak(s,u,body);
       case '/api/nightfall':return model.nightfall(s,u,body);
       case '/api/vault':return model.vault(s,u,body);
