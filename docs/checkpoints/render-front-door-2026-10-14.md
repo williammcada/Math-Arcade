@@ -12,4 +12,6 @@ Checked 14 October 2026 (Asia/Shanghai) by Claude in the owner's built-in deskto
 | Teacher page `Math Arcade v0.5.0` loads; every request stayed on `mcada-matharcade.onrender.com` (no `workers.dev`) | Passed |
 | Teacher sign-in, class, password redemption on a second device, admit, gate, game launch, pause/resume, reload | Not run (owner) |
 | Old Netlify address forwards to Render | Not run — forwarding deploy pending |
-| Student iPad on school Wi-Fi | Not run (owner) |
+| Student iPad on school Wi-Fi | Passed (owner report, 14 October 2026: working on a student iPad via the school Wi-Fi) |
+
+U-12 amendment approved and saved (handbook `75baa80`, v0.1.9): Render is an approved student host.
