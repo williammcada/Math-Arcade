@@ -20,13 +20,15 @@ try{
  for(const id of ['grid-scanner','surge-stabilizer'])await student.locator(`[data-extra-gear="${id}"]`).uncheck();
  await student.locator('#launch').click();await student.locator('.vault-overlay button:not([disabled])').waitFor({timeout:15000});
  assert.equal(round().snapshot.game.fuses,4,'Spare Fuse gives four fuses');assert.equal(await student.locator('[data-assist]').count(),0,'no guided route');
- await student.locator('.vault-overlay button').click();for(let t=0;t<60&&!round().running;t++)await student.waitForTimeout(50);assert.equal(round().running,true);
+ await student.locator('.vault-overlay button').click();for(let t=0;t<100&&!round().running;t++)await student.waitForTimeout(50);assert.equal(round().running,true);
+ // Wait until the device itself is playing (its Pause button shows), not only the server: taps are ignored while paused.
+ await student.locator('[data-pause]').filter({hasText:/^Pause$/}).waitFor({timeout:10000});await student.locator('.vault-overlay').waitFor({state:'hidden'});
  // Tap an unlocked tile: the device rotates exactly that tile and its next snapshot reaches the server.
  const board=round().snapshot.game.board,n=board.n,size=336/n,index=board.tiles.findIndex(t=>!t.locked&&!t.storm&&t.kind==='wire');assert.ok(index>=0);
  const before=board.tiles[index].rot,cx=12+(index%n+.5)*size,cy=12+(Math.floor(index/n)+.5)*size;
  const box=await student.locator('.extra-root canvas').boundingBox(),k=Math.min(box.width/640,box.height/360),ox=(box.width-640*k)/2,oy=(box.height-360*k)/2;
  await student.touchscreen.tap(box.x+ox+cx*k,box.y+oy+cy*k);
- const until=Date.now()+3000;while(Date.now()<until&&round().snapshot.game.board.tiles[index].rot===before)await student.waitForTimeout(50);
+ const until=Date.now()+8000;while(Date.now()<until&&round().snapshot.game.board.tiles[index].rot===before)await student.waitForTimeout(50);
  assert.equal(round().snapshot.game.board.tiles[index].rot,(before+1)%4,'the tapped tile turned a quarter turn');
  // Energize from the on-screen button: a latched press counts once even when shorter than a frame.
  const presses=round().snapshot.game.stats?.energize??null;await student.locator('[data-game-key="energize"]').tap();await student.waitForTimeout(900);
