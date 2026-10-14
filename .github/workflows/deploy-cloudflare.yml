@@ -18,12 +18,15 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
-    # Only this owner-approved expansion opts into automatic deployment after verification.
-    # Routine upstream synchronization and other candidates still require manual dispatch.
+    # v0.7.0 (owner request 2026-10-14): every main-branch commit that passes the full Verify
+    # workflow deploys automatically, including the after-school canonical sync. Before this,
+    # only one opted-in commit and manual dispatches deployed, so synced games never went live.
+    # Pull-request verification runs never deploy.
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.head_commit.message == 'Math Arcade v0.4 implementation checkpoint [deploy-approved]')
+       github.event.workflow_run.head_branch == 'main' &&
+       contains(fromJSON('["push","workflow_dispatch"]'), github.event.workflow_run.event))
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

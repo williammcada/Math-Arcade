@@ -6,7 +6,7 @@ import {StealthSimulation} from '../build/vault7/stealth-core.js';
 import {fallbackScene} from '../build/vault7/fallback.js';
 const fail=message=>{throw Object.assign(Error(message),{status:409});};
 const hydrate=s=>Object.assign(Object.create(StealthSimulation.prototype),s);
-export const keysFor=game=>game==='journey'?['left','right','up','down','attack','jump','magic']:game==='blackline'?['left','right','brake','boost']:game==='false-haven'?['left','right','up','down','run','fire','interact','weapon']:game==='robot'?['left','right','up','down','jump','prone','noFire']:game==='nightfall'?['left','right','up','down','run','fire','interact','weapon']:game==='vault7'?['left','right','jump','interact','jam','cloak','confirm']:['left','right','up','down'];
+export const keysFor=game=>game==='blackout'?['left','right','up','down','rotate','energize','scan']:game==='journey'?['left','right','up','down','attack','jump','magic']:game==='blackline'?['left','right','brake','boost']:game==='false-haven'?['left','right','up','down','run','fire','interact','weapon']:game==='robot'?['left','right','up','down','jump','prone','noFire']:game==='nightfall'?['left','right','up','down','run','fire','interact','weapon']:game==='vault7'?['left','right','jump','interact','jam','cloak','confirm']:['left','right','up','down'];
 export function createRound(game,identity,options={}){
  if(extra.extraGames.includes(game))return extra.create(game,identity,options);
  if(game==='robot')return iron.create(options);
@@ -68,8 +68,8 @@ export const extraAction=extra.command;
 
 // v0.4.1: action rounds run on the student's device, as in MathQuest. The server
 // stores the device snapshot inside a generic envelope and keeps time limits.
-const LIMITS={nightfall:7200,vault7:180,journey:180,'false-haven':300,blackline:300,kingsgate:300,coastal:300,robot:300};
-const TIMEOUTS={kingsgate:'timed_out',nightfall:'timed_out',vault7:'timed_out',journey:'timed_out','false-haven':'timed_out',blackline:'timeout',coastal:'defeat',robot:'time_window_closed'};
+const LIMITS={nightfall:7200,vault7:180,journey:180,'false-haven':300,blackline:300,kingsgate:300,blackout:300,coastal:300,robot:300};
+const TIMEOUTS={kingsgate:'timed_out',blackout:'timed_out',nightfall:'timed_out',vault7:'timed_out',journey:'timed_out','false-haven':'timed_out',blackline:'timeout',coastal:'defeat',robot:'time_window_closed'};
 export const limitFor=game=>LIMITS[game]??300;
 export const timeoutOutcome=game=>TIMEOUTS[game]||'timed_out';
 export const SNAPSHOT_GRACE_MS=5000;

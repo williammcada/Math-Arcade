@@ -1,4 +1,8 @@
-# Math Arcade v0.6.0
+# Math Arcade v0.7.0
+
+**v0.7.0 brings every game up to date** (Coastal, Ironbreak and Blackline difficulty, Nightfall art, Kingsgate), adds **Blackout Protocol**, shows full cartridge art on every card, and deploys verified changes automatically (the game sync runs after school). See the [v0.7.0 specification](docs/change-specs/v0.7.0.md) and [release notes](docs/releases/v0.7.0.md).
+
+## v0.6.0
 
 **v0.6.0 adds Kingsgate**, a tower defense game with question rounds between waves instead of a gate before the round. See the [v0.6.0 specification](docs/change-specs/v0.6.0-kingsgate.md) and [release notes](docs/releases/v0.6.0.md).
 
