@@ -7,7 +7,7 @@
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "files": [
     {
@@ -812,7 +812,7 @@
       "repo": "mathquest",
       "path": "public/engine/game-host.js",
       "dest": "vendor/coastal/public/engine/game-host.js",
-      "sha": "4c6448d4cbfac997962544983b2ade35e7d2ae44"
+      "sha": "993f2c333d5763a9539f612326359e180ab75853"
     },
     {
       "repo": "mathquest",
@@ -2239,15 +2239,15 @@
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2259,22 +2259,22 @@
   },
   "math-civ": {
     "repo": "williammcada/Math-Civ",
-    "commit": "b5d050c3def9cd3b68cbc3f4e5d1d6c4b960c2b6"
+    "commit": "aafc3cc1046299cf8f451d2188d6cc3dfce87320"
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "kingsgate": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   },
   "blackout": {
     "repo": "williammcada/mathquest",
-    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+    "commit": "30ef827038bcf6004997c13ae2e2e9382c089fa6"
   }
 }
