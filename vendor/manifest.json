@@ -7,7 +7,7 @@
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
   },
   "files": [
     {
@@ -272,7 +272,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/host.js",
       "dest": "vendor/journey/public/games/journey/host.js",
-      "sha": "b6f582b95ee364071d61efe80fa01ccaa99255cd"
+      "sha": "660ef989cf4aa704454411f6d76e3e054914cf62"
     },
     {
       "repo": "mathquest",
@@ -417,6 +417,150 @@
       "path": "public/games/blackline/sim.js",
       "dest": "vendor/blackline/public/games/blackline/sim.js",
       "sha": "b42a882d9638b147bf20715d8b0bdbf86104b0dd"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/ambient.wav",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/ambient.wav",
+      "sha": "718f0fcda74db4df1263d8e911253da59f4042d8"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/cover.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/cover.svg",
+      "sha": "2885c3db6c5990522bda9d6185ba203c1105dfa2"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/ending.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/ending.svg",
+      "sha": "2d5a4b6bc6ce359223b58f620d59a20345450794"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/finale.wav",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/finale.wav",
+      "sha": "a98201f0d794e6e927acf834bdc36bd00cc4cb51"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/market.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/market.svg",
+      "sha": "399aae2af848cf41fc74e0a77380457d1bc2b347"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/kingsgate/radio.svg",
+      "dest": "vendor/kingsgate/public/assets/kingsgate/radio.svg",
+      "sha": "4fa01f441b0109a4fe6f74081cb6570aeabe7e10"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/adapter.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/adapter.js",
+      "sha": "ae8f362b0d66408dbf5632f1afab96d9eea2ee1e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/audio.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/audio.js",
+      "sha": "569d98ed5dd1b7abb9fad939e480ebd698780537"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/config.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/config.js",
+      "sha": "6457c60659b0719c3a89a3692fdd2cc786a93df9"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/render.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/render.js",
+      "sha": "e78443e7eb6be6cd4e854b1631d9c40e29ebdd03"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/sim.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/sim.js",
+      "sha": "7c3c811cc1098056a8fdfab1bbf38d9c542cab87"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/kingsgate/sprites.js",
+      "dest": "vendor/kingsgate/public/games/kingsgate/sprites.js",
+      "sha": "e90c475565dbcaedbd9e2ed1c7e879e0f07608a6"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/ambient.wav",
+      "dest": "vendor/blackout/public/assets/blackout/ambient.wav",
+      "sha": "6ee366b07933d4d329601c2ce3d26ae61a7ec24c"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/cover.svg",
+      "dest": "vendor/blackout/public/assets/blackout/cover.svg",
+      "sha": "0aa20bc77c75429625854cd7209c80a5240dfbe8"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/ending.svg",
+      "dest": "vendor/blackout/public/assets/blackout/ending.svg",
+      "sha": "88d7a50743ea3141ba6df62f0eb7b095e3666a54"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/finale.wav",
+      "dest": "vendor/blackout/public/assets/blackout/finale.wav",
+      "sha": "8999675e6b44c44be2742f8b9311b2b70ec8242f"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/lantern.svg",
+      "dest": "vendor/blackout/public/assets/blackout/lantern.svg",
+      "sha": "026432ee43c60cce73049096dec244d46b1b2b35"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/market.svg",
+      "dest": "vendor/blackout/public/assets/blackout/market.svg",
+      "sha": "de9dafc2daac8e424662e8dbea20163b1b59b4c6"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/assets/blackout/radio.svg",
+      "dest": "vendor/blackout/public/assets/blackout/radio.svg",
+      "sha": "5c77e181f9e6b474114a71c4f9a3993d80ac173e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackout/adapter.js",
+      "dest": "vendor/blackout/public/games/blackout/adapter.js",
+      "sha": "ee15b9467dcede5041805f081fe11275ae10ecc4"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackout/audio.js",
+      "dest": "vendor/blackout/public/games/blackout/audio.js",
+      "sha": "fe09330954cadabec7e624c3952c87ccd2bc579e"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackout/config.js",
+      "dest": "vendor/blackout/public/games/blackout/config.js",
+      "sha": "375a6955e5b5f24448e19bff54189fb02a0292b3"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackout/core.js",
+      "dest": "vendor/blackout/public/games/blackout/core.js",
+      "sha": "573f1c5302d82c0271f652b4ac8cca9d07c4def6"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/blackout/core.provenance.json",
+      "dest": "vendor/blackout/public/games/blackout/core.provenance.json",
+      "sha": "74c2c60aaea9f9d57058fe68dde0835ae36f181d"
     },
     {
       "repo": "Math-Civ",
@@ -668,7 +812,7 @@
       "repo": "mathquest",
       "path": "public/engine/game-host.js",
       "dest": "vendor/coastal/public/engine/game-host.js",
-      "sha": "99fc7e22f34e603af5aba8840045e75842e8c649"
+      "sha": "4c6448d4cbfac997962544983b2ade35e7d2ae44"
     },
     {
       "repo": "mathquest",
@@ -680,19 +824,19 @@
       "repo": "mathquest",
       "path": "public/engine/practice-scenes.js",
       "dest": "vendor/coastal/public/engine/practice-scenes.js",
-      "sha": "ee8ea04c0bec30ce8b0414bb4456454b836401be"
+      "sha": "90aad03ef0f8bc2f5f156949daec55cd1676c91c"
     },
     {
       "repo": "mathquest",
       "path": "public/engine/teacher-tools.js",
       "dest": "vendor/coastal/public/engine/teacher-tools.js",
-      "sha": "c33cc8bb60f779530b90857d7cbb8fbc35d29785"
+      "sha": "55385f1995199deca977472fe875d685e6249116"
     },
     {
       "repo": "mathquest",
       "path": "public/engine/team-tools.js",
       "dest": "vendor/coastal/public/engine/team-tools.js",
-      "sha": "af73abd8ef305f1aa1e575527c1889bc1c1e2dc5"
+      "sha": "a2f2501c11ea11faa3a9ca90ec70999bb7df1802"
     },
     {
       "repo": "mathquest",
@@ -1046,13 +1190,13 @@
       "repo": "mathquest",
       "path": "public/stealth.js",
       "dest": "vendor/vault7/public/stealth.js",
-      "sha": "6ac34d7a271fca403f0c942cc01dc4911a6c415b"
+      "sha": "3c2abdd4b9fe636ee1e312b7aab6d0c06613d99c"
     },
     {
       "repo": "mathquest",
       "path": "public/vault-art.js",
       "dest": "vendor/vault7/public/vault-art.js",
-      "sha": "040600398c24ae92d8bb7587fefa0bc48af95391"
+      "sha": "637027d4db64323f5bc2f04460cdb9475c339480"
     },
     {
       "repo": "mathquest",
@@ -1250,79 +1394,91 @@
       "repo": "mathquest",
       "path": "public/games/nightfall/adapter.js",
       "dest": "vendor/nightfall/public/games/nightfall/adapter.js",
-      "sha": "e221015ff3a2805cd65e5cabec9ad26f272b7f7f"
+      "sha": "2661768cea6a643c22084160b9811a5c020c9ed3"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/config.js",
       "dest": "vendor/nightfall/public/games/nightfall/config.js",
-      "sha": "4c4369fb48d08f8dc57dc36b186cbce1383f277b"
+      "sha": "81b0236edf353a309437fabe4b2a6d197d7a4931"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/false-haven-adapter.js",
       "dest": "vendor/nightfall/public/games/nightfall/false-haven-adapter.js",
-      "sha": "eacd9523ff15a463b8281469c748fd3db8b876b8"
+      "sha": "8c19008403fd06b6eb7e1314a0b9d1388a61c0cb"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/false-haven-renderer.js",
       "dest": "vendor/nightfall/public/games/nightfall/false-haven-renderer.js",
-      "sha": "51ebafd2ce6f1eade4166851ead56dc3a7f288a0"
+      "sha": "b1d64880ccf060e750f65118b7bc22c3f15d6a93"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/false-haven-world.js",
       "dest": "vendor/nightfall/public/games/nightfall/false-haven-world.js",
-      "sha": "d22a52abe9214750120718c4da99967bfd5bb98f"
+      "sha": "e6b8a2eac03272441257aafaac6a8356f401aeba"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/hardware.js",
       "dest": "vendor/nightfall/public/games/nightfall/hardware.js",
-      "sha": "ee8623865138ff4e00b263053724e25aa532b4fd"
+      "sha": "bb9d41301c25b7fe383eef8fbb178c3f79734e2a"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/interiors.js",
+      "dest": "vendor/nightfall/public/games/nightfall/interiors.js",
+      "sha": "4dad019dfcb1f0cabdf90c819bef3b47035082b3"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/renderer.js",
       "dest": "vendor/nightfall/public/games/nightfall/renderer.js",
-      "sha": "1c6c84ab875e3ce5a66d3ec30ab25bf0d4df7d5e"
+      "sha": "8a435063f861606907268a7ee39fa0bda6dd7197"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue-adapter.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-adapter.js",
-      "sha": "f708c0c3ffdc50c0777ab0fc6824dd66584eda0c"
+      "sha": "74c768f7f69de9212ba70db2c6a56c44fec9c782"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue-host.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-host.js",
-      "sha": "a688e5c9b01e708aba4044b5bad7f791827fad46"
+      "sha": "cef22a99bd07ae96d880cc7ea73cd5ef45cd9bdc"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue-world.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-world.js",
-      "sha": "5c3915daefbe672db369908c8fb8d080d4aa3a90"
+      "sha": "ba8596145b4dec14d12256ba2359c17db59c55fe"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue.js",
-      "sha": "bccb4f7236c8d82ceba4a7ca790085603b2e3075"
+      "sha": "33a507f21b4897539cc1ed29a66c1a3ef06372a0"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/simulation.js",
       "dest": "vendor/nightfall/public/games/nightfall/simulation.js",
-      "sha": "71134d11dc9e0e0474a4b996778c4386639c2b9d"
+      "sha": "15912b457b7d2973a03aaa2cd6ccc5d2bf8612f0"
+    },
+    {
+      "repo": "mathquest",
+      "path": "public/games/nightfall/sprites.js",
+      "dest": "vendor/nightfall/public/games/nightfall/sprites.js",
+      "sha": "4981994ca015b5491763da613293afd283570a03"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/world.js",
       "dest": "vendor/nightfall/public/games/nightfall/world.js",
-      "sha": "398408fd874684417c369de3263564180172767f"
+      "sha": "dbff4efb05dc976514bec37001b1b5590987a312"
     },
     {
       "repo": "mathquest",
@@ -2083,15 +2239,15 @@
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2107,10 +2263,18 @@
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "9dbc63ef5d673f2e2482fc58b82f409900192212"
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+  },
+  "kingsgate": {
+    "repo": "williammcada/mathquest",
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
+  },
+  "blackout": {
+    "repo": "williammcada/mathquest",
+    "commit": "86e6b3f929292ceef35a809344100975b41facaf"
   }
 }

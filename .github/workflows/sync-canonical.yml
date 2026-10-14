@@ -4,12 +4,15 @@ on:
     branches: [main]
     paths: ['.github/workflows/sync-canonical.yml']
   schedule:
-    - cron: '17 * * * *'
+    # After school only: 09:17–22:17 UTC is 17:17–06:17 in Asia/Shanghai, so a synced
+    # game never replaces the code under a class that is playing.
+    - cron: '17 9-22 * * *'
   workflow_dispatch:
   repository_dispatch:
     types: [canonical-source-updated]
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: canonical-sync
   cancel-in-progress: false
@@ -57,3 +60,10 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -m 'Sync verified canonical games and Math Engine'
           git push origin HEAD:main
+      # Pushes made with the workflow token do not start other workflows, so start the
+      # full Verify run for the promoted commit; a passing run then deploys it.
+      - name: Verify and deploy the promoted commit
+        if: steps.sources.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run verify.yml --ref main
