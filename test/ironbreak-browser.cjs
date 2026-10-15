@@ -13,7 +13,7 @@ await student.goto(base+'/?code='+code);await student.locator('#join-password').
 // an interruption to verify and explicitly recover, never as a held-input timeout.
 const cdp=await student.context().newCDPSession(student);
 async function point(selector,id){const b=await student.locator(selector).boundingBox();return {x:b.x+b.width/2,y:b.y+b.height/2,id};}
-const right=await point('[data-game-key="right"]',1),jump=await point('[data-game-key="jump"]',2);
+const right=await point('[data-pad-cell="right"]',1),jump=await point('[data-game-key="jump"]',2);
 let scenarioStarted=0;
 const inputMatches=expected=>Object.entries(expected).every(([k,v])=>!!state().input[k]===v);
 const details=()=>student.evaluate(()=>({events:window.__inputDiagnostics,overlay:document.querySelector('.vault-overlay')?.innerText,hidden:document.hidden,held:[...document.querySelectorAll('.held')].map(e=>e.dataset.gameKey)}));
