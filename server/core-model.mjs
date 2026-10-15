@@ -4,7 +4,7 @@ import {catalog,Practice,freshMath,configError,generate,find,courses,checkAnswer
 import {validateArcadeKingsgate,BREAK_GOLD} from './kingsgate.mjs';
 import {installCampaigns} from './campaigns.mjs';
 import * as rounds from './rounds.mjs';
-export const VERSION='0.8.1';
+export const VERSION='0.8.2';
 const escHTML=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]);
 // Teacher catalog rows, built once from the Math Engine. Sent through /api/catalog, not on every poll.
 const CATALOG_ROWS=catalog.map(e=>({id:e.id,name:e.name,grade:e.grade,standard:e.standard||'',layer:e.layer,course:e.course||null,bankId:e.bankId||null,lesson:e.lessonLabel||null,order:e.lessonOrder??null}));
@@ -28,7 +28,19 @@ export class Model{
  tx(fn){return this.store.tx(fn);}
  auth(s,t,role){const a=s.tokens.find(x=>x.hash===hash(t||''));if(!a||a.expires<this.now()||a.role!==role)fail('Please sign in again.',401);return a;}
  teacher(s,t){return this.auth(s,t,'teacher');}
- student(s,t,approved=true){const a=this.auth(s,t,'student');const c=s.classes.find(x=>x.id===a.classId);const p=c?.students.find(x=>x.id===a.studentId);if(!c||!p||a.sessionId!==c.session?.id)fail('This session has ended. Join the current session.',401);if(approved&&!a.approved)fail('Waiting for teacher approval.',403);return {a,c,p};}
+ // v0.8.1 U-13 DEV playtest from the teacher desk. Each signed-in teacher gets one in-memory sandbox class and
+ // student. It is never written to the workspace, so DEV runs create no student, class, session, export or deletion
+ // records. Dispatch reaches it only through a teacher-verified object key, never a cookie string.
+ devKey(s,t){const a=this.teacher(s,t);return {dev:a.hash};}
+ devStart(s,t,input){const key=this.devKey(s,t).dev,game=input?.game,g=games.find(x=>x.id===game&&x.ready&&x.policy==='round');if(!g)fail('DEV mode covers the action games. Chrono, Olivia and Math Civ use their own DEV playtest files.');
+  const items=Array.isArray(input.items)?[...new Set(input.items.map(String))].slice(0,8):[],start=typeof input.start==='string'?input.start:'';
+  const opts=game==='vault7'?{route:start==='shaft'?'shaft':'corridor',loadout:items.filter(x=>['toolkit','cloak'].includes(x))}:game==='journey'?{hero:start||undefined,upgrade:typeof input.upgrade==='string'?input.upgrade:undefined}:['coastal','kingsgate'].includes(game)?{}:{loadout:items,...(['false-haven','nightfall'].includes(game)?{threat:Number.isInteger(input.threat)?input.threat:1}:{})};
+  const c={id:'dev',name:'DEV playtest',config:freshMath('S01').config,revision:1,session:{id:'dev',code:'DEV',status:'open',enabled:games.map(x=>x.id),opened:this.now()},students:[],archives:[]};
+  const p={id:'dev',name:'DEV playtest',override:null,revision:1,math:freshMath(),activity:{game,grant:false,gateId:null,itemId:null},answers:[],lastSeen:0,dev:true};c.students.push(p);
+  const rid=id();p.activity.round={id:rid,snapshot:rounds.createRound(game,{runId:rid,seed:randomBytes(4).readUInt32BE(),loadout:[],phaseId:'arcade-dev',configRevision:VERSION},opts),running:false,lastAt:this.now(),input:{},seq:0};
+  this.devSandboxes||=new Map();this.devSandboxes.set(key,{a:{approved:true,dev:true},c,p});if(this.devSandboxes.size>20)this.devSandboxes.delete(this.devSandboxes.keys().next().value);
+  return this.view(c,p,{approved:true});}
+ student(s,t,approved=true){if(t&&typeof t==='object'&&t.dev){const d=this.devSandboxes?.get(t.dev);if(!d)fail('This DEV playtest has ended. Start it again from the teacher desk.',401);return d;}const a=this.auth(s,t,'student');const c=s.classes.find(x=>x.id===a.classId);const p=c?.students.find(x=>x.id===a.studentId);if(!c||!p||a.sessionId!==c.session?.id)fail('This session has ended. Join the current session.',401);if(approved&&!a.approved)fail('Waiting for teacher approval.',403);return {a,c,p};}
  getClass(s,cid){const c=s.classes.find(x=>x.id===cid);if(!c)fail('Class not found.',404);return c;}
  config(c,p){return p?.override||c.config;}
  safeConfig(input){const c=clone(input);const err=configError(c);if(err)fail(err);c.selected=[...new Set(c.selected)];return c;}
@@ -84,6 +96,7 @@ export class Model{
    if(r.kg.open)return {state:this.view(c,p,a)};
    this.take(p,input);this.advance(c,p);const g=r.snapshot.g;
    if(r.snapshot.outcome||g?.mode!=='break'||g.breakFor!==r.kg.breaks.length+1)fail('No question round is due.',409);
+   if(p.dev){const n=5;r.kg.credited+=n;r.kg.breaks.push({wave:g.breakFor,answered:n,correct:n});return {devBreak:{answered:n,correct:n},state:this.view(c,p,a)};}
    const cfg=this.config(c,p),practice=new Practice(p.math);practice.saveConfig(cfg);p.activity.gateId=id();practice.open('kingsgate-break',p.activity.gateId);
    const count=Math.max(1,Math.min(5,Number(cfg.count)||3));p.math.gate.config.count=count;p.activity.itemId=id();
    r.kg.open={wave:g.breakFor,count,answered:0,correct:0};r.running=false;r.input={};

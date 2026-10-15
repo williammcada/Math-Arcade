@@ -36,7 +36,7 @@ export class KingsgateGame{
  // Question round between waves.
  async openBreak(){
   if(this.breakOpen)return;this.breakOpen={wave:this.sim.g.breakFor,answered:0,correct:0};this.audio.pause(true);
-  try{await this.syncPromise;const out=await this.api('kingsgate',{roundId:this.round.id,commandId:crypto.randomUUID(),action:'break',snapshot:{...this.sim,events:[]}});this.state=out.state;this.round=out.state.activity.round;if(out.state.gate)this.showQuestion(out.state.gate);else throw Error('The question round could not open.');}
+  try{await this.syncPromise;const out=await this.api('kingsgate',{roundId:this.round.id,commandId:crypto.randomUUID(),action:'break',snapshot:{...this.sim,events:[]}});this.state=out.state;this.round=out.state.activity.round;if(out.devBreak){await this.finishBreak(out.devBreak);return;}if(out.state.gate)this.showQuestion(out.state.gate);else throw Error('The question round could not open.');}
   catch(e){this.breakOpen=null;this.paused=true;this.error=e.message;this.paint();}
  }
  showQuestion(g){

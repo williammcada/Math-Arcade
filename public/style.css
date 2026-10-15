@@ -34,3 +34,7 @@
 .join-password-panel .label-row{font-size:13px;margin:4px 0 9px;display:flex;align-items:center}
 @media (min-width:900px){.qr-big-body{flex-wrap:nowrap}}
 .qr-big-info{min-width:300px}.qr-big-info strong{font-size:40px;letter-spacing:4px}
+/* v0.8.1 DEV playtest (U-13) */
+.dev-desk{border:2px solid #f0b44c;background:#fffaf0}.dev-games{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#dev-banner{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:60;padding:4px 14px;border-radius:0 0 8px 8px;background:#f0b44c;color:#1a1306;font:800 12px/1.4 system-ui,sans-serif;letter-spacing:.04em;pointer-events:none}#dev-banner[hidden]{display:none}
+#settings:has(#dev-panel){padding:0;background:transparent;border:0}#settings #dev-panel .mq-dev{margin:0}
