@@ -1,4 +1,4 @@
-// Math Arcade v0.8.0 — sound on student iPads.
+// MathQuest v0.13.0 — sound on student iPads (moved from Math Arcade v0.8.1; Arcade receives it by sync).
 // Loaded as a classic script before the app modules, so every game's AudioContext is tracked.
 // 1. Asks iPadOS for "playback" audio, so the side switch / silent mode no longer mutes game sound.
 //    (Older iPads without navigator.audioSession get a silent looping <audio> element instead.)
