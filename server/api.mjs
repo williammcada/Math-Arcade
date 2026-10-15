@@ -16,6 +16,12 @@ export function dispatch(model,{method,path,url,body,cookies}){
       case '/api/session':model.session(s,t,body.classId,body.action);break;
       case '/api/availability':model.availability(s,t,body.classId,body.enabled);break;
       case '/api/approve':model.approve(s,t,body.id,body.allow);break;
+      case '/api/approve-all':return model.approveAll(s,t,body.classId);
+      case '/api/sign-out-all':return model.signOutAll(s,t,body.classId);
+      case '/api/replace-roster':return model.replaceRoster(s,t,body.classId,body.names,body.confirm);
+      case '/api/math-set':return model.saveMathSet(s,t,body);
+      case '/api/math-set/apply':model.applyMathSet(s,t,body.classId,body.setId,body.everyone);break;
+      case '/api/math-set/delete':model.deleteMathSet(s,t,body.setId);break;
       case '/api/delete':model.remove(s,t,body.classId,body.studentId,body.confirm);break;
       case '/api/preview':return model.preview(s,t,body.ids);
       case '/api/begin':return model.begin(s,u,body.game);

@@ -129,3 +129,8 @@ Owner moved the student front door from Netlify to Render to stop Netlify's per-
 ## v0.7.0 — every game current, Blackout, card art, automatic deployment — 14 October 2026
 
 Owner found games out of date and Kingsgate/Blackout missing. Causes: the hourly sync never deployed (workflow-token pushes do not start Verify; deploy needed a manual dispatch), Kingsgate PR #5 was never merged, and Blackout/Nightfall art never reached MathQuest `main`. v0.7.0 merges PR #5, pins every game to MathQuest v0.12.0, adds Blackout Protocol, redesigns cards around full art (all 12 games, Sekigahara art extracted from Math Civ), and deploys every verified `main` commit automatically with the sync limited to after school. **Owner decision recorded:** automatic deployment replaces the manual-dispatch rule for routine syncs. See [specification](change-specs/v0.7.0.md) and [release notes](releases/v0.7.0.md). Live and iPad checks: Not run.
+
+## v0.8.0 Phase 1 — teacher desk and joining — 15 October 2026
+
+Owner feedback after the 15 October classroom run. Approved [v0.8.0 change specification](change-specs/v0.8.0.md). Phase 1 on branch `implement/v0.8.0`: enlargeable QR (to 300% or fit screen, with code and password), class code locked after a QR scan, **universal class password** (shared, reusable, refreshes every 30 s, previous accepted 10 s; supersedes the single-use 45-second password described above), Admit all, saved math sets, Sign everyone out, Replace roster. Status: implementation checkpoint — [evidence](checkpoints/v0.8.0-phase1.md). Not merged or deployed; iPad and hosted checks Not run. Phases 2–4 (sound, D-pads, Math Engine answers) follow.
+
