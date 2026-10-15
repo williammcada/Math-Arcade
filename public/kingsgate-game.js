@@ -7,7 +7,7 @@ import {resolveBreak} from '/kingsgate/games/kingsgate/sim.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const KINGSGATE_STORY='Orc warbands of the Ashmoor are marching on Kingsgate, the walled city that guards the kingdom. Twelve waves are coming down the pass; the last brings a Siege Ram.';
 export const KINGSGATE_TASK='Tap a gold ring to build a tower; tap a tower to upgrade or sell it. Before each new wave you answer questions: every correct first answer earns 30 gold. Kill Shamans first and save gold for the Siege Ram. Five active minutes; pauses and question rounds stop the clock.';
-export function kingsgatePreparation(){return `<section class="card narrow"><span class="pill live">READY</span><h1>Kingsgate</h1><section class="arcade-story"><h2>Story</h2><p>${KINGSGATE_STORY}</p></section><section class="arcade-directions"><h2>Your task</h2><p>${KINGSGATE_TASK}</p><p>There is no math gate before this game. The questions come between waves.</p></section><button id="launch" class="primary">Start Kingsgate</button></section>`;}
+export function kingsgatePreparation(){return `<section class="card narrow"><span class="pill live">READY</span><h1>Kingsgate</h1><section class="arcade-story"><h2>Story</h2><p>${KINGSGATE_STORY}</p></section><section class="arcade-directions"><h2>Your task</h2><p>${KINGSGATE_TASK}</p><p>The questions come between waves. Leaving Kingsgate early means a math gate before your next Kingsgate.</p></section><button id="launch" class="primary">Start Kingsgate</button></section>`;}
 export class KingsgateGame{
  constructor(root,state,api,onClose){
   Object.assign(this,{root,state,api,onClose,game:'kingsgate',round:state.activity.round,seq:state.activity.round.seq,paused:true,connected:true,last:performance.now(),acc:0});
@@ -36,7 +36,7 @@ export class KingsgateGame{
  // Question round between waves.
  async openBreak(){
   if(this.breakOpen)return;this.breakOpen={wave:this.sim.g.breakFor,answered:0,correct:0};this.audio.pause(true);
-  try{await this.syncPromise;const out=await this.api('kingsgate',{roundId:this.round.id,commandId:crypto.randomUUID(),action:'break',snapshot:{...this.sim,events:[]}});this.state=out.state;this.round=out.state.activity.round;if(out.state.gate)this.showQuestion(out.state.gate);else throw Error('The question round could not open.');}
+  try{await this.syncPromise;const out=await this.api('kingsgate',{roundId:this.round.id,commandId:crypto.randomUUID(),action:'break',snapshot:{...this.sim,events:[]}});this.state=out.state;this.round=out.state.activity.round;if(out.devBreak){await this.finishBreak(out.devBreak);return;}if(out.state.gate)this.showQuestion(out.state.gate);else throw Error('The question round could not open.');}
   catch(e){this.breakOpen=null;this.paused=true;this.error=e.message;this.paint();}
  }
  showQuestion(g){

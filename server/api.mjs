@@ -7,7 +7,10 @@ export function dispatch(model,{method,path,url,body,cookies}){
     else if(method==='GET'&&path==='/api/roster')data=model.tx(s=>model.lookup(s,url.searchParams.get('code')));
     else if(method==='GET'&&path==='/api/export')data=model.tx(s=>model.export(s,cookies.teacher));
     else if(method==='POST')data=model.tx(s=>{
-     const t=cookies.teacher,u=cookies.student;
+     const t=cookies.teacher;let u=cookies.student;
+     // v0.8.1 U-13: teacher-desk DEV playtest. Game requests are re-routed to the teacher's in-memory sandbox.
+     if(path==='/api/dev/start')return model.devStart(s,t,body);
+     if(path.startsWith('/api/dev/')){const sub=path.slice(9);if(!['sync','extra','kingsgate','ironbreak','nightfall','vault','leave'].includes(sub))throw Object.assign(Error('Not found.'),{status:404});u=model.devKey(s,t);path='/api/'+sub;}
      switch(path){
       case '/api/class':return {id:model.classCreate(s,t,body)};
       case '/api/roster':model.roster(s,t,body.classId,body.names);break;

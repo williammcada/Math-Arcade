@@ -142,3 +142,7 @@ Owner feedback after the 15 October classroom run. Approved [v0.8.0 change speci
 
 Shared Arcade audio unlock (playback audio session, resume on every tap, music on by default), recovering Sound buttons, louder Journey, campaign iframes woken on taps. Canonical game code unchanged. Implementation checkpoint — [evidence](checkpoints/v0.8.1-phase2-sound.md). Physical iPad check Not run.
 
+## v0.8.2–v0.8.3 — DEV playtest and directional pads — 15 October 2026
+
+v0.8.2: DEV playtest from the teacher desk for the nine action games (handbook U-13 amended 2026-10-15) — [evidence](checkpoints/v0.8.2-dev-mode.md). v0.8.3: one pad module (U-17): Mega Man cross for Nightfall 1 and False Haven; 8-direction pad for Journey, Coastal Escape and Ironbreak; Coastal fills the screen — [evidence](checkpoints/v0.8.3-pads.md). Implementation checkpoints; iPad checks Not run.
+
