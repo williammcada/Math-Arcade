@@ -10,7 +10,7 @@ try{
  const teacher=await browser.newPage({viewport:{width:1440,height:1000}}),student=await browser.newPage({viewport:{width:1180,height:820},hasTouch:true});
  for(const p of [teacher,student])p.on('pageerror',e=>errors.push(e.message));
  await teacher.goto(base+'/?role=teacher');await teacher.locator('#password').fill('test-password-only');await teacher.getByRole('button',{name:'Sign in',exact:true}).click();await teacher.locator('[data-available="blackout"]').waitFor();
- await student.goto(base+'/?code='+code);await student.getByRole('button',{name:'Join class →'}).click();await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
+ await student.goto(base+'/?code='+code);await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
  const card=student.locator('.game-card:has([data-game="blackout"])');await card.waitFor();
  assert.match(await card.innerText(),/Blackout Protocol/);assert.equal(await card.locator('.visual img').getAttribute('src'),'/covers/blackout.svg');
  assert.ok(await card.locator('.visual img').evaluate(i=>i.complete&&i.naturalWidth>0),'card art loads');

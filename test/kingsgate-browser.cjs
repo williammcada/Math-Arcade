@@ -9,7 +9,7 @@ try{
  const teacher=await browser.newPage({viewport:{width:1440,height:1000}}),student=await browser.newPage({viewport:{width:Number(process.env.KG_W||1180),height:Number(process.env.KG_H||820)},hasTouch:true});
  for(const p of [teacher,student])p.on('pageerror',e=>errors.push(e.message));
  await teacher.goto(base+'/?role=teacher');await teacher.locator('#password').fill('test-password-only');await teacher.getByRole('button',{name:'Sign in',exact:true}).click();await teacher.locator('[data-available="kingsgate"]').waitFor();
- await student.goto(base+'/?code='+code);await student.getByRole('button',{name:'Join class →'}).click();await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
+ await student.goto(base+'/?code='+code);await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
  await student.locator('[data-game="kingsgate"]').waitFor();await student.locator('[data-game="kingsgate"]').click();
  await student.getByRole('button',{name:'Start Kingsgate'}).waitFor();assert.equal(student0().math.gate,null,'no math gate before Kingsgate');
  await student.getByRole('button',{name:'Start Kingsgate'}).click();

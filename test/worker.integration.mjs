@@ -37,15 +37,17 @@ test('Cloudflare runtime: atomic joins, ten games, isolation, persistence and br
  let c=await view();
  const input={code:c.session.code,password:c.session.join.password,studentId:c.students[0].id};
  const redeem=()=>fetch(base+'/api/join',{method:'POST',headers:{origin:base,'content-type':'application/json'},body:JSON.stringify(input)});
- const race=await Promise.all([redeem(),redeem()]);assert.deepEqual(race.map(r=>r.status).sort(),[200,403]);
- let student=race.find(r=>r.ok).headers.get('set-cookie').split(';')[0];
+ const race=await Promise.all([redeem(),redeem()]);assert.deepEqual(race.map(r=>r.status),[200,200]);// v0.8.0: shared password is reusable; both wait for the teacher.
+ for(const claim of (await view()).claims)await teacherCall('approve',{id:claim.id,allow:false});
+ const one=await redeem();assert.equal(one.status,200);
+ let student=one.headers.get('set-cookie').split(';')[0];
  await call('/api/begin',{game:'math-civ'},student,403);
  await teacherCall('approve',{id:(await view()).claims[0].id,allow:true});
  const studentCall=async(path,body,status=200)=>(await call('/api/'+path,body,student,status)).data;
  await call('/api/teacher',undefined,student,401);
  for(const path of ['/math-civ/index.html','/math-civ/game.js','/math-civ%2Fgame.js','/chrono/index.html','/olivia/index.html'])assert.equal((await fetch(base+path)).status,401,path);
  for(const path of ['/server/worker.mjs','/vendor/manifest.json','/data/arcade.sqlite','/build/provenance.json'])assert.equal((await fetch(base+path)).status,404,path);
- const home=await fetch(base+'/');assert.match(await home.text(),/<title>Math Arcade v0.7.0<\/title>/);
+ const home=await fetch(base+'/');assert.match(await home.text(),/<title>Math Arcade v0.8.1<\/title>/);
  assert.match(home.headers.get('content-security-policy'),/frame-ancestors 'none'/);
  // All seven authoritative round engines execute in workerd, with one start gate.
  for(const game of ['coastal','vault7','nightfall','robot','false-haven','blackline','journey','blackout']){
@@ -98,7 +100,7 @@ test('Cloudflare runtime: atomic joins, ten games, isolation, persistence and br
  assert.equal((await studentCall('campaign',{game,action:'poll',lease:load.lease})).playing,false);
  await teacherCall('session',{classId:cid,action:'resume'});
  const asset=await fetch(base+'/math-civ/index.html',{headers:{cookie:student}});
- assert.equal(asset.status,200);assert.match(asset.headers.get('cache-control'),/no-store/);assert.match(await asset.text(),/Math Arcade v0.7.0/);
+ assert.equal(asset.status,200);assert.match(asset.headers.get('cache-control'),/no-store/);assert.match(await asset.text(),/Math Arcade v0.8.1/);
  // Restart the entire workerd process using the same persistent directory.
  await stop();await start();
  load=await studentCall('campaign',{game,action:'load'});assert.deepEqual(load.storage,storage);

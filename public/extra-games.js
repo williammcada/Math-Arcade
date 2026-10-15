@@ -26,7 +26,7 @@ export class ExtraGame{
   get('[data-map]')?.addEventListener('click',()=>this.map=!this.map);
   get('[data-assist]')?.addEventListener('click',()=>{this.pause();if(confirm('Switch to guided escape? Progress and used resources stay. This is recorded separately from action success.'))this.command('assist');});
   get('[data-next]').onclick=()=>this.command('safe');
-  get('[data-sound]').onclick=async()=>{await this.audio.toggle();get('[data-sound]').textContent=this.audio.enabled?'Sound on':'Sound off';};
+  get('[data-sound]').onclick=async()=>{try{await this.audio.toggle();}catch{try{await this.audio.start?.();}catch{}}get('[data-sound]').textContent=this.audio.enabled?'Sound on':'Sound off';};
   get('[data-exit]').onclick=async()=>{this.pause();if(confirm('Leave this round? A new round requires a new math gate.')){try{await api('leave',{});this.destroy();}catch(e){this.error=e.message;this.paint();}}};
   const opts={signal:this.abort.signal};for(const event of ['blur','resize','orientationchange','pagehide'])window.addEventListener(event,()=>{this.pause();this.fit();},opts);document.addEventListener('visibilitychange',()=>{if(document.hidden)this.pause();},opts);window.visualViewport?.addEventListener('resize',()=>{this.pause();this.fit();},opts);
   for(const event of ['contextmenu','selectstart','dragstart'])root.addEventListener(event,e=>{e.preventDefault();this.pause();},opts);
