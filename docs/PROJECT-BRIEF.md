@@ -146,3 +146,7 @@ Shared Arcade audio unlock (playback audio session, resume on every tap, music o
 
 v0.8.2: DEV playtest from the teacher desk for the nine action games (handbook U-13 amended 2026-10-15) — [evidence](checkpoints/v0.8.2-dev-mode.md). v0.8.3: one pad module (U-17): Mega Man cross for Nightfall 1 and False Haven; 8-direction pad for Journey, Coastal Escape and Ironbreak; Coastal fills the screen — [evidence](checkpoints/v0.8.3-pads.md). Implementation checkpoints; iPad checks Not run.
 
+## v0.9.1 — MathQuest owns the pad and sound code — 16 October 2026
+
+Synced MathQuest 0.14.0 (`5a5d7c6`); Arcade hosts use MathQuest's `engine/pad.js` and `engine/audio-unlock.js`; the Arcade copies are deleted. Same pads and sound as v0.8.3/0.8.1, now from one source. Implementation checkpoint — [record](checkpoints/v0.9.1-shared-engine.md).
+

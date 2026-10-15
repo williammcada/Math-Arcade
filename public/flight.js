@@ -1,7 +1,7 @@
 import {outgoing,keepLocal} from '/round-sync.js';
 import {aerialAdapter as adapter} from '/coastal/games/aerial-shooter/adapter.js';
 import {DIRECTIONAL_KEYS} from '/coastal/engine/directional-input.js';
-import {padMarkup,bindPadInput} from '/pad.js';
+import {controlMarkup as padMarkup,bindGameInput as bindPadInput} from '/coastal/engine/controls.js';
 // v0.8.3 U-17: 8-direction pad, and the battlefield fills the screen (owner, 2026-10-15).
 const FLIGHT_PAD={pad:'eight',left:[['up','Move up'],['left','Move left'],['down','Move down'],['right','Move right']],right:[],keys:DIRECTIONAL_KEYS};
 import {GameAudio} from '/coastal/engine/game-audio.js';

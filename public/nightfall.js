@@ -2,7 +2,7 @@ import {outgoing,keepLocal} from '/round-sync.js';
 import {nightfallAdapter as adapter} from '/nightfall/games/nightfall/adapter.js';
 import {nextObjective} from '/nightfall/games/nightfall/simulation.js';
 import {CONTROL_PROFILES} from '/coastal/engine/controls.js';
-import {padMarkup,bindPadInput} from '/pad.js';
+import {controlMarkup as padMarkup,bindGameInput as bindPadInput} from '/coastal/engine/controls.js';
 import {GameAudio} from '/coastal/engine/game-audio.js';
 export class Nightfall{
  constructor(root,state,api,onClose){

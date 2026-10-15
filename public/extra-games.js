@@ -4,7 +4,7 @@ import {blacklineAdapter} from '/blackline/games/blackline/adapter.js';
 import {journeyAdapter,HEROES,UPGRADES} from '/journey/adapter.js';
 import {blackoutAdapter} from '/blackout/games/blackout/adapter.js';
 import {nextObjective} from '/nightfall/games/nightfall/simulation.js';
-import {padMarkup as controlMarkup,bindPadInput as bindGameInput} from '/pad.js';
+import {controlMarkup,bindGameInput} from '/coastal/engine/controls.js';
 import {GameAudio} from '/coastal/engine/game-audio.js';
 export const EXTRA_IDS=['false-haven','blackline','journey','blackout'];
 const profiles={
