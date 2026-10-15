@@ -20,7 +20,10 @@ export function stepJourney(s,keys,dt){
 const view=s=>hydrate(s).snapshot(s.model.lastAt),renderers=new WeakMap();
 class Audio{
  constructor(){this.audio=new JourneyAudio();this.enabled=true;this.paused=true;}
- async start(){if(this.enabled)await this.audio.unlock();}
+ // v0.8.0: Journey's synth is very quiet on iPad speakers. Route it through a 3× gain and a limiter
+ // by giving its context a louder "destination" (Arcade-owned wrapper; the canonical game is unchanged).
+ boost(){const AC=globalThis.AudioContext||globalThis.webkitAudioContext;if(!AC||this.audio.ctx)return;const ctx=new AC(),real=ctx.destination,gain=ctx.createGain(),limit=ctx.createDynamicsCompressor();gain.gain.value=3;limit.threshold.value=-6;limit.knee.value=6;limit.ratio.value=12;limit.attack.value=.003;limit.release.value=.15;gain.connect(limit);limit.connect(real);Object.defineProperty(ctx,'destination',{value:gain});this.audio.ctx=ctx;}
+ async start(){if(this.enabled){this.boost();await this.audio.unlock();}}
  async toggle(){this.enabled=!this.enabled;this.audio.music=this.audio.effects=this.enabled;this.audio.silence();if(this.enabled)await this.start();}
  pause(on){this.paused=on;this.audio.stopped=on;if(on)this.audio.silence();}
  update(s){if(this.enabled)this.audio.sync({...view(s),paused:this.paused});}

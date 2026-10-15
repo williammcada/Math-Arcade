@@ -134,3 +134,7 @@ Owner found games out of date and Kingsgate/Blackout missing. Causes: the hourly
 
 Owner feedback after the 15 October classroom run. Approved [v0.8.0 change specification](change-specs/v0.8.0.md). Phase 1 on branch `implement/v0.8.0`: enlargeable QR (to 300% or fit screen, with code and password), class code locked after a QR scan, **universal class password** (shared, reusable, refreshes every 30 s, previous accepted 10 s; supersedes the single-use 45-second password described above), Admit all, saved math sets, Sign everyone out, Replace roster. Status: implementation checkpoint — [evidence](checkpoints/v0.8.0-phase1.md). Not merged or deployed; iPad and hosted checks Not run. Phases 2–4 (sound, D-pads, Math Engine answers) follow.
 
+## v0.8.1 Phase 2 — sound on student iPads — 15 October 2026
+
+Shared Arcade audio unlock (playback audio session, resume on every tap, music on by default), recovering Sound buttons, louder Journey, campaign iframes woken on taps. Canonical game code unchanged. Implementation checkpoint — [evidence](checkpoints/v0.8.1-phase2-sound.md). Physical iPad check Not run.
+

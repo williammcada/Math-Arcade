@@ -19,7 +19,7 @@ export class KingsgateGame{
   get('[data-pause]').onclick=()=>this.paused?this.resume():this.pause();get('[data-help]').onclick=()=>{this.help=true;this.pause();};
   get('[data-assist]').onclick=()=>{this.pause();if(confirm('Switch to the guided defense? It is recorded separately from a defense result.'))this.command('assist');};
   get('[data-next]').onclick=()=>this.command('safe');
-  get('[data-sound]').onclick=async()=>{await this.audio.toggle();get('[data-sound]').textContent=this.audio.enabled?'Sound on':'Sound off';};
+  get('[data-sound]').onclick=async()=>{try{await this.audio.toggle();}catch{try{await this.audio.start?.();}catch{}}get('[data-sound]').textContent=this.audio.enabled?'Sound on':'Sound off';};
   get('[data-exit]').onclick=async()=>{this.pause();if(confirm('Leave this round?')){try{await api('leave',{});this.destroy();}catch(e){this.error=e.message;this.paint();}}};
   const opts={signal:this.abort.signal};for(const event of ['blur','pagehide'])window.addEventListener(event,()=>this.pause(),opts);document.addEventListener('visibilitychange',()=>{if(document.hidden)this.pause();},opts);
   for(const event of ['contextmenu','selectstart','dragstart'])get('.vault-stage').addEventListener(event,e=>e.preventDefault(),opts);

@@ -16,6 +16,12 @@ for(const type of ['keydown','keyup','pointerdown','pointermove','pointerup','cl
 const contexts=[];if(window.AudioContext){const Original=window.AudioContext;window.AudioContext=class extends Original{constructor(...args){super(...args);contexts.push(this);}resume(){return paused?Promise.resolve():super.resume();}};}
 function block(message){if(!paused){paused=true;window.arcadePaused=true;window.arcadePause?.(true);for(const context of contexts)void context.suspend();speechSynthesis?.cancel();}blocker.hidden=false;if(!blocker.open)blocker.showModal();blocker.querySelector('[data-message]').textContent=message;blocker.querySelector('button').hidden=!allowed;}
 blocker.querySelector('button').onclick=()=>{if(!allowed)return;paused=false;window.arcadePaused=false;blocker.hidden=true;blocker.close();window.arcadePause?.(false);for(const context of contexts)void context.resume();};
+// v0.8.0 iPad sound: playback audio session (side switch no longer mutes), and every tap/click/key resumes
+// suspended audio and retries music that iOS refused to start outside a gesture.
+try{if(navigator.audioSession)navigator.audioSession.type='playback';}catch{}
+const blockedMusic=new Set(),nativePlay=HTMLMediaElement.prototype.play;HTMLMediaElement.prototype.play=function(...args){const p=nativePlay.apply(this,args);p?.catch?.(()=>{if(this.loop)blockedMusic.add(this);});return p;};
+const wakeAudio=()=>{if(paused)return;try{if(navigator.audioSession&&navigator.audioSession.type!=='playback')navigator.audioSession.type='playback';}catch{}for(const c of contexts)if(c.state==='suspended')void c.resume();for(const m of blockedMusic){blockedMusic.delete(m);if(m.paused)void nativePlay.call(m).catch(()=>{});}};
+for(const type of ['touchend','pointerup','click','keydown'])document.addEventListener(type,wakeAudio,{capture:true,passive:true});
 const nativeSetInterval=window.setInterval;
 nativeSetInterval(async()=>{try{const v=await request('poll');allowed=v.playing;window.arcadeConfig=v.effective;window.arcadeAssignment?.(v.effective);if(!allowed)block(v.status==='ended'?'Your classroom session has ended.':'Your teacher has paused or closed this adventure.');else if(paused){blocker.querySelector('[data-message]').textContent='Ready when you are.';blocker.querySelector('button').hidden=false;}await window.arcadeFlush();}catch(e){allowed=false;block(e.message);}},800);
 window.addEventListener('blur',()=>block('Adventure paused.'));
