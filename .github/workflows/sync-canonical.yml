@@ -26,7 +26,10 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-      - run: node scripts/sync-upstream.mjs
+      - name: Copy upstream sources
+        env:
+          UPSTREAM_READ_TOKEN: ${{ secrets.UPSTREAM_READ_TOKEN }}
+        run: node scripts/sync-upstream.mjs
       - name: Detect source changes
         id: sources
         run: |
@@ -39,6 +42,8 @@ jobs:
       - run: npm ci
         if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
       - if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          UPSTREAM_READ_TOKEN: ${{ secrets.UPSTREAM_READ_TOKEN }}
         run: npm run build && npm run check && npm test && npm run check:worker
       - if: steps.sources.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: npm install --no-save --package-lock=false playwright@1.62.1
