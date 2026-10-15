@@ -3,3 +3,16 @@
 .vault-stage{position:absolute;inset:0;width:auto;height:auto;min-height:0;overflow:hidden}.vault-stage canvas{width:100%;height:100%;max-height:100%;object-fit:contain}.vault-root label{display:flex;align-items:center;gap:6px}.vault-root input[type=checkbox]{width:18px;height:18px;min-height:0;padding:0;margin:0}.vault-scenes button[aria-pressed=true]{background:#c4f4df;color:#142c39;border-color:#c4f4df}
 
 /* v0.9.0 skill picker */.skill-picker{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px 16px;margin:18px 0}.skill-picker h3{margin:0 0 8px}.course-ticks{border:0;padding:0;margin:0 0 6px;display:flex;flex-wrap:wrap;gap:6px 16px}.course-ticks legend{font-weight:600;font-size:13px;margin-bottom:6px}.course-ticks small{color:var(--muted)}#grade-range{margin:10px 0}#grade-range[hidden]{display:none}.skill-picker details.search-help{margin:8px 0}#skill-status{font-size:13px;margin:6px 0 0}#skill-status button{font-size:12px;padding:3px 9px;min-height:28px;margin-left:6px}.skills .skill-group{grid-column:1/-1;margin:10px 0 2px;font-size:13px;color:var(--ink);position:sticky;top:0;background:#fff;padding:4px 0;border-bottom:1px solid var(--line)}.skills label small{color:var(--muted);margin-left:4px}.skills{max-height:340px}
+
+/* v0.10.0 (U-18): the Math Engine answer pad sits under the answer box. Keys and look come from the Engine. */
+.answer-pad-host{margin-top:12px}.keypad.answer-pad-host{display:block}
+/* v0.10.0 (U-18): keep the Engine pad's own look inside screens whose button styles would otherwise override it
+   (.keypad button, .flight-root button, .classroom-gate button). Values come from the pad's --answer-pad-* settings. */
+.answer-pad-host .answer-pad button.answer-pad-key{background:var(--answer-pad-key-bg);color:var(--answer-pad-key-fg);border:1px solid var(--answer-pad-key-border);border-radius:var(--answer-pad-radius);padding:4px;min-height:var(--answer-pad-key-min);font:600 var(--answer-pad-font)/1 system-ui,sans-serif;box-shadow:none;width:auto;margin:0}
+.answer-pad-host .answer-pad button.answer-pad-key[data-action]{background:var(--answer-pad-action-bg);font-size:calc(var(--answer-pad-font)*.8)}
+.answer-pad-host .answer-pad button.answer-pad-tab{background:var(--answer-pad-tab-bg);color:var(--answer-pad-key-fg);border:1px solid var(--answer-pad-key-border);border-radius:var(--answer-pad-radius);padding:4px;min-height:36px;font:600 16px system-ui,sans-serif;box-shadow:none;width:auto;margin:0}
+.answer-pad-host .answer-pad button.answer-pad-tab[aria-selected="true"]{background:var(--answer-pad-tab-active-bg);color:var(--answer-pad-tab-active-fg);border-color:var(--answer-pad-tab-active-bg)}
+/* v0.10.0: Kingsgate question round — question beside the answer pad so the pad and Check answer fit without scrolling. */
+.kg-q-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px);gap:18px;align-items:start}
+.kg-q-layout .answer-pad-host{margin-top:8px}
+@media(max-width:620px){.kg-q-layout{grid-template-columns:1fr}}
