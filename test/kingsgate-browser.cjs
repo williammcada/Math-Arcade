@@ -3,7 +3,7 @@ const {chromium}=require('playwright');const assert=require('node:assert/strict'
 (async()=>{const {createApp}=await import('../server/index.mjs');const {freshMath}=await import('../build/math/engine.js');const dir=fs.mkdtempSync(os.tmpdir()+'/arcade-kingsgate-browser-');const {server,model}=createApp({dbPath:dir+'/db',password:'test-password-only'});let browser;await new Promise(r=>server.listen(0,'127.0.0.1',r));
 try{
  const base='http://127.0.0.1:'+server.address().port;
- const code=model.tx(s=>{const t=model.login(s,'test-password-only'),cid=model.classCreate(s,t,{name:'Kingsgate'});model.roster(s,t,cid,['Solo']);model.assign(s,t,cid,{config:{...freshMath().config,count:2}});model.session(s,t,cid,'open');return s.classes[0].session.code;});
+ const code=model.tx(s=>{const t=model.login(s,'test-password-only'),cid=model.classCreate(s,t,{name:'Kingsgate'});model.roster(s,t,cid,['Solo']);model.assign(s,t,cid,{config:{...freshMath().config,count:2,kgPerWave:2}});model.session(s,t,cid,'open');return s.classes[0].session.code;});
  const student0=()=>model.tx(s=>s.classes[0].students[0]);const errors=[];
  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
  const teacher=await browser.newPage({viewport:{width:1440,height:1000}}),student=await browser.newPage({viewport:{width:Number(process.env.KG_W||1180),height:Number(process.env.KG_H||820)},hasTouch:true});

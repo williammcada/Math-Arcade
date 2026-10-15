@@ -1,6 +1,9 @@
 // Kingsgate in Math Arcade: device-run defense with between-wave question rounds.
 // Gold from questions is only accepted up to what the server has credited for correct answers.
 export const BREAK_GOLD=30;
+// Kingsgate questions per wave: its own teacher setting, separate from "questions per gate". Default 1.
+export const KG_PER_WAVE_DEFAULT=1,KG_PER_WAVE_MAX=5;
+export const kgPerWave=cfg=>Number.isInteger(cfg?.kgPerWave)&&cfg.kgPerWave>=1&&cfg.kgPerWave<=KG_PER_WAVE_MAX?cfg.kgPerWave:KG_PER_WAVE_DEFAULT;
 const STATS=['kills','leaks','spawned','bounty','mathGold','spent','refund','shots','answered','correct'];
 const okInt=(v,a,b)=>Number.isInteger(v)&&v>=a&&v<=b;
 export function validateArcadeKingsgate(s,kg={credited:0,breaks:[]}){

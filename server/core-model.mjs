@@ -1,7 +1,7 @@
 import {currentPassword,rotatePassword,matchPassword} from './join-password.mjs';
 import {randomUUID,randomBytes,createHash,timingSafeEqual,scryptSync} from 'node:crypto';
 import {catalog,Practice,freshMath,configError,generate,find,courses,checkAnswer,version as ENGINE_VERSION,contentHash as ENGINE_HASH} from '../build/math/engine.js';
-import {validateArcadeKingsgate,BREAK_GOLD} from './kingsgate.mjs';
+import {validateArcadeKingsgate,BREAK_GOLD,kgPerWave,KG_PER_WAVE_MAX} from './kingsgate.mjs';
 import {installCampaigns} from './campaigns.mjs';
 import * as rounds from './rounds.mjs';
 export const VERSION='0.9.0-rc.1';
@@ -43,7 +43,7 @@ export class Model{
  student(s,t,approved=true){if(t&&typeof t==='object'&&t.dev){const d=this.devSandboxes?.get(t.dev);if(!d)fail('This DEV playtest has ended. Start it again from the teacher desk.',401);return d;}const a=this.auth(s,t,'student');const c=s.classes.find(x=>x.id===a.classId);const p=c?.students.find(x=>x.id===a.studentId);if(!c||!p||a.sessionId!==c.session?.id)fail('This session has ended. Join the current session.',401);if(approved&&!a.approved)fail('Waiting for teacher approval.',403);return {a,c,p};}
  getClass(s,cid){const c=s.classes.find(x=>x.id===cid);if(!c)fail('Class not found.',404);return c;}
  config(c,p){return p?.override||c.config;}
- safeConfig(input){const c=clone(input);const err=configError(c);if(err)fail(err);c.selected=[...new Set(c.selected)];return c;}
+ safeConfig(input){const c=clone(input);const err=configError(c);if(err)fail(err);if(c.kgPerWave!==undefined&&!(Number.isInteger(c.kgPerWave)&&c.kgPerWave>=1&&c.kgPerWave<=KG_PER_WAVE_MAX))fail(`Choose 1–${KG_PER_WAVE_MAX} Kingsgate questions per wave.`);c.selected=[...new Set(c.selected)];return c;}
  login(s,password){if(typeof password!=='string'||password.length>200||!timingSafeEqual(scryptSync(password,this.salt,32),this.password))fail('Password not recognized.',401);const t=token();s.tokens=s.tokens.filter(x=>x.expires>this.now());s.tokens.push({hash:hash(t),role:'teacher',expires:this.now()+8*3600e3});return t;}
  classCreate(s,t,input){this.teacher(s,t);if(s.classes.length>=50)fail('Maximum 50 classes.');const c={id:id(),name:name(input.name),config:freshMath('S01').config,revision:1,students:[],session:null,archives:[]};s.classes.push(c);return c.id;}
  roster(s,t,cid,names){this.teacher(s,t);const c=this.getClass(s,cid);if(!Array.isArray(names)||!names.length||names.length+c.students.length>100)fail('Add 1–100 students per class.');const parsed=names.map(name);for(const n of parsed)c.students.push({id:id(),name:n,override:null,revision:1,math:freshMath(),activity:null,answers:[],lastSeen:0});}
@@ -98,7 +98,7 @@ export class Model{
    if(r.snapshot.outcome||g?.mode!=='break'||g.breakFor!==r.kg.breaks.length+1)fail('No question round is due.',409);
    if(p.dev){const n=5;r.kg.credited+=n;r.kg.breaks.push({wave:g.breakFor,answered:n,correct:n});return {devBreak:{answered:n,correct:n},state:this.view(c,p,a)};}
    const cfg=this.config(c,p),practice=new Practice(p.math);practice.saveConfig(cfg);p.activity.gateId=id();practice.open('kingsgate-break',p.activity.gateId);
-   const count=Math.max(1,Math.min(5,Number(cfg.count)||3));p.math.gate.config.count=count;p.activity.itemId=id();
+   const count=kgPerWave(cfg);/* Kingsgate-only setting (owner decision 2026-10-16): questions per wave, default 1; not the gate count. */p.math.gate.config.count=count;p.activity.itemId=id();
    r.kg.open={wave:g.breakFor,count,answered:0,correct:0};r.running=false;r.input={};
    return {state:this.view(c,p,a)};
   }

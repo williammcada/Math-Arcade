@@ -2,10 +2,10 @@ import test from 'node:test';import assert from 'node:assert/strict';import {mkd
 import {Model,games} from '../server/model.mjs';import {freshMath} from '../build/math/engine.js';import * as rounds from '../server/rounds.mjs';
 import {resolveBreak} from '../build/kingsgate/games/kingsgate/sim.js';
 
-function fixture(t,count=3){
+function fixture(t,count=3,kgPerWave){
  const dir=mkdtempSync(tmpdir()+'/arcade-kingsgate-');let now=1000,m=new Model(dir+'/db','test-password-only',{now:()=>now});t.after(()=>{m.close();rmSync(dir,{recursive:true,force:true});});
  const call=(method,...args)=>m.tx(s=>m[method](s,...args));const teacher=call('login','test-password-only'),cid=call('classCreate',teacher,{name:'Kingsgate'});
- call('roster',teacher,cid,['Solo']);call('assign',teacher,cid,{config:{...freshMath().config,count}});call('session',teacher,cid,'open');
+ call('roster',teacher,cid,['Solo']);call('assign',teacher,cid,{config:{...freshMath().config,count,...(kgPerWave===undefined?{}:{kgPerWave})}});call('session',teacher,cid,'open');
  const c=call('teacherView',teacher).classes[0],token=call('join',{code:c.session.code,studentId:c.students[0].id,password:c.session.join.password});
  call('approve',teacher,call('teacherView',teacher).classes[0].claims[0].id,true);
  const raw=fn=>m.tx(s=>fn(s.classes[0].students[0]));const view=()=>call('studentView',token);let seq=0;
@@ -27,7 +27,7 @@ test('Kingsgate is listed and starts without a math gate',t=>{
 });
 
 test('Question round before wave 2: one try per question, server-credited gold, clock stopped',t=>{
- const f=fixture(t,3);f.call('begin',f.token,'kingsgate');f.call('launch',f.token,{});f.sync('resume');
+ const f=fixture(t,10,3);f.call('begin',f.token,'kingsgate');f.call('launch',f.token,{});f.sync('resume');
  const sim=playToBreak(f);assert.equal(sim.g.mode,'break');assert.equal(sim.g.breakFor,1);f.tick(500);
  const opened=f.call('kingsgate',f.token,{roundId:f.view().activity.round.id,commandId:'b1',action:'break',snapshot:{...sim,events:[]}});
  assert.equal(opened.state.gate.count,3);assert.equal(opened.state.activity.round.running,false,'clock stops during the round');
@@ -58,4 +58,16 @@ test('Kingsgate guided defense completes separately',t=>{
  f.call('extra',f.token,{roundId:r.id,commandId:'g0',action:'assist'});
  for(let i=0;i<6;i++)f.call('extra',f.token,{roundId:r.id,commandId:'g'+(i+1),action:'safe',objective:String(i)});
  assert.equal(f.view().activity.round.snapshot.outcome,'assisted_completed');
+});
+
+test('Kingsgate questions per wave is its own setting: default 1, independent of questions per gate',t=>{
+ const open=(count,kgPerWave)=>{const f=fixture(t,count,kgPerWave);f.call('begin',f.token,'kingsgate');f.call('launch',f.token,{});f.sync('resume');const sim=playToBreak(f);
+  return f.call('kingsgate',f.token,{roundId:f.view().activity.round.id,commandId:'b',action:'break',snapshot:{...sim,events:[]}}).state.gate.count;};
+ assert.equal(open(3),1,'no Kingsgate setting saved: one question per wave');
+ assert.equal(open(10),1,'questions per gate does not change Kingsgate');
+ assert.equal(open(3,2),2);assert.equal(open(1,5),5);
+ const f=fixture(t);assert.throws(()=>f.call('assign',f.teacher,f.cid,{config:{...freshMath().config,count:3,kgPerWave:6}}),/1–5 Kingsgate questions per wave/);
+ assert.throws(()=>f.call('assign',f.teacher,f.cid,{config:{...freshMath().config,count:3,kgPerWave:0}}),/Kingsgate questions per wave/);
+ // The normal gate count still applies to every other game.
+ const v=f.call('begin',f.token,'blackline');assert.equal(v.gate.count,3);
 });
