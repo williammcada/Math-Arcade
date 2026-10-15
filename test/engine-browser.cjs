@@ -21,7 +21,7 @@ try{fs.mkdirSync('test-results',{recursive:true});
  await teacher.locator('#save-math').click();for(let t=0;t<200&&model.tx(s=>s.classes[0].config.selected.length)!==3;t++)await teacher.waitForTimeout(50);
  assert.deepEqual(model.tx(s=>s.classes[0].config.selected).sort(),['bank:algebra-2-en:node:142','bank:course-87-en:authored:MCADA-18.1','mq-properties']);
  await teacher.locator('#open-session').click();await teacher.locator('#qr canvas').waitFor();const code=await teacher.locator('.join-code').innerText();
- await student.goto(base+'/?code='+code);await student.getByRole('button',{name:'Join class →'}).click();await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
+ await student.goto(base+'/?code='+code);await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
  await student.locator('[data-game="coastal"]').click();
  const seen=new Set();
  for(let i=0;i<3;i++){

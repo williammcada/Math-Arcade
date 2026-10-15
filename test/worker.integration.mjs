@@ -37,8 +37,10 @@ test('Cloudflare runtime: atomic joins, ten games, isolation, persistence and br
  let c=await view();
  const input={code:c.session.code,password:c.session.join.password,studentId:c.students[0].id};
  const redeem=()=>fetch(base+'/api/join',{method:'POST',headers:{origin:base,'content-type':'application/json'},body:JSON.stringify(input)});
- const race=await Promise.all([redeem(),redeem()]);assert.deepEqual(race.map(r=>r.status).sort(),[200,403]);
- let student=race.find(r=>r.ok).headers.get('set-cookie').split(';')[0];
+ const race=await Promise.all([redeem(),redeem()]);assert.deepEqual(race.map(r=>r.status),[200,200]);// v0.8.0: shared password is reusable; both wait for the teacher.
+ for(const claim of (await view()).claims)await teacherCall('approve',{id:claim.id,allow:false});
+ const one=await redeem();assert.equal(one.status,200);
+ let student=one.headers.get('set-cookie').split(';')[0];
  await call('/api/begin',{game:'math-civ'},student,403);
  await teacherCall('approve',{id:(await view()).claims[0].id,allow:true});
  const studentCall=async(path,body,status=200)=>(await call('/api/'+path,body,student,status)).data;
