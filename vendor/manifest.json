@@ -1,7 +1,7 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "8c475208122def1b976bcbaf4e8bd7f93bbfa07c",
+    "commit": "9b2abefa5dfd4ed2cdf3a51b1b1357f166a50bf5",
     "path": "dist",
     "engineVersion": "0.35.0-rc.1"
   },
@@ -2259,7 +2259,7 @@
   },
   "math-civ": {
     "repo": "williammcada/Math-Civ",
-    "commit": "effe31c0154663bbf4896623a5bcd62fa41dbb58"
+    "commit": "4a91e8ef2c35dffc8ecee94119b8522b5fa2d7fe"
   },
   "blackline": {
     "repo": "williammcada/mathquest",
