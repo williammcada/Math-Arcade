@@ -1,4 +1,8 @@
-# Math Arcade v0.7.0
+# Math Arcade v0.9.0-rc.1 (implementation checkpoint)
+
+**v0.9.0 rebuilds the math skill picker.** Tick the courses to browse and search; search by lesson ("lesson 9"), objective ("9.6"), standard ("PS.MAT.G5.NF") or keyword; the grade range applies only to K–7 skills. Uses Math Engine 0.35.0-rc.1, which adds 8/7 standards to course items and keeps 8/7 Lesson 9.6 answers positive. See the [v0.9.0 specification](docs/change-specs/v0.9.0.md) and [checkpoint verification](docs/checkpoints/v0.9.0-verification.md). Not yet a verified release or deployed.
+
+## v0.7.0
 
 **v0.7.0 brings every game up to date** (Coastal, Ironbreak and Blackline difficulty, Nightfall art, Kingsgate), adds **Blackout Protocol**, shows full cartridge art on every card, and deploys verified changes automatically (the game sync runs after school). See the [v0.7.0 specification](docs/change-specs/v0.7.0.md) and [release notes](docs/releases/v0.7.0.md).
 

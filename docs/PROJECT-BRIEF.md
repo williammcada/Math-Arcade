@@ -7,7 +7,11 @@
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
 **Handbook baseline:** `8fc5e3b6cd163278dd618081333f2264bf392db6`, consulted for the Math Civ continuation.
 
-## Current checkpoint — 2026-10-12
+## Current checkpoint — 2026-10-15
+
+v0.9.0-rc.1 (branch `implement/v0.9.0`): skill picker with course ticks and lesson / objective / standard / keyword search; grade range only for K–7 skills; Math Engine 0.35.0-rc.1 (`8c47520`). Implementation checkpoint — see [spec](change-specs/v0.9.0.md) and [verification](checkpoints/v0.9.0-verification.md). Earlier checkpoints below are historical.
+
+## Earlier checkpoint — 2026-10-12
 
 v0.5.0 (review branch `review/arcade-0.5.0-engine`) moves all Arcade mathematics onto Math Engine 0.34.0-rc.3 — K–7 skills plus course items Intermediate 4 → Algebra 2 — matching MathQuest 0.10.0. See [v0.5.0](change-specs/v0.5.0.md). Not released or deployed; earlier checkpoints below are historical.
 
