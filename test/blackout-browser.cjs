@@ -21,7 +21,7 @@ try{
  for(const id of ['grid-scanner','surge-stabilizer'])await student.locator(`[data-extra-gear="${id}"]`).uncheck();
  await student.locator('#launch').click();await student.locator('.vault-overlay button:not([disabled])').waitFor({timeout:15000});
  assert.equal(round().snapshot.game.fuses,4,'Spare Fuse gives four fuses');assert.equal(await student.locator('[data-assist]').count(),0,'no guided route');
- await student.locator('.vault-overlay button').click();for(let t=0;t<100&&!round().running;t++)await student.waitForTimeout(50);assert.equal(round().running,true);
+ await student.locator('.vault-overlay button').click();for(let t=0;t<100&&!round().running;t++)await student.waitForTimeout(50);for(let t=0;t<100&&(round().running)!==true;t++)await student.waitForTimeout(50);assert.equal(round().running,true);
  // Wait until the device itself is playing (its Pause button shows), not only the server: taps are ignored while paused.
  await student.locator('[data-pause]').filter({hasText:/^Pause$/}).waitFor({timeout:10000});await student.locator('.vault-overlay').waitFor({state:'hidden'});
  // Tap an unlocked tile: the device rotates exactly that tile and its next snapshot reaches the server.
