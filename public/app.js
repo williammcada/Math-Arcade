@@ -8,6 +8,7 @@ import {Nightfall} from '/nightfall.js';
 import {Vault} from '/vault.js';
 import {showDevPanel,devBannerText} from '/coastal/engine/dev-playtest.js';
 import {HEROES,UPGRADES} from '/journey/adapter.js';
+import {preloadArt} from '/art-preload.js';
 const app=document.querySelector('#app'),modal=document.querySelector('#settings'),content=document.querySelector('#settings-content');
 const params=new URLSearchParams(location.search),teacher=params.get('role')==='teacher';
 const answerDrafts=new Map();
@@ -114,6 +115,7 @@ async function loadStudent(){if(busy||flight)return;try{const state=await api('s
 function paintStudent(s){if(lastStudent?.gate&&$('#answer'))answerDrafts.set(lastStudent.gate.itemId,$('#answer').value);lastStudent=s;if(s.pending){const key='pending';if(viewKey===key)return;viewKey=key;app.innerHTML=`<section class="card narrow"><p class="eyebrow">ALMOST READY</p><h1>Hi, ${esc(s.name)}.</h1><p class="muted">Waiting for your teacher to admit this device to ${esc(s.className)}.</p></section>`;return;}
  if(s.activity?.campaign&&s.status!=='ended'){if(!flight){app.hidden=true;flight=new Campaign($('#flight'),s,api,()=>{flight=null;app.hidden=false;viewKey='';loadStudent();});}return;}
  if(s.activity?.round&&!s.activity.round.snapshot.outcome&&s.status!=='ended'){if(!flight){$('#toast').style.display='none';app.hidden=true;flight=new (s.activity.game==='kingsgate'?KingsgateGame:EXTRA_IDS.includes(s.activity.game)?ExtraGame:s.activity.game==='robot'?Ironbreak:s.activity.game==='nightfall'?Nightfall:s.activity.game==='vault7'?Vault:Flight)($('#flight'),s,api,()=>{flight=null;app.hidden=false;viewKey='';loadStudent();});}return;}
+ if((s.gate||s.activity?.grant)&&s.activity?.game)preloadArt(s.activity.game); // v0.11.1: download the chosen game's art during its gate
  const key=JSON.stringify({status:s.status,gate:s.gate,grant:s.activity?.grant,effective:s.gate||s.activity?.grant?null:s.effective,games:s.gate||s.activity?.grant?null:s.games});if(key===viewKey)return;viewKey=key;
  if(s.status==='ended'){app.innerHTML=`<section class="card narrow"><p class="eyebrow">ALL DONE FOR NOW</p><h1>Good work, ${esc(s.name)}.</h1><p>Your classroom session has ended. Your confirmed practice is saved.</p><a href="/">Join another session →</a></section>`;return;}
  if(s.status==='paused'){app.innerHTML=`<section class="card narrow"><p class="eyebrow">CLASS PAUSED</p><h1>Eyes on your teacher.</h1><p>Your progress is saved. We’ll continue when the class resumes.</p></section>`;return;}

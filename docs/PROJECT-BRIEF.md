@@ -7,7 +7,11 @@
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
 **Handbook baseline:** `8fc5e3b6cd163278dd618081333f2264bf392db6`, consulted for the Math Civ continuation.
 
-## Current checkpoint — 2026-10-16
+## Current checkpoint — 2026-10-16 (v0.11.1)
+
+v0.11.1-rc.1 (branch `implement/v0.11.1-early-art`): the chosen game's art downloads during its math gate; MathQuest 0.14.2 WebP art synced. Phase 4 of the owner-approved [game-loading plan](change-specs/game-loading-2026-10-16.md); see [spec](change-specs/v0.11.1-early-art.md) and [verification](checkpoints/v0.11.1-early-art.md).
+
+## Earlier checkpoint — 2026-10-16 (v0.11.0)
 
 v0.11.0-rc.1 (branch `implement/v0.11.0-single-answer`): Math Engine 0.37.0-rc.1 (`574d4c0`) — games no longer receive questions that need more than one answer (course items 1,441 → 1,158). Saved selections, math sets and open gates are cleaned on start, and the teacher sees a one-time "Math update" notice. Implementation checkpoint — see [spec](change-specs/v0.11.0-single-answer.md) and [checkpoint](checkpoints/v0.11.0-single-answer.md). Earlier checkpoints below are historical.
 
