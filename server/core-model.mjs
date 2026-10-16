@@ -4,7 +4,7 @@ import {catalog,Practice,freshMath,configError,generate,find,courses,checkAnswer
 import {validateArcadeKingsgate,BREAK_GOLD,kgPerWave,KG_PER_WAVE_MAX} from './kingsgate.mjs';
 import {installCampaigns} from './campaigns.mjs';
 import * as rounds from './rounds.mjs';
-export const VERSION='0.10.0-rc.1';
+export const VERSION='0.10.1-rc.1';
 const escHTML=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]);
 // Teacher catalog rows, built once from the Math Engine. Sent through /api/catalog, not on every poll.
 const CATALOG_ROWS=catalog.map(e=>({id:e.id,name:e.name,grade:e.grade,standard:e.standard||'',alias:e.standardAlias||'',topic:e.topic||'',layer:e.layer,course:e.course||null,bankId:e.bankId||null,lesson:e.lessonLabel||null,order:e.lessonOrder??null}));
@@ -116,7 +116,7 @@ export class Model{
   }
   fail('Unknown Kingsgate action.');
  }
- preview(s,t,ids){this.teacher(s,t);if(!Array.isArray(ids)||ids.length>catalog.length)fail('Invalid preview selection.');return catalog.filter(x=>ids.includes(x.id)).map(x=>{const q=generate(x.id,{seed:'preview:'+x.id});return {id:x.id,name:x.name,grade:x.grade,layer:x.layer,course:x.course||null,html:q.html,answer:q.answerText};});}
+ preview(s,t,ids,variant=0){this.teacher(s,t);if(!Array.isArray(ids)||ids.length>catalog.length)fail('Invalid preview selection.');const v=Number.isSafeInteger(variant)&&variant>=0?Math.min(variant,9999):0;/* v0.10.1: Next variant = same seed, next Engine index; variant 0 is the original sample. */return catalog.filter(x=>ids.includes(x.id)).map(x=>{const q=generate(x.id,{seed:'preview:'+x.id,index:v});return {id:x.id,variant:v,name:x.name,grade:x.grade,layer:x.layer,course:x.course||null,html:q.html,answer:q.answerText};});}
  catalogView(s,t){this.teacher(s,t);return {engine:ENGINE,courses,catalog:CATALOG_ROWS};}
  export(s,t){this.teacher(s,t);return {format:'math-arcade-export/1',exported:this.now(),classes:clone(s.classes),mathSets:clone(s.mathSets||[])};}
  remove(s,t,cid,studentId,confirm){this.teacher(s,t);if(confirm!=='DELETE')fail('Confirm deletion first.');if(cid==='all'){s.classes=[];s.mathSets=[];s.tokens=s.tokens.filter(x=>x.role==='teacher');return;}const c=this.getClass(s,cid);if(studentId){c.students=c.students.filter(p=>p.id!==studentId);s.tokens=s.tokens.filter(x=>x.studentId!==studentId||x.classId!==cid);}else{s.classes=s.classes.filter(x=>x.id!==cid);s.tokens=s.tokens.filter(x=>x.classId!==cid);}}
