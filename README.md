@@ -1,4 +1,8 @@
-# Math Arcade v0.11.1-rc.1 (implementation checkpoint)
+# Math Arcade v0.11.2-rc.1 (implementation checkpoint)
+
+**v0.11.2 picks up Chrono Circuit 0.10.1**, whose title and Foundry backgrounds are now WebP (4.0 MB → 0.47 MB). See the [v0.11.2 specification](docs/change-specs/v0.11.2-chrono-webp.md). Not yet a verified release or deployed.
+
+## v0.11.1
 
 **v0.11.1 starts a game's artwork downloading while the student answers its math gate**, so the round is ready when they press Start, and picks up MathQuest 0.14.2's smaller WebP art (Journey to the West about 45 MB → 10 MB per launch). See the [v0.11.1 specification](docs/change-specs/v0.11.1-early-art.md) and the [game-loading plan](docs/change-specs/game-loading-2026-10-16.md). Not yet a verified release or deployed.
 

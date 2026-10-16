@@ -7,7 +7,11 @@
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
 **Handbook baseline:** `8fc5e3b6cd163278dd618081333f2264bf392db6`, consulted for the Math Civ continuation.
 
-## Current checkpoint — 2026-10-16 (v0.11.1)
+## Current checkpoint — 2026-10-16 (v0.11.2)
+
+v0.11.2-rc.1 (branch `implement/v0.11.2-chrono-webp`): Chrono Circuit 0.10.1 WebP backgrounds synced. See [spec](change-specs/v0.11.2-chrono-webp.md).
+
+## Earlier checkpoint — 2026-10-16 (v0.11.1, deployed)
 
 v0.11.1-rc.1 (branch `implement/v0.11.1-early-art`): the chosen game's art downloads during its math gate; MathQuest 0.14.2 WebP art synced. Phase 4 of the owner-approved [game-loading plan](change-specs/game-loading-2026-10-16.md); see [spec](change-specs/v0.11.1-early-art.md) and [verification](checkpoints/v0.11.1-early-art.md).
 
