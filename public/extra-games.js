@@ -1,4 +1,5 @@
 import {outgoing,keepLocal} from '/round-sync.js';
+import {registerArt,artFor} from '/art-preload.js';
 import {falseHavenAdapter} from '/nightfall/games/nightfall/false-haven-adapter.js';
 import {blacklineAdapter} from '/blackline/games/blackline/adapter.js';
 import {journeyAdapter,HEROES,UPGRADES} from '/journey/adapter.js';
@@ -17,6 +18,7 @@ export function preparation(game){const p=profiles[game];return `<section class=
 export function options(game){return game==='journey'?{hero:document.querySelector('#extra-hero').value,upgrade:document.querySelector('#extra-upgrade').value}:{threat:+(document.querySelector('#extra-threat')?.value||1),loadout:[...document.querySelectorAll('[data-extra-gear]:checked')].map(e=>e.dataset.extraGear)};}
 // v0.8.3 U-17: Mega Man cross for False Haven; 8-direction pad for Journey. Blackline/Blackout unchanged.
 const PADS={'false-haven':'cross',journey:'eight'},padProfile=(game,profile)=>PADS[game]?{...profile,pad:PADS[game]}:profile;
+for(const [game,{adapter}] of Object.entries(profiles))registerArt(game,()=>adapter.loadArt());
 export class ExtraGame{
  constructor(root,state,api,onClose){
   Object.assign(this,{root,state,api,onClose,game:state.activity.game,round:state.activity.round,seq:state.activity.round.seq,paused:true,connected:true,input:{},last:performance.now(),acc:0,latched:{}});this.profile=profiles[this.game];this.adapter=this.profile.adapter;this.sim=this.revive(structuredClone(this.round.snapshot));this.abort=new AbortController();this.audio=this.adapter.createAudio?.()||new GameAudio(this.adapter.media);
@@ -32,7 +34,7 @@ export class ExtraGame{
   get('[data-exit]').onclick=async()=>{this.pause();if(confirm('Leave this round? A new round requires a new math gate.')){try{await api('leave',{});this.destroy();}catch(e){this.error=e.message;this.paint();}}};
   const opts={signal:this.abort.signal};for(const event of ['blur','resize','orientationchange','pagehide'])window.addEventListener(event,()=>{this.pause();this.fit();},opts);document.addEventListener('visibilitychange',()=>{if(document.hidden)this.pause();},opts);window.visualViewport?.addEventListener('resize',()=>{this.pause();this.fit();},opts);
   for(const event of ['contextmenu','selectstart','dragstart'])root.addEventListener(event,e=>{e.preventDefault();this.pause();},opts);
-  this.fit();this.sync('pause');this.adapter.loadArt().then(art=>{if(!this.dead){this.art=art;this.paint();}}).catch(()=>{this.error='Artwork could not load. Reload to recover this round.';this.paint();});this.paint();this.timer=setInterval(()=>this.sync(),140);this.frame=requestAnimationFrame(t=>this.tick(t));
+  this.fit();this.sync('pause');artFor(this.game,()=>this.adapter.loadArt()).then(art=>{if(!this.dead){this.art=art;this.paint();}}).catch(()=>{this.error='Artwork could not load. Reload to recover this round.';this.paint();});this.paint();this.timer=setInterval(()=>this.sync(),140);this.frame=requestAnimationFrame(t=>this.tick(t));
  }
  // Blackout keeps a class instance (core Run) that plain snapshots lose; rebuild it from the snapshot.
  revive(s){return this.game==='blackout'&&s.game&&typeof s.game.step!=='function'?blackoutAdapter.create({runId:s.runId,loadout:s.loadout,mode:s.mode,snapshot:s}):s;}

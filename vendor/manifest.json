@@ -7,92 +7,68 @@
   },
   "coastal": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "files": [
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/ENVIRONMENT-ART-PROVENANCE.md",
-      "dest": "vendor/journey/public/assets/journey/ENVIRONMENT-ART-PROVENANCE.md",
-      "sha": "912e3cf18ba2d3c1914d8880c64a66e370d3eaa5"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/HERO-ART-PROVENANCE.md",
-      "dest": "vendor/journey/public/assets/journey/HERO-ART-PROVENANCE.md",
-      "sha": "5d3f638c99642a5c30b9ba02e13ca500ee09b533"
-    },
-    {
-      "repo": "mathquest",
       "path": "public/assets/journey/README.md",
       "dest": "vendor/journey/public/assets/journey/README.md",
-      "sha": "9819454a66d4ccb958c7b24bd9a85d3c6b3c71ea"
+      "sha": "19abc0d974b7798e87c32e29400b91a40075d136"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/STAGE9-ART-PROVENANCE.md",
-      "dest": "vendor/journey/public/assets/journey/STAGE9-ART-PROVENANCE.md",
-      "sha": "8f273aca9377b7bb2a36b60e7d8f91c11c1c620c"
+      "path": "public/assets/journey/bajie-repair-stage3.webp",
+      "dest": "vendor/journey/public/assets/journey/bajie-repair-stage3.webp",
+      "sha": "df1335d30f2a6b064e54c6c4c1217b8d32354cd5"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/bajie-repair-stage3.png",
-      "dest": "vendor/journey/public/assets/journey/bajie-repair-stage3.png",
-      "sha": "9a8486d23e404d587d0adb8822a1ca3e10250bee"
+      "path": "public/assets/journey/bajie-stage2.webp",
+      "dest": "vendor/journey/public/assets/journey/bajie-stage2.webp",
+      "sha": "e3558986423deacd3761d931bd282a8560f88ac4"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/bajie-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/bajie-stage2.png",
-      "sha": "220b80819c196242208de4694d1e578fdc472010"
+      "path": "public/assets/journey/baozi-stage9.webp",
+      "dest": "vendor/journey/public/assets/journey/baozi-stage9.webp",
+      "sha": "f363181c6928300ff821d30aab1fab98f8bca66b"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/baozi-stage9.png",
-      "dest": "vendor/journey/public/assets/journey/baozi-stage9.png",
-      "sha": "2332fbf977445da91183682474cc4e7f3f219eb7"
+      "path": "public/assets/journey/brute-stage6.webp",
+      "dest": "vendor/journey/public/assets/journey/brute-stage6.webp",
+      "sha": "cc959d8dcb641d2a6838cb44e65a833a7389d8ef"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/brute-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/brute-stage6.png",
-      "sha": "962c43ebc4ed0f62a81a702d578f50a6433a3f49"
+      "path": "public/assets/journey/cast-concept.webp",
+      "dest": "vendor/journey/public/assets/journey/cast-concept.webp",
+      "sha": "4d0df2971d9770f9640d9ef2852b3a3567c1536c"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/cast-concept.png",
-      "dest": "vendor/journey/public/assets/journey/cast-concept.png",
-      "sha": "ce2ad4711a015e3624c13112b2c1a32c79d050eb"
+      "path": "public/assets/journey/caster-stage6.webp",
+      "dest": "vendor/journey/public/assets/journey/caster-stage6.webp",
+      "sha": "0bd8398d9abf9cf90e2116fe3d5b0bb9530c9489"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/caster-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/caster-stage6.png",
-      "sha": "7ea3bad20dc7f61d0d1b6b087c80c14b78edbbe9"
+      "path": "public/assets/journey/crate-stage9.webp",
+      "dest": "vendor/journey/public/assets/journey/crate-stage9.webp",
+      "sha": "738802b575291f796e3b747427717bbeac7905f9"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/crate-stage9.png",
-      "dest": "vendor/journey/public/assets/journey/crate-stage9.png",
-      "sha": "128399547d9b30a4f2080c28f75ef8882ad904ff"
+      "path": "public/assets/journey/elixir-stage9.webp",
+      "dest": "vendor/journey/public/assets/journey/elixir-stage9.webp",
+      "sha": "eb67454f2bca002124ab58fe0f808f9e53ee8067"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/elixir-stage9.png",
-      "dest": "vendor/journey/public/assets/journey/elixir-stage9.png",
-      "sha": "c898d65a023b6feec9b5099511236a4ace335920"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/enemy-repairs-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/enemy-repairs-stage6.png",
-      "sha": "5eec934ef75d073fe65d8cb38c12cb5647ea7db4"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-cave-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-cave-stage7.png",
-      "sha": "2478fae0e7878042f45d6a6badfec7d8bed38c71"
+      "path": "public/assets/journey/enemy-repairs-stage6.webp",
+      "dest": "vendor/journey/public/assets/journey/enemy-repairs-stage6.webp",
+      "sha": "5a1be6bf5a6e63907b2370666cf441c9ad9421c9"
     },
     {
       "repo": "mathquest",
@@ -102,21 +78,9 @@
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/environment-courtyard-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-courtyard-stage7.png",
-      "sha": "3a08f9574b6a12ce971adcbb808056a46ec29a4a"
-    },
-    {
-      "repo": "mathquest",
       "path": "public/assets/journey/environment-courtyard-stage7.webp",
       "dest": "vendor/journey/public/assets/journey/environment-courtyard-stage7.webp",
       "sha": "6551047ff556066b407da1137117aaebd79980fd"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/environment-mountain-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-mountain-stage7.png",
-      "sha": "bc79ce6feeb5d3e21c32c8882ae0c7989fc225d3"
     },
     {
       "repo": "mathquest",
@@ -126,105 +90,81 @@
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/environment-shrine-stage7.png",
-      "dest": "vendor/journey/public/assets/journey/environment-shrine-stage7.png",
-      "sha": "65f4ac66de840fd501d662743ee6100038b502ae"
-    },
-    {
-      "repo": "mathquest",
       "path": "public/assets/journey/environment-shrine-stage7.webp",
       "dest": "vendor/journey/public/assets/journey/environment-shrine-stage7.webp",
       "sha": "555896ce96e42c50c3a294777cd01264c732afb6"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/frame-bounds-audit.json",
-      "dest": "vendor/journey/public/assets/journey/frame-bounds-audit.json",
-      "sha": "5f96d4e6c239d884bee0029f2278db79b3fd73e5"
+      "path": "public/assets/journey/leaper-stage6.webp",
+      "dest": "vendor/journey/public/assets/journey/leaper-stage6.webp",
+      "sha": "b04d32b31dbb0054540063fa8ca0aaaf446f97a3"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/leaper-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/leaper-stage6.png",
-      "sha": "d8002f9f9a164f88648b878a92d3a21a525eef4e"
+      "path": "public/assets/journey/nezha-stage6.webp",
+      "dest": "vendor/journey/public/assets/journey/nezha-stage6.webp",
+      "sha": "1be6837b0934e93ae871c16b75f3202e5976af7f"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/manifest.json",
-      "dest": "vendor/journey/public/assets/journey/manifest.json",
-      "sha": "e889f64295c791f5e471ce6aacb83b82c051283e"
+      "path": "public/assets/journey/prince-charge-stage3.webp",
+      "dest": "vendor/journey/public/assets/journey/prince-charge-stage3.webp",
+      "sha": "3dee68c26731a1c84b26a35b4d4ca0a04966ebfe"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/nezha-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/nezha-stage6.png",
-      "sha": "241239a6a996578f0e0c0b6bd352a4a400d85171"
+      "path": "public/assets/journey/prince-repair-stage4.webp",
+      "dest": "vendor/journey/public/assets/journey/prince-repair-stage4.webp",
+      "sha": "3694a9bec1119f02a01cc5a7806eeecf911c5da6"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/prince-charge-stage3.png",
-      "dest": "vendor/journey/public/assets/journey/prince-charge-stage3.png",
-      "sha": "bdef328936f276df07fedfecb284829c66c15763"
+      "path": "public/assets/journey/prince-stage2.webp",
+      "dest": "vendor/journey/public/assets/journey/prince-stage2.webp",
+      "sha": "f36f682fd282f1dd57c1a9429abe4b4407c1de4b"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/prince-repair-stage4.png",
-      "dest": "vendor/journey/public/assets/journey/prince-repair-stage4.png",
-      "sha": "4c016503a62934ecf0135626c3bacbcdfbd967b5"
+      "path": "public/assets/journey/raider-stage1.webp",
+      "dest": "vendor/journey/public/assets/journey/raider-stage1.webp",
+      "sha": "1b2cd10e7d3b784a6bfa1650574958345df5fc10"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/prince-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/prince-stage2.png",
-      "sha": "c34890d1294c26f835191001016a07dc5ebf6f05"
+      "path": "public/assets/journey/shield-stage6.webp",
+      "dest": "vendor/journey/public/assets/journey/shield-stage6.webp",
+      "sha": "a03ed40a91f96129e2dec7b35d53d1644690aa87"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/raider-stage1.png",
-      "dest": "vendor/journey/public/assets/journey/raider-stage1.png",
-      "sha": "d75091044079871313cea8d146e537268420169d"
+      "path": "public/assets/journey/tang-stage2.webp",
+      "dest": "vendor/journey/public/assets/journey/tang-stage2.webp",
+      "sha": "ad43a67f6ba4764ce5519aa5eb5334e426dfe1bb"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/shield-stage6.png",
-      "dest": "vendor/journey/public/assets/journey/shield-stage6.png",
-      "sha": "d53eeb1d333aa06ae48a0bf5c2a8568d5a61dc2d"
+      "path": "public/assets/journey/wujing-repair-stage4.webp",
+      "dest": "vendor/journey/public/assets/journey/wujing-repair-stage4.webp",
+      "sha": "0863cc2f8c678e3b3c16c313e112bc9c76e127e0"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/stage4-repair-manifest.json",
-      "dest": "vendor/journey/public/assets/journey/stage4-repair-manifest.json",
-      "sha": "84a2a706abdc7f484f10c67c773693de90198287"
+      "path": "public/assets/journey/wujing-stage2.webp",
+      "dest": "vendor/journey/public/assets/journey/wujing-stage2.webp",
+      "sha": "2de21a662c937d4cdb3980ba594543221e519379"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/tang-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/tang-stage2.png",
-      "sha": "50022bfdd5b651315638eb25b434fd366695857d"
+      "path": "public/assets/journey/wukong-repair-stage4.webp",
+      "dest": "vendor/journey/public/assets/journey/wukong-repair-stage4.webp",
+      "sha": "d02c9ad0065372bbb479b9a2a5b2b49606d13c32"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/journey/wujing-repair-stage4.png",
-      "dest": "vendor/journey/public/assets/journey/wujing-repair-stage4.png",
-      "sha": "1636ea381f6038660551b82fb7ca5f693313b48b"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wujing-stage2.png",
-      "dest": "vendor/journey/public/assets/journey/wujing-stage2.png",
-      "sha": "8d77f5989c23927d71fc38c6dc69cbb09771343d"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wukong-repair-stage4.png",
-      "dest": "vendor/journey/public/assets/journey/wukong-repair-stage4.png",
-      "sha": "66b007215be95b8a551c28ddc942606a9c824d12"
-    },
-    {
-      "repo": "mathquest",
-      "path": "public/assets/journey/wukong-stage1.png",
-      "dest": "vendor/journey/public/assets/journey/wukong-stage1.png",
-      "sha": "6ffe76e8c8cd107a75087373873da3299d6c5c2f"
+      "path": "public/assets/journey/wukong-stage1.webp",
+      "dest": "vendor/journey/public/assets/journey/wukong-stage1.webp",
+      "sha": "277dd521dad0d713373f0bc6a515f9546b702bd1"
     },
     {
       "repo": "mathquest",
@@ -242,7 +182,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/enemy-art.js",
       "dest": "vendor/journey/public/games/journey/enemy-art.js",
-      "sha": "fa9477a89a551bc6ce5f0ced4b0a5f4bd907e30a"
+      "sha": "a65d8302745981df0a39f6f4fea698c13529bce3"
     },
     {
       "repo": "mathquest",
@@ -260,19 +200,19 @@
       "repo": "mathquest",
       "path": "public/games/journey/frame-repairs.js",
       "dest": "vendor/journey/public/games/journey/frame-repairs.js",
-      "sha": "2cffa7995d1f66f050eba427db39f0e60832214c"
+      "sha": "1b02f63c75e3efcb58ab6706c40400f6638dd215"
     },
     {
       "repo": "mathquest",
       "path": "public/games/journey/hero-art.js",
       "dest": "vendor/journey/public/games/journey/hero-art.js",
-      "sha": "75b8627a9120294836f4c0d7a27d4309e8f44aaa"
+      "sha": "217fb2a6fdd141b85691542fc5a9a598d231e01a"
     },
     {
       "repo": "mathquest",
       "path": "public/games/journey/host.js",
       "dest": "vendor/journey/public/games/journey/host.js",
-      "sha": "dcf25c495974e94b37d1bfc48503f15af9b369de"
+      "sha": "afcb99b7fc1c335ad70ee0bf07b71f37c9ba6e57"
     },
     {
       "repo": "mathquest",
@@ -302,7 +242,7 @@
       "repo": "mathquest",
       "path": "public/games/journey/renderer.js",
       "dest": "vendor/journey/public/games/journey/renderer.js",
-      "sha": "770cd2cb24e1051a5b6fb5ec292b2757442c9539"
+      "sha": "e8f026f237acccbaa5bd7b9dd3f0ae484e84be03"
     },
     {
       "repo": "mathquest",
@@ -569,6 +509,24 @@
       "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
     },
     {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.js",
+      "dest": "vendor/math/math-engine-practice.js",
+      "sha": "f3485fe280b37210a47ef221605ab36fb537e888"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.provenance.json",
+      "dest": "vendor/math/math-engine-practice.provenance.json",
+      "sha": "4ff86723b33ede5a53e322fae334722a8fa3ff45"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "src/answer-pad.js",
+      "dest": "vendor/math/answer-pad.js",
+      "sha": "213b8d9e0414f4ac3585ef233ad74fc3f82180be"
+    },
+    {
       "repo": "mathquest",
       "path": "public/assets/aerial-shooter/audio/bonus.wav",
       "dest": "vendor/coastal/public/assets/aerial-shooter/audio/bonus.wav",
@@ -806,7 +764,7 @@
       "repo": "mathquest",
       "path": "public/engine/game-host.js",
       "dest": "vendor/coastal/public/engine/game-host.js",
-      "sha": "b0ca01f962bc8323adc7267508b3194754add215"
+      "sha": "d0d1bf75a4dccbd99253ea31ba996bddc87b254d"
     },
     {
       "repo": "mathquest",
@@ -824,31 +782,31 @@
       "repo": "mathquest",
       "path": "public/engine/practice-scenes.js",
       "dest": "vendor/coastal/public/engine/practice-scenes.js",
-      "sha": "2446fcd67eb9419d0c2f2a51a4ebd6ef867dd138"
+      "sha": "6368c749f73a562d14218619a8b0627d214d5cb7"
     },
     {
       "repo": "mathquest",
       "path": "public/engine/teacher-gate.js",
       "dest": "vendor/coastal/public/engine/teacher-gate.js",
-      "sha": "fb40a0dc2c9ebd9241e06823b12c066dab67a498"
+      "sha": "7ac148e10ba808a65181fa9ddd39eef20b8831ac"
     },
     {
       "repo": "mathquest",
       "path": "public/engine/teacher-guard.js",
       "dest": "vendor/coastal/public/engine/teacher-guard.js",
-      "sha": "2939aa83aa499a0973b6264c1071e7f27815ea9a"
+      "sha": "b354f29fcb492cea14c5066acc7c39c03bf80a4e"
     },
     {
       "repo": "mathquest",
       "path": "public/engine/teacher-tools.js",
       "dest": "vendor/coastal/public/engine/teacher-tools.js",
-      "sha": "aaa229d7fd2646dd7219e19917e713b8131dde59"
+      "sha": "4aafc302270a907455df3c2cf50140aa82e32427"
     },
     {
       "repo": "mathquest",
       "path": "public/engine/team-tools.js",
       "dest": "vendor/coastal/public/engine/team-tools.js",
-      "sha": "dd0f74df956d781ff83bfaf5fd7c79f67d1556ed"
+      "sha": "455b74e4d2bcd01712a6c60ec04f3542e219e891"
     },
     {
       "repo": "mathquest",
@@ -1202,13 +1160,13 @@
       "repo": "mathquest",
       "path": "public/stealth.js",
       "dest": "vendor/vault7/public/stealth.js",
-      "sha": "bd28b1e35cf00ef5c226e4acb835dd1c6a7fd6d5"
+      "sha": "c182bc0f5d9baf42d90e51da57aaadf337f71126"
     },
     {
       "repo": "mathquest",
       "path": "public/vault-art.js",
       "dest": "vendor/vault7/public/vault-art.js",
-      "sha": "14f646cd7bf3937486fcfd7cc360d3f01ebd6e3c"
+      "sha": "9ac6b9309e40af380effdb8a6e3bfa8b21617582"
     },
     {
       "repo": "mathquest",
@@ -1224,9 +1182,9 @@
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/false-haven/machinery-v1.png",
-      "dest": "vendor/nightfall/public/assets/false-haven/machinery-v1.png",
-      "sha": "667118539e6205edb675f99849eb91aed165459e"
+      "path": "public/assets/false-haven/machinery-v1.webp",
+      "dest": "vendor/nightfall/public/assets/false-haven/machinery-v1.webp",
+      "sha": "30df6db7771e1f1354d8d067f8fc822c25a119e3"
     },
     {
       "repo": "mathquest",
@@ -1254,9 +1212,9 @@
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/city/actors.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/city/actors.png",
-      "sha": "540d1f0865c34b9fffc0edf6e74d21d4bb2d4e35"
+      "path": "public/assets/nightfall/city/actors.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/actors.webp",
+      "sha": "5ca53a80716a7d9c02f43aa129d2123e2a3cc86e"
     },
     {
       "repo": "mathquest",
@@ -1284,15 +1242,15 @@
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/city/props.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/city/props.png",
-      "sha": "33cafbff04bf92602c5062f0d100e0c45fdaadbd"
+      "path": "public/assets/nightfall/city/props.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/props.webp",
+      "sha": "5c575d83b2a7925101405385ed09cc645a7b250a"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/city/tiles.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/city/tiles.png",
-      "sha": "c6eb5d9579c943bdb5d138a907f9d6c3a45d1740"
+      "path": "public/assets/nightfall/city/tiles.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/city/tiles.webp",
+      "sha": "35ef13777126a98152d8860e1b49cf60faa6db16"
     },
     {
       "repo": "mathquest",
@@ -1380,33 +1338,33 @@
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/shared/decals-v1.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/shared/decals-v1.png",
-      "sha": "57d777645b7db0c04db9c1c03731c65bb8b48e22"
+      "path": "public/assets/nightfall/shared/decals-v1.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/decals-v1.webp",
+      "sha": "becb8d65cbcb09fa4908de1b0d484668447caf28"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/shared/furniture-v1.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/shared/furniture-v1.png",
-      "sha": "ec74c562e5d22c0ea260c6cbde163a7fa3159964"
+      "path": "public/assets/nightfall/shared/furniture-v1.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/furniture-v1.webp",
+      "sha": "39d7372eb8fd25a6ec0de01e9a68f4fdf64aec4c"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/shared/interactables-v1.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/shared/interactables-v1.png",
-      "sha": "e1e6d27d3134ce487a7de124c41866d25bec2880"
+      "path": "public/assets/nightfall/shared/interactables-v1.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/interactables-v1.webp",
+      "sha": "41c854e1a1dbc4c33c34b21b9d51c0706f44238e"
     },
     {
       "repo": "mathquest",
-      "path": "public/assets/nightfall/shared/roofs-v1.png",
-      "dest": "vendor/nightfall/public/assets/nightfall/shared/roofs-v1.png",
-      "sha": "7b1aaddb506ea923f5a2f3f9d89d828bab405fa5"
+      "path": "public/assets/nightfall/shared/roofs-v1.webp",
+      "dest": "vendor/nightfall/public/assets/nightfall/shared/roofs-v1.webp",
+      "sha": "eca8d6de0e35b5689c7e5a28205d2f901111cb3a"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/adapter.js",
       "dest": "vendor/nightfall/public/games/nightfall/adapter.js",
-      "sha": "01c0d2a4e49f6292f526987bdb449a9da1581e0f"
+      "sha": "88c44e4afe36ab78332deafa80e3e7fa0e27aba0"
     },
     {
       "repo": "mathquest",
@@ -1418,13 +1376,13 @@
       "repo": "mathquest",
       "path": "public/games/nightfall/false-haven-adapter.js",
       "dest": "vendor/nightfall/public/games/nightfall/false-haven-adapter.js",
-      "sha": "0edd3ecbe379bf0ced6e44dea8b27bffe8cc18b9"
+      "sha": "6cabaf4c5c55727c7c6c05ea8ae253dc764ae2e7"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/false-haven-renderer.js",
       "dest": "vendor/nightfall/public/games/nightfall/false-haven-renderer.js",
-      "sha": "5157c46676a8ffaff1582003b3782e387ceab8e8"
+      "sha": "7a7982b5e4f2e969562e84f037ea3ddec5bb6c24"
     },
     {
       "repo": "mathquest",
@@ -1436,7 +1394,7 @@
       "repo": "mathquest",
       "path": "public/games/nightfall/hardware.js",
       "dest": "vendor/nightfall/public/games/nightfall/hardware.js",
-      "sha": "9e698ba3770e82ccf0d1f2630d014fa9e7862316"
+      "sha": "f236e7d67ca49cc050ed9e510f73c74816892782"
     },
     {
       "repo": "mathquest",
@@ -1448,19 +1406,19 @@
       "repo": "mathquest",
       "path": "public/games/nightfall/renderer.js",
       "dest": "vendor/nightfall/public/games/nightfall/renderer.js",
-      "sha": "04822b862cc386600895f8a4b07bdada4ed70b7a"
+      "sha": "eb07cdf745100c62c5415f06ca1d0acdacfed8a6"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue-adapter.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-adapter.js",
-      "sha": "aecc2514f111be25aca4d671e67d0497757cd8f8"
+      "sha": "f84db13818cefa5d351fe86ea638e85dc9302ab1"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue-host.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue-host.js",
-      "sha": "890303c737976de896ae6d8cc9c95a615563555e"
+      "sha": "387bbd7f4c4d5da23abeca7baa91f76dd629b9a1"
     },
     {
       "repo": "mathquest",
@@ -1472,25 +1430,25 @@
       "repo": "mathquest",
       "path": "public/games/nightfall/rescue.js",
       "dest": "vendor/nightfall/public/games/nightfall/rescue.js",
-      "sha": "12aa646097b17065d2b742f9384e4a32aa69d9e1"
+      "sha": "ffa92f1aa1472b550a6602b318d91d55fa03f182"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/simulation.js",
       "dest": "vendor/nightfall/public/games/nightfall/simulation.js",
-      "sha": "43209636ab5023051516ca07a43ee8348cc8b2a1"
+      "sha": "0ab5a035aebae409aa42d892c146b3570945279e"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/sprites.js",
       "dest": "vendor/nightfall/public/games/nightfall/sprites.js",
-      "sha": "4981994ca015b5491763da613293afd283570a03"
+      "sha": "bb683db79cacab36775845bd2c251e2e24e29c41"
     },
     {
       "repo": "mathquest",
       "path": "public/games/nightfall/world.js",
       "dest": "vendor/nightfall/public/games/nightfall/world.js",
-      "sha": "717cfc3b4054fa038f13bbdbd087d78dfbcef25b"
+      "sha": "d82f533e546122bd1631f139891e2abd192569e6"
     },
     {
       "repo": "mathquest",
@@ -2247,37 +2205,19 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "dist/math-engine-practice.js",
-      "dest": "vendor/math/math-engine-practice.js",
-      "sha": "f3485fe280b37210a47ef221605ab36fb537e888"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "dist/math-engine-practice.provenance.json",
-      "dest": "vendor/math/math-engine-practice.provenance.json",
-      "sha": "4ff86723b33ede5a53e322fae334722a8fa3ff45"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "src/answer-pad.js",
-      "dest": "vendor/math/answer-pad.js",
-      "sha": "213b8d9e0414f4ac3585ef233ad74fc3f82180be"
     }
   ],
   "vault7": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "nightfall": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "ironbreak": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
@@ -2293,18 +2233,18 @@
   },
   "blackline": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "journey": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "kingsgate": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   },
   "blackout": {
     "repo": "williammcada/mathquest",
-    "commit": "5a5d7c63421b5bcd4e3a5481eab8d4f4e1091733"
+    "commit": "6d185cb4fa9f02e168f24979702510ad0f1b04b1"
   }
 }

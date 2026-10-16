@@ -1,6 +1,6 @@
 # Faster game loading (Math Arcade and upstream games)
 
-**Status:** Approved by William McAda, 2026-10-16 (Asia/Shanghai). Not yet implemented.
+**Status:** Approved by William McAda, 2026-10-16 (Asia/Shanghai). Phase 1 released as MathQuest 0.14.2 (merged `6d185cb`, 16 October). Phase 4 in Math Arcade v0.11.1 ([spec](v0.11.1-early-art.md)). Phases 2–3 not started.
 **Trigger:** Owner report that Journey to the West loads slowly in Math Arcade; a student suggested preloading.
 **Sources read:** Math-Arcade `adab5cc` (main has since moved to `316864a`; re-check at implementation) (main, 2026-10-16); mathquest `5a5d7c6` (the commit Arcade pins for Journey, Nightfall, Blackline, Kingsgate, Blackout, Coastal, Vault 7); CHRONO-CIRCUIT `cfc8ff6`; Math-Civ `4a91e8e` (pinned files in `vendor/`).
 **Handbook baseline:** mcada-project-handbook `9d9c80f` (AI-START-HERE, UNIVERSAL-RULES, CONDITIONAL-STANDARDS, RELEASE-CHECKLIST).
