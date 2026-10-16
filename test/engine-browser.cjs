@@ -23,7 +23,7 @@ try{fs.mkdirSync('test-results',{recursive:true});
  // Lesson, objective and standard search inside 8/7 only.
  await teacher.locator('#search-all').uncheck();for(const k of ['k7','algebra-2-en','extras'])await teacher.locator(`[data-course="${k}"]`).uncheck();await teacher.locator('[data-course="course-87-en"]').check();
  assert.ok(await teacher.locator('#grade-range').isHidden(),'grade range hidden for course-only Targeted Review');
- await teacher.locator('#skill-search').fill('lesson 9');assert.equal(await teacher.locator('#skills label').count(),5,'lesson 9 finds exactly the five 8/7 Lesson 9 skills');assert.equal(await teacher.locator('#skills .skill-group').count(),1);
+ await teacher.locator('#skill-search').fill('lesson 9');assert.equal(await teacher.locator('#skills label').count(),11,'lesson 9 finds exactly the eleven 8/7 Lesson 9 skills (Engine 0.63.0 adds six 8/7 port items; was five)');assert.equal(await teacher.locator('#skills .skill-group').count(),1);
  await teacher.locator('#skill-search').fill('PS.MAT.G5.NF.9.6');assert.equal(await teacher.locator('[data-skill="bank:course-87-en:authored:MCADA-9.6"]').count(),1,'standard search');
  await teacher.locator('#skill-search').fill('9.6');assert.equal(await teacher.locator('#skills label').count(),1,'objective search');
  await teacher.locator('#skill-search').fill('');await teacher.locator('[data-course="course-87-en"]').uncheck();await teacher.locator('[data-course="intermediate-4-en"]').check();assert.ok(await teacher.locator('#skills label').count()>20,'course browsing lists that course');assert.match(await teacher.locator('#skills .skill-group').first().innerText(),/Intermediate 4 · Lesson 1:/,'course items are grouped by lesson, in teaching order');
