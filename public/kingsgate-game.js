@@ -1,6 +1,7 @@
 // Math Arcade host for Kingsgate (game source: williammcada/mathquest public/games/kingsgate).
 // The device runs the defense. Before waves 2–12 the round pauses for a question round;
 // the server generates and checks every question with the Math Engine and credits gold.
+import {mountAnswerEntry,currentAnswerEntry} from '/answer-entry.js';
 import {outgoing,keepLocal} from '/round-sync.js';
 import {kingsgateAdapter} from '/kingsgate/games/kingsgate/adapter.js';
 import {resolveBreak} from '/kingsgate/games/kingsgate/sim.js';
@@ -13,7 +14,7 @@ export class KingsgateGame{
   Object.assign(this,{root,state,api,onClose,game:'kingsgate',round:state.activity.round,seq:state.activity.round.seq,paused:true,connected:true,last:performance.now(),acc:0});
   this.adapter=kingsgateAdapter;this.sim=structuredClone(this.round.snapshot);this.abort=new AbortController();this.audio=this.adapter.createAudio();
   root.hidden=false;root.className='flight-root vault-root extra-root';
-  root.innerHTML=`<div class="row between"><strong>Kingsgate</strong><div class="row"><button data-sound>Sound on</button><button data-exit>Leave round</button></div></div><div class="vault-body"><div class="vault-stage" style="touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none"><canvas width="640" height="360" aria-label="${this.adapter.canvasLabel}"></canvas></div><section class="vault-scenes" hidden><h2>Guided defense</h2><p data-guided></p><button data-next>Continue the guided defense</button></section><section class="kg-break card" hidden style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,94%);max-height:94%;overflow:auto;z-index:6;box-sizing:border-box;color:#152230;background:#fff"></section><div class="vault-overlay"></div></div><div><p data-hud class="flight-status"></p><p data-objective class="flight-status"></p><div class="row between"><div class="row"><button data-help>Help</button><button data-assist>Guided defense</button></div><button data-pause>Resume</button></div></div>`;
+  root.innerHTML=`<div class="row between"><strong>Kingsgate</strong><div class="row"><button data-sound>Sound on</button><button data-exit>Leave round</button></div></div><div class="vault-body"><div class="vault-stage" style="touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none"><canvas width="640" height="360" aria-label="${this.adapter.canvasLabel}"></canvas></div><section class="vault-scenes" hidden><h2>Guided defense</h2><p data-guided></p><button data-next>Continue the guided defense</button></section><section class="kg-break card" hidden style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(820px,96%);max-height:94%;overflow:auto;z-index:6;box-sizing:border-box;color:#152230;background:#fff"></section><div class="vault-overlay"></div></div><div><p data-hud class="flight-status"></p><p data-objective class="flight-status"></p><div class="row between"><div class="row"><button data-help>Help</button><button data-assist>Guided defense</button></div><button data-pause>Resume</button></div></div>`;
   const get=s=>root.querySelector(s);this.canvas=get('canvas');this.ctx=this.canvas.getContext('2d');
   this.canvas.addEventListener('pointerdown',e=>{if(this.blocked()||this.sim.arcadeMode!=='action')return;e.preventDefault();const r=this.canvas.getBoundingClientRect();if(!r.width||!r.height)return;const k=Math.min(r.width/640,r.height/360),ox=(r.width-640*k)/2,oy=(r.height-360*k)/2;/* canvas uses object-fit: contain; map through the letterboxed content box */this.adapter.pointer(this.sim,(e.clientX-r.left-ox)/k,(e.clientY-r.top-oy)/k);for(const ev of this.sim.events)this.audio.effect(ev.type);this.sim.events=[];},{signal:this.abort.signal});
   get('[data-pause]').onclick=()=>this.paused?this.resume():this.pause();get('[data-help]').onclick=()=>{this.help=true;this.pause();};
@@ -41,10 +42,9 @@ export class KingsgateGame{
  }
  showQuestion(g){
   this.breakOpen||={wave:this.sim.g.breakFor,answered:0,correct:0};this.question=g;const panel=this.root.querySelector('.kg-break');panel.hidden=false;
-  const keys=g.inputMode==='keyboard'?[]:g.inputMode==='choice'?(g.choices||[]):(g.keys||['7','8','9','back','4','5','6','clear','1','2','3','-','0','.','/',' ']);
-  panel.innerHTML=`<p class="eyebrow">Before wave ${this.breakOpen.wave+1} · ${esc(g.skillName||'')}</p><h2>Question round</h2><p class="muted">Each correct first answer earns 30 gold. One try per question.</p><div class="question">${g.html}</div><form><label>Your answer<input class="answer" autocomplete="off" inputmode="${g.inputMode==='keyboard'?'text':'none'}" aria-label="Your answer"></label><div class="keypad">${keys.map(k=>`<button type="button" data-key="${esc(k)}">${esc(k==='back'?'⌫':k==='clear'?'Clear':k===' '?'Space':k)}</button>`).join('')}</div><p class="feedback" role="status"></p><button class="primary" style="width:100%;margin-top:12px">Check answer</button></form>`;
+  panel.innerHTML=`<div class="kg-q-layout"><div><p class="eyebrow">Before wave ${this.breakOpen.wave+1} · ${esc(g.skillName||'')}</p><h2>Question round</h2><p class="muted">Each correct first answer earns 30 gold. One try per question.</p><div class="question">${g.html}</div></div><form><label>Your answer<input class="answer" autocomplete="off" aria-label="Your answer"></label><div class="keypad"></div><p class="feedback" role="status"></p><button class="primary" style="width:100%;margin-top:12px">Check answer</button></form></div>`;
   const input=panel.querySelector('input'),form=panel.querySelector('form');
-  panel.querySelectorAll('[data-key]').forEach(b=>b.onclick=()=>{const k=b.dataset.key;input.value=g.inputMode==='choice'?k:k==='clear'?'':k==='back'?input.value.slice(0,-1):input.value+k;});
+  mountAnswerEntry({container:panel.querySelector('.keypad'),input,form,gate:g}); // U-18 universal answer pad
   form.onsubmit=async e=>{e.preventDefault();if(this.answering||!input.value.trim())return;this.answering=true;const button=form.querySelector('button.primary');button.disabled=true;
    try{const out=await this.api('kingsgate',{roundId:this.round.id,commandId:crypto.randomUUID(),action:'answer',itemId:g.itemId,answer:input.value});const r=out.result;this.state=out.state;
     const fb=panel.querySelector('.feedback');fb.textContent=r.correct?'Correct! +30 gold':'Not quite. The answer is '+(r.answerText??'shown by your teacher')+'.';this.audio.effect(r.correct?'gold':'kill');
@@ -52,7 +52,7 @@ export class KingsgateGame{
    catch(err){panel.querySelector('.feedback').textContent=err.message;button.disabled=false;}finally{this.answering=false;}};
  }
  async finishBreak(result){
-  resolveBreak(this.sim.g,{answered:result.answered,correct:result.correct});this.root.querySelector('.kg-break').hidden=true;this.breakOpen=null;this.question=null;
+  currentAnswerEntry()?.destroy();resolveBreak(this.sim.g,{answered:result.answered,correct:result.correct});this.root.querySelector('.kg-break').hidden=true;this.breakOpen=null;this.question=null;
   this.keepOnce=true;this.sentAt=0;await this.resume();this.sentAt=0;this.sync();
  }
  paint(){if(this.dead)return;const s=this.sim,get=x=>this.root.querySelector(x),guided=s.arcadeMode==='accessible';get('[data-pause]').textContent=this.paused?'Resume':'Pause';get('.vault-stage').hidden=guided;get('.vault-scenes').hidden=!guided;

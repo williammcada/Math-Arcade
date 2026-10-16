@@ -1,9 +1,9 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "9b2abefa5dfd4ed2cdf3a51b1b1357f166a50bf5",
+    "commit": "9452ab49ac9980bcddd1c7f9faa49b3dfdaaf6c6",
     "path": "dist",
-    "engineVersion": "0.35.0-rc.1"
+    "engineVersion": "0.36.0-rc.1"
   },
   "coastal": {
     "repo": "williammcada/mathquest",
@@ -567,18 +567,6 @@
       "path": "PLAY-SEKIGAHARA-0.3.1.html",
       "dest": "vendor/math-civ/PLAY-SEKIGAHARA-0.3.1.html",
       "sha": "ccffe181677be2334d6ff16678f696c5f85a3e66"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "dist/math-engine-practice.js",
-      "dest": "vendor/math/math-engine-practice.js",
-      "sha": "4d84303c7dc4072f7f4b131fdecee47b97b69861"
-    },
-    {
-      "repo": "MATH-ENGINE",
-      "path": "dist/math-engine-practice.provenance.json",
-      "dest": "vendor/math/math-engine-practice.provenance.json",
-      "sha": "d8d2f51aaf47c2f34aeec553aaed5779db9772ec"
     },
     {
       "repo": "mathquest",
@@ -2259,6 +2247,24 @@
       "path": "src/world.ts",
       "dest": "vendor/olivia/src/world.ts",
       "sha": "0238df8fc72fe8237a0d7057763ca4a35b3424a9"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.js",
+      "dest": "vendor/math/math-engine-practice.js",
+      "sha": "dfd0def437f89f4dd61a763cfb5f859a6a7ba3ca"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "dist/math-engine-practice.provenance.json",
+      "dest": "vendor/math/math-engine-practice.provenance.json",
+      "sha": "7505c9bbe6a3abfaf84eb52c511c6e10caa8f960"
+    },
+    {
+      "repo": "MATH-ENGINE",
+      "path": "src/answer-pad.js",
+      "dest": "vendor/math/answer-pad.js",
+      "sha": "213b8d9e0414f4ac3585ef233ad74fc3f82180be"
     }
   ],
   "vault7": {

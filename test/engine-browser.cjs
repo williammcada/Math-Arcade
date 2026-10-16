@@ -1,4 +1,5 @@
 // Math Arcade 0.5.0: Math Engine K–Algebra 2 content through the real teacher and student pages.
+const {enterAnswer}=require('./answer-input.cjs');
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');const fs=require('node:fs');const os=require('node:os');
 (async()=>{const {createApp}=await import('../server/index.mjs');const dir=fs.mkdtempSync(os.tmpdir()+'/arcade-engine-browser-');const {server,model}=createApp({dbPath:dir+'/db',password:'test-password-only'});await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
@@ -38,9 +39,9 @@ try{fs.mkdirSync('test-results',{recursive:true});
   assert.ok(item.html,'engine item');const shown=await student.locator('.question').innerText();assert.ok(shown.length>10,shown);
   assert.equal(await student.evaluate(()=>!!document.querySelector('.question').innerHTML.match(/answerText|"answer"/)),false);
   await student.screenshot({path:`test-results/engine-gate-${i}.png`});
-  await student.locator('#answer').fill('wrong');await student.locator('#check-answer').click();await student.locator('#feedback').filter({hasText:'Not quite'}).waitFor();
-  if(item.inputMode==='choice'){await student.locator('#answer').fill('');await student.locator(`[data-key="${item.answerText}"]`).click();assert.equal(await student.locator('#answer').inputValue(),item.answerText);}
-  else await student.locator('#answer').fill(item.answerText);
+  if(item.inputMode==='choice')await student.locator(`[data-key="${item.choices.find(c=>c!==item.answerText)}"]`).click();else await enterAnswer(student.locator('#answer'),item.inputMode==='keypad'?'999999.5':'wrong');await student.locator('#check-answer').click();await student.locator('#feedback').filter({hasText:'Not quite'}).waitFor();
+  if(item.inputMode==='choice'){await student.locator(`[data-key="${item.answerText}"]`).click();assert.equal(await student.locator('#answer').inputValue(),item.answerText);}
+  else await enterAnswer(student.locator('#answer'),item.answerText);
   const before=model.tx(s=>s.classes[0].students[0].math.gate?.completed??99);await student.locator('#check-answer').click();
   for(let t=0;t<200;t++){const g=model.tx(s=>s.classes[0].students[0].math.gate);if(!g||g.completed>before)break;await student.waitForTimeout(50);}
   if(i<2)await student.locator('.pill').filter({hasText:`${i+1} / 3`}).waitFor({timeout:15000});

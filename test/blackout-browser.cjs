@@ -1,3 +1,4 @@
+const {enterAnswer}=require('./answer-input.cjs');
 const {chromium}=require('playwright');const assert=require('node:assert/strict');const fs=require('node:fs');const os=require('node:os');
 // Blackout Protocol in the browser: math gate, equipment, a canvas tap turns the tapped tile, Energize reaches the device run,
 // and a reload restores the same board (the puzzle object is rebuilt from the saved snapshot).
@@ -15,7 +16,7 @@ try{
  assert.match(await card.innerText(),/Blackout Protocol/);assert.equal(await card.locator('.visual img').getAttribute('src'),'/covers/blackout.svg');
  assert.ok(await card.locator('.visual img').evaluate(i=>i.complete&&i.naturalWidth>0),'card art loads');
  await student.locator('[data-game="blackout"]').click();await student.locator('#answer').waitFor();
- await student.locator('#answer').fill(model.tx(s=>String(s.classes[0].students[0].math.gate.item.answer)));await student.locator('#check-answer').click();
+ await enterAnswer(student.locator('#answer'),model.tx(s=>String(s.classes[0].students[0].math.gate.item.answer)));await student.locator('#check-answer').click();
  await student.locator('.arcade-story').waitFor();await student.locator('[data-extra-gear="spare-fuse"]').waitFor();
  for(const id of ['grid-scanner','surge-stabilizer'])await student.locator(`[data-extra-gear="${id}"]`).uncheck();
  await student.locator('#launch').click();await student.locator('.vault-overlay button:not([disabled])').waitFor({timeout:15000});

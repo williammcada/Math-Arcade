@@ -150,3 +150,7 @@ v0.8.2: DEV playtest from the teacher desk for the nine action games (handbook U
 
 Synced MathQuest 0.14.0 (`5a5d7c6`); Arcade hosts use MathQuest's `engine/pad.js` and `engine/audio-unlock.js`; the Arcade copies are deleted. Same pads and sound as v0.8.3/0.8.1, now from one source. Implementation checkpoint — [record](checkpoints/v0.9.1-shared-engine.md).
 
+
+## v0.10.0 — the universal answer pad (handbook U-18) — 16 October 2026
+
+The main gate, the adventure gate (Chrono, Olivia) and the Kingsgate question round now use the Math Engine's universal answer pad (Engine 0.36.0-rc.1, `9452ab4`). It has two tabs, 123 first, and the full key set on every question, including R for remainders. This fixes the classroom case where a student could not enter a remainder. Choice questions keep buttons; word and letter answers keep a text box. The Kingsgate round shows the question beside the pad. Implementation checkpoint 0.10.0-rc.1 — [spec](change-specs/v0.10.0-answer-pad.md), [record](checkpoints/v0.10.0-answer-pad.md). Handbook `9d9c80f` (v0.1.12). Physical iPad check Not run.
