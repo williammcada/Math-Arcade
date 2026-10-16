@@ -7,7 +7,11 @@
 **Source:** New integration project; upstream references are pinned in [SOURCE-BASELINE.md](SOURCE-BASELINE.md). Pilot integration is detailed in [alpha.3](checkpoints/alpha.3.md).
 **Handbook baseline:** `8fc5e3b6cd163278dd618081333f2264bf392db6`, consulted for the Math Civ continuation.
 
-## Current checkpoint — 2026-10-15
+## Current checkpoint — 2026-10-16
+
+v0.11.0-rc.1 (branch `implement/v0.11.0-single-answer`): Math Engine 0.37.0-rc.1 (`574d4c0`) — games no longer receive questions that need more than one answer (course items 1,441 → 1,158). Saved selections, math sets and open gates are cleaned on start, and the teacher sees a one-time "Math update" notice. Implementation checkpoint — see [spec](change-specs/v0.11.0-single-answer.md) and [checkpoint](checkpoints/v0.11.0-single-answer.md). Earlier checkpoints below are historical.
+
+## Earlier checkpoint — 2026-10-15
 
 v0.9.0-rc.1 (branch `implement/v0.9.0`): skill picker with course ticks and lesson / objective / standard / keyword search; grade range only for K–7 skills; Math Engine 0.35.0-rc.1 (`8c47520`). Implementation checkpoint — see [spec](change-specs/v0.9.0.md) and [verification](checkpoints/v0.9.0-verification.md). Earlier checkpoints below are historical.
 
