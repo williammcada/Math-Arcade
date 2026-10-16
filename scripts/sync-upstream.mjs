@@ -8,10 +8,14 @@ const root=join(import.meta.dirname,'..'), manifest=JSON.parse(readFileSync(join
 const groups={journey:['williammcada/mathquest',['public/games/journey/','public/assets/journey/','src/cartridges/journey/model.js','src/cartridges/journey/encounters.js','src/cartridges/journey/specials.js']],blackline:['williammcada/mathquest',['public/games/blackline/','public/assets/blackline/']],kingsgate:['williammcada/mathquest',['public/games/kingsgate/','public/assets/kingsgate/']],blackout:['williammcada/mathquest',['public/games/blackout/','public/assets/blackout/']],'math-civ':['williammcada/Math-Civ',['PLAY-SEKIGAHARA-0.3.1.html']],math:['williammcada/MATH-ENGINE',['dist/','src/answer-pad.js']],coastal:['williammcada/mathquest',['public/games/aerial-shooter/','public/assets/aerial-shooter/','public/engine/']],vault7:['williammcada/mathquest',['public/assets/vault7/']],nightfall:['williammcada/mathquest',['public/games/nightfall/','public/assets/nightfall/','public/assets/false-haven/']],ironbreak:['williammcada/mathquest',['public/games/shooter/','public/assets/shooter/']],chrono:['williammcada/CHRONO-CIRCUIT',['public/']],olivia:['williammcada/OLIVIA-MAGIC-BRACELET-QUEST',['public/','src/']]};
 const scratch=mkdtempSync(join(tmpdir(),'arcade-sources-')), repos=new Map(), next=[];
 const git=(cwd,...args)=>execFileSync('git',args,{cwd,maxBuffer:64*1024*1024});
+// Private upstream repositories: when UPSTREAM_READ_TOKEN (a read-only key) is set, clones sign in
+// with it through a one-command header, so the key never appears in a URL, a remote or the logs.
+const token=process.env.UPSTREAM_READ_TOKEN?.trim();
+const auth=token?['-c',`http.https://github.com/.extraheader=AUTHORIZATION: basic ${Buffer.from('x-access-token:'+token).toString('base64')}`]:[];
 try {
  for(const [key,[repo,prefixes]] of Object.entries(groups)){
   let source=repos.get(repo);
-  if(!source){const directory=join(scratch,repo.split('/')[1]);const local=process.env.ARCADE_SOURCE_ROOT&&join(process.env.ARCADE_SOURCE_ROOT,repo.split('/')[1]);git(scratch,'clone','--depth','1',local||`https://github.com/${repo}.git`,directory);source={directory,commit:git(directory,'rev-parse','HEAD').toString().trim()};repos.set(repo,source);}
+  if(!source){const directory=join(scratch,repo.split('/')[1]);const local=process.env.ARCADE_SOURCE_ROOT&&join(process.env.ARCADE_SOURCE_ROOT,repo.split('/')[1]);git(scratch,...(local?[]:auth),'clone','--depth','1',local||`https://github.com/${repo}.git`,directory);source={directory,commit:git(directory,'rev-parse','HEAD').toString().trim()};repos.set(repo,source);}
   const old=manifest.files.filter(f=>f.dest.startsWith(`vendor/${key}/`));
   const required=new Set(old.map(f=>f.path));
   const entries=git(source.directory,'ls-tree','-r','--full-tree','HEAD').toString().trim().split('\n').map(line=>{const [metadata,path]=line.split('\t');const [mode,type,sha]=metadata.split(' ');return {mode,type,sha,path};});
