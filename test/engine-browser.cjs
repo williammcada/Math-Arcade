@@ -14,7 +14,10 @@ try{fs.mkdirSync('test-results',{recursive:true});
  // v0.9.0: course ticks scope browsing and search; K–7 ticked by default.
  assert.ok(await teacher.locator('[data-course="k7"]').isChecked(),'K–7 skills ticked by default');
  await teacher.locator('[data-course="algebra-2-en"]').check();await teacher.locator('#skill-search').fill('two-variable system');
- await teacher.locator('[data-skill="bank:algebra-2-en:node:142"]').check();assert.equal(await teacher.locator('#mode').inputValue(),'targeted','course items switch to Targeted Review');
+ // v0.11.0 (Engine 0.37.0): the "Enter x; y" system needs two answers, so it is no longer offered to games.
+ assert.equal(await teacher.locator('[data-skill="bank:algebra-2-en:node:142"]').count(),0,'multi-answer item not offered');
+ await teacher.locator('#skill-search').fill('equation with fractions');
+ await teacher.locator('[data-skill="bank:algebra-2-en:node:209"]').check();assert.equal(await teacher.locator('#mode').inputValue(),'targeted','course items switch to Targeted Review');
  await teacher.locator('#skill-search').fill('Properties of operations: identify (all');assert.equal(await teacher.locator('[data-skill="mq-properties"]').count(),0,'unticked extras are not searched');await teacher.locator('#show-elsewhere').click();assert.ok(await teacher.locator('#search-all').isChecked());await teacher.locator('[data-skill="mq-properties"]').check();
  await teacher.locator('#skill-search').fill('Name a polygon by');await teacher.locator('[data-skill="bank:course-87-en:authored:MCADA-18.1"]').check();
  // Lesson, objective and standard search inside 8/7 only.
@@ -25,11 +28,11 @@ try{fs.mkdirSync('test-results',{recursive:true});
  await teacher.locator('#skill-search').fill('9.6');assert.equal(await teacher.locator('#skills label').count(),1,'objective search');
  await teacher.locator('#skill-search').fill('');await teacher.locator('[data-course="course-87-en"]').uncheck();await teacher.locator('[data-course="intermediate-4-en"]').check();assert.ok(await teacher.locator('#skills label').count()>20,'course browsing lists that course');assert.match(await teacher.locator('#skills .skill-group').first().innerText(),/Intermediate 4 · Lesson 1:/,'course items are grouped by lesson, in teaching order');
  await teacher.locator('[data-course="k7"]').check();assert.ok(await teacher.locator('#grade-range').isVisible(),'grade range returns with K–7 skills');
- assert.match(await teacher.locator('#selected').innerText(),/Algebra 2 · Solve a two-variable system/);
+ assert.match(await teacher.locator('#selected').innerText(),/Algebra 2 · Solve an equation with fractions/);
  await teacher.locator('#preview-math').click();await teacher.locator('#preview details summary').click();const preview=await teacher.locator('#preview').innerText();assert.match(preview,/PREVIEW 1 \/ 3/);
  await teacher.locator('#count').fill('3');await teacher.screenshot({path:'test-results/engine-settings.png',fullPage:true});
  await teacher.locator('#save-math').click();for(let t=0;t<200&&model.tx(s=>s.classes[0].config.selected.length)!==3;t++)await teacher.waitForTimeout(50);
- assert.deepEqual(model.tx(s=>s.classes[0].config.selected).sort(),['bank:algebra-2-en:node:142','bank:course-87-en:authored:MCADA-18.1','mq-properties']);
+ assert.deepEqual(model.tx(s=>s.classes[0].config.selected).sort(),['bank:algebra-2-en:node:209','bank:course-87-en:authored:MCADA-18.1','mq-properties']);
  await teacher.locator('#open-session').click();await teacher.locator('#qr canvas').waitFor();const code=await teacher.locator('.join-code').innerText();
  await student.goto(base+'/?code='+code);await student.locator('#join-password').fill(model.tx(s=>s.classes[0].session.join.password));await student.locator('#join-name').click();await teacher.getByRole('button',{name:'Admit',exact:true}).click();
  await student.locator('[data-game="coastal"]').click();

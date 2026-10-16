@@ -8,7 +8,7 @@ import {tmpdir} from 'node:os';
 test('v0.10.1: preview variants are deterministic, distinct, and variant 0 is the original sample',()=>{
  const dir=mkdtempSync(tmpdir()+'/arcade-variant-');const m=new Model(dir+'/db.sqlite','test-password-only');
  try{const t=m.tx(s=>m.login(s,'test-password-only'));const pv=(ids,v)=>m.tx(s=>m.preview(s,t,ids,v));
-  const ids=['g3-reduce','bank:algebra-1-en:node:570','bank:course-87-en:item:SN870001'];
+  const ids=['g3-reduce','bank:algebra-1-en:node:297','bank:course-87-en:item:SN870001'];/* v0.11.0: node:570 ("Enter x; y") left games in Engine 0.37.0 */
   assert.deepEqual(pv(ids),pv(ids,0));
   for(const id of ids){const seen=new Set();
    for(let v=0;v<8;v++){const [a]=pv([id],v),[b]=pv([id],v);assert.equal(a.variant,v);assert.deepEqual(a,b);seen.add(a.html+'|'+a.answer);}
