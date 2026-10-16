@@ -1,9 +1,11 @@
 import {outgoing,keepLocal} from '/round-sync.js';
+import {registerArt,artFor} from '/art-preload.js';
 import {nightfallAdapter as adapter} from '/nightfall/games/nightfall/adapter.js';
 import {nextObjective} from '/nightfall/games/nightfall/simulation.js';
 import {CONTROL_PROFILES} from '/coastal/engine/controls.js';
 import {controlMarkup as padMarkup,bindGameInput as bindPadInput} from '/coastal/engine/controls.js';
 import {GameAudio} from '/coastal/engine/game-audio.js';
+registerArt('nightfall',()=>adapter.loadArt());
 export class Nightfall{
  constructor(root,state,api,onClose){
   Object.assign(this,{root,state,api,onClose,round:state.activity.round,seq:state.activity.round.seq,paused:true,connected:true,input:{},last:performance.now(),acc:0});this.sim=structuredClone(this.round.snapshot);this.abort=new AbortController();this.audio=new GameAudio(adapter.media);this.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -15,7 +17,7 @@ export class Nightfall{
   get('[data-exit]').onclick=async()=>{this.pause();if(confirm('Leave this round? Starting again requires a new math gate.'))try{await api('leave',{});this.destroy();}catch(e){this.error=e.message;this.paint();}};
   get('[data-sound]').onclick=async()=>{try{await this.audio.toggle();}catch{try{await this.audio.start?.();}catch{}}get('[data-sound]').textContent=this.audio.enabled?'Sound on':'Sound off';};
   const opts={signal:this.abort.signal};window.addEventListener('keydown',e=>{if(e.key.toLowerCase()==='m'&&!e.repeat&&!this.blocked()){e.preventDefault();get('[data-map]').click();}},opts);window.addEventListener('blur',()=>this.pause(),opts);document.addEventListener('visibilitychange',()=>{if(document.hidden)this.pause();},opts);window.addEventListener('resize',()=>{this.pause();this.fit();},opts);window.addEventListener('orientationchange',()=>{this.pause();this.fit();},opts);window.visualViewport?.addEventListener('resize',()=>{this.pause();this.fit();},opts);for(const type of ['contextmenu','selectstart','dragstart'])root.addEventListener(type,e=>{e.preventDefault();this.pause();},opts);
-  this.fit();this.sync('pause');adapter.loadArt().then(art=>{if(!this.dead){this.art=art;this.paint();}}).catch(()=>{this.error='Artwork could not load. Reload to recover the same round.';this.paint();});this.paint();this.timer=setInterval(()=>this.sync(),140);this.frame=requestAnimationFrame(t=>this.tick(t));
+  this.fit();this.sync('pause');artFor('nightfall').then(art=>{if(!this.dead){this.art=art;this.paint();}}).catch(()=>{this.error='Artwork could not load. Reload to recover the same round.';this.paint();});this.paint();this.timer=setInterval(()=>this.sync(),140);this.frame=requestAnimationFrame(t=>this.tick(t));
  }
  blocked(){return this.paused||!this.connected||!this.art||this.state.status!=='open'||document.hidden||!!this.sim.outcome||this.portrait;}
  fit(){this.root.style.height=(visualViewport?.height||innerHeight)+'px';this.root.style.width=(visualViewport?.width||innerWidth)+'px';this.portrait=(visualViewport?.height||innerHeight)>(visualViewport?.width||innerWidth);this.root.classList.toggle('portrait',this.portrait);}

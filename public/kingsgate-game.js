@@ -3,12 +3,14 @@
 // the server generates and checks every question with the Math Engine and credits gold.
 import {mountAnswerEntry,currentAnswerEntry} from '/answer-entry.js';
 import {outgoing,keepLocal} from '/round-sync.js';
+import {registerArt,artFor} from '/art-preload.js';
 import {kingsgateAdapter} from '/kingsgate/games/kingsgate/adapter.js';
 import {resolveBreak} from '/kingsgate/games/kingsgate/sim.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const KINGSGATE_STORY='Orc warbands of the Ashmoor are marching on Kingsgate, the walled city that guards the kingdom. Twelve waves are coming down the pass; the last brings a Siege Ram.';
 export const KINGSGATE_TASK='Tap a gold ring to build a tower; tap a tower to upgrade or sell it. Before each new wave you answer questions: every correct first answer earns 30 gold. Kill Shamans first and save gold for the Siege Ram. Five active minutes; pauses and question rounds stop the clock.';
 export function kingsgatePreparation(){return `<section class="card narrow"><span class="pill live">READY</span><h1>Kingsgate</h1><section class="arcade-story"><h2>Story</h2><p>${KINGSGATE_STORY}</p></section><section class="arcade-directions"><h2>Your task</h2><p>${KINGSGATE_TASK}</p><p>The questions come between waves. Leaving Kingsgate early means a math gate before your next Kingsgate.</p></section><button id="launch" class="primary">Start Kingsgate</button></section>`;}
+registerArt('kingsgate',()=>kingsgateAdapter.loadArt());
 export class KingsgateGame{
  constructor(root,state,api,onClose){
   Object.assign(this,{root,state,api,onClose,game:'kingsgate',round:state.activity.round,seq:state.activity.round.seq,paused:true,connected:true,last:performance.now(),acc:0});
@@ -24,7 +26,7 @@ export class KingsgateGame{
   get('[data-exit]').onclick=async()=>{this.pause();if(confirm('Leave this round?')){try{await api('leave',{});this.destroy();}catch(e){this.error=e.message;this.paint();}}};
   const opts={signal:this.abort.signal};for(const event of ['blur','pagehide'])window.addEventListener(event,()=>this.pause(),opts);document.addEventListener('visibilitychange',()=>{if(document.hidden)this.pause();},opts);
   for(const event of ['contextmenu','selectstart','dragstart'])get('.vault-stage').addEventListener(event,e=>e.preventDefault(),opts);
-  this.sync('pause');this.adapter.loadArt().then(art=>{if(!this.dead){this.art=art;this.paint();}}).catch(()=>{this.error='Artwork could not load. Reload to recover this round.';this.paint();});
+  this.sync('pause');artFor('kingsgate',()=>this.adapter.loadArt()).then(art=>{if(!this.dead){this.art=art;this.paint();}}).catch(()=>{this.error='Artwork could not load. Reload to recover this round.';this.paint();});
   if(state.gate)this.showQuestion(state.gate);
   this.paint();this.timer=setInterval(()=>this.sync(),140);this.frame=requestAnimationFrame(t=>this.tick(t));
  }

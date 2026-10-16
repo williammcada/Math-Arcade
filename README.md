@@ -1,4 +1,8 @@
-# Math Arcade v0.10.1-rc.1 (implementation checkpoint)
+# Math Arcade v0.10.2-rc.1 (implementation checkpoint)
+
+**v0.10.2 starts a game's artwork downloading while the student answers its math gate**, so the round is ready when they press Start, and picks up MathQuest 0.14.2's smaller WebP art (Journey to the West about 45 MB → 10 MB per launch). See the [v0.10.2 specification](docs/change-specs/v0.10.2-early-art.md) and the [game-loading plan](docs/change-specs/game-loading-2026-10-16.md). Not yet a verified release or deployed.
+
+## v0.10.1
 
 **v0.10.1 adds Next variant to the teacher math preview**, so each skill can be screened through fresh Engine questions instead of one fixed sample. Stacked on 0.10.0-rc.1 (universal answer pad). See the [v0.10.1 specification](docs/change-specs/v0.10.1-preview-variants.md). Not yet a verified release or deployed.
 
