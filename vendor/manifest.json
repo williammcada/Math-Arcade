@@ -1626,9 +1626,9 @@
     },
     {
       "repo": "CHRONO-CIRCUIT",
-      "path": "public/assets/foundry.png",
-      "dest": "vendor/chrono/public/assets/foundry.png",
-      "sha": "0a734ffa369d5b0d95c7eedcfd10ff1bc16dc2b0"
+      "path": "public/assets/foundry.webp",
+      "dest": "vendor/chrono/public/assets/foundry.webp",
+      "sha": "cc51c0a3ef233ffcf21de65d5956048019991d9d"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -1656,9 +1656,9 @@
     },
     {
       "repo": "CHRONO-CIRCUIT",
-      "path": "public/assets/title.png",
-      "dest": "vendor/chrono/public/assets/title.png",
-      "sha": "f8bc701ee5ded0dfde1ba874189575ebce438a69"
+      "path": "public/assets/title.webp",
+      "dest": "vendor/chrono/public/assets/title.webp",
+      "sha": "787b7715d4b024c99233ddb15d6054381f6021b0"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -1694,7 +1694,7 @@
       "repo": "CHRONO-CIRCUIT",
       "path": "public/game.js",
       "dest": "vendor/chrono/public/game.js",
-      "sha": "6688737494a1da46df7269041f9bd858a1493683"
+      "sha": "3005d5f60fbaef4c47c635c4d845830d793cc33c"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -1724,7 +1724,7 @@
       "repo": "CHRONO-CIRCUIT",
       "path": "public/index.html",
       "dest": "vendor/chrono/public/index.html",
-      "sha": "be63b4be4bfa1ad50a6e3dfe3548f257fe34e24e"
+      "sha": "8b526b3834671aa5ccb097e5da5d9a21dc658d22"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -1820,7 +1820,7 @@
       "repo": "CHRONO-CIRCUIT",
       "path": "public/stage-data.js",
       "dest": "vendor/chrono/public/stage-data.js",
-      "sha": "7d394e20727e06be6a38a71335b8b39610b87ad7"
+      "sha": "b3f0f7363a823ca510b13da096a519652b668a6b"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -1832,7 +1832,7 @@
       "repo": "CHRONO-CIRCUIT",
       "path": "public/style.css",
       "dest": "vendor/chrono/public/style.css",
-      "sha": "d03cde7e207df33c11e0ef998ff994bfc5c5574a"
+      "sha": "ca096f9c25c8cdb159f98f6ae5a80f14c991387b"
     },
     {
       "repo": "CHRONO-CIRCUIT",
@@ -2221,7 +2221,7 @@
   },
   "chrono": {
     "repo": "williammcada/CHRONO-CIRCUIT",
-    "commit": "cfc8ff6e7ee3cc4bb6a6cc7b6d902a99fa54aa5b"
+    "commit": "64dd72ed2b3e4ace2d3fc178342ad715c06ef07a"
   },
   "olivia": {
     "repo": "williammcada/OLIVIA-MAGIC-BRACELET-QUEST",

@@ -5,7 +5,7 @@ import {validateArcadeKingsgate,BREAK_GOLD,kgPerWave,KG_PER_WAVE_MAX} from './ki
 import {installCampaigns} from './campaigns.mjs';
 import {migrateWorkspace} from './engine-migration.mjs';
 import * as rounds from './rounds.mjs';
-export const VERSION='0.11.1-rc.1';
+export const VERSION='0.11.2-rc.1';
 const escHTML=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch]);
 // Teacher catalog rows, built once from the Math Engine. Sent through /api/catalog, not on every poll.
 const CATALOG_ROWS=catalog.map(e=>({id:e.id,name:e.name,grade:e.grade,standard:e.standard||'',alias:e.standardAlias||'',topic:e.topic||'',layer:e.layer,course:e.course||null,bankId:e.bankId||null,lesson:e.lessonLabel||null,order:e.lessonOrder??null}));

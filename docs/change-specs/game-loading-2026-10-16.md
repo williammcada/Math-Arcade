@@ -1,6 +1,6 @@
 # Faster game loading (Math Arcade and upstream games)
 
-**Status:** Approved by William McAda, 2026-10-16 (Asia/Shanghai). Phase 1 released as MathQuest 0.14.2 (merged `6d185cb`, 16 October). Phase 4 in Math Arcade v0.11.1 ([spec](v0.11.1-early-art.md)). Phases 2–3 not started.
+**Status:** Approved by William McAda, 2026-10-16 (Asia/Shanghai). Phase 1 released as MathQuest 0.14.2 (`6d185cb`). Phase 4 released as Math Arcade v0.11.1 (deployed 16 October). Phase 2 released as Chrono Circuit 0.10.1 (`64dd72e`) and synced in Math Arcade v0.11.2 ([spec](v0.11.2-chrono-webp.md)). Phase 3 needs no separate change; see the Phase 3 note below.
 **Trigger:** Owner report that Journey to the West loads slowly in Math Arcade; a student suggested preloading.
 **Sources read:** Math-Arcade `adab5cc` (main has since moved to `316864a`; re-check at implementation) (main, 2026-10-16); mathquest `5a5d7c6` (the commit Arcade pins for Journey, Nightfall, Blackline, Kingsgate, Blackout, Coastal, Vault 7); CHRONO-CIRCUIT `cfc8ff6`; Math-Civ `4a91e8e` (pinned files in `vendor/`).
 **Handbook baseline:** mcada-project-handbook `9d9c80f` (AI-START-HERE, UNIVERSAL-RULES, CONDITIONAL-STANDARDS, RELEASE-CHECKLIST).
@@ -56,6 +56,8 @@ Repository: `williammcada/CHRONO-CIRCUIT`. Same method and checks as Phase 1. Sm
 ### Phase 3 — Math Civ: compress embedded sound
 
 Repository: `williammcada/Math-Civ`. Re-encode the 20 embedded WAV sounds as MP3 in the build that produces the single HTML file. Keep the file single and offline-capable. Verify every sound still plays on an iPad (Safari) and that the file opens offline as before.
+
+**Phase 3 finding (16 October 2026):** Math Civ 0.5.1 (release candidate, `4a91e8e`) already stores its music as MP3; its student file is 6.13 MiB against 13.3 MB for the preserved 0.3.1 file Math Arcade serves. The remaining WAV effects add about 0.25 MB. The 0.3.1 file is the byte-preserved original and is not edited. The saving arrives when the owner moves Math Arcade to Math Civ 0.5.x, which is a content release decision.
 
 ### Phase 4 — Math Arcade: start loading art at the gate
 
