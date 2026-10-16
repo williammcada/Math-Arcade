@@ -17,7 +17,7 @@ test('canonical Math Engine bundle is pinned, hash-verified and K–Algebra 2',(
  assert.equal(createHash('sha256').update(readFileSync(new URL('../build/math/engine.js',import.meta.url))).digest('hex'),prov.bundleSha256);
  assert.equal(version,prov.engineVersion);assert.equal(contentHash,prov.contentHash);
  const layers={};for(const e of catalog)layers[e.layer]=(layers[e.layer]||0)+1;
- assert.equal(layers.skill,312);assert.equal(layers.bank,1158);/* v0.11.0: Engine 0.37.0 keeps multi-answer questions out of games (was 1,441). */assert.equal(catalog.length,prov.catalog.total);
+ assert.equal(layers.skill,312);assert.equal(layers.bank,3154);/* Engine 0.63.0 adds the Algebra 1 and Algebra 1/2 course ports (was 1,158 in Engine 0.37.0; multi-answer questions still stay out of games). */assert.equal(catalog.length,prov.catalog.total);
  assert.deepEqual(courses.map(c=>c.course),['Intermediate 4','Course 1','Introduction to PreAlgebra (8/7)','Algebra 1/2','Algebra 1','Algebra 2']);
 });
 
