@@ -1,4 +1,8 @@
-# Math Arcade v0.9.0-rc.1 (implementation checkpoint)
+# Math Arcade v0.10.1-rc.1 (implementation checkpoint)
+
+**v0.10.1 adds Next variant to the teacher math preview**, so each skill can be screened through fresh Engine questions instead of one fixed sample. Stacked on 0.10.0-rc.1 (universal answer pad). See the [v0.10.1 specification](docs/change-specs/v0.10.1-preview-variants.md). Not yet a verified release or deployed.
+
+## v0.9.0
 
 **v0.9.0 rebuilds the math skill picker.** Tick the courses to browse and search; search by lesson ("lesson 9"), objective ("9.6"), standard ("PS.MAT.G5.NF") or keyword; the grade range applies only to K–7 skills. Uses Math Engine 0.35.0-rc.1, which adds 8/7 standards to course items and keeps 8/7 Lesson 9.6 answers positive. See the [v0.9.0 specification](docs/change-specs/v0.9.0.md) and [checkpoint verification](docs/checkpoints/v0.9.0-verification.md). Not yet a verified release or deployed.
 

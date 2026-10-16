@@ -26,7 +26,7 @@ export function dispatch(model,{method,path,url,body,cookies}){
       case '/api/math-set/apply':model.applyMathSet(s,t,body.classId,body.setId,body.everyone);break;
       case '/api/math-set/delete':model.deleteMathSet(s,t,body.setId);break;
       case '/api/delete':model.remove(s,t,body.classId,body.studentId,body.confirm);break;
-      case '/api/preview':return model.preview(s,t,body.ids);
+      case '/api/preview':return model.preview(s,t,body.ids,body.variant);
       case '/api/begin':return model.begin(s,u,body.game);
       case '/api/answer':return model.answer(s,u,body);
       case '/api/campaign':return model.campaign(s,u,body);
