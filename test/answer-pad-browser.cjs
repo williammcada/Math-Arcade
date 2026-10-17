@@ -4,8 +4,11 @@
 const {chromium}=require('playwright');const assert=require('node:assert/strict');const fs=require('node:fs');const os=require('node:os');const path=require('node:path');
 const padModule={exports:{}};new Function('module','exports',fs.readFileSync(path.join(__dirname,'../vendor/math/answer-pad.js'),'utf8'))(padModule,padModule.exports);
 const PAD=padModule.exports;
-const TAB123=['7','8','9','⌫','4','5','6','Clear','1','2','3','/','0','.','−','R',':',';',',','Space'];
-const TABALG=['x','y','^','⌫','+','−','×','÷','(',')','√','Clear','=','<','>','%','≤','≥','{','}','$','AM','PM','Space'];
+// The expected layout comes from the pinned Engine pad itself (U-18; the Engine owns the layout, amended 2026-10-16),
+// so a deliberate Engine update with a new layout does not need this test rewritten.
+const label=k=>PAD.labelFor(k);
+const TAB123=PAD.tabs.find(t=>t.id==='123').rows.flat().map(label);
+const TABALG=PAD.tabs.find(t=>t.id==='algebra').rows.flat().map(label);
 (async()=>{const {createApp}=await import('../server/index.mjs');const {freshMath}=await import('../build/math/engine.js');
 const dir=fs.mkdtempSync(os.tmpdir()+'/arcade-answer-pad-');const {server,model}=createApp({dbPath:dir+'/db',password:'test-password-only'});let browser;
 await new Promise(r=>server.listen(0,'127.0.0.1',r));const shots=process.env.SHOT_DIR||'test-results';fs.mkdirSync(shots,{recursive:true});
