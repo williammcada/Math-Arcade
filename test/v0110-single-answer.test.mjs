@@ -12,7 +12,7 @@ const KEPT='bank:algebra-2-en:node:209', K7='k-next';
 const PW='test-password-only';
 
 test('Engine 0.37.0 and later: no game question asks for more than one answer',()=>{
- assert.equal(version,'0.63.0');
+ assert.equal(version,'0.65.0');
  assert.equal(find(REMOVED),null);assert.equal(gameExclusion(REMOVED),'multi-part');assert.equal(gameExclusion(REMOVED2),'multi-part');
  assert.ok(find('bank:course-87-en:authored:MCADA-30.3'),'single-answer sibling kept');
  assert.throws(()=>generate(REMOVED,{seed:'x'}),/multi-part/);
