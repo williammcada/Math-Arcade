@@ -1,7 +1,7 @@
 {
   "math": {
     "repo": "williammcada/MATH-ENGINE",
-    "commit": "54f1ff5f9db98bb9819998352681450e20bc9227",
+    "commit": "17c4e3a460cfc89f4b7db42b8bb59251e6a9f6b0",
     "path": "dist",
     "engineVersion": "0.63.0"
   },
@@ -512,19 +512,19 @@
       "repo": "MATH-ENGINE",
       "path": "dist/math-engine-practice.js",
       "dest": "vendor/math/math-engine-practice.js",
-      "sha": "081e990cf9a02c7939a07c9f603644f0a97af23f"
+      "sha": "b2d1b00df7d142393614fe46206b1a10905c2361"
     },
     {
       "repo": "MATH-ENGINE",
       "path": "dist/math-engine-practice.provenance.json",
       "dest": "vendor/math/math-engine-practice.provenance.json",
-      "sha": "aa485f3b7d7c8d549790541cdba44279a46b2f53"
+      "sha": "2b1542efe919ab1b53ffd64bf5da95d466561886"
     },
     {
       "repo": "MATH-ENGINE",
       "path": "src/answer-pad.js",
       "dest": "vendor/math/answer-pad.js",
-      "sha": "213b8d9e0414f4ac3585ef233ad74fc3f82180be"
+      "sha": "a34c0c8138be31d05ce0d21cb27cd771dea1fb7c"
     },
     {
       "repo": "mathquest",
